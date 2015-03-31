@@ -9,7 +9,11 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include <vector>
+#include <string>
+#include <unordered_map>
 
+using namespace std;
 
 
 // TODO: reference additional headers your program requires here
