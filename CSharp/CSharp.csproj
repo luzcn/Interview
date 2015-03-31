@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>57e1b974-54f4-4a91-985c-76e6f1ae18bc</ProjectGuid>
+    <ProjectGuid>{57E1B974-54F4-4A91-985C-76E6F1AE18BC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CSharp</RootNamespace>
@@ -41,6 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CareerCup\Operations.cs" />
+    <Compile Include="DataStructure\DataStructur.cs" />
+    <Compile Include="LeetCode\AddBinary.cs" />
+    <Compile Include="LeetCode\BestTimeToBuyAndSellStock.cs" />
+    <Compile Include="LeetCode\BinaryTreeMaximumPathSum.cs" />
+    <Compile Include="LeetCode\ExcelSheetColumnNumber.cs" />
+    <Compile Include="LeetCode\LongestPalindromicSubstring.cs" />
+    <Compile Include="LeetCode\Numberof1Bits.cs" />
+    <Compile Include="LeetCode\RemoveElement.cs" />
+    <Compile Include="LeetCode\ReverseBits.cs" />
+    <Compile Include="LeetCode\RotateArray.cs" />
+    <Compile Include="LeetCode\RotateList.cs" />
+    <Compile Include="LeetCode\SpiralMatrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -2,9 +2,9 @@
 # Invoke-WebRequest https://gist.githubusercontent.com/kmorcinek/2710267/raw/ -OutFile .gitignore
  
 # User-specific files
-*.suo
-*.user
-*.sln.docstates
+# *.suo
+# *.user
+# *.sln.docstates
  
 # Build results
  
