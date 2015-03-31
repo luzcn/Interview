@@ -9,9 +9,11 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <math.h>
 
 using namespace std;
 

@@ -47,8 +47,11 @@
     <Compile Include="LeetCode\BestTimeToBuyAndSellStock.cs" />
     <Compile Include="LeetCode\BinaryTreeMaximumPathSum.cs" />
     <Compile Include="LeetCode\ExcelSheetColumnNumber.cs" />
+    <Compile Include="LeetCode\HouseRobber.cs" />
+    <Compile Include="LeetCode\LargestNumber.cs" />
     <Compile Include="LeetCode\LongestPalindromicSubstring.cs" />
     <Compile Include="LeetCode\Numberof1Bits.cs" />
+    <Compile Include="LeetCode\Permutations.cs" />
     <Compile Include="LeetCode\RemoveElement.cs" />
     <Compile Include="LeetCode\ReverseBits.cs" />
     <Compile Include="LeetCode\RotateArray.cs" />
