@@ -24,7 +24,7 @@ namespace CSharp.LeetCode
                 numList.Add(i);
             }
 
-            permuteRec(numList, result, new List<int>(), 0);
+            permuteRec(numList, result, new List<int>());
 
             return result;
         }
@@ -40,10 +40,10 @@ namespace CSharp.LeetCode
             for (int i = 0; i < num.Count; i++)
             {
                 current.Add(num[i]);
-                num.Remove(i);
+                num.RemoveAt(i);
                 permuteRec(num, result, current);
                 num.Insert(i, current[current.Count - 1]);
-                current.Remove(current.Count - 1);
+                current.RemoveAt(current.Count - 1);
             }
         }
     }
