@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterviewPractice.LeetCode
+namespace CSharp.LeetCode
 {
     /***
     Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.

@@ -1,8 +1,8 @@
 ﻿using System;
-using InterviewPractice.DataStructure;
+using CSharp.DataStructure;
 
 
-namespace InterviewPractice.LeetCode
+namespace CSharp.LeetCode
 {
     class BinaryTreeMaximumPathSum
     {

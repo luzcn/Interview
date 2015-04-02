@@ -50,7 +50,9 @@
     <Compile Include="LeetCode\HouseRobber.cs" />
     <Compile Include="LeetCode\LargestNumber.cs" />
     <Compile Include="LeetCode\LongestPalindromicSubstring.cs" />
+    <Compile Include="LeetCode\LowestCommonAncestor.cs" />
     <Compile Include="LeetCode\Numberof1Bits.cs" />
+    <Compile Include="LeetCode\PartitionList.cs" />
     <Compile Include="LeetCode\Permutations.cs" />
     <Compile Include="LeetCode\RemoveElement.cs" />
     <Compile Include="LeetCode\ReverseBits.cs" />

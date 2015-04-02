@@ -20,3 +20,26 @@ using namespace std;
 
 
 // TODO: reference additional headers your program requires here
+class TreeNode
+{
+public:
+    TreeNode* left;
+    TreeNode* right;
+    int val;
+
+    TreeNode(int v)
+        :val(v)
+    {}
+};
+
+class ListNode
+{
+public:
+    ListNode* next;
+    int val;
+
+    ListNode(int v)
+        :val(v)
+    {}
+
+};

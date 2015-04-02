@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterviewPractice
+namespace CSharp
 {
     using LeetCode;
     class Program
@@ -15,8 +15,6 @@ namespace InterviewPractice
 
             int[] num = { 3, 30, 34, 5, 9 };
             Console.WriteLine(ln.getLargestNumber(num));
-
-
         }
     }
 }

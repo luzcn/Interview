@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterviewPractice.CareerCup.Bits
+namespace CSharp.CareerCup.Bits
 {
     class Operations
     {
