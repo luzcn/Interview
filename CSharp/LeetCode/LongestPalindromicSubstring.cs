@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InterviewPractice.LeetCode.String
+namespace InterviewPractice.LeetCode
 {
     class LongestPalindromicSubstring
     {

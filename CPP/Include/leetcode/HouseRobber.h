@@ -16,10 +16,10 @@ namespace HouseRobber
     }
 
     // The DP solution
-    int robDP(vector<int>& num)
-    {
+    //int robDP(vector<int>& num)
+    //{
 
-    }
+    //}
 
 
     int rob(vector<int> &num)

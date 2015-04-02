@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharp.LeetCode
+namespace InterviewPractice.LeetCode
 {
     /***
          Given a collection of numbers, return all possible permutations.

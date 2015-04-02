@@ -130,6 +130,7 @@
     <ClInclude Include="Include\leetcode\ImplementstrStr.h" />
     <ClInclude Include="Include\leetcode\InsertionSortList.h" />
     <ClInclude Include="Include\leetcode\JumpGame.h" />
+    <ClInclude Include="Include\leetcode\LargestNumber.h" />
     <ClInclude Include="Include\leetcode\LengthofLastWord.h" />
     <ClInclude Include="Include\leetcode\LinkedListCycle.h" />
     <ClInclude Include="Include\leetcode\LongestConsecutiveSequence.h" />

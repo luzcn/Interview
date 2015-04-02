@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterviewPractice.LeetCode.Bits
+namespace InterviewPractice.LeetCode
 {
     /***
         Reverse bits of a given 32 bits unsigned integer.

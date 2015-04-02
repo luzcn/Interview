@@ -2,7 +2,7 @@
 using InterviewPractice.DataStructure;
 
 
-namespace InterviewPractice.LeetCode.Tree
+namespace InterviewPractice.LeetCode
 {
     class BinaryTreeMaximumPathSum
     {

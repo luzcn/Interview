@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterviewPractice.LeetCode.Bits
+namespace InterviewPractice.LeetCode
 {
     /// <summary>
     /// Write a function that takes an unsigned integer and returns the number of ’1' bits it has (also known as the Hamming weight).

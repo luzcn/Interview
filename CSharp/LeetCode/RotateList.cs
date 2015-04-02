@@ -1,6 +1,6 @@
 ﻿using InterviewPractice.DataStructure;
 
-namespace InterviewPractice.LeetCode.LinkedList
+namespace InterviewPractice.LeetCode
 {
     /// <summary>
     /// Given a list, rotate the list to the right by k places, where k is non-negative.
