@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 namespace CSharp
 {
     using LeetCode;
+    using CareerCup;
     class Program
     {
         static void Main(string[] args)
         {
-            LargestNumber ln = new LargestNumber();
 
-            int[] num = { 3, 30, 34, 5, 9 };
-            Console.WriteLine(ln.getLargestNumber(num));
         }
     }
 }

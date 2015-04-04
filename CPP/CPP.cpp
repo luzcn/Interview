@@ -5,10 +5,10 @@
 #include "leetcode\HouseRobber.h"
 using namespace std;
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain(int argc, _TCHAR* argv [])
 {
-    vector<int> num = { 2,1,4 };
+    vector<int> num = { 2, 1, 1, 2 };
     cout << HouseRobber::rob(num);
-	return 0;
+    return 0;
 }
 
