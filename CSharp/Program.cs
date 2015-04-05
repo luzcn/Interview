@@ -12,7 +12,13 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
+            Permutations2 pm = new Permutations2();
+            int[] num = { 3, 3, 0, 3 };
 
+            var s = pm.PermuteUnique(num);
+
+            foreach (var i in s)
+                Console.WriteLine(string.Join(" ", i));
         }
     }
 }
