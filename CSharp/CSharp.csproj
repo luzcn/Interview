@@ -58,6 +58,7 @@
     <Compile Include="LeetCode\PartitionList.cs" />
     <Compile Include="LeetCode\Permutations.cs" />
     <Compile Include="LeetCode\RemoveElement.cs" />
+    <Compile Include="LeetCode\RepeatedDNASequence.cs" />
     <Compile Include="LeetCode\ReverseBits.cs" />
     <Compile Include="LeetCode\RotateArray.cs" />
     <Compile Include="LeetCode\RotateList.cs" />
