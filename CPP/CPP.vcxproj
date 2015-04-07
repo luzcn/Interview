@@ -85,6 +85,7 @@
     <ClInclude Include="Include\CareerCup\Anagram.h" />
     <ClInclude Include="Include\CareerCup\BinaryToHex.h" />
     <ClInclude Include="Include\CareerCup\CoinMakeChange.h" />
+    <ClInclude Include="Include\CareerCup\Combinations.h" />
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h" />
     <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h" />
     <ClInclude Include="Include\CareerCup\DetectCycle.h" />

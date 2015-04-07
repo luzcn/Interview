@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CareerCup\DivideCandyBags.cs" />
     <Compile Include="CareerCup\Operations.cs" />
+    <Compile Include="CareerCup\ReverseLinkedList.cs" />
     <Compile Include="DataStructure\DataStructur.cs" />
     <Compile Include="LeetCode\AddBinary.cs" />
     <Compile Include="LeetCode\BestTimeToBuyAndSellStock.cs" />

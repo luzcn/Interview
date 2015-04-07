@@ -312,6 +312,9 @@
     <ClInclude Include="Include\leetcode\BinarySearchTreeIterator.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\Combinations.h">
+      <Filter>Header Files\CareerCup</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
