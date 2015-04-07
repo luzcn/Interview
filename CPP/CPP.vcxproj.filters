@@ -309,6 +309,9 @@
     <ClInclude Include="Include\leetcode\LowestCommonAncestor.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\BinarySearchTreeIterator.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

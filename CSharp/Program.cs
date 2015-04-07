@@ -12,8 +12,6 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            RepeatedDNASequence dna = new RepeatedDNASequence();
-            Console.WriteLine(dna.FindRepeatedDnaSequences("GAGAGAGAGAGA")[0]);
         }
     }
 }

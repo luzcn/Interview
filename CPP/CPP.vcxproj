@@ -110,6 +110,7 @@
     <ClInclude Include="Include\DataStructure\Sorting.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
     <ClInclude Include="Include\leetcode\BestToBuyAndSellStock.h" />
+    <ClInclude Include="Include\leetcode\BinarySearchTreeIterator.h" />
     <ClInclude Include="Include\leetcode\BinaryTreeLevelOrderTraversal.h" />
     <ClInclude Include="Include\leetcode\BinaryTreeMaximumPathSum.h" />
     <ClInclude Include="Include\leetcode\Candy.h" />
