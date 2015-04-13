@@ -45,6 +45,7 @@
     <Compile Include="CareerCup\Operations.cs" />
     <Compile Include="CareerCup\ReverseLinkedList.cs" />
     <Compile Include="DataStructure\DataStructur.cs" />
+    <Compile Include="DataStructure\Graph.cs" />
     <Compile Include="LeetCode\AddBinary.cs" />
     <Compile Include="LeetCode\BestTimeToBuyAndSellStock.cs" />
     <Compile Include="LeetCode\BinarySearchTreeIterator.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="LeetCode\LowestCommonAncestor.cs" />
     <Compile Include="LeetCode\MaximumSubArray.cs" />
     <Compile Include="LeetCode\Numberof1Bits.cs" />
+    <Compile Include="LeetCode\NumberOfIslands.cs" />
     <Compile Include="LeetCode\PartitionList.cs" />
     <Compile Include="LeetCode\Permutations.cs" />
     <Compile Include="LeetCode\RemoveElement.cs" />
