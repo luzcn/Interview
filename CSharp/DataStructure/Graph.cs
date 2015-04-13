@@ -15,25 +15,52 @@ namespace CSharp.DataStructure
         /// <param name="s"> The start graph node</param>
         public void BFS(int[,] graph, int s)
         {
-            var vertix = graph.GetLength(0);
+            int vertex = graph.GetLength(0);
 
-            if (!map.ContainsKey(s))
+            IList<int> list = new List<int>();
+            List<bool> visited = new List<bool>();
+            for (int i = 0; i < vertex; i++)
+            {
+                visited.Add(false);
+            }
+
+            if (visited[s] == false)
             {
                 que.Enqueue(s);
-                map.Add(s, true);
+                visited[s] = true;
 
                 while (que.Count() != 0)
                 {
-                    var current = que.Dequeue();
-                    for (int i = 0; i < vertix; i++)
+                    var u = que.Dequeue();
+                    Console.WriteLine(u);
+
+                    for (int i = 0; i < vertex; i++)
                     {
-                        if (graph[s,i] == 1 && map.cout)
+                        if (graph[u, i] == 1 && !visited[i])
+                        {
+                            que.Enqueue(i);
+                            visited[i] = true;
+                        }
                     }
                 }
             }
 
         }
-        private Dictionary<int, bool> map = new Dictionary<int, bool>();
         private Queue<int> que = new Queue<int>();
     }
 }
+#if false
+    static void Main(string[] args)
+        {
+            int[,] grid = new int[,]
+            {
+                {0,1,0,0},
+                {0,0,1,1},
+                {0,0,0,0},
+                {1,0,0,0}
+            };
+
+            Graph gs = new Graph();
+            gs.BFS(grid, 0);
+        }
+#endif

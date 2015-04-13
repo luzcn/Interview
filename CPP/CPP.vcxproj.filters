@@ -315,6 +315,9 @@
     <ClInclude Include="Include\CareerCup\Combinations.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\FloodFill.h">
+      <Filter>Header Files\CareerCup</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

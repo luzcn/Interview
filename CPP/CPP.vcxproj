@@ -91,6 +91,7 @@
     <ClInclude Include="Include\CareerCup\DetectCycle.h" />
     <ClInclude Include="Include\CareerCup\ExpressionEvaluation.h" />
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
+    <ClInclude Include="Include\CareerCup\FloodFill.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h" />
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h" />
