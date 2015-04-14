@@ -22,27 +22,63 @@ namespace DungeonGame
     10 	30 	-5 (P)
     */
 
-    int calculateRec(vector<vector<int>>& matrix, int i, int j, int sum)
-    {
-        if (i >= matrix.size())
-            return sum;
-        if (j >= matrix[0].size())
-            return sum;
-
-        if (i == matrix.size() - 1 && j == matrix[0].size() - 1)
-        {
-            if (sum <= 0)
-                return 10000;
-            else
-                return sum + matrix[i][j];
-        }
-
-        return std::min(calculateRec(matrix, i + 1, j, sum + matrix[i][j]), calculateRec(matrix, i, j + 1, sum + matrix[i][j]));
-    }
-
 
     int calculateMinimumHP(vector<vector<int>>& dungeon)
     {
-        return calculateRec(dungeon, 0, 0, 0);
+        int m = dungeon.size();
+        int n = dungeon[0].size();
+        vector<vector<int>> DP(m, vector<int>(n));
+
+        DP[m - 1][n - 1] = dungeon[m - 1][n - 1];
+        for (int i = m - 2; i >= 0; i--)
+        {
+            if (DP[i + 1][n - 1] > 0)
+            {
+                DP[i][n - 1] = dungeon[i][n - 1];
+            }
+            else
+                DP[i][n - 1] = DP[i + 1][n - 1] + dungeon[i][n - 1];
+        }
+        for (int j = n - 2; j >= 0; j--)
+        {
+            if (DP[m - 1][j + 1] > 0)
+            {
+                DP[m - 1][j] = dungeon[m - 1][j];
+            }
+            else
+                DP[m - 1][j] = DP[m - 1][j + 1] + dungeon[m - 1][j];
+        }
+
+
+        for (int i = m - 2; i >= 0; i--)
+        {
+            for (int j = n - 2; j >= 0; j--)
+            {
+                auto v1 = DP[i + 1][j];
+                auto v2 = DP[i][j + 1];
+
+                if (v1 > 0 || v2 > 0)
+                {
+                    DP[i][j] = dungeon[i][j];
+                }
+                else
+                {
+                    DP[i][j] = dungeon[i][j] + max(v1, v2);
+                }
+            }
+        }
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                cout << DP[i][j] << " ";
+            }
+            cout << endl;
+        }
+
+        cout << "----------" << endl;
+
+        return abs(DP[0][0]) + 1;
     }
 }

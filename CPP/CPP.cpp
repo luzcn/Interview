@@ -7,13 +7,16 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv [])
 {
+    //vector<vector<int>> grid = {
+    //    { -2, -3, 3 },
+    //    { -1, -10, 1 },
+    //    { 10, -30, -5 }
+    //};
     vector<vector<int>> grid = {
-        { -2, -3, 3 },
-        { -5, -10, 1 },
-        { 10, 30, -5 }
+        { -2, 5 },
     };
+    cout << DungeonGame::calculateMinimumHP(grid) << endl;
 
-    cout << DungeonGame::calculateMinimumHP(grid);
     return 0;
 }
 
