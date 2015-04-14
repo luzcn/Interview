@@ -26,7 +26,7 @@ namespace CSharp.DataStructure
 
             if (visited[s] == false)
             {
-                que.Enqueue(s);
+                que.Enqueue(s);     // use a queue for BFS
                 visited[s] = true;
 
                 while (que.Count() != 0)

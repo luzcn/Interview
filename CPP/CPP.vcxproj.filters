@@ -318,6 +318,9 @@
     <ClInclude Include="Include\CareerCup\FloodFill.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\NumberOfIslands.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
