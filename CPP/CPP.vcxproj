@@ -127,6 +127,7 @@
     <ClInclude Include="Include\leetcode\FindFirstMissingPositiveNumber.h" />
     <ClInclude Include="Include\leetcode\FindKthSmallestInTowSortedArray.h" />
     <ClInclude Include="Include\leetcode\FindMinimuminRotatedSortedArray.h" />
+    <ClInclude Include="Include\leetcode\FindPeakElement.h" />
     <ClInclude Include="Include\leetcode\FlattenBinaryTreeToLinkedList.h" />
     <ClInclude Include="Include\leetcode\GasStation.h" />
     <ClInclude Include="Include\leetcode\GrayCode.h" />

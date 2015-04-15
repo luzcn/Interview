@@ -2,20 +2,13 @@
 //
 
 #include "stdafx.h"
-#include "leetcode\DungeonGame.h"
+#include "leetcode\FindPeakElement.h"
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    //vector<vector<int>> grid = {
-    //    { -2, -3, 3 },
-    //    { -1, -10, 1 },
-    //    { 10, -30, -5 }
-    //};
-    vector<vector<int>> grid = {
-        { -2, 5 },
-    };
-    cout << DungeonGame::calculateMinimumHP(grid) << endl;
+    vector<int> v = { 1, 2 };
+    cout << FindPeakElement::findPeakElement(v);
 
     return 0;
 }
