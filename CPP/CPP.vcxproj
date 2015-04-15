@@ -124,6 +124,8 @@
     <ClInclude Include="Include\leetcode\DungeonGame.h" />
     <ClInclude Include="Include\leetcode\EditDistance.h" />
     <ClInclude Include="Include\leetcode\EvaluateReversePolishNotation.h" />
+    <ClInclude Include="Include\leetcode\ExcelSheetColumnNumber.h" />
+    <ClInclude Include="Include\leetcode\ExcelSheetColumnTitle.h" />
     <ClInclude Include="Include\leetcode\FindFirstMissingPositiveNumber.h" />
     <ClInclude Include="Include\leetcode\FindKthSmallestInTowSortedArray.h" />
     <ClInclude Include="Include\leetcode\FindMinimuminRotatedSortedArray.h" />

@@ -2,13 +2,12 @@
 //
 
 #include "stdafx.h"
-#include "leetcode\FindPeakElement.h"
+#include "leetcode\ExcelSheetColumnTitle.h"
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    vector<int> v = { 1, 2 };
-    cout << FindPeakElement::findPeakElement(v);
+    cout << ExcelSheetColumnTitle::convertToTitle(52) << endl;
 
     return 0;
 }
