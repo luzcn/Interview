@@ -13,16 +13,7 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            int[,] grid = new int[,]
-            {
-                {0,1,0,0},
-                {0,0,1,1},
-                {0,0,0,0},
-                {1,0,0,0}
-            };
 
-            Graph gs = new Graph();
-            gs.BFS(grid, 0);
         }
     }
 }

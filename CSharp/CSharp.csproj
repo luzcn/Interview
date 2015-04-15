@@ -51,6 +51,7 @@
     <Compile Include="LeetCode\BinarySearchTreeIterator.cs" />
     <Compile Include="LeetCode\BinaryTreeMaximumPathSum.cs" />
     <Compile Include="LeetCode\BinaryTreeRightSideView.cs" />
+    <Compile Include="LeetCode\CompareVersionNumbers.cs" />
     <Compile Include="LeetCode\ExcelSheetColumnNumber.cs" />
     <Compile Include="LeetCode\FindMissingPositive.cs" />
     <Compile Include="LeetCode\HouseRobber.cs" />
