@@ -170,6 +170,7 @@
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
+    <ClInclude Include="Include\leetcode\SpiralMatrix.h" />
     <ClInclude Include="Include\leetcode\SubSets.h" />
     <ClInclude Include="Include\leetcode\SubstringwithConcatenationofAllWords.h" />
     <ClInclude Include="Include\leetcode\SumRootToLeafNumbers.h" />

@@ -333,6 +333,9 @@
     <ClInclude Include="Include\leetcode\ExcelSheetColumnTitle.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\SpiralMatrix.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
