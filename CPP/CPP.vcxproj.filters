@@ -19,7 +19,7 @@
     <Filter Include="Header Files\DataStructure">
       <UniqueIdentifier>{f55953c4-d2aa-4822-9565-992b7a070b8f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\DataStructure\CareerCup">
+    <Filter Include="Header Files\CareerCup">
       <UniqueIdentifier>{f6b3719b-be0e-4931-81c3-53710f1da5e9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -211,67 +211,67 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\Addition.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\AddTowNumbersAsLinkedList.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\Anagram.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\BinaryToHex.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\CoinMakeChange.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\DetectCycle.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\ExpressionEvaluation.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\MaximumSubarray.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\Multiplication.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\Permutation.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\SubSet.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\DataStructure\BinarySearch.h">
       <Filter>Header Files\DataStructure</Filter>
@@ -313,10 +313,10 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\Combinations.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\FloodFill.h">
-      <Filter>Header Files\DataStructure\CareerCup</Filter>
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\NumberOfIslands.h">
       <Filter>Header Files\leetcode</Filter>
@@ -335,6 +335,9 @@
     </ClInclude>
     <ClInclude Include="Include\leetcode\SpiralMatrix.h">
       <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h">
+      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
