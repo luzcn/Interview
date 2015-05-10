@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "CareerCup\ConstructTreefromInorderandPreorder.h"
-#include "leetcode\HappyNumber.h"
+#include "leetcode\CountPrimes.h"
 
 using namespace std;
 
@@ -28,7 +28,8 @@ int _tmain(int argc, _TCHAR* argv [])
 
     //inorderT(t);
 
-    cout << HappyNumber::isHappy(19);
+    auto t= Primes::getPrimes(6);
+
     return 0;
 }
 

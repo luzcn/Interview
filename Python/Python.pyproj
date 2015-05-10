@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a0962067-f36e-4dbd-adeb-20af129a696b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Python.py</StartupFile>
+    <StartupFile>leetcode\CountPrimes.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="leetcode\BitwiseAndRange.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="leetcode\CountPrimes.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="leetcode\HappyNumber.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Python.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="leetcode\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
