@@ -29,7 +29,7 @@ public:
     int val;
 
     TreeNode(int v)
-        :val(v)
+        :val(v), left(nullptr), right(nullptr)
     {}
 };
 
@@ -40,7 +40,7 @@ public:
     int val;
 
     ListNode(int v)
-        :val(v)
+        :val(v), next(nullptr)
     {}
 
 };
