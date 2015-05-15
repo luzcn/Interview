@@ -2,34 +2,24 @@
 //
 
 #include "stdafx.h"
-#include "CareerCup\ConstructTreefromInorderandPreorder.h"
-#include "leetcode\CountPrimes.h"
+#include "leetcode\SurroundedRegions.h"
 
 using namespace std;
 
-
-void inorderT(TreeNode* root)
-{
-    if (!root)
-        return;
-
-    inorderT(root->left);
-    cout << root->val;
-    inorderT(root->right);
-}
 int _tmain(int argc, _TCHAR* argv [])
 {
-    // inorder: 4,2,5,1,6,3,9,7  preorder: 1,2,4,5,3,6,7,9
+    vector<vector<char>> board{
+        { 'x', 'x', 'x', 'x' },
+        { 'x', 'O', 'O', 'x' },
+        { 'x', 'x', 'O', 'X' },
+        { 'x', 'O', 'x', 'x' },
+    };
 
-    //vector<int> inorder = { 4, 2, 5, 1, 6, 3, 9, 7 };
-    //vector<int> preorder = { 1, 2, 4, 5, 3, 6, 7, 9 };
-
-    //auto t = ConstructTreeFromInorderAndPostorder::constructTree(inorder, preorder);
-
-    //inorderT(t);
-
-    auto t= Primes::getPrimes(6);
-
+    //vector<vector<char>> board{
+    //    { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' }
+    //};
+    
+    SurroundedRegions::solve(board);
     return 0;
 }
 

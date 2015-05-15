@@ -8,7 +8,7 @@ namespace CSharp.LeetCode
 {
     class CountPrimes
     {
-        public int CountPrimes(int n)
+        public int count(int n)
         {
             int count = 0;
             Boolean[] is_prime = new Boolean[n + 1];
