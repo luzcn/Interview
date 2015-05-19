@@ -57,6 +57,32 @@ namespace ValidSudoku
                 }
             }
         }
+
+#if 0
+        for (int i = 0; i < 9; i += 3)
+        {
+            for (int j = 0; j < 9; j += 3)
+            {
+                vector<bool> visited(9, false);
+                for (int k = i; k <= i + 2; k++)
+                {
+                    for (int l = j; l <= j + 2; l++)
+                    {
+                        if (board[k][l] != '.')
+                        {
+                            int c = board[k][l] - '1';
+                            if (!visited[c])
+                            {
+                                visited[c] = true;
+                            }
+                            else
+                                return false;
+                        }
+                    }
+                }
+            }
+        }
+#endif
         return true;
     }
 }

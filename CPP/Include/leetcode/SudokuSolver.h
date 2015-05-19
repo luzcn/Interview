@@ -1,14 +1,6 @@
 #pragma once
 #include "stdafx.h"
 
-namespace ValidSudoku
-{
-    // Given a sodoku, check if it is a valid one (no duplicates in row, in column and in 3X3 box).
-    bool isValid(vector<string>& board)
-    {
-
-    }
-}
 namespace SudokuSolver
 {
     bool valid(vector<string>& board, int x, int y, int val)
@@ -36,17 +28,48 @@ namespace SudokuSolver
         {
             for (int j = square_y * 3; j <= square_y * 3 + 2; j++)
             {
-                cout << board[i][j] << endl;
+                cout << board[i][j] << " ";
                 if (board[i][j] == val + '0')
                     return false;
             }
+            cout << endl;
         }
 
         return true;
     }
 
+    bool solveRec(vector<string>& board, int i, int j)
+    {
+        // finished one row, continue checking the next row
+        if (j >= 9)
+            return solveRec(board, i + 1, 0);
+
+        // all rows and columns are finished.
+        if (i == 9)
+            return true;
+
+        if (board[i][j] == '.')
+        {
+            for (int val = 1; val <= 9; val++)
+            {
+                if (valid(board, i, j, val))
+                {
+                    board[i][j] = val + '0';
+                    if (solveRec(board, i, j + 1))
+                        return true;
+                }
+                board[i][j] = '.';
+            }
+        }
+        else
+        {
+            return solveRec(board, i, j + 1);
+        }
+        return false;
+    }
+
     void solveSudoku(vector<string>& board) 
     {
-
+        solveRec(board, 0, 0);
     }
 }
