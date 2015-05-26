@@ -2,24 +2,18 @@
 //
 
 #include "stdafx.h"
-#include "leetcode\SudokuSolver.h"
+#include "leetcode\Triangle.h"
 
 using namespace std;
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    vector<string> input = {
-        "..4...63.", 
-        ".........", 
-        "5......9.", 
-        "...56....", 
-        "4.3.....1", 
-        "...7.....", 
-        "...5.....", 
-        ".........", 
-        "........."
+    vector<vector<int>> triangle{
+        { -1 },
+        { 2, 3 },
+        { 1, -1, -3 },
     };
 
-    cout << SudokuSolver::valid(input, 0, 7, 2) << endl;
+    cout << Triangle::minimumTotal(triangle) << endl;
     return 0;
 }

@@ -182,6 +182,7 @@
     <ClInclude Include="Include\leetcode\SurroundedRegions.h" />
     <ClInclude Include="Include\leetcode\SwapNodesinPairs.h" />
     <ClInclude Include="Include\leetcode\TrappingRainingWater.h" />
+    <ClInclude Include="Include\leetcode\Triangle.h" />
     <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
     <ClInclude Include="Include\leetcode\WordBreak.h" />
