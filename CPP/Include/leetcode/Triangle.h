@@ -31,29 +31,23 @@ namespace Triangle
     int minDP(vector<vector<int>>& T)
     {
         int m = T.size();
-        int n = T[m - 1].size();
+        vector<int> res(m);
 
-        vector<vector<int>> DP(n, vector<int>(n, 0));
-        DP[0][0] = T[0][0];
+        // put last row elements into res
+        for (int i = 0; i < m; i++)
+        {
+            res[i] = T[m - 1][i];
+        }
 
-        for (int level = 1; level < m; level++)
+        // bottom up
+        for (int level = m - 2; level >= 0; level--)
         {
             for (int i = 0; i < T[level].size(); i++)
             {
-                DP[level][i] = DP[level - 1][i] + T[level][i];
+                res[i] = T[level][i] + std::min(res[i], res[i + 1]);
             }
         }
-
-        
-        for (auto l : DP)
-        {
-            for (auto i : l)
-            {
-                cout << i << " ";
-            }
-            cout << endl;
-        }
-        return 1;
+        return res[0];
     }
 
 
