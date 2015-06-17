@@ -58,6 +58,7 @@
     <Compile Include="LeetCode\FindMissingPositive.cs" />
     <Compile Include="LeetCode\HappyNumber.cs" />
     <Compile Include="LeetCode\HouseRobber.cs" />
+    <Compile Include="LeetCode\IsomorphicStrings.cs" />
     <Compile Include="LeetCode\LargestNumber.cs" />
     <Compile Include="LeetCode\LongestPalindromicSubstring.cs" />
     <Compile Include="LeetCode\LowestCommonAncestor.cs" />

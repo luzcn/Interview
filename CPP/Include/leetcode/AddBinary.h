@@ -12,7 +12,7 @@
 
  http://fisherlei.blogspot.com/2013/01/leetcode-add-binary.html
  */
-namespace AddBinary
+namespace leetcode
 {
     string addBinary(string a, string b)
     {

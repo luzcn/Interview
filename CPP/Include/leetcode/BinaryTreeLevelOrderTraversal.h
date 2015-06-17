@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include <queue>
 
-namespace BinaryTreeLevelOrderTraversal
+namespace leetcode
 {
     using namespace std;
     /***

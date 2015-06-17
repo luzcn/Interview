@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-namespace DungeonGame
+namespace leetcode
 {
     /**
     he demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon.
