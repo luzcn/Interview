@@ -28,7 +28,7 @@
  \_/
  */
 
-namespace CloneGraph
+namespace leetcode
 {
     using namespace std;
     struct UndirectedGraphNode

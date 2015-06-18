@@ -3,7 +3,7 @@
 #include "stdafx.h"
 
 
-namespace BestTimeToBuyAndSellStock
+namespace leetcode
 {
     /// <summary>
     ///  If you were only permitted to complete at most one transaction 

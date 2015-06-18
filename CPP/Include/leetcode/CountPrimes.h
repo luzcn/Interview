@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-namespace CountPrimes
+namespace leetcode
 {
     int countPrimes(int n)
     {

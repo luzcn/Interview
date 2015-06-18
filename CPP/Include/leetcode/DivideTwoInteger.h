@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include <limits>
 
-namespace DivideTwoInteger
+namespace leetcode
 {
     /**
      *	O(n) solution

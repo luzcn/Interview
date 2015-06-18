@@ -20,7 +20,7 @@
  - Insert ch1 to s2, 1 + ed(s1, s2+ch2)
  - Delete ch2 from s2, 1+ ed(s1, s2
  */
-namespace EditDistance
+namespace leetcode
 {
     /***
      *	Recursive solution

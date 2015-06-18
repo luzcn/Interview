@@ -19,7 +19,7 @@
  evaluate the arithmetic expression, push the result back to the stack.
  */
 
-namespace EvaluateReversePolishNotation
+namespace leetcode
 {
     using namespace std;
 

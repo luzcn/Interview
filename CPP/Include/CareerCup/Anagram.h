@@ -3,7 +3,7 @@
 #include <map>
 #include <algorithm>
 
-namespace Anagram
+namespace CareerCup
 {
     void print(const std::map<std::string, std::string>& map)
     {
