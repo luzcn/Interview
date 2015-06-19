@@ -2,12 +2,12 @@
 //
 
 #include "stdafx.h"
-#include "leetcode\IsomorphicStrings.h"
+#include "leetcode\BasicCalculator.h"
 using namespace std;
 
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    cout << leetcode::isIsomorphic("paper", "title") << endl;
+    cout << leetcode::calculate("2-(3+4)") << endl;
     return 0;
 }
