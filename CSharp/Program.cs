@@ -13,8 +13,8 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            BitwiseAndRange bw = new BitwiseAndRange();
-            Console.Write(bw.RangeBitwiseAnd(5, 7));
+            BasicCalculator bc = new BasicCalculator();
+            Console.WriteLine(bc.calculte("0"));
         }
     }
 }

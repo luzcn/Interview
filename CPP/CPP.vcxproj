@@ -140,6 +140,7 @@
     <ClInclude Include="Include\leetcode\GrayCode.h" />
     <ClInclude Include="Include\leetcode\HappyNumber.h" />
     <ClInclude Include="Include\leetcode\HouseRobber.h" />
+    <ClInclude Include="Include\leetcode\ImplementStackUsingQueues.h" />
     <ClInclude Include="Include\leetcode\ImplementstrStr.h" />
     <ClInclude Include="Include\leetcode\InsertionSortList.h" />
     <ClInclude Include="Include\leetcode\IsomorphicStrings.h" />

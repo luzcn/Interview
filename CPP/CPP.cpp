@@ -6,8 +6,9 @@
 using namespace std;
 
 
+
 int _tmain(int argc, _TCHAR* argv [])
 {
-    cout << leetcode::calculate("2-(3+4)") << endl;
+    cout << leetcode::calculate("(5-(1+(5)))") << endl;
     return 0;
 }

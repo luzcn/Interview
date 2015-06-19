@@ -47,6 +47,7 @@
     <Compile Include="DataStructure\DataStructur.cs" />
     <Compile Include="DataStructure\Graph.cs" />
     <Compile Include="LeetCode\AddBinary.cs" />
+    <Compile Include="LeetCode\BasicCalculator.cs" />
     <Compile Include="LeetCode\BestTimeToBuyAndSellStock.cs" />
     <Compile Include="LeetCode\BinarySearchTreeIterator.cs" />
     <Compile Include="LeetCode\BinaryTreeMaximumPathSum.cs" />
