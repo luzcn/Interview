@@ -13,8 +13,6 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            BasicCalculator bc = new BasicCalculator();
-            Console.WriteLine(bc.calculte("0"));
         }
     }
 }
