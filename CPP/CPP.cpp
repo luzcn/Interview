@@ -2,14 +2,13 @@
 //
 
 #include "stdafx.h"
-#include "leetcode\BasicCalculator.h"
+#include "leetcode\RectangleArea.h"
 using namespace std;
 
 
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    cout << 2 - (3 + 5) * 2 / (3 + 4) - 10 << endl;
-    cout << leetcode::calculate3("2-(3+5)*2/(3+4) - 10*(2)") << endl;
+    cout << leetcode::computeOverlapArea(-1500000001, 0, -1500000000, 1, 1500000000, 0, 1500000001, 1);
     return 0;
 }
