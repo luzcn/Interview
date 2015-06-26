@@ -85,6 +85,7 @@
     <ClInclude Include="Include\CareerCup\AddTowNumbersAsLinkedList.h" />
     <ClInclude Include="Include\CareerCup\Anagram.h" />
     <ClInclude Include="Include\CareerCup\BinaryToHex.h" />
+    <ClInclude Include="Include\CareerCup\ClosestPairs.h" />
     <ClInclude Include="Include\CareerCup\CoinMakeChange.h" />
     <ClInclude Include="Include\CareerCup\Combinations.h" />
     <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h" />

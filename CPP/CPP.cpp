@@ -2,13 +2,15 @@
 //
 
 #include "stdafx.h"
-#include "leetcode\RectangleArea.h"
+#include "CareerCup\ClosestPairs.h"
 using namespace std;
 
 
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    cout << leetcode::computeOverlapArea(-1500000001, 0, -1500000000, 1, 1500000000, 0, 1500000001, 1);
+    vector<Point> p{ { 2, 3 }, { 12, 30 }, { 40, 50 }, { 5, 1 }, { 12, 10 }, { 3, 4 } };
+    cout << careercup::closestPair(p) << endl;
+
     return 0;
 }
