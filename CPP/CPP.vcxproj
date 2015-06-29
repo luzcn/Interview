@@ -113,6 +113,7 @@
     <ClInclude Include="Include\DataStructure\QueueFromStack.h" />
     <ClInclude Include="Include\DataStructure\ShortestPathInGraph.h" />
     <ClInclude Include="Include\DataStructure\Sorting.h" />
+    <ClInclude Include="Include\DesignPattern\Singleton.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
     <ClInclude Include="Include\leetcode\BasicCalculator.h" />
     <ClInclude Include="Include\leetcode\BestToBuyAndSellStock.h" />
