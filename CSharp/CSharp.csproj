@@ -46,6 +46,8 @@
     <Compile Include="CareerCup\ReverseLinkedList.cs" />
     <Compile Include="DataStructure\DataStructur.cs" />
     <Compile Include="DataStructure\Graph.cs" />
+    <Compile Include="DesignPattern\Observer.cs" />
+    <Compile Include="DesignPattern\Singleton.cs" />
     <Compile Include="LeetCode\AddBinary.cs" />
     <Compile Include="LeetCode\BasicCalculator.cs" />
     <Compile Include="LeetCode\BestTimeToBuyAndSellStock.cs" />
