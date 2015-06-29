@@ -381,6 +381,9 @@
     <ClInclude Include="Include\DesignPattern\Singleton.h">
       <Filter>Header Files\DesignPattern</Filter>
     </ClInclude>
+    <ClInclude Include="Include\DesignPattern\Observer.h">
+      <Filter>Header Files\DesignPattern</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

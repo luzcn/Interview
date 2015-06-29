@@ -9,10 +9,15 @@ namespace CSharp
     using LeetCode;
     using CareerCup;
     using DataStructure;
+    using DesignPattern;
+
     class Program
     {
         static void Main(string[] args)
         {
+            SingletonObject obj1 = SingletonObject.Instance;
+
+
         }
     }
 }
