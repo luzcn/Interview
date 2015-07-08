@@ -384,6 +384,12 @@
     <ClInclude Include="Include\DesignPattern\Observer.h">
       <Filter>Header Files\DesignPattern</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\ImplementQueueUsingStack.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\KthSmallestElementInBST.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

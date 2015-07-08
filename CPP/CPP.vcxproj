@@ -143,11 +143,13 @@
     <ClInclude Include="Include\leetcode\GrayCode.h" />
     <ClInclude Include="Include\leetcode\HappyNumber.h" />
     <ClInclude Include="Include\leetcode\HouseRobber.h" />
+    <ClInclude Include="Include\leetcode\ImplementQueueUsingStack.h" />
     <ClInclude Include="Include\leetcode\ImplementStackUsingQueues.h" />
     <ClInclude Include="Include\leetcode\ImplementstrStr.h" />
     <ClInclude Include="Include\leetcode\InsertionSortList.h" />
     <ClInclude Include="Include\leetcode\IsomorphicStrings.h" />
     <ClInclude Include="Include\leetcode\JumpGame.h" />
+    <ClInclude Include="Include\leetcode\KthSmallestElementInBST.h" />
     <ClInclude Include="Include\leetcode\LargestNumber.h" />
     <ClInclude Include="Include\leetcode\LengthOfLongestSubstring.h" />
     <ClInclude Include="Include\leetcode\LowestCommonAncestor.h" />
