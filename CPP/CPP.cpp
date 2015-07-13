@@ -2,15 +2,15 @@
 //
 
 #include "stdafx.h"
-#include "DesignPattern\Observer.h"
+#include "CareerCup\FindKthSmallest.h"
 using namespace std;
 
 
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    int n = 2;
+    vector<int> v{ 2, 3234, 43, 234, 4, 657, 2, 1234, 568, 89 };
+    cout << careercup::findKthSmallest(v, 7);
 
-    printf("%d", n&(n - 1));
     return 0;
 }
