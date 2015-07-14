@@ -414,6 +414,12 @@
     <ClInclude Include="Include\CareerCup\BSTtoDoubleLinkedList.h">
       <Filter>Header Files\CareerCup\Tree</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\MajorityElement2.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SummaryRanges.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

@@ -2,15 +2,15 @@
 //
 
 #include "stdafx.h"
-#include "CareerCup\FindKthSmallest.h"
+#include "leetcode\MajorityElement2.h"
 using namespace std;
 
 
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    vector<int> v{ 2, 3234, 43, 234, 4, 657, 2, 1234, 568, 89 };
-    cout << careercup::findKthSmallest(v, 7);
+    vector<int> v{ -1, 1, 1, 2, 1, 4, 5, 6 };
+    leetcode::majority2(v);
 
     return 0;
 }

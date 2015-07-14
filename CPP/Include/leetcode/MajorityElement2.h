@@ -41,7 +41,7 @@ namespace leetcode
                 if (nums[maj_index] == nums[i])
                     count++;
 
-                if (count > nums.size() / 2) 
+                if (count > nums.size() / 2)
                     return nums[maj_index];
             }
 
@@ -54,11 +54,49 @@ namespace leetcode
     {
         return helper::majority_voting(nums);
     }
-    
+
     // Find the majority element from an array, which has more than n/3 occurance
     vector<int> majority2(vector<int>& A)
     {
         vector<int> res;
+        int count1 = 0;
+        int count2 = 0;
+        int a = 0;
+        int b = 0;
+
+        // voting
+        for (int n : A)
+        {
+            if (count1 == 0 || n == a)
+            {
+                count1++;
+                a = n;
+            }
+            else if (count2 == 0 || n == b)
+            {
+                count2++;
+                b = n;
+            }
+            else
+            {
+                count1--;
+                count2--;
+            }
+        }
+
+        count1 = count2 = 0;
+        for (int n : A)
+        {
+            if (n == a)
+                count1++;
+            else if (n == b)
+                count2++;
+        }
+
+        if (count1 > A.size() / 2)
+            res.push_back(a);
+        if (count2 > A.size() / 2)
+            res.push_back(b);
 
         return res;
     }

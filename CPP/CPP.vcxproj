@@ -163,6 +163,7 @@
     <ClInclude Include="Include\leetcode\LongestSubstringWithoutRepeatingCharacters.h" />
     <ClInclude Include="Include\leetcode\longestValidParentheses.h" />
     <ClInclude Include="Include\leetcode\LRUCache.h" />
+    <ClInclude Include="Include\leetcode\MajorityElement2.h" />
     <ClInclude Include="Include\leetcode\MaximalRectangle.h" />
     <ClInclude Include="Include\leetcode\MaximumDepth.h" />
     <ClInclude Include="Include\leetcode\MaximumProductSubarray.h" />
@@ -191,6 +192,7 @@
     <ClInclude Include="Include\leetcode\SubSets.h" />
     <ClInclude Include="Include\leetcode\SubstringwithConcatenationofAllWords.h" />
     <ClInclude Include="Include\leetcode\SudokuSolver.h" />
+    <ClInclude Include="Include\leetcode\SummaryRanges.h" />
     <ClInclude Include="Include\leetcode\SumRootToLeafNumbers.h" />
     <ClInclude Include="Include\leetcode\SurroundedRegions.h" />
     <ClInclude Include="Include\leetcode\SwapNodesinPairs.h" />
