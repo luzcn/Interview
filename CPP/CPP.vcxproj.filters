@@ -37,6 +37,9 @@
     <Filter Include="Header Files\CareerCup\DP">
       <UniqueIdentifier>{e144f4a6-3136-4d4d-b834-fc0d8e489375}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\Tree">
+      <UniqueIdentifier>{94280627-f7d7-47dd-aaae-012b352f0e48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -407,6 +410,9 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\NumberOf1Bit.h">
       <Filter>Header Files\CareerCup\BitsManipulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\BSTtoDoubleLinkedList.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
