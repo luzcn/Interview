@@ -25,6 +25,18 @@
     <Filter Include="Header Files\DesignPattern">
       <UniqueIdentifier>{060fd0c1-4458-48ce-b6da-ad716b190429}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\BitsManipulation">
+      <UniqueIdentifier>{7c954157-afbf-4dda-9f74-69cb3a332405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CareerCup\Linked List">
+      <UniqueIdentifier>{dac242e3-0970-4ce1-9d70-c9013c642361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CareerCup\Array">
+      <UniqueIdentifier>{98ebea4b-848f-4f81-b344-5c41a4fe1ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CareerCup\DP">
+      <UniqueIdentifier>{e144f4a6-3136-4d4d-b834-fc0d8e489375}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -213,19 +225,10 @@
     <ClInclude Include="Include\leetcode\ZigZagConversion.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\Addition.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\AddTowNumbersAsLinkedList.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\Anagram.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\BinaryToHex.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\CoinMakeChange.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h">
@@ -392,6 +395,18 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\FindKthSmallest.h">
       <Filter>Header Files\CareerCup</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\Addition.h">
+      <Filter>Header Files\CareerCup\BitsManipulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\AddTowNumbersAsLinkedList.h">
+      <Filter>Header Files\CareerCup\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\CoinMakeChange.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\NumberOf1Bit.h">
+      <Filter>Header Files\CareerCup\BitsManipulation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

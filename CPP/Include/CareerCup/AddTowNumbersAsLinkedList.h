@@ -13,7 +13,7 @@
     0->2->0, 1->1 => 1->3->0 
     9->9, 9->9 => 8->9->1
  */
-namespace AddTowNumbersAsList
+namespace careercup
 {
     ListNode* addNumbers(ListNode* head1, ListNode* head2)
     {
