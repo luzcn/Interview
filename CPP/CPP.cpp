@@ -8,107 +8,31 @@
 
 using namespace std;
 
-void print(const vector <vector<char>>& board)
+vector<int> productExceptSelf(vector<int>& nums)
 {
-    for (auto v : board)
+    vector<int> res(nums.size());
+    res[0] = 1;
+    int n = nums.size();
+
+    for (int i = 1; i < n; i++)
     {
-        for (auto i : v)
-        {
-            cout << i << " ";
-        }
-        cout << endl;
+        res[i] = res[i - 1] * nums[i - 1];
     }
+
+    int right_product = nums[n - 1];
+    for (int i = n - 2; i >= 0; i--)
+    {
+        res[i] = res[i] * right_product;
+        right_product *= nums[i];
+    }
+
+    return res;
 }
-
-void bfs(vector<vector<char>>& board, int i, int j)
-{
-    if (board[i][j] == 'O')
-    {
-        std::queue<pair<int, int>> que;
-        que.emplace(i, j);
-        board[i][j] = '#';
-
-        while (!que.empty())
-        {
-            auto current = que.front();
-            que.pop();
-
-            int s = current.first;
-            int t = current.second;
-
-            if (s - 1 >= 0 && board[s - 1][t] == 'O')
-            {
-                que.emplace(s - 1, t);
-                board[s - 1][t] = '#';
-            }
-            if (s + 1 < board.size() && board[s + 1][t] == 'O')
-            {
-                que.emplace(s + 1, t);
-                board[s + 1][t] = '#';
-            }
-            if (t - 1 >= 0 && board[s][t - 1] == 'O')
-            {
-                que.emplace(s, t - 1);
-                board[s][t - 1] = '#';
-            }
-            if (t + 1 < board[0].size() && board[s][t + 1] == 'O')
-            {
-                que.emplace(s, t + 1);
-                board[s][t + 1] = '#';
-            }
-        }
-    }
-}
-void solve(vector<vector<char>>& board)
-{
-    if (board.empty())
-        return;
-
-    int m = board.size();
-    int n = board[0].size();
-
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (i == 0 || i == m - 1 || j == 0 || j == n - 1)
-            {
-                bfs(board, i, j);
-            }
-        }
-    }
-
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (board[i][j] == 'O')
-            {
-                board[i][j] = 'X';
-            }
-            else if (board[i][j] == '#')
-            {
-                board[i][j] = 'O';
-            }
-        }
-    }
-}
-
 
 int _tmain(int argc, _TCHAR* argv [])
 {
-    vector<vector<char>> board{
-        { 'X', 'O', 'X', 'O', 'X', 'O' },
-        { 'O', 'X', 'O', 'X', 'O', 'X' },
-        { 'X', 'O', 'X', 'O', 'X', 'O' },
-        { 'O', 'X', 'O', 'X', 'O', 'X' }
-    };
-    print(board);
+    vector<int> v{ 1, 2, 3, 4 };
+    productExceptSelf(v);
 
-    cout << endl;
-
-    solve(board);
-
-    print(board);
     return 0;
 }
