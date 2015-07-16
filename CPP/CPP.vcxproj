@@ -129,6 +129,7 @@
     <ClInclude Include="Include\leetcode\CloneGraph.h" />
     <ClInclude Include="Include\leetcode\ConstructBinaryTree.h" />
     <ClInclude Include="Include\leetcode\CopyListwithRandomPointer.h" />
+    <ClInclude Include="Include\leetcode\CountCompleteTreeNodes.h" />
     <ClInclude Include="Include\leetcode\CountPrimes.h" />
     <ClInclude Include="Include\leetcode\DecodingWays.h" />
     <ClInclude Include="Include\leetcode\DivideTwoInteger.h" />
