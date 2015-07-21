@@ -2,37 +2,43 @@
 //
 
 #include "stdafx.h"
-#include "leetcode\CountCompleteTreeNodes.h"
-#include "CareerCup\FindKthSmallest.h"
-
+#include "leetcode\KthSmallestElementInBST.h"
 
 using namespace std;
 
-vector<int> productExceptSelf(vector<int>& nums)
+void inorder(TreeNode* node)
 {
-    vector<int> res(nums.size());
-    res[0] = 1;
-    int n = nums.size();
+    if (!node)
+        return;
 
-    for (int i = 1; i < n; i++)
-    {
-        res[i] = res[i - 1] * nums[i - 1];
-    }
+    inorder(node->left);
+    cout << node->val << endl;
+    inorder(node->right);
 
-    int right_product = nums[n - 1];
-    for (int i = n - 2; i >= 0; i--)
-    {
-        res[i] = res[i] * right_product;
-        right_product *= nums[i];
-    }
-
-    return res;
 }
 
-int _tmain(int argc, _TCHAR* argv [])
+int _tmain(int argc, _TCHAR* argv[])
 {
-    vector<int> v{ 1, 2, 3, 4 };
-    productExceptSelf(v);
+    vector<TreeNode> n{
+        TreeNode(20),
+        TreeNode(8),
+        TreeNode(4),
+        TreeNode(12),
+        TreeNode(10),
+        TreeNode(14),
+        TreeNode(22)
+    };
 
+    n[0].left = &n[1];
+    n[0].right = &n[6];
+
+    n[1].left = &n[2];
+    n[1].right = &n[3];
+
+    n[3].left = &n[4];
+    n[3].left = &n[5];
+
+
+    cout << leetcode::kthSmallest2(&n[0], 3);
     return 0;
 }
