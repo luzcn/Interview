@@ -60,12 +60,15 @@ namespace leetcode
         auto current = root;
         TreeNode* pre = nullptr;
 
-        while (current)
+        while (current != nullptr)
         {
-            if (!current->left)
+            if (current->left != nullptr)
             {
+                //cout << current->val << endl;
+                count++;
+                if (count == k)
+                    return current->val;
                 current = current->right;
-                cout << current->val << endl;
             }
             else
             {
@@ -74,7 +77,7 @@ namespace leetcode
                     pre = pre->right;
 
                 // set the left subtree right most node point the right point to the current root node.
-                if (!pre->right)
+                if (pre->right == nullptr)
                 {
                     pre->right = current;
                     current = current->left;
@@ -84,11 +87,16 @@ namespace leetcode
                 else
                 {
                     pre->right = nullptr;
-                    cout << pre->val << endl;
+                    //cout << current->val << endl;
+                    count++;
+                    if (count == k)
+                        return current->val;
                     current = current->right;
                 }
             }
         }
+
+        return 0;
     }
 
 }
