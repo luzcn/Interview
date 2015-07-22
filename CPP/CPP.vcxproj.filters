@@ -426,6 +426,9 @@
     <ClInclude Include="Include\leetcode\ProductOfArrayExceptSelf.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\DataStructure\ProducerConsumer.h">
+      <Filter>Header Files\DataStructure</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

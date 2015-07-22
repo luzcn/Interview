@@ -114,6 +114,7 @@
     <ClInclude Include="Include\DataStructure\BinaryTree.h" />
     <ClInclude Include="Include\DataStructure\Graph.h" />
     <ClInclude Include="Include\DataStructure\MinStack.h" />
+    <ClInclude Include="Include\DataStructure\ProducerConsumer.h" />
     <ClInclude Include="Include\DataStructure\QueueFromStack.h" />
     <ClInclude Include="Include\DataStructure\ShortestPathInGraph.h" />
     <ClInclude Include="Include\DataStructure\Sorting.h" />
