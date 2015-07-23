@@ -181,6 +181,7 @@
     <ClInclude Include="Include\leetcode\PartitionList.h" />
     <ClInclude Include="Include\leetcode\PathSum.h" />
     <ClInclude Include="Include\leetcode\PathSum2.h" />
+    <ClInclude Include="Include\leetcode\Pow.h" />
     <ClInclude Include="Include\leetcode\ProductOfArrayExceptSelf.h" />
     <ClInclude Include="Include\leetcode\RectangleArea.h" />
     <ClInclude Include="Include\leetcode\RegularExpressMatching.h" />
