@@ -237,28 +237,16 @@
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\DetectCycle.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\ExpressionEvaluation.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\IsBalancaTree.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\MaximumSubarray.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h">
@@ -345,9 +333,6 @@
     <ClInclude Include="Include\leetcode\SpiralMatrix.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\leetcode\HappyNumber.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
@@ -396,9 +381,6 @@
     <ClInclude Include="Include\leetcode\KthSmallestElementInBST.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\FindKthSmallest.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\Addition.h">
       <Filter>Header Files\CareerCup\BitsManipulation</Filter>
     </ClInclude>
@@ -433,6 +415,27 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\ContainsDuplicate.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h">
+      <Filter>Header Files\CareerCup\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\DetectCycle.h">
+      <Filter>Header Files\CareerCup\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\FindKthSmallest.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\IsBalancaTree.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\MaximumSubarray.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MinStack.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

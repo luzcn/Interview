@@ -175,6 +175,7 @@
     <ClInclude Include="Include\leetcode\MergeKSortedList.h" />
     <ClInclude Include="Include\leetcode\MergeTowSortedList.h" />
     <ClInclude Include="Include\leetcode\MinPathSum.h" />
+    <ClInclude Include="Include\leetcode\MinStack.h" />
     <ClInclude Include="Include\leetcode\NQueens.h" />
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
