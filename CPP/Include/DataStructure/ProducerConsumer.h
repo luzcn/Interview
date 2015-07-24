@@ -7,6 +7,7 @@
 
 namespace producer_consumer
 {
+    // The lock based producer consumer thread safe queue
     template<typename T>
     class producer_consumer_queue
     {
@@ -20,7 +21,7 @@ namespace producer_consumer
             std::lock_guard<std::mutex> lock(m_mutex);
             if (m_queue.size >= m_max_size)
             {
-                cv_pop.wait(lock, [&](){ return m_queue.size() < m_max_size; });
+                cv_pop.wait(lock, [&]() { return m_queue.size() < m_max_size; });
             }
 
             m_queue.push(item);
@@ -33,7 +34,7 @@ namespace producer_consumer
             std::lock_guard<std::mutex> lock(m_mutex);
             if (m_queue.empty())
             {
-                cv_push.wait(lock, [&](){ return !m_queue.empty(); });
+                cv_push.wait(lock, [&]() { return !m_queue.empty(); });
             }
 
             m_queue.pop();

@@ -130,6 +130,7 @@
     <ClInclude Include="Include\leetcode\Candy.h" />
     <ClInclude Include="Include\leetcode\CloneGraph.h" />
     <ClInclude Include="Include\leetcode\ConstructBinaryTree.h" />
+    <ClInclude Include="Include\leetcode\ContainsDuplicate.h" />
     <ClInclude Include="Include\leetcode\CopyListwithRandomPointer.h" />
     <ClInclude Include="Include\leetcode\CountCompleteTreeNodes.h" />
     <ClInclude Include="Include\leetcode\CountPrimes.h" />
