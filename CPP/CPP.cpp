@@ -2,49 +2,34 @@
 //
 
 #include "stdafx.h"
-#include "leetcode\ContainsDuplicate.h"
+#include "leetcode\PopulatingNextRightNodeInEachNode.h"
 
 using namespace std;
-bool isValid(vector<int> current, int r)
-{
-    for (int i = 0; i < r; i++)
-    {
-        if (current[i] == current[r]) // in same row
-            return false;
 
-        if (abs(current[i] - current[r]) == abs(i - r))
-            return false;
-    }
-    return true;
-}
-void solve(vector<vector<int>>& res, vector<int> current, int col, int n)
-{
-    if (col == n)
-    {
-        res.push_back(current);
-        return;
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        current[col] = i;
-        if (isValid(current, col))
-        {
-            solve(res, current, col + 1, n);
-        }
-    }
-}
-
-vector<vector<int>> solveQueen(int n)
-{
-    vector<vector<int>> res;
-    vector<int> current(n);
-    solve(res, current, 0, n);
-    return res;
-}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-    solveQueen(4);
+
+    auto n0 = leetcode::TreeLinkNode(0);
+    auto n1 = leetcode::TreeLinkNode(1);
+    auto n2 = leetcode::TreeLinkNode(2);
+    auto n3 = leetcode::TreeLinkNode(3);
+    auto n4 = leetcode::TreeLinkNode(4);
+
+    auto n5 = leetcode::TreeLinkNode(5);
+
+    n0.left = &n1;
+    n0.right = &n2;
+
+    n1.left = &n3;
+    n1.right = &n4;
+
+    n2.right = &n5;
+
+    leetcode::connect2(&n0);
+
+
+    cout << n3.next->val << endl;
+    cout << n4.next->val << endl;
     return 0;
 }

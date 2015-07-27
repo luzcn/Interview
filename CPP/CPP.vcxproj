@@ -183,6 +183,7 @@
     <ClInclude Include="Include\leetcode\PartitionList.h" />
     <ClInclude Include="Include\leetcode\PathSum.h" />
     <ClInclude Include="Include\leetcode\PathSum2.h" />
+    <ClInclude Include="Include\leetcode\PopulatingNextRightNodeInEachNode.h" />
     <ClInclude Include="Include\leetcode\Pow.h" />
     <ClInclude Include="Include\leetcode\ProductOfArrayExceptSelf.h" />
     <ClInclude Include="Include\leetcode\RectangleArea.h" />
@@ -195,6 +196,7 @@
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
+    <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />
     <ClInclude Include="Include\leetcode\SpiralMatrix.h" />
     <ClInclude Include="Include\leetcode\SubSets.h" />
     <ClInclude Include="Include\leetcode\SubstringwithConcatenationofAllWords.h" />
