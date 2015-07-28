@@ -180,6 +180,7 @@
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
     <ClInclude Include="Include\leetcode\PalindromePartitioning2.h" />
+    <ClInclude Include="Include\leetcode\PalindromLinkedList.h" />
     <ClInclude Include="Include\leetcode\PartitionList.h" />
     <ClInclude Include="Include\leetcode\PathSum.h" />
     <ClInclude Include="Include\leetcode\PathSum2.h" />

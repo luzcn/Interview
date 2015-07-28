@@ -444,6 +444,9 @@
     <ClInclude Include="Include\leetcode\PopulatingNextRightNodeInEachNode.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\PalindromLinkedList.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
