@@ -73,9 +73,6 @@ namespace PalindromePartitioning
 
  For example, given s = "aab",
  Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 cut.
-
- 凡是求最优解的，一般都是走DP的路线。
-
  http://fisherlei.blogspot.com/2013/03/leetcode-palindrome-partitioning-ii.html
 
  */

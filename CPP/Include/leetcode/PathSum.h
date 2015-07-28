@@ -23,7 +23,7 @@ namespace PathSum
 {
     namespace details
     {
-
+        // Be careful, here cannot use "int& sum"
         bool hasPathSumRootToLeafRec(TreeNode* node, int sum, int target)
         {
             if (!node)
@@ -52,10 +52,16 @@ namespace PathSum
         * sum.
         *
         */
-        bool hasPathSumRootToAnyRec(TreeNode* node, int sum, int target)
+        bool hasPathSumRootToAny(TreeNode* node, int sum, int target)
         {
-            // TODO
-            return false;
+            if (!node)
+                return false;
+
+            sum += node->val;
+            if (sum == target)
+                return true;
+
+            return hasPathSumRootToAny(node->left, sum, target) || hasPathSumRootToAny(node->right, sum, target);
         }
     }
 

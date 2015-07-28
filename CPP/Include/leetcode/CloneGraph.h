@@ -31,19 +31,20 @@
 namespace leetcode
 {
     using namespace std;
-    struct UndirectedGraphNode
+    class UndirectedGraphNode
     {
+    public:
         int label;
         vector<UndirectedGraphNode *> neighbors;
-        UndirectedGraphNode(int x) : label(x) {};
+        UndirectedGraphNode(int x) 
+            : label(x) 
+        {}
     };
 
     using HashMap = std::unordered_map < UndirectedGraphNode*, UndirectedGraphNode* > ;
 
 #pragma region BFS Solution
-    /***
-    *	The breadth first search of an undirected graph.
-    */
+    // The breadth first search of an undirected graph.
     void UndirectedGraphBFS(UndirectedGraphNode* node)
     {
         if (!node)
@@ -84,6 +85,8 @@ namespace leetcode
     }
 
 #pragma endregion DFS Solution
+
+    // Clone graph
     UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node)
     {
         if (!node)
