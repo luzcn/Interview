@@ -40,6 +40,9 @@
     <Filter Include="Header Files\CareerCup\Tree">
       <UniqueIdentifier>{94280627-f7d7-47dd-aaae-012b352f0e48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\String">
+      <UniqueIdentifier>{2fb80d52-c6e6-483d-8fc1-2c31c1659477}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -446,6 +449,9 @@
     </ClInclude>
     <ClInclude Include="Include\leetcode\PalindromLinkedList.h">
       <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PatternMatching.h">
+      <Filter>Header Files\CareerCup\String</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

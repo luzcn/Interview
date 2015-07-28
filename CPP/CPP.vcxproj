@@ -105,6 +105,7 @@
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h" />
     <ClInclude Include="Include\CareerCup\Multiplication.h" />
     <ClInclude Include="Include\CareerCup\NumberOf1Bit.h" />
+    <ClInclude Include="Include\CareerCup\PatternMatching.h" />
     <ClInclude Include="Include\CareerCup\Permutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
