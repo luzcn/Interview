@@ -255,9 +255,6 @@
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\Multiplication.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\Permutation.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
@@ -452,6 +449,12 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\PatternMatching.h">
       <Filter>Header Files\CareerCup\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ValidPalindrome.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\Multiplication.h">
+      <Filter>Header Files\CareerCup\BitsManipulation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -210,6 +210,7 @@
     <ClInclude Include="Include\leetcode\TrappingRainingWater.h" />
     <ClInclude Include="Include\leetcode\Triangle.h" />
     <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
+    <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
     <ClInclude Include="Include\leetcode\WordBreak.h" />
     <ClInclude Include="Include\leetcode\WordBreak2.h" />
