@@ -15,6 +15,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CPP</RootNamespace>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -104,6 +105,7 @@
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h" />
     <ClInclude Include="Include\CareerCup\Multiplication.h" />
     <ClInclude Include="Include\CareerCup\NumberOf1Bit.h" />
+    <ClInclude Include="Include\CareerCup\PatternMatching.h" />
     <ClInclude Include="Include\CareerCup\Permutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
@@ -113,6 +115,7 @@
     <ClInclude Include="Include\DataStructure\BinaryTree.h" />
     <ClInclude Include="Include\DataStructure\Graph.h" />
     <ClInclude Include="Include\DataStructure\MinStack.h" />
+    <ClInclude Include="Include\DataStructure\ProducerConsumer.h" />
     <ClInclude Include="Include\DataStructure\QueueFromStack.h" />
     <ClInclude Include="Include\DataStructure\ShortestPathInGraph.h" />
     <ClInclude Include="Include\DataStructure\Sorting.h" />
@@ -128,9 +131,12 @@
     <ClInclude Include="Include\leetcode\Candy.h" />
     <ClInclude Include="Include\leetcode\CloneGraph.h" />
     <ClInclude Include="Include\leetcode\ConstructBinaryTree.h" />
+    <ClInclude Include="Include\leetcode\ContainsDuplicate.h" />
     <ClInclude Include="Include\leetcode\CopyListwithRandomPointer.h" />
+    <ClInclude Include="Include\leetcode\CountCompleteTreeNodes.h" />
     <ClInclude Include="Include\leetcode\CountPrimes.h" />
     <ClInclude Include="Include\leetcode\DecodingWays.h" />
+    <ClInclude Include="Include\leetcode\DifferentWaysAddParentheses.h" />
     <ClInclude Include="Include\leetcode\DivideTwoInteger.h" />
     <ClInclude Include="Include\leetcode\DungeonGame.h" />
     <ClInclude Include="Include\leetcode\EditDistance.h" />
@@ -155,6 +161,7 @@
     <ClInclude Include="Include\leetcode\KthSmallestElementInBST.h" />
     <ClInclude Include="Include\leetcode\LargestNumber.h" />
     <ClInclude Include="Include\leetcode\LengthOfLongestSubstring.h" />
+    <ClInclude Include="Include\leetcode\LetterCombinationsPhoneNumber.h" />
     <ClInclude Include="Include\leetcode\LowestCommonAncestor.h" />
     <ClInclude Include="Include\leetcode\LengthofLastWord.h" />
     <ClInclude Include="Include\leetcode\LinkedListCycle.h" />
@@ -163,6 +170,7 @@
     <ClInclude Include="Include\leetcode\LongestSubstringWithoutRepeatingCharacters.h" />
     <ClInclude Include="Include\leetcode\longestValidParentheses.h" />
     <ClInclude Include="Include\leetcode\LRUCache.h" />
+    <ClInclude Include="Include\leetcode\MajorityElement2.h" />
     <ClInclude Include="Include\leetcode\MaximalRectangle.h" />
     <ClInclude Include="Include\leetcode\MaximumDepth.h" />
     <ClInclude Include="Include\leetcode\MaximumProductSubarray.h" />
@@ -170,13 +178,19 @@
     <ClInclude Include="Include\leetcode\MergeKSortedList.h" />
     <ClInclude Include="Include\leetcode\MergeTowSortedList.h" />
     <ClInclude Include="Include\leetcode\MinPathSum.h" />
+    <ClInclude Include="Include\leetcode\MinStack.h" />
+    <ClInclude Include="Include\leetcode\MultiplyStrings.h" />
     <ClInclude Include="Include\leetcode\NQueens.h" />
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
     <ClInclude Include="Include\leetcode\PalindromePartitioning2.h" />
+    <ClInclude Include="Include\leetcode\PalindromLinkedList.h" />
     <ClInclude Include="Include\leetcode\PartitionList.h" />
     <ClInclude Include="Include\leetcode\PathSum.h" />
     <ClInclude Include="Include\leetcode\PathSum2.h" />
+    <ClInclude Include="Include\leetcode\PopulatingNextRightNodeInEachNode.h" />
+    <ClInclude Include="Include\leetcode\Pow.h" />
+    <ClInclude Include="Include\leetcode\ProductOfArrayExceptSelf.h" />
     <ClInclude Include="Include\leetcode\RectangleArea.h" />
     <ClInclude Include="Include\leetcode\RegularExpressMatching.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicatesFromSortedArray.h" />
@@ -187,16 +201,19 @@
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
+    <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />
     <ClInclude Include="Include\leetcode\SpiralMatrix.h" />
     <ClInclude Include="Include\leetcode\SubSets.h" />
     <ClInclude Include="Include\leetcode\SubstringwithConcatenationofAllWords.h" />
     <ClInclude Include="Include\leetcode\SudokuSolver.h" />
+    <ClInclude Include="Include\leetcode\SummaryRanges.h" />
     <ClInclude Include="Include\leetcode\SumRootToLeafNumbers.h" />
     <ClInclude Include="Include\leetcode\SurroundedRegions.h" />
     <ClInclude Include="Include\leetcode\SwapNodesinPairs.h" />
     <ClInclude Include="Include\leetcode\TrappingRainingWater.h" />
     <ClInclude Include="Include\leetcode\Triangle.h" />
     <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
+    <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
     <ClInclude Include="Include\leetcode\WordBreak.h" />
     <ClInclude Include="Include\leetcode\WordBreak2.h" />

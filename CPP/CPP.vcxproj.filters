@@ -40,6 +40,9 @@
     <Filter Include="Header Files\CareerCup\Tree">
       <UniqueIdentifier>{94280627-f7d7-47dd-aaae-012b352f0e48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\String">
+      <UniqueIdentifier>{2fb80d52-c6e6-483d-8fc1-2c31c1659477}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -237,19 +240,10 @@
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\DetectCycle.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\ExpressionEvaluation.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\IsBalancaTree.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h">
@@ -258,13 +252,7 @@
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\MaximumSubarray.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\Multiplication.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\Permutation.h">
@@ -345,9 +333,6 @@
     <ClInclude Include="Include\leetcode\SpiralMatrix.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\leetcode\HappyNumber.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
@@ -396,9 +381,6 @@
     <ClInclude Include="Include\leetcode\KthSmallestElementInBST.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\FindKthSmallest.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\Addition.h">
       <Filter>Header Files\CareerCup\BitsManipulation</Filter>
     </ClInclude>
@@ -413,6 +395,75 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\BSTtoDoubleLinkedList.h">
       <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MajorityElement2.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SummaryRanges.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\CountCompleteTreeNodes.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ProductOfArrayExceptSelf.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DataStructure\ProducerConsumer.h">
+      <Filter>Header Files\DataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\Pow.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ContainsDuplicate.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h">
+      <Filter>Header Files\CareerCup\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\DetectCycle.h">
+      <Filter>Header Files\CareerCup\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\FindKthSmallest.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\IsBalancaTree.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\MaximumSubarray.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MinStack.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\PopulatingNextRightNodeInEachNode.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\PalindromLinkedList.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PatternMatching.h">
+      <Filter>Header Files\CareerCup\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ValidPalindrome.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\Multiplication.h">
+      <Filter>Header Files\CareerCup\BitsManipulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\LetterCombinationsPhoneNumber.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MultiplyStrings.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\DifferentWaysAddParentheses.h">
+      <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

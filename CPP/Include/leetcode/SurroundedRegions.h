@@ -4,45 +4,67 @@
 
 namespace SurroundedRegions
 {
-    // BFS solution
-#pragma region BFS
-    void bfs(vector<vector<char>>& board, vector<vector<bool>>& visited, int i, int j)
+    namespace helper
     {
-        int m = board.size();
-        int n = board[0].size();
-        std::queue<pair<int, int>> que;
-
-        if (board[i][j] == 'O' && !visited[i][j])
+        // BFS solution
+        void bfs(vector<vector<char>>& board, int i, int j)
         {
-            que.emplace(i, j);
-            while (!que.empty())
+            if (board[i][j] == 'O')
             {
-                auto v = que.front();
-                que.pop();
+                std::queue<pair<int, int>> que;
+                que.emplace(i, j);
+                board[i][j] = '#';
 
-                auto s = v.first;
-                auto t = v.second;
-                visited[s][t] = true;
+                while (!que.empty())
+                {
+                    auto current = que.front();
+                    que.pop();
 
-                if (s - 1 >= 0 && board[s - 1][t] == 'O' && !visited[s - 1][t])
-                {
-                    que.emplace(s - 1, t);
-                }
-                if (s + 1 < m && board[s + 1][t] == 'O' && !visited[s + 1][t])
-                {
-                    que.emplace(s + 1, t);
-                }
-                if (t - 1 >= 0 && board[s][t - 1] == 'O' && !visited[s][t - 1])
-                {
-                    que.emplace(s, t - 1);
-                }
-                if (t + 1 < n && board[s][t + 1] == 'O' && !visited[s][t + 1])
-                {
-                    que.emplace(s, t + 1);
+                    int s = current.first;
+                    int t = current.second;
+
+                    if (s - 1 >= 0 && board[s - 1][t] == 'O')
+                    {
+                        que.emplace(s - 1, t);
+                        board[s - 1][t] = '#';
+                    }
+                    if (s + 1 < board.size() && board[s + 1][t] == 'O')
+                    {
+                        que.emplace(s + 1, t);
+                        board[s + 1][t] = '#';
+                    }
+                    if (t - 1 >= 0 && board[s][t - 1] == 'O')
+                    {
+                        que.emplace(s, t - 1);
+                        board[s][t - 1] = '#';
+                    }
+                    if (t + 1 < board[0].size() && board[s][t + 1] == 'O')
+                    {
+                        que.emplace(s, t + 1);
+                        board[s][t + 1] = '#';
+                    }
                 }
             }
         }
+
+        // DFS solution
+        void dfs(vector<vector<char>>& board, int i, int j)
+        {
+            if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size())
+                return;
+
+            if (board[i][j] != 'O')
+                return;
+
+            board[i][j] = '#';
+
+            dfs(board, i - 1, j);
+            dfs(board, i + 1, j);
+            dfs(board, i, j - 1);
+            dfs(board, i, j + 1);
+        }
     }
+
 
     void solve_bfs(vector<vector<char>>& board)
     {
@@ -59,7 +81,7 @@ namespace SurroundedRegions
             {
                 if (i == 0 || i == m - 1 || j == 0 || j == n - 1)
                 {
-                    bfs(board, visited, i, j);
+                    helper::bfs(board, visited, i, j);
                 }
             }
         }
@@ -76,22 +98,7 @@ namespace SurroundedRegions
         }
 
     }
-#pragma endregion
 
-
-#pragma region DFS
-    void dfs(vector<vector<char>>& board, vector<vector<bool>>& visited, int i, int j)
-    {
-        if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size()) return;
-        if (board[i][j] != 'O') return;
-        if (visited[i][j]) return;
-
-        visited[i][j] = true;
-        dfs(board, visited, i - 1, j);
-        dfs(board, visited, i + 1, j);
-        dfs(board, visited, i, j - 1);
-        dfs(board, visited, i, j + 1);
-    }
 
     void solve_dfs(vector<vector<char>>& board)
     {
@@ -100,7 +107,6 @@ namespace SurroundedRegions
 
         int m = board.size();
         int n = board[0].size();
-        vector<vector<bool>> visited(m, vector<bool>(n, false));
 
         for (int i = 0; i < m; i++)
         {
@@ -108,7 +114,7 @@ namespace SurroundedRegions
             {
                 if (i == 0 || i == m - 1 || j == 0 || j == n - 1)
                 {
-                    dfs(board, visited, i, j);
+                    helper::dfs(board, i, j);
                 }
             }
         }
@@ -117,14 +123,15 @@ namespace SurroundedRegions
         {
             for (int j = 0; j < n; j++)
             {
-                if (!visited[i][j])
-                {
+                if (board[i][j] == 'O')
                     board[i][j] = 'X';
-                }
+                else if (board[i][j] == '#')
+                    board[i][j] = 'O';
             }
         }
     }
-#pragma endregion
+
+
     void solve(vector<vector<char>>& board)
     {
         //solve_bfs(board);

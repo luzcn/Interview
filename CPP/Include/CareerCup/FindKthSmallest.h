@@ -38,13 +38,12 @@ namespace careercup
                 return nums[l];
 
             int m = partition(nums, l, r);
-            int leftlen = m - l + 1;
-            if (leftlen == k)
+            if (m + 1 == k)
                 return nums[m];
-            else if (leftlen > k)
+            else if (m + 1 > k)
                 return kthSmallestDivideConquer(nums, l, m - 1, k);
             else
-                return kthSmallestDivideConquer(nums, m + 1, r, k - m - 1);
+                return kthSmallestDivideConquer(nums, m + 1, r, k);
         }
 
         int kthSmallestHeap(vector<int>& nums, int k)

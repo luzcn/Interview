@@ -151,6 +151,55 @@ namespace BinaryTree
 
             return sol;
         }
+
+        /**
+        * Function to traverse binary tree without recursion and without stack
+        *
+        * 1. Initialize current as root
+        * 2. While current is not NULL
+        * If current does not have left child
+        * 		a) Print current's data
+        * 		b) Go to the right, i.e., current = current->right
+        * Else
+        * 		a) Find the rightmost node in current's left subtree save as "pre"
+        * 		b) Make current as right child of "pre"
+        * 		c) Go to this left child, i.e., current = current->left
+        *
+        */
+
+        void morrisTreeTraversal(TreeNode* root)
+        {
+            auto current = root;
+            TreeNode* pre = nullptr;
+
+            while (current)
+            {
+                if (!current->left)
+                {
+                    cout << current->val << endl;
+                    current = current->right;
+                }
+                else
+                {
+                    pre = current->left;
+
+                    while (!pre->right && pre->right != current)
+                        pre = pre->right;
+
+                    if (!pre->right)
+                    {
+                        pre->right = current;
+                        current = current->left;
+                    }
+                    else
+                    {
+                        pre->right = nullptr;
+                        cout << pre->val << endl;
+                        current = current->right;
+                    }
+                }
+            }
+        }
     }
 
 
