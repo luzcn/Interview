@@ -136,6 +136,7 @@
     <ClInclude Include="Include\leetcode\CountCompleteTreeNodes.h" />
     <ClInclude Include="Include\leetcode\CountPrimes.h" />
     <ClInclude Include="Include\leetcode\DecodingWays.h" />
+    <ClInclude Include="Include\leetcode\DifferentWaysAddParentheses.h" />
     <ClInclude Include="Include\leetcode\DivideTwoInteger.h" />
     <ClInclude Include="Include\leetcode\DungeonGame.h" />
     <ClInclude Include="Include\leetcode\EditDistance.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Include\leetcode\KthSmallestElementInBST.h" />
     <ClInclude Include="Include\leetcode\LargestNumber.h" />
     <ClInclude Include="Include\leetcode\LengthOfLongestSubstring.h" />
+    <ClInclude Include="Include\leetcode\LetterCombinationsPhoneNumber.h" />
     <ClInclude Include="Include\leetcode\LowestCommonAncestor.h" />
     <ClInclude Include="Include\leetcode\LengthofLastWord.h" />
     <ClInclude Include="Include\leetcode\LinkedListCycle.h" />
@@ -177,6 +179,7 @@
     <ClInclude Include="Include\leetcode\MergeTowSortedList.h" />
     <ClInclude Include="Include\leetcode\MinPathSum.h" />
     <ClInclude Include="Include\leetcode\MinStack.h" />
+    <ClInclude Include="Include\leetcode\MultiplyStrings.h" />
     <ClInclude Include="Include\leetcode\NQueens.h" />
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
