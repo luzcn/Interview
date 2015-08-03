@@ -16,6 +16,7 @@
 #include <unordered_set>
 #include <math.h>
 #include <algorithm>
+#include <stack>
 
 using namespace std;
 
@@ -53,4 +54,21 @@ public:
     {}
 
     int x, y;
+};
+
+class GraphNode
+{
+public:
+    int val;
+    vector<GraphNode*> adj_list;
+
+    GraphNode(int v)
+        :val(v)
+    {
+    }
+
+    void add_edge(GraphNode* node)
+    {
+        adj_list.push_back(node);
+    }
 };

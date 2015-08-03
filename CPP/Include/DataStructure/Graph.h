@@ -7,23 +7,6 @@
 
 namespace Graph
 {
-    struct GraphNode
-    {
-        int val;
-        vector<GraphNode*> adj_list;
-
-        GraphNode(int v)
-            :val(v)
-        {
-        }
-
-        void add_edge(GraphNode* node)
-        {
-            adj_list.push_back(node);
-        }
-    };
-
-#pragma region Graph BFS
     void BFS(GraphNode* node, std::queue<GraphNode*>& que, std::unordered_map<GraphNode*, int>& visited)
     {
         if (!node)
@@ -53,9 +36,7 @@ namespace Graph
             }
         }
     }
-#pragma endregion
 
-#pragma region Graph DFS
     void DFS(GraphNode* node, unordered_map<GraphNode*, int>& map)
     {
         if (!node)
@@ -72,9 +53,8 @@ namespace Graph
             }
         }
     }
-#pragma endregion
 
-#pragma region Detect Cycle In Directed Graph
+    //  Detect Cycle In Directed Graph
     bool isCycleDFS(GraphNode* node, unordered_map<GraphNode*, int>& visited,
         unordered_map<GraphNode*, int>& ancestor)
     {
@@ -115,8 +95,42 @@ namespace Graph
         unordered_map<GraphNode*, int> ancestor;
         return isCycleDFS(node, visited, ancestor);
     }
-#pragma endregion
 
+    void TopologicalSortRec(GraphNode* node, std::unordered_set<GraphNode*>& visited, std::stack<GraphNode*>& stack)
+    {
+        if (!node)
+            return;
+
+        if (visited.find(node) == visited.end())
+        {
+            visited.insert(node);
+            for (auto n : node->adj_list)
+            {
+                TopologicalSortRec(n, visited, stack);
+            }
+            stack.push(node);
+        }
+    }
+    void TopologicalSort(vector<GraphNode*> graph)
+    {
+        std::unordered_set<GraphNode*> visited;
+        std::stack<GraphNode*> stack;
+
+        for (auto node : graph)
+        {
+            if (visited.find(node) == visited.end())
+            {
+                TopologicalSortRec(node, visited, stack);
+            }
+        }
+        while (!stack.empty())
+        {
+            cout << stack.top()->val << endl;
+            stack.pop();
+        }
+
+        return;
+    }
 }
 
 namespace WeightedGraph
@@ -137,13 +151,12 @@ namespace WeightedGraph
         return min_index;
     }
 
-
-#pragma region Dijkstra’s algorithm shortest path
-    /**
-*	Dijkstra algorithm to compute the shortest distance from source to each vertex.
-*	O(n^2)
-*	http://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/
-*/
+    //  Dijkstra algorithm to compute the shortest distance from source to each vertex.
+    //  Dijkstra’s algorithm doesn’t work for graphs with negative weight edges. 
+    //  For graphs with negative weight edges, Bellman–Ford algorithm can be used.
+    // 
+    //  O(n^2)
+    //  http://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/
     vector<int> shortest_path(vector<vector<int>>& graph, int src)
     {
         const int n = graph.size();
@@ -179,9 +192,6 @@ namespace WeightedGraph
         }
         return prev;
     }
-#pragma endregion
-
-
 }
 #if 0
 
