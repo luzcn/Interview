@@ -197,11 +197,13 @@
     <ClInclude Include="Include\leetcode\RemoveDuplicatesFromSortedArray.h" />
     <ClInclude Include="Include\leetcode\RemoveNthNodeFromEndofList.h" />
     <ClInclude Include="Include\leetcode\ReorderList.h" />
+    <ClInclude Include="Include\leetcode\RestoreIPAddresses.h" />
     <ClInclude Include="Include\leetcode\ReverseLinkedList.h" />
     <ClInclude Include="Include\leetcode\ReverserInteger.h" />
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
+    <ClInclude Include="Include\leetcode\SimplifyPath.h" />
     <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />
     <ClInclude Include="Include\leetcode\SpiralMatrix.h" />
     <ClInclude Include="Include\leetcode\StringToInteger.h" />
