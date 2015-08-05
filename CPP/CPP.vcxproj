@@ -180,6 +180,7 @@
     <ClInclude Include="Include\leetcode\MinPathSum.h" />
     <ClInclude Include="Include\leetcode\MinStack.h" />
     <ClInclude Include="Include\leetcode\MultiplyStrings.h" />
+    <ClInclude Include="Include\leetcode\NextPermutation.h" />
     <ClInclude Include="Include\leetcode\NQueens.h" />
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
@@ -199,6 +200,7 @@
     <ClInclude Include="Include\leetcode\ReorderList.h" />
     <ClInclude Include="Include\leetcode\RestoreIPAddresses.h" />
     <ClInclude Include="Include\leetcode\ReverseLinkedList.h" />
+    <ClInclude Include="Include\leetcode\ReverseNodesInKGroup.h" />
     <ClInclude Include="Include\leetcode\ReverserInteger.h" />
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
