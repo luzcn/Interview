@@ -206,6 +206,7 @@
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
     <ClInclude Include="Include\leetcode\SimplifyPath.h" />
+    <ClInclude Include="Include\leetcode\SingleNumber.h" />
     <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />
     <ClInclude Include="Include\leetcode\SpiralMatrix.h" />
     <ClInclude Include="Include\leetcode\StringToInteger.h" />
