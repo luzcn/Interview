@@ -100,6 +100,7 @@
     <ClInclude Include="Include\CareerCup\FloodFill.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h" />
+    <ClInclude Include="Include\CareerCup\LongestIncreasingSubSequence.h" />
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h" />
     <ClInclude Include="Include\CareerCup\MaximumSubarray.h" />
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h" />
@@ -226,6 +227,7 @@
     <ClInclude Include="Include\leetcode\WordBreak2.h" />
     <ClInclude Include="Include\leetcode\WordLadder.h" />
     <ClInclude Include="Include\leetcode\ZigZagConversion.h" />
+    <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\targetver.h" />
   </ItemGroup>

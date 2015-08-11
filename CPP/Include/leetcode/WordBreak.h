@@ -21,7 +21,7 @@ namespace WordBreak
     // O(2^n) time
     bool wordbreak(string s, unordered_set<string>& dict)
     {
-        if (dict.find(s) != dict.end())
+        if (s.empty() || dict.find(s) != dict.end())
         {
             return true;
         }
