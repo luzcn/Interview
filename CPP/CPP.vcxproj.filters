@@ -40,6 +40,12 @@
     <Filter Include="Header Files\CareerCup\Tree">
       <UniqueIdentifier>{94280627-f7d7-47dd-aaae-012b352f0e48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\String">
+      <UniqueIdentifier>{2fb80d52-c6e6-483d-8fc1-2c31c1659477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lintcode">
+      <UniqueIdentifier>{b8a160e3-c35d-4344-804c-279c406e5c23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -243,16 +249,10 @@
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\Multiplication.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\Permutation.h">
@@ -446,6 +446,54 @@
     </ClInclude>
     <ClInclude Include="Include\leetcode\PalindromLinkedList.h">
       <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PatternMatching.h">
+      <Filter>Header Files\CareerCup\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ValidPalindrome.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\Multiplication.h">
+      <Filter>Header Files\CareerCup\BitsManipulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\LetterCombinationsPhoneNumber.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MultiplyStrings.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\DifferentWaysAddParentheses.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\PlusOne.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\StringToInteger.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SimplifyPath.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\RestoreIPAddresses.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ReverseNodesInKGroup.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\NextPermutation.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SingleNumber.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h">
+      <Filter>Header Files\lintcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\LongestIncreasingSubSequence.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
