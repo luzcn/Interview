@@ -29,7 +29,7 @@ namespace leetcode
         int right_product = nums[n - 1];
         for (int i = n - 2; i >= 0; i--)
         {
-            res[i] = nums[i] * right_product;
+            res[i] = res[i] * right_product;
             right_product *= nums[i];
         }
 

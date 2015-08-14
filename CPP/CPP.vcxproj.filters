@@ -46,6 +46,9 @@
     <Filter Include="Header Files\lintcode">
       <UniqueIdentifier>{b8a160e3-c35d-4344-804c-279c406e5c23}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\IntegerArray">
+      <UniqueIdentifier>{48999c4a-3df7-4893-bd99-19636ccbe51f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -494,6 +497,9 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\LongestIncreasingSubSequence.h">
       <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\RemoveElement.h">
+      <Filter>Header Files\lintcode\IntegerArray</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
