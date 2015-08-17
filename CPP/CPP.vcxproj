@@ -231,6 +231,7 @@
     <ClInclude Include="Include\lintcode\Median.h" />
     <ClInclude Include="Include\lintcode\RemoveElement.h" />
     <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h" />
+    <ClInclude Include="Include\lintcode\SortLetters.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\targetver.h" />
   </ItemGroup>
