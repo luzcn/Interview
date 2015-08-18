@@ -229,6 +229,7 @@
     <ClInclude Include="Include\leetcode\ZigZagConversion.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
+    <ClInclude Include="Include\lintcode\Rehashing.h" />
     <ClInclude Include="Include\lintcode\RemoveElement.h" />
     <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h" />
     <ClInclude Include="Include\lintcode\SortLetters.h" />

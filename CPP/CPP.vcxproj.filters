@@ -510,6 +510,9 @@
     <ClInclude Include="Include\lintcode\SortLetters.h">
       <Filter>Header Files\lintcode\IntegerArray</Filter>
     </ClInclude>
+    <ClInclude Include="Include\lintcode\Rehashing.h">
+      <Filter>Header Files\lintcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
