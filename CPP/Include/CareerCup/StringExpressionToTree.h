@@ -70,3 +70,34 @@ namespace careercup
         return root;
     }
 }
+
+#if 0
+void bfs(careercup::Tree* root)
+{
+    if (root->children.empty())
+        return;
+
+    queue<careercup::Tree*> que1;
+    queue<careercup::Tree*> que2;
+
+    que1.push(root);
+    while (!que1.empty())
+    {
+        auto current = que1.front();
+        que1.pop();
+
+        cout << current->val << " ";
+
+        for (auto t : current->children)
+        {
+            que2.push(t);
+        }
+        if (que1.empty())
+        {
+            cout << endl;
+            que1 = que2;
+            que2 = queue<careercup::Tree*>();
+        }
+    }
+}
+#endif

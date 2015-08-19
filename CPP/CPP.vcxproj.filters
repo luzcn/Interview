@@ -516,6 +516,12 @@
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h">
       <Filter>Header Files\CareerCup\Tree</Filter>
     </ClInclude>
+    <ClInclude Include="Include\lintcode\ThreeSumClosest.h">
+      <Filter>Header Files\lintcode\IntegerArray</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SubarraySumClosest.h">
+      <Filter>Header Files\lintcode\IntegerArray</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
