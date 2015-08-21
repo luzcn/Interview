@@ -205,6 +205,7 @@
     <ClInclude Include="Include\leetcode\ReverseNodesInKGroup.h" />
     <ClInclude Include="Include\leetcode\ReverserInteger.h" />
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
+    <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
     <ClInclude Include="Include\leetcode\SimplifyPath.h" />

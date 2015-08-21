@@ -14,9 +14,8 @@
  */
 namespace FindMinimuminRotatedSortedArray
 {
-    /**
-     *	Thought,
-     */
+    // Thought: if array is not roated, A[m] should < A[r], so if rotated, A[m] will > A[r]
+    // so every time, we find A[m]>A[r], search the [m...r] range.
     int findMin(vector<int> &num)
     {
         if (num.empty())
@@ -31,25 +30,16 @@ namespace FindMinimuminRotatedSortedArray
         {
             int m = l + (r - l) / 2;
 
-            // if not rotated
-            if (num[l] < num[r])
+            // num[l] > num[r] && num[m] > num[r], search [m, r]
+            if (num[m] > num[r])
             {
-                return num[l];
+                l = m + 1;
             }
             else
             {
-                // num[l] < num[r] && num[m] > num[r], search [m, r]
-                if (num[m] > num[r])
-                {
-                    l = m + 1;
-                }
-                else
-                {
-                    r = m;
-                }
+                r = m;
             }
         }
-
         return num[r];
     }
 
