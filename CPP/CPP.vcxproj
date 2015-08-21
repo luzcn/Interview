@@ -211,6 +211,7 @@
     <ClInclude Include="Include\leetcode\SingleNumber.h" />
     <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />
     <ClInclude Include="Include\leetcode\SpiralMatrix.h" />
+    <ClInclude Include="Include\leetcode\Sqrt.h" />
     <ClInclude Include="Include\leetcode\StringToInteger.h" />
     <ClInclude Include="Include\leetcode\SubSets.h" />
     <ClInclude Include="Include\leetcode\SubstringwithConcatenationofAllWords.h" />
@@ -234,8 +235,11 @@
     <ClInclude Include="Include\lintcode\RemoveElement.h" />
     <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h" />
     <ClInclude Include="Include\lintcode\SortLetters.h" />
+    <ClInclude Include="Include\lintcode\SpaceReplacement.h" />
+    <ClInclude Include="Include\lintcode\SubarraySum.h" />
     <ClInclude Include="Include\lintcode\SubarraySumClosest.h" />
     <ClInclude Include="Include\lintcode\ThreeSumClosest.h" />
+    <ClInclude Include="Include\lintcode\WoodCut.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\targetver.h" />
   </ItemGroup>

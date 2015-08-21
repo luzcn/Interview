@@ -49,6 +49,9 @@
     <Filter Include="Header Files\lintcode\IntegerArray">
       <UniqueIdentifier>{48999c4a-3df7-4893-bd99-19636ccbe51f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\Binary Search">
+      <UniqueIdentifier>{341ca333-cac6-4482-84dd-546ac21ab35a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -521,6 +524,18 @@
     </ClInclude>
     <ClInclude Include="Include\lintcode\SubarraySumClosest.h">
       <Filter>Header Files\lintcode\IntegerArray</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SubarraySum.h">
+      <Filter>Header Files\lintcode\IntegerArray</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\Sqrt.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SpaceReplacement.h">
+      <Filter>Header Files\lintcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\WoodCut.h">
+      <Filter>Header Files\lintcode\Binary Search</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
