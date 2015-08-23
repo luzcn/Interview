@@ -540,6 +540,12 @@
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\AddDigits.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\Search2DMatrix.h">
+      <Filter>Header Files\lintcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
