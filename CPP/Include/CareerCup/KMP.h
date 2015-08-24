@@ -38,9 +38,8 @@ namespace careercup
 
             // use this len to track the longest prefix which is also a suffix
             int len = 0;
-
             int j = 1;
-            while (j < p.size())
+            while(j < p.size())
             {
                 if (p[j] == p[len])
                 {

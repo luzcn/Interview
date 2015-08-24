@@ -17,7 +17,7 @@ namespace leetcode
         // O(n) time, O(1) space, Moore's voting algorithm
         int majority_voting(const vector<int>& nums)
         {
-            // Find the candicate element which has the most occurance
+            // Find the candidate element which has the most occurance
             int maj_index = 0;
             int count = 1;
             for (int i = 0; i < nums.size(); i++)

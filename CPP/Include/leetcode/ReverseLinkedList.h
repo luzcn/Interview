@@ -4,10 +4,7 @@
 
 namespace ReverserLinkedList
 {
-
-    /***
-     *	Reverse the whole linked list.
-     */
+    // Reverse the whole linked list iterative solution.
     ListNode* rever_linkedlist(ListNode* head)
     {
         if (!head || !head->next)
@@ -27,18 +24,30 @@ namespace ReverserLinkedList
         return pre;
     }
 
-    /***
-     *	 Reverse a linked list from position m to n. Do it in-place and in one-pass.
+    // Reverse linked list recursive solution
+    ListNode* reverseRec(ListNode* node, ListNode* pre)
+    {
+        if (!node)
+            return nullptr;
 
-        For example:
-        Given 1->2->3->4->5->NULL, m = 2 and n = 4,
+        if (!node->next)
+        {
+            node->next = pre;
+            return node;
+        }
 
-        return 1->4->3->2->5->NULL.
+        auto r = reverseRec(node->next, node);
+        node->next = pre;
+        return r;
+    }
 
-        Note:
-        Given m, n satisfy the following condition:
-        1 ≤ m ≤ n ≤ length of list. 
-     */
+    //Reverse a linked list from position m to n. Do it in-place and in one-pass.
+    //For example:
+    //Given 1->2->3->4->5->NULL, m = 2 and n = 4,
+    //return 1->4->3->2->5->NULL.
+    //Note:
+    //Given m, n satisfy the following condition:
+    //1 ≤ m ≤ n ≤ length of list. 
     ListNode* reverse_linkedlist_inRange(ListNode* head, int m, int n)
     {
         if (!head || !head->next)
@@ -98,26 +107,3 @@ namespace ReverserLinkedList
         return result->next;
     }
 }
-
-
-#if 0
-int _tmain(int argc, _TCHAR* argv[])
-{
-    std::vector<ListNode*> nodes = { new ListNode(1), new ListNode(2), new ListNode(3), new ListNode(4), new ListNode(5), new ListNode(6) };
-    for (int i = 1; i < nodes.size(); ++i)
-    {
-        nodes[i - 1]->next = nodes[i];
-    }
-
-    //ListNode* p = new ListNode(0);
-
-    auto t = ReverserLinkedList::reverse_linkedlist_inRange(nodes[0], 2, 4);
-
-    while (t)
-    {
-        std::cout << t->val << std::endl;
-        t = t->next;
-    }
-    return 0;
-}
-#endif

@@ -8,8 +8,8 @@ namespace DesignPattern
         // Private Constructor
         SingletonObject();
         // Stop the compiler generating methods of copy the object
-        SingletonObject(const SingletonObject& copy);            // Not Implemented
-        SingletonObject& operator=(const SingletonObject& copy); // Not Implemented
+        SingletonObject(const SingletonObject& copy) = delete;            // Not Implemented
+        SingletonObject& operator=(const SingletonObject& copy) = delete; // Not Implemented
 
     public:
         static SingletonObject& getInstance()
