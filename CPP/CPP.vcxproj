@@ -230,6 +230,7 @@
     <ClInclude Include="Include\leetcode\WordBreak2.h" />
     <ClInclude Include="Include\leetcode\WordLadder.h" />
     <ClInclude Include="Include\leetcode\ZigZagConversion.h" />
+    <ClInclude Include="Include\lintcode\BackPack.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
     <ClInclude Include="Include\lintcode\Rehashing.h" />
