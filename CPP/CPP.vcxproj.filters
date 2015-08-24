@@ -453,9 +453,6 @@
     <ClInclude Include="Include\leetcode\PalindromLinkedList.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\PatternMatching.h">
-      <Filter>Header Files\CareerCup\String</Filter>
-    </ClInclude>
     <ClInclude Include="Include\leetcode\ValidPalindrome.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
@@ -536,6 +533,9 @@
     </ClInclude>
     <ClInclude Include="Include\lintcode\WoodCut.h">
       <Filter>Header Files\lintcode\Binary Search</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\KMP.h">
+      <Filter>Header Files\CareerCup\String</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
