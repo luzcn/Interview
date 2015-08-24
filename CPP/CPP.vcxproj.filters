@@ -534,8 +534,19 @@
     <ClInclude Include="Include\lintcode\WoodCut.h">
       <Filter>Header Files\lintcode\Binary Search</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Include\CareerCup\KMP.h">
       <Filter>Header Files\CareerCup\String</Filter>
+=======
+    <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\AddDigits.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\Search2DMatrix.h">
+      <Filter>Header Files\lintcode</Filter>
+>>>>>>> a3f1e5f9e0adfd9049cd8b3de835a6dc7bb88e6a
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
