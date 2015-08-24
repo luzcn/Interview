@@ -541,6 +541,7 @@
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Include\leetcode\AddDigits.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
@@ -548,6 +549,8 @@
       <Filter>Header Files\lintcode</Filter>
 >>>>>>> a3f1e5f9e0adfd9049cd8b3de835a6dc7bb88e6a
     </ClInclude>
+=======
+>>>>>>> parent of a3f1e5f... Updated search in 2d matrix problem.
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

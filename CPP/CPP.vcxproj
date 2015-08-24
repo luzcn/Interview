@@ -124,7 +124,6 @@
     <ClInclude Include="Include\DesignPattern\Observer.h" />
     <ClInclude Include="Include\DesignPattern\Singleton.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
-    <ClInclude Include="Include\leetcode\AddDigits.h" />
     <ClInclude Include="Include\leetcode\BasicCalculator.h" />
     <ClInclude Include="Include\leetcode\BestToBuyAndSellStock.h" />
     <ClInclude Include="Include\leetcode\BinarySearchTreeIterator.h" />
@@ -236,7 +235,6 @@
     <ClInclude Include="Include\lintcode\Rehashing.h" />
     <ClInclude Include="Include\lintcode\RemoveElement.h" />
     <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h" />
-    <ClInclude Include="Include\lintcode\Search2DMatrix.h" />
     <ClInclude Include="Include\lintcode\SortLetters.h" />
     <ClInclude Include="Include\lintcode\SpaceReplacement.h" />
     <ClInclude Include="Include\lintcode\SubarraySum.h" />
