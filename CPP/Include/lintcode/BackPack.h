@@ -21,6 +21,7 @@ namespace lintcode
         return std::max(A[i] + backPackRec(A, m - A[i], i + 1), backPackRec(A, m, i + 1));
     }
 
+    // O(m*n) space
     int backPackDP(vector<int>& A, int m)
     {
         int n = A.size();
@@ -40,6 +41,27 @@ namespace lintcode
             }
         }
         return M[m][A.size()];
+    }
+
+    // O(m) space
+    // since the dp function only need to track the j-1 column value, 
+    // we can use one vector with size of m
+    int backPackDP2(vector<int>& A, int m)
+    {
+        int n = A.size();
+        vector<bool> M(m + 1, false);
+        M[0] = true;
+        for (int j = 1; j <= A.size(); j++)
+        {
+            for (int i = 1; i <= m; i++)
+            {
+                if (i >= A[j - 1] && M[i - A[j - 1]])
+                {
+                    M[i] = true;
+                }
+            }
+        }
+        return M[m];
     }
     int backPack(int m, vector<int> A)
     {
