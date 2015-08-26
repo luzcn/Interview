@@ -230,6 +230,10 @@
     <ClInclude Include="Include\leetcode\WordBreak2.h" />
     <ClInclude Include="Include\leetcode\WordLadder.h" />
     <ClInclude Include="Include\leetcode\ZigZagConversion.h" />
+    <ClInclude Include="Include\lintcode\BackPack.h" />
+    <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
+    <ClInclude Include="Include\lintcode\FindPeakElement.h" />
+    <ClInclude Include="Include\lintcode\FlipBits.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
     <ClInclude Include="Include\lintcode\Rehashing.h" />
@@ -240,6 +244,7 @@
     <ClInclude Include="Include\lintcode\SubarraySum.h" />
     <ClInclude Include="Include\lintcode\SubarraySumClosest.h" />
     <ClInclude Include="Include\lintcode\ThreeSumClosest.h" />
+    <ClInclude Include="Include\lintcode\TrailingZeros.h" />
     <ClInclude Include="Include\lintcode\WoodCut.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\targetver.h" />

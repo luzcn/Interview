@@ -43,6 +43,10 @@ namespace FindMinimuminRotatedSortedArray
         return num[r];
     }
 
+    // example: 
+    // 9 1 2 3 3 3 3
+    // 3 3 3 3 1 2 3
+    // A[m] == A[r], but we cannot decide which direction to go.
     int findMinDuplicate(vector<int> &A)
     {
         return *std::min_element(A.begin(), A.end());

@@ -49,6 +49,12 @@
     <Filter Include="Header Files\lintcode\BinarySearch">
       <UniqueIdentifier>{a88746e0-e307-4bf0-bf36-8e5be2180f62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\DP">
+      <UniqueIdentifier>{87ddde2f-2e80-43e1-b3bf-f333f1825795}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lintcode\BitAndMath">
+      <UniqueIdentifier>{94835751-9db2-4559-9ac0-6cc2049ae2dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -536,6 +542,21 @@
     </ClInclude>
     <ClInclude Include="Include\leetcode\SimplifyPath.h">
       <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\BackPack.h">
+      <Filter>Header Files\lintcode\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\FindPeakElement.h">
+      <Filter>Header Files\lintcode\BinarySearch</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\FlipBits.h">
+      <Filter>Header Files\lintcode\BitAndMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\BinaryRepresentation.h">
+      <Filter>Header Files\lintcode\BitAndMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\TrailingZeros.h">
+      <Filter>Header Files\lintcode\BitAndMath</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
