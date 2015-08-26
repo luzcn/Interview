@@ -66,20 +66,48 @@ namespace UniqueBinarySearchTrees
         {
             for (int j = 1; j <= i; ++j)
             {
-                count[i] += count[j - 1] * count[i - j ];
+                count[i] += count[j - 1] * count[i - j];
             }
         }
         return count[n];
     }
 
-    //TreeNode* generateRec(int n, vector<TreeNode*>)
-    //{
-    //    
-    //}
+    vector<TreeNode*> generateRec(int min, int max)
+    {
+        vector<TreeNode*> res;
+        if (min > max)
+        {
+            res.push_back(nullptr);
+            return res;
+        }
 
-    //// generate all the binary search tree
-    //vector<TreeNode*> generateTree(int n)
-    //{
+        vector<TreeNode*> leftSub;
+        vector<TreeNode*> rightSub;
+        for (int i = min; i <= max; i++)
+        {
+            leftSub = std::move(generateRec(min, i - 1));
+            rightSub = std::move(generateRec(i + 1, max));
 
-    //}
+            for (auto leftNode : leftSub)
+            {
+                for (auto rightNode : rightSub)
+                {
+                    TreeNode* root = new TreeNode(i);
+                    root->left = leftNode;
+                    root->right = rightNode;
+                    res.push_back(root);
+                }
+            }
+        }
+        return res;
+    }
+
+    // generate all the binary search tree
+    vector<TreeNode*> generateTree(int n)
+    {
+        if (n == 0)
+            return{};
+
+        return generateRec(1, n);
+    }
 }
