@@ -25,28 +25,32 @@ namespace lintcode
         return false;
     }
 
-    bool isHigherOrder(string& str1, string& str2)
+    bool isHigherOrEqualOrder(string& str1, string& str2)
     {
-        if ((str1 == "*" || str1 == "/") && (str2 == "+" || str2 == "-"))
+        if ((str1 == "*" || str1 == "/"))
             return true;
+        if ((str1 == "+" || str1 == "-") && (str2 == "+" || str2 == "-"))
+            return true;
+
         return false;
     }
 
-    void process(std::stack<string>& operator_stack, stack<ExpressionTreeNode*>& node_stack)
+    void process(std::stack<string>& op_stack, stack<ExpressionTreeNode*>& node_stack)
     {
-        string op = operator_stack.top();
-        operator_stack.pop();
-        ExpressionTreeNode* op_node = new ExpressionTreeNode(op);
+        string op = op_stack.top();
+        op_stack.pop();
+        ExpressionTreeNode* opNode = new ExpressionTreeNode(op);
 
-        ExpressionTreeNode* rightChild = node_stack.top();
-        node_stack.pop();
-        ExpressionTreeNode* leftChild = node_stack.top();
+        auto rightChild = node_stack.top();
         node_stack.pop();
 
-        op_node->left = leftChild;
-        op_node->right = rightChild;
+        auto leftChild = node_stack.top();
+        node_stack.pop();
 
-        node_stack.push(op_node);
+        opNode->left = leftChild;
+        opNode->right = rightChild;
+
+        node_stack.push(opNode);
     }
 
     // ExpressTreeBuild
@@ -57,7 +61,7 @@ namespace lintcode
             return nullptr;
 
         std::stack<ExpressionTreeNode*> node_stack;
-        std::stack<string> operator_stack;
+        std::stack<string> op_stack;
 
         int i = 0;
         while (i < expression.size())
@@ -65,48 +69,39 @@ namespace lintcode
             string str = expression[i];
             if (str == "(")
             {
-                operator_stack.push("(");
+                op_stack.push("(");
             }
             else if (str == ")")
             {
-                while (!operator_stack.empty() && operator_stack.top() != "(")
+                while (!op_stack.empty() && op_stack.top() != "(")
                 {
-                    process(operator_stack, node_stack);
+                    process(op_stack, node_stack);
                 }
-                operator_stack.pop();
+                op_stack.pop();
             }
             else if (!isOperator(str))  // INT
             {
                 ExpressionTreeNode* node = new ExpressionTreeNode(str);
                 node_stack.push(node);
             }
-            else   // an operator
+            else
             {
-                if (operator_stack.empty()) // if stack is empty, directly push in 
-                    operator_stack.push(str);
-                else if (isHigherOrder(operator_stack.top(), str))
+                // Operators
+                while (!op_stack.empty() && isHigherOrEqualOrder(op_stack.top(), str))
                 {
-                    // if the stack top operatro has higher order of the current one,
-                    // need to pop out and process first.
-                    while (!operator_stack.empty() && isHigherOrder(operator_stack.top(), str))
-                    {
-                        process(operator_stack, node_stack);
-                    }
-                    operator_stack.push(str);
+                    process(op_stack, node_stack);
                 }
-                else
-                {
-                    operator_stack.push(str);
-                }
+                op_stack.push(str);
             }
-
             i++;
         }
-
-        while (!operator_stack.empty())
+        while (!op_stack.empty())
         {
-            process(operator_stack, node_stack);
+            process(op_stack, node_stack);
         }
+
+        if (node_stack.empty())
+            return nullptr;
 
         return node_stack.top();
     }

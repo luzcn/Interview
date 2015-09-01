@@ -570,6 +570,9 @@
     <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h">
       <Filter>Header Files\lintcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h">
+      <Filter>Header Files\lintcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

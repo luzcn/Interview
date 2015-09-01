@@ -234,6 +234,7 @@
     <ClInclude Include="Include\lintcode\AssignmentOperatorOverload.h" />
     <ClInclude Include="Include\lintcode\BackPack.h" />
     <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
+    <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h" />
     <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h" />
     <ClInclude Include="Include\lintcode\FindPeakElement.h" />
     <ClInclude Include="Include\lintcode\FlipBits.h" />
