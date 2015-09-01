@@ -5,6 +5,7 @@
 //  Note: The numbers can be arbitrarily large and are non-negative.
 namespace leetcode
 {
+    // O(m*n) time complexity
     string multiply(string num1, string num2)
     {
         string res(num1.size() + num2.size() + 1, '0');
@@ -48,4 +49,6 @@ namespace leetcode
 
         return res.substr(start);
     }
+
+    // Divide conqure solution
 }

@@ -99,6 +99,7 @@
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
     <ClInclude Include="Include\CareerCup\FloodFill.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
+    <ClInclude Include="Include\CareerCup\LargeFactorial.h" />
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h" />
     <ClInclude Include="Include\CareerCup\LongestIncreasingSubSequence.h" />
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h" />
@@ -230,8 +231,10 @@
     <ClInclude Include="Include\leetcode\WordBreak2.h" />
     <ClInclude Include="Include\leetcode\WordLadder.h" />
     <ClInclude Include="Include\leetcode\ZigZagConversion.h" />
+    <ClInclude Include="Include\lintcode\AssignmentOperatorOverload.h" />
     <ClInclude Include="Include\lintcode\BackPack.h" />
     <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
+    <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h" />
     <ClInclude Include="Include\lintcode\FindPeakElement.h" />
     <ClInclude Include="Include\lintcode\FlipBits.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />

@@ -55,6 +55,9 @@
     <Filter Include="Header Files\lintcode\BitAndMath">
       <UniqueIdentifier>{94835751-9db2-4559-9ac0-6cc2049ae2dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\DivideConquer">
+      <UniqueIdentifier>{d9594a14-f7d3-4022-b15d-9cbdca458d70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -243,31 +246,16 @@
     <ClInclude Include="Include\leetcode\ZigZagConversion.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\Anagram.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\BinaryToHex.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\Permutation.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\SubSet.h">
@@ -371,9 +359,6 @@
     </ClInclude>
     <ClInclude Include="Include\leetcode\RectangleArea.h">
       <Filter>Header Files\leetcode</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\ClosestPairs.h">
-      <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\DesignPattern\Singleton.h">
       <Filter>Header Files\DesignPattern</Filter>
@@ -557,6 +542,33 @@
     </ClInclude>
     <ClInclude Include="Include\lintcode\TrailingZeros.h">
       <Filter>Header Files\lintcode\BitAndMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\BinaryToHex.h">
+      <Filter>Header Files\CareerCup\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\Anagram.h">
+      <Filter>Header Files\CareerCup\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ClosestPairs.h">
+      <Filter>Header Files\CareerCup\DivideConquer</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h">
+      <Filter>Header Files\CareerCup\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h">
+      <Filter>Header Files\CareerCup\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\LargeFactorial.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\AssignmentOperatorOverload.h">
+      <Filter>Header Files\lintcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h">
+      <Filter>Header Files\lintcode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
