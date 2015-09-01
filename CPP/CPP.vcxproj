@@ -98,6 +98,7 @@
     <ClInclude Include="Include\CareerCup\FindKthSmallest.h" />
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
     <ClInclude Include="Include\CareerCup\FloodFill.h" />
+    <ClInclude Include="Include\CareerCup\IntToBinary.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
     <ClInclude Include="Include\CareerCup\LargeFactorial.h" />
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h" />
@@ -235,6 +236,7 @@
     <ClInclude Include="Include\lintcode\BackPack.h" />
     <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
     <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h" />
+    <ClInclude Include="Include\lintcode\ExpressionEvaluation.h" />
     <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h" />
     <ClInclude Include="Include\lintcode\FindPeakElement.h" />
     <ClInclude Include="Include\lintcode\FlipBits.h" />

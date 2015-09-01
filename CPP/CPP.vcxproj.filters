@@ -58,6 +58,9 @@
     <Filter Include="Header Files\CareerCup\DivideConquer">
       <UniqueIdentifier>{d9594a14-f7d3-4022-b15d-9cbdca458d70}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\String">
+      <UniqueIdentifier>{e09ee6b2-29d9-4dcd-883b-7fba1244042f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -568,10 +571,16 @@
       <Filter>Header Files\lintcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h">
-      <Filter>Header Files\lintcode</Filter>
+      <Filter>Header Files\lintcode\String</Filter>
     </ClInclude>
     <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h">
-      <Filter>Header Files\lintcode</Filter>
+      <Filter>Header Files\lintcode\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\ExpressionEvaluation.h">
+      <Filter>Header Files\lintcode\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\IntToBinary.h">
+      <Filter>Header Files\CareerCup\BitsManipulation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
