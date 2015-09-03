@@ -61,6 +61,9 @@
     <Filter Include="Header Files\lintcode\String">
       <UniqueIdentifier>{e09ee6b2-29d9-4dcd-883b-7fba1244042f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\Linked List">
+      <UniqueIdentifier>{e4a4a5b3-697d-4750-b6f8-16267af269de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -581,6 +584,9 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\IntToBinary.h">
       <Filter>Header Files\CareerCup\BitsManipulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h">
+      <Filter>Header Files\lintcode\Linked List</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

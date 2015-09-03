@@ -236,6 +236,7 @@
     <ClInclude Include="Include\lintcode\BackPack.h" />
     <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
     <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h" />
+    <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h" />
     <ClInclude Include="Include\lintcode\ExpressionEvaluation.h" />
     <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h" />
     <ClInclude Include="Include\lintcode\FindPeakElement.h" />
