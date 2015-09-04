@@ -588,6 +588,9 @@
     <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h">
       <Filter>Header Files\lintcode\Linked List</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\IntervalTree.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
