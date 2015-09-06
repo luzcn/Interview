@@ -98,7 +98,6 @@
     <ClInclude Include="Include\CareerCup\FindKthSmallest.h" />
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
     <ClInclude Include="Include\CareerCup\FloodFill.h" />
-    <ClInclude Include="Include\CareerCup\IntervalTree.h" />
     <ClInclude Include="Include\CareerCup\IntToBinary.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
     <ClInclude Include="Include\CareerCup\LargeFactorial.h" />
@@ -116,12 +115,16 @@
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
     <ClInclude Include="Include\CareerCup\SubSet.h" />
     <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h" />
+    <ClInclude Include="Include\CareerCup\VerifySquenceOfBST.h" />
     <ClInclude Include="Include\DataStructure\BinarySearch.h" />
+    <ClInclude Include="Include\DataStructure\BinarySearchTree.h" />
     <ClInclude Include="Include\DataStructure\BinaryTree.h" />
     <ClInclude Include="Include\DataStructure\Graph.h" />
+    <ClInclude Include="Include\DataStructure\IntervalTree.h" />
     <ClInclude Include="Include\DataStructure\MinStack.h" />
     <ClInclude Include="Include\DataStructure\ProducerConsumer.h" />
     <ClInclude Include="Include\DataStructure\QueueFromStack.h" />
+    <ClInclude Include="Include\DataStructure\RedBlackTree.h" />
     <ClInclude Include="Include\DataStructure\ShortestPathInGraph.h" />
     <ClInclude Include="Include\DataStructure\Sorting.h" />
     <ClInclude Include="Include\DesignPattern\Observer.h" />

@@ -13,7 +13,7 @@ namespace careercup
     {
         int low;
         int higher;
-        Interval(){}
+        Interval() {}
 
         Interval(int x, int y)
             :low(x), higher(y)
@@ -43,6 +43,7 @@ namespace careercup
         }
     };
 
+    // helper function to build a interval tree.
     IntervalTreeNode* insert(IntervalTreeNode* root, const Interval& i)
     {
         if (!root)
@@ -76,5 +77,39 @@ namespace careercup
         if (l1.low <= l2.higher && l2.low <= l1.higher)
             return true;
         return false;
+    }
+
+    // the search takes O(lgn) for balanced interval tree.
+    IntervalTreeNode* searchOverlap(IntervalTreeNode* root, Interval i)
+    {
+        if (!root)
+            return nullptr;
+
+        if (isOverlap(root->m_interval, i))
+            return root;
+        else if (root->left && root->left->max >= i.low)
+            searchOverlap(root->left, i);
+        else
+            searchOverlap(root->right, i);
+
+        return nullptr;
+    }
+
+    void searchAllOverlap(IntervalTreeNode* root, vector<IntervalTreeNode*>& res, Interval i)
+    {
+        if (!root)
+            return ;
+
+        if (isOverlap(root->m_interval, i))
+        {
+            res.push_back(root);
+        }
+
+        if (root->left && root->left->max >= i.low)
+            searchOverlap(root->left, i);
+        
+        if (root->right)
+            searchOverlap(root->right, i);
+
     }
 }
