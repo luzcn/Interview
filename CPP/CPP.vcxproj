@@ -112,6 +112,7 @@
     <ClInclude Include="Include\CareerCup\Permutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\SegmentTreeSubarraySum.h" />
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
     <ClInclude Include="Include\CareerCup\SubSet.h" />
     <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h" />
@@ -250,6 +251,7 @@
     <ClInclude Include="Include\lintcode\Rehashing.h" />
     <ClInclude Include="Include\lintcode\RemoveElement.h" />
     <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h" />
+    <ClInclude Include="Include\lintcode\SegmentTree.h" />
     <ClInclude Include="Include\lintcode\SortLetters.h" />
     <ClInclude Include="Include\lintcode\SpaceReplacement.h" />
     <ClInclude Include="Include\lintcode\SubarraySum.h" />

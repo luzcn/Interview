@@ -67,6 +67,9 @@
     <Filter Include="Header Files\DataStructure\Tree">
       <UniqueIdentifier>{afbae285-8649-425e-8e0f-78ebb549ca9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\Tree">
+      <UniqueIdentifier>{def1110a-cee2-434d-8403-c29e2866cdcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -602,6 +605,12 @@
     </ClInclude>
     <ClInclude Include="Include\DataStructure\IntervalTree.h">
       <Filter>Header Files\DataStructure\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\SegmentTreeSubarraySum.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SegmentTree.h">
+      <Filter>Header Files\lintcode\Tree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
