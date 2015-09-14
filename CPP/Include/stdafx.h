@@ -72,3 +72,13 @@ public:
         adj_list.push_back(node);
     }
 };
+
+struct UndirectedGraphNode
+{
+    int label;
+    vector<UndirectedGraphNode *> neighbors;
+
+    UndirectedGraphNode(int x) 
+        :label(x)
+    {}
+};

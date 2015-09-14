@@ -244,6 +244,7 @@
     <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h" />
     <ClInclude Include="Include\lintcode\ExpressionEvaluation.h" />
     <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h" />
+    <ClInclude Include="Include\lintcode\Find theConnectedComponent.h" />
     <ClInclude Include="Include\lintcode\FindPeakElement.h" />
     <ClInclude Include="Include\lintcode\FlipBits.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />

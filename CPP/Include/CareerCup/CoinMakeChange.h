@@ -8,7 +8,7 @@
 
  http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/
  */
-namespace CoinMakeChange
+namespace careercup
 {
     /***
      *	Recursive solution.
@@ -25,7 +25,7 @@ namespace CoinMakeChange
             return 1;
         }
 
-        if (m <= 0 && n > 0) // If there is no more coins and n is greater than 0, no solution. 
+        if (m < 0 && n > 0) // If there is no more coins and n is greater than 0, no solution. 
         {
             return 0;
         }
@@ -40,9 +40,10 @@ namespace CoinMakeChange
 
     // DP solution
     // m is the input money, n is the coins array size
-    int change_DP(int n, int coins [], int m)
+    int changeWaysDP(int n, vector<int> coins)
     {
         // create a (n+1)*m grid to save the solution.
+        int m = coins.size();
         vector<vector<int>> grid(n + 1, vector<int>(m + 1));
 
         // initial the first row (i = 0) to all "1".
@@ -69,5 +70,71 @@ namespace CoinMakeChange
         }
 
         return grid[n][m];
+    }
+
+    int minCoinsRec(vector<int> coins, int sum, int i)
+    {
+        if (sum == 0)
+            return 0;
+        if (i >= coins.size() && sum > 0)
+            return INT_MAX - 1;
+        if (sum < 0)
+            return INT_MAX - 1;
+
+        return min(minCoinsRec(coins, sum - coins[i], i) + 1, minCoinsRec(coins, sum, i + 1));
+
+    }
+
+
+    int minCoinsDP(vector<int> coins, int sum)
+    {
+        int m = sum;
+        int n = coins.size();
+
+        vector<vector<int>> M(m + 1, vector<int>(n + 1, 0));
+        for (int i = 0; i <= m; i++)
+        {
+            M[i][0] = sum;
+        }
+
+        for (int i = 1; i <= m; i++)
+        {
+            for (int j = 1; j <= n; j++)
+            {
+                if (i >= coins[j - 1])
+                {
+                    M[i][j] = min(M[i - coins[j - 1]][j] + 1, M[i][j - 1]);
+                }
+                else
+                    M[i][j] = M[i][j - 1];
+            }
+        }
+        return M[m][n];
+    }
+
+    // O(m) space
+    int minCoinsDP2(vector<int> coins, int sum)
+    {
+        vector<int> Min(sum + 1, sum);
+        Min[0] = 0;
+
+        for (int i = 1; i <= sum; i++)
+        {
+            for (int j = 0; j < coins.size(); j++)
+            {
+                if (i >= coins[j])
+                {
+                    Min[i] = std::min(Min[i - coins[j]] + 1, Min[i]);
+                }
+            }
+        }
+
+        return Min[sum];
+    }
+
+    int minCoins(vector<int> coins, int sum)
+    {
+        //return minCoinsRec(coins, sum, 0);
+        return minCoinsDP2(coins, sum);
     }
 }

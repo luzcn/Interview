@@ -70,6 +70,9 @@
     <Filter Include="Header Files\lintcode\Tree">
       <UniqueIdentifier>{def1110a-cee2-434d-8403-c29e2866cdcb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\Graph">
+      <UniqueIdentifier>{90974f2f-c8c8-4d53-b5ec-b356c6baa23c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -483,9 +486,6 @@
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h">
       <Filter>Header Files\lintcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\lintcode\Median.h">
-      <Filter>Header Files\lintcode</Filter>
-    </ClInclude>
     <ClInclude Include="Include\leetcode\NextPermutation.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
@@ -611,6 +611,12 @@
     </ClInclude>
     <ClInclude Include="Include\lintcode\SegmentTree.h">
       <Filter>Header Files\lintcode\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\Find theConnectedComponent.h">
+      <Filter>Header Files\lintcode\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\Median.h">
+      <Filter>Header Files\lintcode\BinarySearch</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

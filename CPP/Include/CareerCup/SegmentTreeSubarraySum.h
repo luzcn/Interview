@@ -6,9 +6,6 @@ namespace careercup
 {
     int constructRec(vector<int>& arr, int start, int end, vector<int>& res, int i)
     {
-        //if (start > end)
-        //    return 0;
-
         if (start == end)
         {
             res[i] = arr[start];
@@ -29,7 +26,8 @@ namespace careercup
         if (arr.empty())
             return{};
 
-        vector<int> segment(2 * arr.size() + 1, 0);
+        int height = ceil(log2(arr.size()));
+        vector<int> segment(2 * pow(2, height) - 1, 0);
 
         constructRec(arr, 0, arr.size() - 1, segment, 0);
 
