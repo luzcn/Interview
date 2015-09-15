@@ -64,9 +64,7 @@ namespace lintcode
     {
         // write your code here
         int n = nums.size();
-        if (n % 2 == 0)
-            return topKth(nums, 0, n - 1, n / 2);
-        else
-            return topKth(nums, 0, n - 1, n / 2 + 1);
+        int k = (n + 1) / 2;
+        return topKth(nums, 0, n - 1, k);
     }
 }
