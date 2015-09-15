@@ -9,7 +9,7 @@ input: n = 1432219, k = 3
 output: 1219
 */
 
-namespace DeleteKDigits
+namespace careercup
 {
     // greedy solution,
     // assume the the length of digits > k, and n > 0.

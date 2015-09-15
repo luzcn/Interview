@@ -38,9 +38,8 @@ namespace CoinMakeChange
         return changeWays(n - coins[m - 1], coins, m) + changeWays(n, coins, m - 1);
     }
 
-    /***
-     *	DP solution.
-     */
+    // DP solution
+    // m is the input money, n is the coins array size
     int change_DP(int n, int coins [], int m)
     {
         // create a (n+1)*m grid to save the solution.

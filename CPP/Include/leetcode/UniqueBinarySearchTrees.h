@@ -19,18 +19,16 @@
  */
 namespace UniqueBinarySearchTrees
 {
-    /**
-     *	recursive solution.
-     *
-     *	if n == 0, only one bst tree, empty tree
-     *	if n == 1, only one node tree.
-     *
-     *	if n == 2, number of trees with "1" as root + number of trees with "2" as root.s
-     *	 => numTree(0)*numTree(1) + numTree(1)*numTree(0).
-     *
-     *	 当数组为 1，2，3，4，.. i，.. n时，基于以下原则的BST建树具有唯一性：
-     以i为根节点的树，其左子树由[0, i-1]构成， 其右子树由[i+1, n]构成。
-     */
+    //if n == 0, only one bst tree, empty tree
+    //if n == 1, only one node tree.
+    // 
+    //if n == 2, number of trees with "1" as root + number of trees with "2" as root.
+    //s => numTree(0)*numTree(1) + numTree(1)*numTree(0).
+    // 
+    //当数组为 1,2,3,4...n时，基于以下原则的BST建树具有唯一性:
+    //以i为根节点的树: 1.其左子树由[0, i-1]构成 2.其右子树由[i+1, n]构成。
+
+    //recursive solution.
     int numTrees(int n)
     {
         if (n == 0)
@@ -66,12 +64,50 @@ namespace UniqueBinarySearchTrees
 
         for (int i = 2; i <= n; ++i)
         {
-            for (int j = 0; j < i; ++j)
+            for (int j = 1; j <= i; ++j)
             {
-                count[i] += count[j] * count[i - j - 1];
+                count[i] += count[j - 1] * count[i - j];
             }
         }
-
         return count[n];
+    }
+
+    vector<TreeNode*> generateRec(int min, int max)
+    {
+        vector<TreeNode*> res;
+        if (min > max)
+        {
+            res.push_back(nullptr);
+            return res;
+        }
+
+        vector<TreeNode*> leftSub;
+        vector<TreeNode*> rightSub;
+        for (int i = min; i <= max; i++)
+        {
+            leftSub = std::move(generateRec(min, i - 1));
+            rightSub = std::move(generateRec(i + 1, max));
+
+            for (auto leftNode : leftSub)
+            {
+                for (auto rightNode : rightSub)
+                {
+                    TreeNode* root = new TreeNode(i);
+                    root->left = leftNode;
+                    root->right = rightNode;
+                    res.push_back(root);
+                }
+            }
+        }
+        return res;
+    }
+
+    // generate all the binary search tree
+    vector<TreeNode*> generateTree(int n)
+    {
+        if (n == 0)
+            return{};
+
+        return generateRec(1, n);
     }
 }
