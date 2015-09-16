@@ -85,12 +85,14 @@
     <ClInclude Include="Include\CareerCup\Addition.h" />
     <ClInclude Include="Include\CareerCup\AddTowNumbersAsLinkedList.h" />
     <ClInclude Include="Include\CareerCup\Anagram.h" />
+    <ClInclude Include="Include\CareerCup\BadNeighbors.h" />
     <ClInclude Include="Include\CareerCup\BinaryToHex.h" />
     <ClInclude Include="Include\CareerCup\BSTtoDoubleLinkedList.h" />
     <ClInclude Include="Include\CareerCup\ClosestPairs.h" />
     <ClInclude Include="Include\CareerCup\CoinMakeChange.h" />
     <ClInclude Include="Include\CareerCup\Combinations.h" />
     <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h" />
+    <ClInclude Include="Include\CareerCup\CuttingRod.h" />
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h" />
     <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h" />
     <ClInclude Include="Include\CareerCup\DetectCycle.h" />
@@ -117,6 +119,7 @@
     <ClInclude Include="Include\CareerCup\SubSet.h" />
     <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h" />
     <ClInclude Include="Include\CareerCup\VerifySquenceOfBST.h" />
+    <ClInclude Include="Include\CareerCup\ZigZag.h" />
     <ClInclude Include="Include\DataStructure\BinarySearch.h" />
     <ClInclude Include="Include\DataStructure\BinarySearchTree.h" />
     <ClInclude Include="Include\DataStructure\BinaryTree.h" />

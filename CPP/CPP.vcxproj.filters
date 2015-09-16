@@ -618,6 +618,15 @@
     <ClInclude Include="Include\lintcode\Median.h">
       <Filter>Header Files\lintcode\BinarySearch</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\ZigZag.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\BadNeighbors.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\CuttingRod.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
