@@ -73,6 +73,9 @@
     <Filter Include="Header Files\lintcode\Graph">
       <UniqueIdentifier>{90974f2f-c8c8-4d53-b5ec-b356c6baa23c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\Greedy">
+      <UniqueIdentifier>{232723fe-8472-44dd-a3ab-51477c72cbbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -626,6 +629,12 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\CuttingRod.h">
       <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\MaximalSquare.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\DistinctSubsequences.h">
+      <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
