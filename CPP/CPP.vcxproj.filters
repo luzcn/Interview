@@ -630,11 +630,26 @@
     <ClInclude Include="Include\CareerCup\CuttingRod.h">
       <Filter>Header Files\CareerCup\DP</Filter>
     </ClInclude>
-    <ClInclude Include="Include\lintcode\MaximalSquare.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\leetcode\DistinctSubsequences.h">
       <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\MaximalSquare.h">
+      <Filter>Header Files\lintcode\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\MatrixChainMultiplication.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ShortestPalindrome.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ShortestPathWithMoney.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\GasStation.h">
+      <Filter>Header Files\lintcode\Greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\DeleteKDigits.h">
+      <Filter>Header Files\lintcode\Greedy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

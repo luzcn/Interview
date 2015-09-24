@@ -105,6 +105,7 @@
     <ClInclude Include="Include\CareerCup\LargeFactorial.h" />
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h" />
     <ClInclude Include="Include\CareerCup\LongestIncreasingSubSequence.h" />
+    <ClInclude Include="Include\CareerCup\MatrixChainMultiplication.h" />
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h" />
     <ClInclude Include="Include\CareerCup\MaximumSubarray.h" />
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h" />
@@ -115,6 +116,7 @@
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
     <ClInclude Include="Include\CareerCup\SegmentTreeSubarraySum.h" />
+    <ClInclude Include="Include\CareerCup\ShortestPathWithMoney.h" />
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
     <ClInclude Include="Include\CareerCup\SubSet.h" />
     <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h" />
@@ -219,6 +221,7 @@
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
+    <ClInclude Include="Include\leetcode\ShortestPalindrome.h" />
     <ClInclude Include="Include\leetcode\SimplifyPath.h" />
     <ClInclude Include="Include\leetcode\SingleNumber.h" />
     <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />
@@ -246,11 +249,13 @@
     <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
     <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h" />
     <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h" />
+    <ClInclude Include="Include\lintcode\DeleteKDigits.h" />
     <ClInclude Include="Include\lintcode\ExpressionEvaluation.h" />
     <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h" />
     <ClInclude Include="Include\lintcode\Find theConnectedComponent.h" />
     <ClInclude Include="Include\lintcode\FindPeakElement.h" />
     <ClInclude Include="Include\lintcode\FlipBits.h" />
+    <ClInclude Include="Include\lintcode\GasStation.h" />
     <ClInclude Include="Include\lintcode\MaximalSquare.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
