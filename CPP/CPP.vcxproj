@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
@@ -273,4 +274,291 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3B165BAD-8E07-4A4A-9171-792D8CD03F79}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CPP</RootNamespace>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\CareerCup\Addition.h" />
+    <ClInclude Include="Include\CareerCup\AddTowNumbersAsLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\Anagram.h" />
+    <ClInclude Include="Include\CareerCup\BadNeighbors.h" />
+    <ClInclude Include="Include\CareerCup\BinaryToHex.h" />
+    <ClInclude Include="Include\CareerCup\BSTtoDoubleLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\ClosestPairs.h" />
+    <ClInclude Include="Include\CareerCup\CoinMakeChange.h" />
+    <ClInclude Include="Include\CareerCup\Combinations.h" />
+    <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h" />
+    <ClInclude Include="Include\CareerCup\CuttingRod.h" />
+    <ClInclude Include="Include\CareerCup\DeleteKDigits.h" />
+    <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h" />
+    <ClInclude Include="Include\CareerCup\DetectCycle.h" />
+    <ClInclude Include="Include\CareerCup\ExpressionEvaluation.h" />
+    <ClInclude Include="Include\CareerCup\FindKthSmallest.h" />
+    <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
+    <ClInclude Include="Include\CareerCup\FloodFill.h" />
+    <ClInclude Include="Include\CareerCup\IntToBinary.h" />
+    <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
+    <ClInclude Include="Include\CareerCup\LargeFactorial.h" />
+    <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h" />
+    <ClInclude Include="Include\CareerCup\LongestIncreasingSubSequence.h" />
+    <ClInclude Include="Include\CareerCup\MatrixChainMultiplication.h" />
+    <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h" />
+    <ClInclude Include="Include\CareerCup\MaximumSubarray.h" />
+    <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\Multiplication.h" />
+    <ClInclude Include="Include\CareerCup\NumberOf1Bit.h" />
+    <ClInclude Include="Include\CareerCup\KMP.h" />
+    <ClInclude Include="Include\CareerCup\Permutation.h" />
+    <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
+    <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\SegmentTreeSubarraySum.h" />
+    <ClInclude Include="Include\CareerCup\ShortestPathWithMoney.h" />
+    <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
+    <ClInclude Include="Include\CareerCup\SubSet.h" />
+    <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h" />
+    <ClInclude Include="Include\CareerCup\VerifySquenceOfBST.h" />
+    <ClInclude Include="Include\CareerCup\ZigZag.h" />
+    <ClInclude Include="Include\DataStructure\BinarySearch.h" />
+    <ClInclude Include="Include\DataStructure\BinarySearchTree.h" />
+    <ClInclude Include="Include\DataStructure\BinaryTree.h" />
+    <ClInclude Include="Include\DataStructure\Graph.h" />
+    <ClInclude Include="Include\DataStructure\IntervalTree.h" />
+    <ClInclude Include="Include\DataStructure\MinStack.h" />
+    <ClInclude Include="Include\DataStructure\ProducerConsumer.h" />
+    <ClInclude Include="Include\DataStructure\QueueFromStack.h" />
+    <ClInclude Include="Include\DataStructure\RedBlackTree.h" />
+    <ClInclude Include="Include\DataStructure\ShortestPathInGraph.h" />
+    <ClInclude Include="Include\DataStructure\Sorting.h" />
+    <ClInclude Include="Include\DesignPattern\Observer.h" />
+    <ClInclude Include="Include\DesignPattern\Singleton.h" />
+    <ClInclude Include="Include\leetcode\AddBinary.h" />
+    <ClInclude Include="Include\leetcode\BasicCalculator.h" />
+    <ClInclude Include="Include\leetcode\BestToBuyAndSellStock.h" />
+    <ClInclude Include="Include\leetcode\BinarySearchTreeIterator.h" />
+    <ClInclude Include="Include\leetcode\BinaryTreeLevelOrderTraversal.h" />
+    <ClInclude Include="Include\leetcode\BinaryTreeMaximumPathSum.h" />
+    <ClInclude Include="Include\leetcode\BitwiseAndRange.h" />
+    <ClInclude Include="Include\leetcode\Candy.h" />
+    <ClInclude Include="Include\leetcode\CloneGraph.h" />
+    <ClInclude Include="Include\leetcode\ConstructBinaryTree.h" />
+    <ClInclude Include="Include\leetcode\ContainsDuplicate.h" />
+    <ClInclude Include="Include\leetcode\CopyListwithRandomPointer.h" />
+    <ClInclude Include="Include\leetcode\CountCompleteTreeNodes.h" />
+    <ClInclude Include="Include\leetcode\CountPrimes.h" />
+    <ClInclude Include="Include\leetcode\DecodingWays.h" />
+    <ClInclude Include="Include\leetcode\DifferentWaysAddParentheses.h" />
+    <ClInclude Include="Include\leetcode\DistinctSubsequences.h" />
+    <ClInclude Include="Include\leetcode\DivideTwoInteger.h" />
+    <ClInclude Include="Include\leetcode\DungeonGame.h" />
+    <ClInclude Include="Include\leetcode\EditDistance.h" />
+    <ClInclude Include="Include\leetcode\EvaluateReversePolishNotation.h" />
+    <ClInclude Include="Include\leetcode\ExcelSheetColumnNumber.h" />
+    <ClInclude Include="Include\leetcode\ExcelSheetColumnTitle.h" />
+    <ClInclude Include="Include\leetcode\FindFirstMissingPositiveNumber.h" />
+    <ClInclude Include="Include\leetcode\FindKthSmallestInTowSortedArray.h" />
+    <ClInclude Include="Include\leetcode\FindMinimuminRotatedSortedArray.h" />
+    <ClInclude Include="Include\leetcode\FindPeakElement.h" />
+    <ClInclude Include="Include\leetcode\FlattenBinaryTreeToLinkedList.h" />
+    <ClInclude Include="Include\leetcode\GasStation.h" />
+    <ClInclude Include="Include\leetcode\GrayCode.h" />
+    <ClInclude Include="Include\leetcode\HappyNumber.h" />
+    <ClInclude Include="Include\leetcode\HouseRobber.h" />
+    <ClInclude Include="Include\leetcode\ImplementQueueUsingStack.h" />
+    <ClInclude Include="Include\leetcode\ImplementStackUsingQueues.h" />
+    <ClInclude Include="Include\leetcode\ImplementstrStr.h" />
+    <ClInclude Include="Include\leetcode\InsertionSortList.h" />
+    <ClInclude Include="Include\leetcode\IsomorphicStrings.h" />
+    <ClInclude Include="Include\leetcode\JumpGame.h" />
+    <ClInclude Include="Include\leetcode\KthSmallestElementInBST.h" />
+    <ClInclude Include="Include\leetcode\LargestNumber.h" />
+    <ClInclude Include="Include\leetcode\LengthOfLongestSubstring.h" />
+    <ClInclude Include="Include\leetcode\LetterCombinationsPhoneNumber.h" />
+    <ClInclude Include="Include\leetcode\LowestCommonAncestor.h" />
+    <ClInclude Include="Include\leetcode\LengthofLastWord.h" />
+    <ClInclude Include="Include\leetcode\LinkedListCycle.h" />
+    <ClInclude Include="Include\leetcode\LongestConsecutiveSequence.h" />
+    <ClInclude Include="Include\leetcode\LongestPalindromicSubstring.h" />
+    <ClInclude Include="Include\leetcode\LongestSubstringWithoutRepeatingCharacters.h" />
+    <ClInclude Include="Include\leetcode\longestValidParentheses.h" />
+    <ClInclude Include="Include\leetcode\LRUCache.h" />
+    <ClInclude Include="Include\leetcode\MajorityElement2.h" />
+    <ClInclude Include="Include\leetcode\MaximalRectangle.h" />
+    <ClInclude Include="Include\leetcode\MaximumDepth.h" />
+    <ClInclude Include="Include\leetcode\MaximumProductSubarray.h" />
+    <ClInclude Include="Include\leetcode\MaxPointsOnALine.h" />
+    <ClInclude Include="Include\leetcode\MergeKSortedList.h" />
+    <ClInclude Include="Include\leetcode\MergeTowSortedList.h" />
+    <ClInclude Include="Include\leetcode\MinPathSum.h" />
+    <ClInclude Include="Include\leetcode\MinStack.h" />
+    <ClInclude Include="Include\leetcode\MultiplyStrings.h" />
+    <ClInclude Include="Include\leetcode\NextPermutation.h" />
+    <ClInclude Include="Include\leetcode\NQueens.h" />
+    <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
+    <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
+    <ClInclude Include="Include\leetcode\PalindromePartitioning2.h" />
+    <ClInclude Include="Include\leetcode\PalindromLinkedList.h" />
+    <ClInclude Include="Include\leetcode\PartitionList.h" />
+    <ClInclude Include="Include\leetcode\PathSum.h" />
+    <ClInclude Include="Include\leetcode\PathSum2.h" />
+    <ClInclude Include="Include\leetcode\PlusOne.h" />
+    <ClInclude Include="Include\leetcode\PopulatingNextRightNodeInEachNode.h" />
+    <ClInclude Include="Include\leetcode\Pow.h" />
+    <ClInclude Include="Include\leetcode\ProductOfArrayExceptSelf.h" />
+    <ClInclude Include="Include\leetcode\RectangleArea.h" />
+    <ClInclude Include="Include\leetcode\RegularExpressMatching.h" />
+    <ClInclude Include="Include\leetcode\RemoveDuplicatesFromSortedArray.h" />
+    <ClInclude Include="Include\leetcode\RemoveNthNodeFromEndofList.h" />
+    <ClInclude Include="Include\leetcode\ReorderList.h" />
+    <ClInclude Include="Include\leetcode\RestoreIPAddresses.h" />
+    <ClInclude Include="Include\leetcode\ReverseLinkedList.h" />
+    <ClInclude Include="Include\leetcode\ReverseNodesInKGroup.h" />
+    <ClInclude Include="Include\leetcode\ReverserInteger.h" />
+    <ClInclude Include="Include\leetcode\ReverseWord.h" />
+    <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h" />
+    <ClInclude Include="Include\leetcode\SetColor.h" />
+    <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
+    <ClInclude Include="Include\leetcode\ShortestPalindrome.h" />
+    <ClInclude Include="Include\leetcode\SimplifyPath.h" />
+    <ClInclude Include="Include\leetcode\SingleNumber.h" />
+    <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />
+    <ClInclude Include="Include\leetcode\SpiralMatrix.h" />
+    <ClInclude Include="Include\leetcode\Sqrt.h" />
+    <ClInclude Include="Include\leetcode\StringToInteger.h" />
+    <ClInclude Include="Include\leetcode\SubSets.h" />
+    <ClInclude Include="Include\leetcode\SubstringwithConcatenationofAllWords.h" />
+    <ClInclude Include="Include\leetcode\SudokuSolver.h" />
+    <ClInclude Include="Include\leetcode\SummaryRanges.h" />
+    <ClInclude Include="Include\leetcode\SumRootToLeafNumbers.h" />
+    <ClInclude Include="Include\leetcode\SurroundedRegions.h" />
+    <ClInclude Include="Include\leetcode\SwapNodesinPairs.h" />
+    <ClInclude Include="Include\leetcode\TrappingRainingWater.h" />
+    <ClInclude Include="Include\leetcode\Triangle.h" />
+    <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
+    <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
+    <ClInclude Include="Include\leetcode\ValidSudoku.h" />
+    <ClInclude Include="Include\leetcode\WordBreak.h" />
+    <ClInclude Include="Include\leetcode\WordBreak2.h" />
+    <ClInclude Include="Include\leetcode\WordLadder.h" />
+    <ClInclude Include="Include\leetcode\ZigZagConversion.h" />
+    <ClInclude Include="Include\lintcode\AssignmentOperatorOverload.h" />
+    <ClInclude Include="Include\lintcode\BackPack.h" />
+    <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
+    <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h" />
+    <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h" />
+    <ClInclude Include="Include\lintcode\DeleteKDigits.h" />
+    <ClInclude Include="Include\lintcode\ExpressionEvaluation.h" />
+    <ClInclude Include="Include\lintcode\ExpressionTreeBuild.h" />
+    <ClInclude Include="Include\lintcode\Find theConnectedComponent.h" />
+    <ClInclude Include="Include\lintcode\FindPeakElement.h" />
+    <ClInclude Include="Include\lintcode\FlipBits.h" />
+    <ClInclude Include="Include\lintcode\GasStation.h" />
+    <ClInclude Include="Include\lintcode\MaximalSquare.h" />
+    <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
+    <ClInclude Include="Include\lintcode\Median.h" />
+    <ClInclude Include="Include\lintcode\Rehashing.h" />
+    <ClInclude Include="Include\lintcode\RemoveElement.h" />
+    <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h" />
+    <ClInclude Include="Include\lintcode\SegmentTree.h" />
+    <ClInclude Include="Include\lintcode\SortLetters.h" />
+    <ClInclude Include="Include\lintcode\SpaceReplacement.h" />
+    <ClInclude Include="Include\lintcode\SubarraySum.h" />
+    <ClInclude Include="Include\lintcode\SubarraySumClosest.h" />
+    <ClInclude Include="Include\lintcode\ThreeSumClosest.h" />
+    <ClInclude Include="Include\lintcode\TrailingZeros.h" />
+    <ClInclude Include="Include\lintcode\WoodCut.h" />
+    <ClInclude Include="Include\stdafx.h" />
+    <ClInclude Include="Include\targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CPP.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+>>>>>>> Development
 </Project>

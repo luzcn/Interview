@@ -53,15 +53,12 @@ namespace LongestPalindromicSubstring
     }
 
 #pragma region DP solution, O(n^2) time and space
-    /**
-*	DP solution, O(n^2) time, O(n^2) space.
-*
-*	Defin DP[i][j] = true, if the substring s[i]...s[j] is palidrom.
-*
-*	So, the transform function is:
-*	DP[i][i] = true;
-*	DP[i][j] = DP[i+1][j-1] && s[i] == s[j], j-i>1
-*/
+    //  DP solution, O(n^2) time, O(n^2) space.
+	//  Defin DP[i][j] = true, if the substring s[i]...s[j] is palidrom.
+	//  So, the transform function is:
+	//  DP[i][i] = true;
+    //  DP[i][i+1] = true; if s[i] == s[i+1]
+	//  DP[i][j] = DP[i+1][j-1] && s[i] == s[j], j-i>1
     string longestPalindrome_DP(string s)
     {
         if (s.empty())
