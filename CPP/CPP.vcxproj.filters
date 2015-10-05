@@ -651,6 +651,9 @@
     <ClInclude Include="Include\lintcode\DeleteKDigits.h">
       <Filter>Header Files\lintcode\Greedy</Filter>
     </ClInclude>
+    <ClInclude Include="Include\lintcode\PreviousPermutation.h">
+      <Filter>Header Files\lintcode\Graph</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
