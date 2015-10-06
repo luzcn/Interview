@@ -119,6 +119,7 @@
     <ClInclude Include="Include\CareerCup\ShortestPathWithMoney.h" />
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
     <ClInclude Include="Include\CareerCup\SubSet.h" />
+    <ClInclude Include="Include\CareerCup\TwoSumInBST.h" />
     <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h" />
     <ClInclude Include="Include\CareerCup\VerifySquenceOfBST.h" />
     <ClInclude Include="Include\CareerCup\ZigZag.h" />
@@ -256,6 +257,7 @@
     <ClInclude Include="Include\lintcode\FindPeakElement.h" />
     <ClInclude Include="Include\lintcode\FlipBits.h" />
     <ClInclude Include="Include\lintcode\GasStation.h" />
+    <ClInclude Include="Include\lintcode\InsertionSortList.h" />
     <ClInclude Include="Include\lintcode\MaximalSquare.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
@@ -265,6 +267,7 @@
     <ClInclude Include="Include\lintcode\RouteBetweenTwoNodesInGraph.h" />
     <ClInclude Include="Include\lintcode\SegmentTree.h" />
     <ClInclude Include="Include\lintcode\SortLetters.h" />
+    <ClInclude Include="Include\lintcode\SortList.h" />
     <ClInclude Include="Include\lintcode\SpaceReplacement.h" />
     <ClInclude Include="Include\lintcode\SubarraySum.h" />
     <ClInclude Include="Include\lintcode\SubarraySumClosest.h" />

@@ -654,6 +654,15 @@
     <ClInclude Include="Include\lintcode\PreviousPermutation.h">
       <Filter>Header Files\lintcode\Graph</Filter>
     </ClInclude>
+    <ClInclude Include="Include\lintcode\InsertionSortList.h">
+      <Filter>Header Files\lintcode\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SortList.h">
+      <Filter>Header Files\lintcode\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\TwoSumInBST.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
