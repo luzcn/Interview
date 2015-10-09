@@ -41,7 +41,7 @@ namespace datastructure
         return root;
     }
 
-    // insert a new node
+    // insert a new node, returns the BST root node
     TreeNode* insert(TreeNode* root, int v)
     {
         if (!root)
@@ -51,6 +51,8 @@ namespace datastructure
             root->left = insert(root->left, v);
         else
             root->right = insert(root->right, v);
+
+        return root;
     }
 
     // The Delete, Successor and predecessor operations may need "parent" pointer
