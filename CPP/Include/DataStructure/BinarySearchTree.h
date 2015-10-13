@@ -55,6 +55,130 @@ namespace datastructure
         return root;
     }
 
+
+    void transplant(TreeNode* parent, TreeNode* node, TreeNode* newNode)
+    {
+        if (parent->left == node)
+            parent->left = newNode;
+        else
+            parent->right =newNode;
+
+        node->left = nullptr;
+        node->right = nullptr;
+    }
+
+    TreeNode* deleteNodeRec(TreeNode* parent, TreeNode* node, int v)
+    {
+        if (!node)
+            return nullptr;
+
+        if (node->val == v)
+        {
+            if (!node->left)
+            {
+                if (!parent)
+                    return node->right;
+
+                transplant(parent, node, node->right);
+            }
+            else if (!node->right)
+            {
+                if (!parent)
+                    return node->left;
+
+                transplant(parent, node, node->left);
+            }
+            else
+            {
+                // find the successor of node
+                auto successor = node->right;
+                TreeNode* prev = nullptr;
+                while (successor->left)
+                {
+                    prev = successor;
+                    successor = successor->left;
+                }
+
+                // if the successor is the right child of target node
+                // 1. set the left child of target node as the left of successor
+                // 2. transplant the parent and 
+                if (node->right == successor)
+                {
+                    successor->left = node->left;
+                    if (!parent)
+                        return successor;
+
+                    transplant(parent, node, successor);
+                }
+                else
+                {
+                    prev->left = successor->right;
+                    successor->left = node->left;
+                    successor->right = node->right;
+
+                    if (!parent)
+                        return successor;
+
+                    transplant(parent, node, successor);
+                }
+            }
+        }
+        deleteNodeRec(node, node->left, v);
+        deleteNodeRec(node, node->right, v);
+
+        return node;
+    }
+
+    // delete a tree node which has value v, return the tree root node.
+    // 1. if the target node v has no children, simply delete this node.
+    // 2. if v has only one child y, replace the v node with y by v's parent to point y as child
+    // 3. if v has two children, find the successor y (which must be in the righ subtree of v)
+    //   - if y is v's right child, 
+    TreeNode* deleteNode(TreeNode* root, int target)
+    {
+        // inorder traverse
+        if (!root)
+            return root;
+
+        //if (root->val == target)
+        //{
+        //    if (!root->left)
+        //    {
+        //        return root->right;
+        //    }
+        //    else if (!root->right)
+        //    {
+        //        return root->right;
+        //    }
+        //    else
+        //    {
+        //        // find the successor of node
+        //        auto successor = root->right;
+        //        TreeNode* prev = nullptr;
+        //        while (successor->left)
+        //        {
+        //            prev = successor;
+        //            successor = successor->left;
+        //        }
+        //        // if the successor is the right child of target node
+        //        // 1. set the left child of target node as the left of successor
+        //        if (root->right == successor)
+        //        {
+        //            successor->left = root->left;
+        //        }
+        //        else
+        //        {
+        //            prev->left = successor->right;
+        //            successor->left = root->left;
+        //            successor->right = root->right;
+        //        }
+        //        return successor;
+        //    }
+        //}
+
+        return deleteNodeRec(nullptr, root, target);
+    }
+
     // The Delete, Successor and predecessor operations may need "parent" pointer
     namespace details
     {
@@ -82,7 +206,7 @@ namespace datastructure
             if (node->right)
             {
                 auto n = node->right;
-                while(n->left)
+                while (n->left)
                 {
                     n = n->left;
                 }

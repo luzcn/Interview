@@ -112,6 +112,7 @@
     <ClInclude Include="Include\CareerCup\Multiplication.h" />
     <ClInclude Include="Include\CareerCup\NumberOf1Bit.h" />
     <ClInclude Include="Include\CareerCup\KMP.h" />
+    <ClInclude Include="Include\CareerCup\PaintersPartition.h" />
     <ClInclude Include="Include\CareerCup\Permutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
@@ -119,6 +120,7 @@
     <ClInclude Include="Include\CareerCup\ShortestPathWithMoney.h" />
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
     <ClInclude Include="Include\CareerCup\SubSet.h" />
+    <ClInclude Include="Include\CareerCup\TreeSerialization.h" />
     <ClInclude Include="Include\CareerCup\TwoSumInBST.h" />
     <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h" />
     <ClInclude Include="Include\CareerCup\VerifySquenceOfBST.h" />

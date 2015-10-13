@@ -663,6 +663,12 @@
     <ClInclude Include="Include\CareerCup\TwoSumInBST.h">
       <Filter>Header Files\CareerCup\Tree</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\TreeSerialization.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PaintersPartition.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
