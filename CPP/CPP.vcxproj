@@ -101,6 +101,7 @@
     <ClInclude Include="Include\CareerCup\FindKthSmallest.h" />
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
     <ClInclude Include="Include\CareerCup\FloodFill.h" />
+    <ClInclude Include="Include\CareerCup\HuffmanCoding.h" />
     <ClInclude Include="Include\CareerCup\IntToBinary.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
     <ClInclude Include="Include\CareerCup\LargeFactorial.h" />

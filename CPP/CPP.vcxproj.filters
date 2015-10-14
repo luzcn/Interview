@@ -678,6 +678,9 @@
     <ClInclude Include="Include\CareerCup\ActivitySelection.h">
       <Filter>Header Files\CareerCup\Greedy</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\HuffmanCoding.h">
+      <Filter>Header Files\CareerCup\Greedy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
