@@ -82,6 +82,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\CareerCup\ActivitySelection.h" />
     <ClInclude Include="Include\CareerCup\Addition.h" />
     <ClInclude Include="Include\CareerCup\AddTowNumbersAsLinkedList.h" />
     <ClInclude Include="Include\CareerCup\Anagram.h" />
@@ -113,6 +114,7 @@
     <ClInclude Include="Include\CareerCup\NumberOf1Bit.h" />
     <ClInclude Include="Include\CareerCup\KMP.h" />
     <ClInclude Include="Include\CareerCup\PaintersPartition.h" />
+    <ClInclude Include="Include\CareerCup\PartitionProblem.h" />
     <ClInclude Include="Include\CareerCup\Permutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />

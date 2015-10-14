@@ -12,5 +12,5 @@
 // Divide A into k or fewer partitions, such that the maximum sum over all the partitions is minimized.
 namespace careercup
 {
-
+    // TODO
 }

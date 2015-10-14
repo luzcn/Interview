@@ -76,6 +76,9 @@
     <Filter Include="Header Files\lintcode\Greedy">
       <UniqueIdentifier>{232723fe-8472-44dd-a3ab-51477c72cbbc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\Greedy">
+      <UniqueIdentifier>{a379c448-4c36-4e89-b527-4dfd90891fde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -668,6 +671,12 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\PaintersPartition.h">
       <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PartitionProblem.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ActivitySelection.h">
+      <Filter>Header Files\CareerCup\Greedy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
