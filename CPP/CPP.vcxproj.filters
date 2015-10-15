@@ -669,9 +669,6 @@
     <ClInclude Include="Include\CareerCup\TreeSerialization.h">
       <Filter>Header Files\CareerCup\Tree</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\PaintersPartition.h">
-      <Filter>Header Files\CareerCup\Array</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\PartitionProblem.h">
       <Filter>Header Files\CareerCup\DP</Filter>
     </ClInclude>
@@ -680,6 +677,18 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\HuffmanCoding.h">
       <Filter>Header Files\CareerCup\Greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\StringPartition.h">
+      <Filter>Header Files\CareerCup\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PaintersPartition.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ExpressionAddOperators.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\NimGame.h">
+      <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

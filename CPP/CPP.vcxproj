@@ -122,6 +122,7 @@
     <ClInclude Include="Include\CareerCup\SegmentTreeSubarraySum.h" />
     <ClInclude Include="Include\CareerCup\ShortestPathWithMoney.h" />
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
+    <ClInclude Include="Include\CareerCup\StringPartition.h" />
     <ClInclude Include="Include\CareerCup\SubSet.h" />
     <ClInclude Include="Include\CareerCup\TreeSerialization.h" />
     <ClInclude Include="Include\CareerCup\TwoSumInBST.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Include\leetcode\EvaluateReversePolishNotation.h" />
     <ClInclude Include="Include\leetcode\ExcelSheetColumnNumber.h" />
     <ClInclude Include="Include\leetcode\ExcelSheetColumnTitle.h" />
+    <ClInclude Include="Include\leetcode\ExpressionAddOperators.h" />
     <ClInclude Include="Include\leetcode\FindFirstMissingPositiveNumber.h" />
     <ClInclude Include="Include\leetcode\FindKthSmallestInTowSortedArray.h" />
     <ClInclude Include="Include\leetcode\FindMinimuminRotatedSortedArray.h" />
@@ -202,6 +204,7 @@
     <ClInclude Include="Include\leetcode\MinStack.h" />
     <ClInclude Include="Include\leetcode\MultiplyStrings.h" />
     <ClInclude Include="Include\leetcode\NextPermutation.h" />
+    <ClInclude Include="Include\leetcode\NimGame.h" />
     <ClInclude Include="Include\leetcode\NQueens.h" />
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
