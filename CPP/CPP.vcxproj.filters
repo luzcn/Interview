@@ -79,6 +79,9 @@
     <Filter Include="Header Files\CareerCup\Greedy">
       <UniqueIdentifier>{a379c448-4c36-4e89-b527-4dfd90891fde}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\Recursion">
+      <UniqueIdentifier>{d00d0863-a3d4-4528-92d1-ce833a9b600d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -689,6 +692,9 @@
     </ClInclude>
     <ClInclude Include="Include\leetcode\NimGame.h">
       <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\Combination.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

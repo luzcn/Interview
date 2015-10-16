@@ -256,6 +256,7 @@
     <ClInclude Include="Include\lintcode\AssignmentOperatorOverload.h" />
     <ClInclude Include="Include\lintcode\BackPack.h" />
     <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
+    <ClInclude Include="Include\lintcode\Combination.h" />
     <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h" />
     <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h" />
     <ClInclude Include="Include\lintcode\DeleteKDigits.h" />
