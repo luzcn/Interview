@@ -98,6 +98,7 @@
     <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h" />
     <ClInclude Include="Include\CareerCup\DetectCycle.h" />
     <ClInclude Include="Include\CareerCup\ExpressionEvaluation.h" />
+    <ClInclude Include="Include\CareerCup\FindCommonNodesInTwoBST.h" />
     <ClInclude Include="Include\CareerCup\FindKthSmallest.h" />
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
     <ClInclude Include="Include\CareerCup\FloodFill.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Include\leetcode\BitwiseAndRange.h" />
     <ClInclude Include="Include\leetcode\Candy.h" />
     <ClInclude Include="Include\leetcode\CloneGraph.h" />
+    <ClInclude Include="Include\leetcode\CombinationSum2.h" />
     <ClInclude Include="Include\leetcode\ConstructBinaryTree.h" />
     <ClInclude Include="Include\leetcode\ContainsDuplicate.h" />
     <ClInclude Include="Include\leetcode\CopyListwithRandomPointer.h" />
@@ -270,6 +272,7 @@
     <ClInclude Include="Include\lintcode\MaximalSquare.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
+    <ClInclude Include="Include\lintcode\NQueen.h" />
     <ClInclude Include="Include\lintcode\PreviousPermutation.h" />
     <ClInclude Include="Include\lintcode\Rehashing.h" />
     <ClInclude Include="Include\lintcode\RemoveElement.h" />

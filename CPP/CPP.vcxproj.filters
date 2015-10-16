@@ -696,6 +696,15 @@
     <ClInclude Include="Include\lintcode\Combination.h">
       <Filter>Header Files\lintcode\Recursion</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\CombinationSum2.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\NQueen.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\FindCommonNodesInTwoBST.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
