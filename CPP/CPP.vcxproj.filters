@@ -705,6 +705,12 @@
     <ClInclude Include="Include\CareerCup\FindCommonNodesInTwoBST.h">
       <Filter>Header Files\CareerCup\Tree</Filter>
     </ClInclude>
+    <ClInclude Include="Include\lintcode\SubSet2.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\Permutation.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

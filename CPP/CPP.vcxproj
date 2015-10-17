@@ -273,6 +273,7 @@
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
     <ClInclude Include="Include\lintcode\NQueen.h" />
+    <ClInclude Include="Include\lintcode\Permutation.h" />
     <ClInclude Include="Include\lintcode\PreviousPermutation.h" />
     <ClInclude Include="Include\lintcode\Rehashing.h" />
     <ClInclude Include="Include\lintcode\RemoveElement.h" />
@@ -283,6 +284,7 @@
     <ClInclude Include="Include\lintcode\SpaceReplacement.h" />
     <ClInclude Include="Include\lintcode\SubarraySum.h" />
     <ClInclude Include="Include\lintcode\SubarraySumClosest.h" />
+    <ClInclude Include="Include\lintcode\SubSet2.h" />
     <ClInclude Include="Include\lintcode\ThreeSumClosest.h" />
     <ClInclude Include="Include\lintcode\TrailingZeros.h" />
     <ClInclude Include="Include\lintcode\WoodCut.h" />
