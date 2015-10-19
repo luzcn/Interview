@@ -288,6 +288,7 @@
     <ClInclude Include="Include\lintcode\ThreeSumClosest.h" />
     <ClInclude Include="Include\lintcode\TrailingZeros.h" />
     <ClInclude Include="Include\lintcode\WoodCut.h" />
+    <ClInclude Include="Include\lintcode\WordLadder2.h" />
     <ClInclude Include="Include\stdafx.h" />
     <ClInclude Include="Include\targetver.h" />
   </ItemGroup>
