@@ -30,74 +30,58 @@ namespace lintcode
 
         int n = A.size();
 
-        // find the leftMax sum 
-        vector<int> leftMaxSum(n, 0);
-        int currentSum = 0;
+        vector<int> leftMaxSum(n);
+        vector<int> leftMinSum(n);
+
         int maxSum = INT_MIN;
+        int minSum = INT_MAX;
+        int currentMax = 0;
+        int currentMin = 0;
         for (int i = 0; i < n; i++)
         {
-            currentSum += A[i];
-            maxSum = max(maxSum, currentSum);
-            if (currentSum < 0)
-                currentSum = 0;
-
+            currentMax += A[i];
+            maxSum = max(maxSum, currentMax);
             leftMaxSum[i] = maxSum;
+            if (currentMax < 0)
+                currentMax = 0;
+
+            currentMin += A[i];
+            minSum = min(minSum, currentMin);
+            leftMinSum[i] = minSum;
+            if (currentMin > 0)
+                currentMin = 0;
         }
 
-        // find right min sum
-        vector<int> rightMinSum(n, 0);
-        currentSum = 0;
-        int minSum = INT_MAX;
+        currentMax = 0;
+        currentMin = 0;
+        maxSum = INT_MIN;
+        minSum = INT_MAX;
+        vector<int> rightMaxSum(n);
+        vector<int> rightMinSum(n);
         for (int i = n - 1; i >= 0; i--)
         {
-            currentSum += A[i];
-            minSum = min(minSum, currentSum);
-            if (currentSum > 0)
-                currentSum = 0;
+            currentMax += A[i];
+            maxSum = max(maxSum, currentMax);
+            rightMaxSum[i] = maxSum;
+            if (currentMax < 0)
+                currentMax = 0;
 
+            currentMin += A[i];
+            minSum = min(minSum, currentMin);
             rightMinSum[i] = minSum;
+            if (currentMin > 0)
+                currentMin = 0;
         }
 
-        int max1 = INT_MIN;
+        int max1 = INT_MIN, max2 = INT_MIN;
         for (int i = 0; i < n - 1; i++)
         {
             max1 = max(max1, abs(leftMaxSum[i] - rightMinSum[i + 1]));
         }
 
-
-        // find the leftMin auxiliary array
-        vector<int> leftMinSum(n, 0);
-        currentSum = 0;
-        minSum = INT_MAX;
-        for (int i = 0; i < n; i++)
+        for (int i = n - 1; i > 0; i--)
         {
-            currentSum += A[i];
-            minSum = min(minSum, currentSum);
-            if (currentSum > 0)
-                currentSum = 0;
-
-            leftMinSum[i] = minSum;
-        }
-
-
-        // find the rightMax 
-        vector<int> rightMaxSum(n, 0);
-        currentSum = 0;
-        maxSum = INT_MIN;
-        for (int i = n - 1; i >= 0; i--)
-        {
-            currentSum += A[i];
-            maxSum = max(maxSum, currentSum);
-            if (currentSum < 0)
-                currentSum = 0;
-
-            rightMaxSum[i] = maxSum;
-        }
-
-        int max2 = INT_MIN;
-        for (int i = 0; i < n - 1; i++)
-        {
-            max2 = max(max2, abs(rightMaxSum[i] - leftMinSum[i + 1]));
+            max2 = max(max2, abs(rightMaxSum[i] - leftMinSum[i - 1]));
         }
 
         return max(max1, max2);
