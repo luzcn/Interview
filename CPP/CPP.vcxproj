@@ -270,6 +270,7 @@
     <ClInclude Include="Include\lintcode\GasStation.h" />
     <ClInclude Include="Include\lintcode\InsertionSortList.h" />
     <ClInclude Include="Include\lintcode\MaximalSquare.h" />
+    <ClInclude Include="Include\lintcode\MaximumSubarrayDifference.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
     <ClInclude Include="Include\lintcode\NQueen.h" />

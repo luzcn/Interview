@@ -82,6 +82,9 @@
     <Filter Include="Header Files\lintcode\Recursion">
       <UniqueIdentifier>{d00d0863-a3d4-4528-92d1-ce833a9b600d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\Array">
+      <UniqueIdentifier>{ac57b036-8ad3-407f-b0f2-7fbb03649c32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -516,9 +519,6 @@
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\lintcode\ThreeSumClosest.h">
-      <Filter>Header Files\lintcode</Filter>
-    </ClInclude>
     <ClInclude Include="Include\lintcode\SortLetters.h">
       <Filter>Header Files\lintcode</Filter>
     </ClInclude>
@@ -530,12 +530,6 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h">
       <Filter>Header Files\CareerCup\Tree</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\lintcode\SubarraySum.h">
-      <Filter>Header Files\lintcode</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\lintcode\SubarraySumClosest.h">
-      <Filter>Header Files\lintcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\lintcode\WoodCut.h">
       <Filter>Header Files\lintcode\BinarySearch</Filter>
@@ -713,6 +707,18 @@
     </ClInclude>
     <ClInclude Include="Include\lintcode\WordLadder2.h">
       <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SubarraySum.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SubarraySumClosest.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\ThreeSumClosest.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\MaximumSubarrayDifference.h">
+      <Filter>Header Files\lintcode\Array</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
