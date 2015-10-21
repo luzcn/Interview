@@ -75,9 +75,13 @@ namespace leetcode
         {
             for (int j = t.size(); j >= 1; j--)
             {
-                if (s[i - 1] == t[j - 1])
+                // if i < j, there is no subsequence available for s(0...i) => t(0...j), since we can only delete.
+                if (i >= j)
                 {
-                    dp[j] = dp[j - 1] + dp[j];
+                    if (s[i - 1] == t[j - 1])
+                    {
+                        dp[j] = dp[j - 1] + dp[j];
+                    }
                 }
             }
         }

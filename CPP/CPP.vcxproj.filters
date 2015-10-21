@@ -720,6 +720,12 @@
     <ClInclude Include="Include\lintcode\MaximumSubarrayDifference.h">
       <Filter>Header Files\lintcode\Array</Filter>
     </ClInclude>
+    <ClInclude Include="Include\lintcode\MaximumProductSubarray.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\InterleavingString.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

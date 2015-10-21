@@ -181,6 +181,7 @@
     <ClInclude Include="Include\leetcode\ImplementStackUsingQueues.h" />
     <ClInclude Include="Include\leetcode\ImplementstrStr.h" />
     <ClInclude Include="Include\leetcode\InsertionSortList.h" />
+    <ClInclude Include="Include\leetcode\InterleavingString.h" />
     <ClInclude Include="Include\leetcode\IsomorphicStrings.h" />
     <ClInclude Include="Include\leetcode\JumpGame.h" />
     <ClInclude Include="Include\leetcode\KthSmallestElementInBST.h" />
@@ -270,6 +271,7 @@
     <ClInclude Include="Include\lintcode\GasStation.h" />
     <ClInclude Include="Include\lintcode\InsertionSortList.h" />
     <ClInclude Include="Include\lintcode\MaximalSquare.h" />
+    <ClInclude Include="Include\lintcode\MaximumProductSubarray.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarrayDifference.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
