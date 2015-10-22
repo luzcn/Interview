@@ -249,6 +249,7 @@
     <ClInclude Include="Include\leetcode\SwapNodesinPairs.h" />
     <ClInclude Include="Include\leetcode\TrappingRainingWater.h" />
     <ClInclude Include="Include\leetcode\Triangle.h" />
+    <ClInclude Include="Include\leetcode\UglyNumber.h" />
     <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
     <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
@@ -270,6 +271,7 @@
     <ClInclude Include="Include\lintcode\FlipBits.h" />
     <ClInclude Include="Include\lintcode\GasStation.h" />
     <ClInclude Include="Include\lintcode\InsertionSortList.h" />
+    <ClInclude Include="Include\lintcode\LongestConsecutiveSequence.h" />
     <ClInclude Include="Include\lintcode\MaximalSquare.h" />
     <ClInclude Include="Include\lintcode\MaximumProductSubarray.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarrayDifference.h" />

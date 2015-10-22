@@ -38,9 +38,33 @@ namespace leetcode
 
     bool isInterleaveDP(string& s1, string& s2, string& s3)
     {
-        
+        int m = s1.size();
+        int n = s2.size();
+
+        vector<vector<bool>> dp(m + 1, vector<bool>(n + 1, false));
+
+        // base condition
+        // s1, s2 both empty, we can always interleaving an empty string
+        dp[0][0] = true;
+
+        for (int i = 0; i <= m; i++)
+        {
+            for (int j = 0; j <= n; j++)
+            {
+                if (i > 0 && dp[i - 1][j] && s1[i - 1] == s3[i + j - 1])
+                {
+                    dp[i][j] = true;
+                }
+                else if (j > 0 && dp[i][j - 1] && s2[j - 1] == s3[i + j - 1])
+                {
+                    dp[i][j] = true;
+                }
+            }
+        }
+
+        return dp[m][n];
     }
-    bool isInterleave(string& s1, string& s2, string& s3)
+    bool isInterleave(string s1, string s2, string s3)
     {
         if (s1.size() == 0)
         {
@@ -58,7 +82,8 @@ namespace leetcode
                 return false;
         }
 
-        return isInterleaveRec(s1, s2, s3, 0, 0, 0);
+        //return isInterleaveRec(s1, s2, s3, 0, 0, 0);
+        return isInterleaveDP(s1, s2, s3);
     }
 
 
