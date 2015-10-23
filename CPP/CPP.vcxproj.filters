@@ -88,6 +88,9 @@
     <Filter Include="Header Files\lintcode\Array">
       <UniqueIdentifier>{ac57b036-8ad3-407f-b0f2-7fbb03649c32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\Graph">
+      <UniqueIdentifier>{f3a3c34f-6fe8-42a2-b232-a87ffe80a4e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -733,6 +736,21 @@
       <Filter>Header Files\lintcode\DataStructure</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\UglyNumber.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\RobotMergeProblem.h">
+      <Filter>Header Files\CareerCup</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MergeIntervals.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MaxGap.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\RotateImage.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\GenerateParenthesis.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

@@ -120,6 +120,7 @@
     <ClInclude Include="Include\CareerCup\Permutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\RobotMergeProblem.h" />
     <ClInclude Include="Include\CareerCup\SegmentTreeSubarraySum.h" />
     <ClInclude Include="Include\CareerCup\ShortestPathWithMoney.h" />
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Include\leetcode\FindPeakElement.h" />
     <ClInclude Include="Include\leetcode\FlattenBinaryTreeToLinkedList.h" />
     <ClInclude Include="Include\leetcode\GasStation.h" />
+    <ClInclude Include="Include\leetcode\GenerateParenthesis.h" />
     <ClInclude Include="Include\leetcode\GrayCode.h" />
     <ClInclude Include="Include\leetcode\HappyNumber.h" />
     <ClInclude Include="Include\leetcode\HouseRobber.h" />
@@ -197,10 +199,12 @@
     <ClInclude Include="Include\leetcode\longestValidParentheses.h" />
     <ClInclude Include="Include\leetcode\LRUCache.h" />
     <ClInclude Include="Include\leetcode\MajorityElement2.h" />
+    <ClInclude Include="Include\leetcode\MaxGap.h" />
     <ClInclude Include="Include\leetcode\MaximalRectangle.h" />
     <ClInclude Include="Include\leetcode\MaximumDepth.h" />
     <ClInclude Include="Include\leetcode\MaximumProductSubarray.h" />
     <ClInclude Include="Include\leetcode\MaxPointsOnALine.h" />
+    <ClInclude Include="Include\leetcode\MergeIntervals.h" />
     <ClInclude Include="Include\leetcode\MergeKSortedList.h" />
     <ClInclude Include="Include\leetcode\MergeTowSortedList.h" />
     <ClInclude Include="Include\leetcode\MinPathSum.h" />
@@ -230,6 +234,7 @@
     <ClInclude Include="Include\leetcode\ReverseNodesInKGroup.h" />
     <ClInclude Include="Include\leetcode\ReverserInteger.h" />
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
+    <ClInclude Include="Include\leetcode\RotateImage.h" />
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
