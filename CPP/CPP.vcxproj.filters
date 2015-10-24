@@ -91,6 +91,9 @@
     <Filter Include="Header Files\CareerCup\Graph">
       <UniqueIdentifier>{f3a3c34f-6fe8-42a2-b232-a87ffe80a4e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\DFS BFS">
+      <UniqueIdentifier>{e1279a60-2bbc-407c-9587-67b8cf63f7c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -334,9 +337,6 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\Combinations.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\FloodFill.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\NumberOfIslands.h">
@@ -751,6 +751,27 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\GenerateParenthesis.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\FloodFill.h">
+      <Filter>Header Files\CareerCup\DFS BFS</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\LandingZero.h">
+      <Filter>Header Files\CareerCup\DFS BFS</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\HIndex.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ClosestBinarySearchTreeValue.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SearchForRange.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\IntegerToRoman.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\GameOfLife.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

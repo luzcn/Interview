@@ -105,6 +105,7 @@
     <ClInclude Include="Include\CareerCup\HuffmanCoding.h" />
     <ClInclude Include="Include\CareerCup\IntToBinary.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
+    <ClInclude Include="Include\CareerCup\LandingZero.h" />
     <ClInclude Include="Include\CareerCup\LargeFactorial.h" />
     <ClInclude Include="Include\CareerCup\LongestCommonSubsequence.h" />
     <ClInclude Include="Include\CareerCup\LongestIncreasingSubSequence.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="Include\leetcode\BitwiseAndRange.h" />
     <ClInclude Include="Include\leetcode\Candy.h" />
     <ClInclude Include="Include\leetcode\CloneGraph.h" />
+    <ClInclude Include="Include\leetcode\ClosestBinarySearchTreeValue.h" />
     <ClInclude Include="Include\leetcode\CombinationSum2.h" />
     <ClInclude Include="Include\leetcode\ConstructBinaryTree.h" />
     <ClInclude Include="Include\leetcode\ContainsDuplicate.h" />
@@ -174,15 +176,18 @@
     <ClInclude Include="Include\leetcode\FindMinimuminRotatedSortedArray.h" />
     <ClInclude Include="Include\leetcode\FindPeakElement.h" />
     <ClInclude Include="Include\leetcode\FlattenBinaryTreeToLinkedList.h" />
+    <ClInclude Include="Include\leetcode\GameOfLife.h" />
     <ClInclude Include="Include\leetcode\GasStation.h" />
     <ClInclude Include="Include\leetcode\GenerateParenthesis.h" />
     <ClInclude Include="Include\leetcode\GrayCode.h" />
     <ClInclude Include="Include\leetcode\HappyNumber.h" />
+    <ClInclude Include="Include\leetcode\HIndex.h" />
     <ClInclude Include="Include\leetcode\HouseRobber.h" />
     <ClInclude Include="Include\leetcode\ImplementQueueUsingStack.h" />
     <ClInclude Include="Include\leetcode\ImplementStackUsingQueues.h" />
     <ClInclude Include="Include\leetcode\ImplementstrStr.h" />
     <ClInclude Include="Include\leetcode\InsertionSortList.h" />
+    <ClInclude Include="Include\leetcode\IntegerToRoman.h" />
     <ClInclude Include="Include\leetcode\InterleavingString.h" />
     <ClInclude Include="Include\leetcode\IsomorphicStrings.h" />
     <ClInclude Include="Include\leetcode\JumpGame.h" />
@@ -235,6 +240,7 @@
     <ClInclude Include="Include\leetcode\ReverserInteger.h" />
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
     <ClInclude Include="Include\leetcode\RotateImage.h" />
+    <ClInclude Include="Include\leetcode\SearchForRange.h" />
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h" />
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
