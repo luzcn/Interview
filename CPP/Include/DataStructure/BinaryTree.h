@@ -194,7 +194,7 @@ namespace BinaryTree
                     else
                     {
                         pre->right = nullptr;
-                        cout << pre->val << endl;
+                        cout << current->val << endl;
                         current = current->right;
                     }
                 }
@@ -300,17 +300,21 @@ namespace BinaryTree
             writeBinaryTreeRec(node->right, solution);
         }
 
-        void readBinaryTreeRec(TreeNode* node, const std::vector<std::string>& input, int index)
+        // "index" is the position in input string, it does not need to go backward. so use int& and always increase
+        void readBinaryTreeRec(TreeNode* node, const std::vector<std::string>& input, int& index)
         {
             if (index == input.size())
                 return;
             if (input[index] == "#")
+            {
+                index++;
                 return;
-
+            }
             node = new TreeNode(std::atoi(input[index].c_str()));
 
-            readBinaryTreeRec(node->left, input, index + 1);
-            readBinaryTreeRec(node->right, input, index + 1);
+            index++;
+            readBinaryTreeRec(node->left, input, index);
+            readBinaryTreeRec(node->right, input, index);
         }
 
         std::vector<std::string> writeBinaryTree(TreeNode* root)

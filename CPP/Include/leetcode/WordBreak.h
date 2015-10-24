@@ -1,6 +1,6 @@
 #pragma once
 #include <unordered_set>
-
+#include <algorithm>
 //  Given a string s and a dictionary of words dict, 
 //  determine if s can be segmented into a space-separated sequence of one or more dictionary words.
 //
@@ -58,10 +58,19 @@ namespace WordBreak
         vector<bool> possible(len + 1, false);
         possible[0] = true;
 
+        auto max_len = std::max_element(dict.begin(), dict.end(), [&](const string& s1, const string& s2) {
+            return s1.size() < s2.size();
+        })->size();
+
         for (int i = 1; i <= len; ++i)
         {
-            for (int k = 0; k < i; ++k)
+            for (int k = i-1; k >= 0; k--)
             {
+                // if the sub string is longer than the longest string in dict
+                // we can exit this loop, no need to check any more.
+                if (i - k > max_len)    
+                    break;
+
                 possible[i] = possible[k] && (dict.find(s.substr(k, i - k)) != dict.end());
                 if (possible[i])
                     break;

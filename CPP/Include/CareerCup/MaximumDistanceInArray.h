@@ -2,11 +2,13 @@
 
 #include "stdafx.h"
 #include <limits.h>
-/**
- *	Given an array A of integers, find the maximum of j-i subjected to the constraint of A[i] < A[j].
- *	
- *	http://leetcode.com/2011/05/a-distance-maximizing-problem.html
- */
+
+//  Given an array A of integers, find the maximum of j-i subjected to the constraint of A[i] < A[j].
+//  Note:
+//    The max profit (best time buy and sell stock 1) solution does not work for this problem.
+//  Example: [4,3,5,2,1,2,3,2,3]
+//  http://leetcode.com/2011/05/a-distance-maximizing-problem.html
+
 namespace MaximumDistance
 {
     //brutal force O(n^2) solution
@@ -17,7 +19,7 @@ namespace MaximumDistance
 
         int n = A.size();
         int max_len = 0;
-        for (int i = 0; i < n -1; i++)
+        for (int i = 0; i < n - 1; i++)
         {
             for (int j = i + 1; j < n; j++)
             {

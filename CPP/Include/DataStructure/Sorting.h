@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 
-namespace Sort
+namespace datastructure
 {
     void swap(std::vector<int>& v, int i, int j)
     {
@@ -96,5 +96,73 @@ namespace Sort
     }
 #pragma endregion
 
+#pragma region Radix Sort
+    void radixSort(vector<int>& nums)
+    {
+        int maxElement = *std::max_element(nums.begin(), nums.end());
+        int base = 1;
+
+        // For each digit, using counting sort
+        while (maxElement / base > 0)
+        {
+            vector<int> count(10, 0);
+            for (int i = 0; i < nums.size(); i++)
+            {
+                count[(nums[i] / base) % 10]++;
+            }
+
+            vector<int> result(nums.size(), 0);
+
+            for (int j = 1; j < 10; j++)
+            {
+                count[j] += count[j - 1];
+            }
+
+            for (int i = nums.size() - 1; i >= 0; i--)
+            {
+                result[count[(nums[i] / base) % 10] - 1] = nums[i];
+                count[(nums[i] / base) % 10]--;
+            }
+
+            // copy back to the orignial array
+            for (int i = 0; i < nums.size(); i++)
+            {
+                nums[i] = result[i];
+            }
+
+            base *= 10;
+        }
+    }
+#pragma endregion
+
+#pragma region Counting Sort
+    vector<int> countSort(vector<int>& nums, int k)
+    {
+        vector<int> C(k + 1, 0);
+        for (int i = 0; i < nums.size(); i++)
+        {
+            C[nums[i]]++;
+        }
+
+        vector<int> res(nums.size());
+
+        // Sum each element in C with previouse one,
+        // now, the value of C[j] is the position the "j" needs to put in out put array
+        for (int j = 1; j < C.size(); j++)
+        {
+            C[j] += C[j - 1];
+        }
+
+        for (int i = nums.size() - 1; i >= 0; i--)
+        {
+            int data = nums[i];     // the elements need to sort
+            int pos = C[data] - 1;  // the sorted position where this data need to put
+            res[pos] = data;        // put data 
+            C[data]--;              // decrease the postion by 1
+        }
+
+        return res;
+    }
+#pragma endregion
 
 }

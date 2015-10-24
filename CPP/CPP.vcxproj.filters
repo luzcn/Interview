@@ -76,6 +76,24 @@
     <Filter Include="Header Files\lintcode\Greedy">
       <UniqueIdentifier>{232723fe-8472-44dd-a3ab-51477c72cbbc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\Greedy">
+      <UniqueIdentifier>{a379c448-4c36-4e89-b527-4dfd90891fde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lintcode\Recursion">
+      <UniqueIdentifier>{d00d0863-a3d4-4528-92d1-ce833a9b600d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lintcode\DataStructure">
+      <UniqueIdentifier>{36246c7d-9740-4915-a548-be72a8d9e184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lintcode\Array">
+      <UniqueIdentifier>{ac57b036-8ad3-407f-b0f2-7fbb03649c32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CareerCup\Graph">
+      <UniqueIdentifier>{f3a3c34f-6fe8-42a2-b232-a87ffe80a4e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CareerCup\DFS BFS">
+      <UniqueIdentifier>{e1279a60-2bbc-407c-9587-67b8cf63f7c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -321,9 +339,6 @@
     <ClInclude Include="Include\CareerCup\Combinations.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\FloodFill.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\leetcode\NumberOfIslands.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
@@ -510,9 +525,6 @@
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\lintcode\ThreeSumClosest.h">
-      <Filter>Header Files\lintcode</Filter>
-    </ClInclude>
     <ClInclude Include="Include\lintcode\SortLetters.h">
       <Filter>Header Files\lintcode</Filter>
     </ClInclude>
@@ -524,12 +536,6 @@
     </ClInclude>
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h">
       <Filter>Header Files\CareerCup\Tree</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\lintcode\SubarraySum.h">
-      <Filter>Header Files\lintcode</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\lintcode\SubarraySumClosest.h">
-      <Filter>Header Files\lintcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\lintcode\WoodCut.h">
       <Filter>Header Files\lintcode\BinarySearch</Filter>
@@ -653,6 +659,120 @@
     </ClInclude>
     <ClInclude Include="Include\lintcode\PreviousPermutation.h">
       <Filter>Header Files\lintcode\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\InsertionSortList.h">
+      <Filter>Header Files\lintcode\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SortList.h">
+      <Filter>Header Files\lintcode\Linked List</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\TwoSumInBST.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\TreeSerialization.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PartitionProblem.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ActivitySelection.h">
+      <Filter>Header Files\CareerCup\Greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\HuffmanCoding.h">
+      <Filter>Header Files\CareerCup\Greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\StringPartition.h">
+      <Filter>Header Files\CareerCup\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PaintersPartition.h">
+      <Filter>Header Files\CareerCup\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ExpressionAddOperators.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\NimGame.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\Combination.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\CombinationSum2.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\NQueen.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\FindCommonNodesInTwoBST.h">
+      <Filter>Header Files\CareerCup\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SubSet2.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\Permutation.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\WordLadder2.h">
+      <Filter>Header Files\lintcode\Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SubarraySum.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\SubarraySumClosest.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\ThreeSumClosest.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\MaximumSubarrayDifference.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\MaximumProductSubarray.h">
+      <Filter>Header Files\lintcode\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\InterleavingString.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\LongestConsecutiveSequence.h">
+      <Filter>Header Files\lintcode\DataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\UglyNumber.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\RobotMergeProblem.h">
+      <Filter>Header Files\CareerCup</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MergeIntervals.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MaxGap.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\RotateImage.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\GenerateParenthesis.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\FloodFill.h">
+      <Filter>Header Files\CareerCup\DFS BFS</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\LandingZero.h">
+      <Filter>Header Files\CareerCup\DFS BFS</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\HIndex.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ClosestBinarySearchTreeValue.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SearchForRange.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\IntegerToRoman.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\GameOfLife.h">
+      <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
