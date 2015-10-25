@@ -49,6 +49,7 @@ namespace leetcode
         return max_profit;
     }
 
+#pragma region Best Time to Buy and Sell Stock II
     /// <summary>
     ///  Say you have an array for which the ith element is the price of a given stock on day i.
     ///  Design an algorithm to find the maximum profit.
@@ -64,7 +65,7 @@ namespace leetcode
         size_t n = prices.size();
 
         int max_profit = 0;
-        for (size_t i = 0; i < n -1; ++i)
+        for (size_t i = 0; i < n - 1; ++i)
         {
             if (prices[i] < prices[i + 1])
             {
@@ -74,53 +75,128 @@ namespace leetcode
 
         return max_profit;
     }
+#pragma endregion 
 
+#pragma region Best Time to Buy and Sell Stock III
     /// <summary>
     ///  Say you have an array for which the ith element is the price of a given stock on day i.
     ///  Design an algorithm to find the maximum profit. You may complete at most two transactions.
     ///  
     ///  Note: You may not engage in multiple transactions at the same time(ie,you must sell the stock before you buy again).
     ///  
-    ///  The solution is 1. from left to right, find the max profit for each element in the array and save in the left_maxprofit array.
+    ///  The solution is 
+    ///  1. from left to right, find the max profit for each element in the array and save in the left_maxprofit array.
     ///  2. from right to left, find the max profit for each element in the array and save in the right_maxprofit array.
     ///  Now, we have two arrays, for each element i, left_maxprofit[i] + right_maxprofit[i] is the max profit for tow transactions
     /// </summary>
-    int maxProfit3(std::vector<int>& p)
+    int maxProfit3(std::vector<int>& prices)
     {
-        if (p.empty())
-            return;
+        if (prices.empty())
+            return 0;
 
-        size_t n = p.size();
+        size_t n = prices.size();
 
-        std::vector<int> left_maxprofit_list(n);
-        std::vector<int> right_maxprofit_list(n);
-
-        // construct the left max profit array
-        int left_min= p[0];
-        int left_maxprofit = 0;
-        for (size_t i = 0; i < n - 1; ++i)
+        int maxProfit = 0;
+        int pivot = prices[0];
+        vector<int> leftProfit(n, 0);
+        for (int i = 1; i < n; i++)
         {
-            if (p[i] < left_min)
+            if (prices[i] > pivot)
             {
-                left_min = p[i];
+                maxProfit = max(maxProfit, prices[i] - pivot);
             }
             else
             {
-                auto profit = p[i] - left_min;
-                if (profit > left_maxprofit)
+                pivot = prices[i];
+            }
+
+            leftProfit[i] = maxProfit;
+        }
+
+        maxProfit = 0;
+        pivot = prices[n - 1];
+        vector<int> rightProfit(n, 0);
+        for (int i = n - 2; i >= 0; i--)
+        {
+            if (prices[i] < pivot)
+            {
+                maxProfit = max(maxProfit, pivot - prices[i]);
+            }
+            else
+            {
+                pivot = prices[i];
+            }
+            rightProfit[i] = maxProfit;
+        }
+
+        maxProfit = 0;
+        for (int i = 0; i < n; i++)
+        {
+            maxProfit = max(maxProfit, rightProfit[i] + leftProfit[i]);
+        }
+
+        return maxProfit;
+    }
+#pragma endregion
+
+
+#pragma region  Best Time to Buy and Sell Stock IV
+    //  Say you have an array for which the ith element is the price of a given stock on day i.
+    //  Design an algorithm to find the maximum profit.You may complete at most k transactions.
+    //  Thought:
+    //  1. This problem is similar to painters partition problem.
+    //     - we separate the input array to k sub arrays. 
+    //     - We can use maxProfit1 (only 1 transaction) to get the max profit of each sub array.
+    //  2. Use P(n, k) to denote the max profit of array [0...n] with at most k transactions.
+    //     - If we separate the array at position i, then we have sub array [i+1, n] and the maxProfit of this sub array
+    //     - so the recurrence is P(n,k) = P(i, k-1) + maxProfit(i+1, n)
+    //  3. the optimal soltuion is max( P(i, k-1) + maxProfit(i+1, n)) for each 0< i <= n-1;
+    namespace helper
+    {
+        int maxProfitInRange(const vector<int>& prices, const int start, const int end)
+        {
+            int maxProfit = 0;
+            int pivot = prices[start];
+            for (int i = start + 1; i <= end; i++)
+            {
+                if (prices[i] > pivot)
                 {
-                    left_maxprofit = profit;
+                    maxProfit = max(maxProfit, prices[i] - pivot);
+                }
+                else
+                {
+                    pivot = prices[i];
                 }
             }
-            left_maxprofit_list[i] = left_maxprofit;
+
+            return maxProfit;
         }
 
-        // construct the right max profit array
-        int righ_max = p[n - 1];
-        int righ_maxprofit = 0;
-        for (size_t i = n - 1; n > 0; --n)
+        int  maxProfitRec(const vector<int>& prices, int k, int n)
         {
+            if (k == 1)
+                return maxProfitInRange(prices, 0, n);
+            if (n == 1)
+                return 0;
 
+            int best = 0;
+            for (int i = n - 2; i > 0; i--)
+            {
+                int rightMaxProfit = maxProfitInRange(prices, i + 1, n);
+                int leftOPT = maxProfitRec(prices, k - 1, i);
+
+                best = max(best, rightMaxProfit + leftOPT);
+            }
+
+            return best;
         }
     }
+    int maxProfit4(vector<int>& prices, int k)
+    {
+        if (prices.size() < 2)
+            return 0;
+
+        return helper::maxProfitRec(prices, k, prices.size() - 1);
+    }
+#pragma endregion 
 }
