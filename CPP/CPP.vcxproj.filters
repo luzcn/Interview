@@ -774,6 +774,15 @@
     <ClInclude Include="Include\lintcode\PreviousPermutation.h">
       <Filter>Header Files\lintcode\Greedy</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\FindMedianInDataStream.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\PalindromePermutation.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ShortestWordDistance.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

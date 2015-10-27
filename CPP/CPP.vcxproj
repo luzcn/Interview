@@ -173,6 +173,7 @@
     <ClInclude Include="Include\leetcode\ExpressionAddOperators.h" />
     <ClInclude Include="Include\leetcode\FindFirstMissingPositiveNumber.h" />
     <ClInclude Include="Include\leetcode\FindKthSmallestInTowSortedArray.h" />
+    <ClInclude Include="Include\leetcode\FindMedianInDataStream.h" />
     <ClInclude Include="Include\leetcode\FindMinimuminRotatedSortedArray.h" />
     <ClInclude Include="Include\leetcode\FindPeakElement.h" />
     <ClInclude Include="Include\leetcode\FlattenBinaryTreeToLinkedList.h" />
@@ -221,6 +222,7 @@
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
     <ClInclude Include="Include\leetcode\PalindromePartitioning2.h" />
+    <ClInclude Include="Include\leetcode\PalindromePermutation.h" />
     <ClInclude Include="Include\leetcode\PalindromLinkedList.h" />
     <ClInclude Include="Include\leetcode\PartitionList.h" />
     <ClInclude Include="Include\leetcode\PathSum.h" />
@@ -245,6 +247,7 @@
     <ClInclude Include="Include\leetcode\SetColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
     <ClInclude Include="Include\leetcode\ShortestPalindrome.h" />
+    <ClInclude Include="Include\leetcode\ShortestWordDistance.h" />
     <ClInclude Include="Include\leetcode\SimplifyPath.h" />
     <ClInclude Include="Include\leetcode\SingleNumber.h" />
     <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />

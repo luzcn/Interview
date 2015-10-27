@@ -190,6 +190,47 @@ namespace leetcode
 
             return best;
         }
+
+        int  maxProfitDp(const vector<int>& prices, int k)
+        {
+            int n = prices.size();
+            vector<vector<int>> dp(n, vector<int>(k, 0));
+            dp[0][0] = 0;
+
+            // base condition first column is the maxProfit(0...i)
+            int maxProfit = 0;
+            int pivot = prices[0];
+            for (int i = 1; i < n; i++)
+            {
+                if (prices[i] > pivot)
+                {
+                    maxProfit = max(maxProfit, prices[i] - pivot);
+                }
+                else
+                {
+                    pivot = prices[i];
+                }
+
+                dp[i][0] = maxProfit;
+            }
+
+            for (int i = 1; i < n; i++)
+            {
+                for (int j = 1; j < k; j++)
+                {
+                    int best = 0;
+                    for (int p = 0; p < i; p++)
+                    {
+                        int rightMaxProfit = maxProfitInRange(prices, p, i);
+                        int leftOPT = dp[p][j - 1];
+                        best = max(best, rightMaxProfit + leftOPT);
+                    }
+                    dp[i][j] = best;
+                }
+            }
+
+            return dp[n - 1][k - 1];
+        }
     }
     int maxProfit4(vector<int>& prices, int k)
     {

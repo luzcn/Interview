@@ -115,6 +115,54 @@ namespace careercup
         return dp[n - 1][k - 1];
     }
 
+
+    // compute how many workers required, 
+    // if the array is partitioned as the sum of each subarray has maximun value of "maxInPartition" 
+    int getRequireWorks(vector<int>& A, int maxInPartition)
+    {
+        int nums = 1;
+        int total = 0;
+        for (int i = 0; i < A.size(); i++)
+        {
+            total += A[i];
+
+            if (total > maxInPartition)
+            {
+                nums++;
+                total = A[i];
+            }
+        }
+
+        return nums;
+    }
+
+    // O(Nlogc), c is the range [max_element(A)... sum(A)].
+    // From observation, we can easily see:
+    // - if k == 1, the result is sum(A).
+    // - if k >= n, the result is max_element(A).
+    int partitionBinarySearch(vector<int>& A, int k)
+    {
+        int low = *max_element(A.begin(), A.end());
+        int high = sum(A, 0, A.size() - 1);
+
+        while (low < high)
+        {
+            int mid = low + (high - low) / 2;
+            int workers = getRequireWorks(A, mid);
+            if (workers <= k)
+            {
+                high = mid;
+            }
+            else
+            {
+                // if wokers > k, the value "mid" is not a valid solution, so must discard it.
+                low = mid + 1;
+            }
+        }
+
+        return low;
+    }
+
     int partition(vector<int> boards, int k)
     {
         return partitionDP(boards, k);
