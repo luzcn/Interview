@@ -288,9 +288,6 @@
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\Permutation.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
@@ -781,6 +778,18 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\ShortestWordDistance.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\Permutation.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\StringPermutation.h">
+      <Filter>Header Files\CareerCup</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\PermutationSequence.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\FindCelebrity.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

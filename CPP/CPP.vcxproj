@@ -118,7 +118,7 @@
     <ClInclude Include="Include\CareerCup\KMP.h" />
     <ClInclude Include="Include\CareerCup\PaintersPartition.h" />
     <ClInclude Include="Include\CareerCup\PartitionProblem.h" />
-    <ClInclude Include="Include\CareerCup\Permutation.h" />
+    <ClInclude Include="Include\CareerCup\StringPermutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
     <ClInclude Include="Include\CareerCup\RobotMergeProblem.h" />
@@ -171,6 +171,7 @@
     <ClInclude Include="Include\leetcode\ExcelSheetColumnNumber.h" />
     <ClInclude Include="Include\leetcode\ExcelSheetColumnTitle.h" />
     <ClInclude Include="Include\leetcode\ExpressionAddOperators.h" />
+    <ClInclude Include="Include\leetcode\FindCelebrity.h" />
     <ClInclude Include="Include\leetcode\FindFirstMissingPositiveNumber.h" />
     <ClInclude Include="Include\leetcode\FindKthSmallestInTowSortedArray.h" />
     <ClInclude Include="Include\leetcode\FindMedianInDataStream.h" />
@@ -227,6 +228,8 @@
     <ClInclude Include="Include\leetcode\PartitionList.h" />
     <ClInclude Include="Include\leetcode\PathSum.h" />
     <ClInclude Include="Include\leetcode\PathSum2.h" />
+    <ClInclude Include="Include\leetcode\Permutation.h" />
+    <ClInclude Include="Include\leetcode\PermutationSequence.h" />
     <ClInclude Include="Include\leetcode\PlusOne.h" />
     <ClInclude Include="Include\leetcode\PopulatingNextRightNodeInEachNode.h" />
     <ClInclude Include="Include\leetcode\Pow.h" />
