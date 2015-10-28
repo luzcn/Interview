@@ -3,23 +3,34 @@
 
 namespace careercup
 {
-	/**
-		 Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
+    void permute(vector<int>& nums, vector<vector<int>>& result, 
+        vector<int>& current, vector<bool>& visited)
+    {
+        if (current.size() == nums.size())
+        {
+            result.push_back(current);
+            return;
+        }
 
-		 For example,
-		 If n = 4 and k = 2, a solution is:
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (!visited[i])
+            {
+                // nums must be sorted
+                if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1])
+                    continue;
 
-		 [
-		 [2,4],
-		 [3,4],
-		 [2,3],
-		 [1,2],
-		 [1,3],
-		 [1,4],
-		 ]
-		 */
-    void combineRec(const int& n, const int& k, vector<vector<int>>& result,
-        vector<int>& current, int index)
+                visited[i] = true;
+                current.push_back(nums[i]);
+                permute(nums, result, current, visited);
+                current.pop_back();
+                visited[i] = false;
+            }
+        }
+    }
+
+    void combination(vector<int>& nums, int k, vector<vector<int>>& result, vector<int>& current,
+        vector<bool>& visited, int index)
     {
         if (current.size() == k)
         {
@@ -27,22 +38,28 @@ namespace careercup
             return;
         }
 
-        for (int i = index; i <= n; i++)
+        for (int i = index; i < nums.size(); i++)
         {
-            current.push_back(i);
-            combineRec(n, k, result, current, i + 1);
+            if (i != index && nums[i] == nums[i - 1])   // remove duplicate
+                continue;
+
+            current.push_back(nums[i]);
+            combination(nums, k, result, current, visited, i + 1);
             current.pop_back();
         }
     }
-
-	vector<vector<int>> combine(int n, int k)
-	{
-        vector<vector<int>> result;
-        vector<int> current;
-
-        combineRec(n, k, result, current, 1);
-
-        return result;
-
-	}
 }
+
+#if 0
+int main()
+{
+    vector<int> nums{ 1,2,3,4,5,6 };
+    vector<vector<int>> result;
+    vector<int> current;
+    vector<bool> visited(nums.size(), false);
+
+    combination(nums, 3, result, current, visited, 0);
+
+    return 0;
+}
+#endif
