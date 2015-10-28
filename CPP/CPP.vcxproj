@@ -155,7 +155,7 @@
     <ClInclude Include="Include\leetcode\Candy.h" />
     <ClInclude Include="Include\leetcode\CloneGraph.h" />
     <ClInclude Include="Include\leetcode\ClosestBinarySearchTreeValue.h" />
-    <ClInclude Include="Include\leetcode\CombinationSum2.h" />
+    <ClInclude Include="Include\leetcode\CombinationSum.h" />
     <ClInclude Include="Include\leetcode\ConstructBinaryTree.h" />
     <ClInclude Include="Include\leetcode\ContainsDuplicate.h" />
     <ClInclude Include="Include\leetcode\CopyListwithRandomPointer.h" />

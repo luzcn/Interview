@@ -690,9 +690,6 @@
     <ClInclude Include="Include\lintcode\Combination.h">
       <Filter>Header Files\lintcode\Recursion</Filter>
     </ClInclude>
-    <ClInclude Include="Include\leetcode\CombinationSum2.h">
-      <Filter>Header Files\leetcode</Filter>
-    </ClInclude>
     <ClInclude Include="Include\lintcode\NQueen.h">
       <Filter>Header Files\lintcode\Recursion</Filter>
     </ClInclude>
@@ -790,6 +787,9 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\FindCelebrity.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\CombinationSum.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>
