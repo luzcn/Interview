@@ -102,6 +102,7 @@
     <ClInclude Include="Include\CareerCup\FindKthSmallest.h" />
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
     <ClInclude Include="Include\CareerCup\FloodFill.h" />
+    <ClInclude Include="Include\CareerCup\GCD.h" />
     <ClInclude Include="Include\CareerCup\HuffmanCoding.h" />
     <ClInclude Include="Include\CareerCup\IntToBinary.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />
@@ -112,12 +113,15 @@
     <ClInclude Include="Include\CareerCup\MatrixChainMultiplication.h" />
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h" />
     <ClInclude Include="Include\CareerCup\MaximumSubarray.h" />
+    <ClInclude Include="Include\CareerCup\MaxSumGame.h" />
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\MinimumSpanningTree.h" />
     <ClInclude Include="Include\CareerCup\Multiplication.h" />
     <ClInclude Include="Include\CareerCup\NumberOf1Bit.h" />
     <ClInclude Include="Include\CareerCup\KMP.h" />
     <ClInclude Include="Include\CareerCup\PaintersPartition.h" />
     <ClInclude Include="Include\CareerCup\PartitionProblem.h" />
+    <ClInclude Include="Include\CareerCup\ShortestPath.h" />
     <ClInclude Include="Include\CareerCup\StringPermutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
     <ClInclude Include="Include\CareerCup\RemoveDuplicatesInLinkedList.h" />
@@ -150,6 +154,7 @@
     <ClInclude Include="Include\leetcode\BestToBuyAndSellStock.h" />
     <ClInclude Include="Include\leetcode\BinarySearchTreeIterator.h" />
     <ClInclude Include="Include\leetcode\BinaryTreeLevelOrderTraversal.h" />
+    <ClInclude Include="Include\leetcode\BinaryTreeLongestConsecutiveSequence.h" />
     <ClInclude Include="Include\leetcode\BinaryTreeMaximumPathSum.h" />
     <ClInclude Include="Include\leetcode\BitwiseAndRange.h" />
     <ClInclude Include="Include\leetcode\Candy.h" />
@@ -211,6 +216,7 @@
     <ClInclude Include="Include\leetcode\MaximumDepth.h" />
     <ClInclude Include="Include\leetcode\MaximumProductSubarray.h" />
     <ClInclude Include="Include\leetcode\MaxPointsOnALine.h" />
+    <ClInclude Include="Include\leetcode\MeetingRooms.h" />
     <ClInclude Include="Include\leetcode\MergeIntervals.h" />
     <ClInclude Include="Include\leetcode\MergeKSortedList.h" />
     <ClInclude Include="Include\leetcode\MergeTowSortedList.h" />
@@ -270,6 +276,7 @@
     <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
     <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
+    <ClInclude Include="Include\leetcode\WildcardMatching.h" />
     <ClInclude Include="Include\leetcode\WordBreak.h" />
     <ClInclude Include="Include\leetcode\WordBreak2.h" />
     <ClInclude Include="Include\leetcode\WordLadder.h" />

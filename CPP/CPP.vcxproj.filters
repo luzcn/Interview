@@ -94,6 +94,12 @@
     <Filter Include="Header Files\CareerCup\DFS BFS">
       <UniqueIdentifier>{e1279a60-2bbc-407c-9587-67b8cf63f7c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\Amazon">
+      <UniqueIdentifier>{0e242233-493a-4661-ae9c-1124496d143d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CareerCup\Google">
+      <UniqueIdentifier>{804a0f55-d080-4810-82f1-750713619009}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -790,6 +796,27 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\CombinationSum.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\GCD.h">
+      <Filter>Header Files\CareerCup\Amazon</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\MaxSumGame.h">
+      <Filter>Header Files\CareerCup\Google</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MeetingRooms.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ShortestPath.h">
+      <Filter>Header Files\CareerCup\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\MinimumSpanningTree.h">
+      <Filter>Header Files\CareerCup\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\WildcardMatching.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\BinaryTreeLongestConsecutiveSequence.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

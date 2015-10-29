@@ -21,6 +21,8 @@ namespace leetcode
         int l = 0, r = A.size() - 1;
         while (l <= r)
         {
+            // this is important
+            // because the following steps do not check equivalence.
             if (A[l] == t)
                 return l;
             if (A[r] == t)
