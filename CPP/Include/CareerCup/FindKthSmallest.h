@@ -3,61 +3,73 @@
 #include <queue>
 namespace careercup
 {
-    namespace helper
+    // find kth smallest divide-conquer solution, similar to quick sort.
+    int kthSmallestDivideConquer(vector<int>& nums, int l, int r, int k)
     {
-        // Partition
-        int partition(vector<int>& nums, int l, int r)
+        if (l == r)
+            return nums[l];
+
+        int m = l - 1;
+        int pivot = nums[r];
+        for (int i = l; i < r; i++)
         {
-            int m = l - 1;
-            int pivot = nums[r];
-            for (int i = l; i < r; i++)
+            if (nums[i] < pivot)  // use (nums[i] > pivot) to find kth largest
             {
-                if (nums[i] < pivot)
+                m++;
+                if (m != i)
                 {
-                    m++;
-                    if (m != i)
-                    {
-                        int temp = nums[i];
-                        nums[i] = nums[m];
-                        nums[m] = temp;
-                    }
+                    int temp = nums[i];
+                    nums[i] = nums[m];
+                    nums[m] = temp;
                 }
             }
-            m++;
-            int temp = nums[r];
-            nums[r] = nums[m];
-            nums[m] = temp;
-
-            return m;
         }
+        m++;
+        int temp = nums[r];
+        nums[r] = nums[m];
+        nums[m] = temp;
 
-        // find kth smallest divide-conquer solution, similar to quick sort.
-        int kthSmallestDivideConquer(vector<int>& nums, int l, int r, int k)
-        {
-            if (l == r)
-                return nums[l];
-
-            int m = partition(nums, l, r);
-            if (m + 1 == k)
-                return nums[m];
-            else if (m + 1 > k)
-                return kthSmallestDivideConquer(nums, l, m - 1, k);
-            else
-                return kthSmallestDivideConquer(nums, m + 1, r, k);
-        }
-
-        int kthSmallestHeap(vector<int>& nums, int k)
-        {
-            vector<int> v(k);
-            make_heap(v.begin(), v.end());
-
-
-            return 0;
-        }
+        if (m + 1 == k)
+            return nums[m];
+        else if (m + 1 > k)
+            return kthSmallestDivideConquer(nums, l, m - 1, k);
+        else
+            return kthSmallestDivideConquer(nums, m + 1, r, k);
     }
-    // Find the kth smallest element from an array
-    int findKthSmallest(vector<int>& nums, int k)
+
+    // Find kth smallest/largest in BST
+    int findKthSmallestBST(TreeNode* root, int k)
     {
-        return helper::kthSmallestDivideConquer(nums, 0, nums.size() - 1, k);
+        // inorder iterative
+        if (!root)
+            return 0;
+
+        stack<TreeNode*> m_stack;
+        auto current = root;
+        int count = 0;
+        while (true)
+        {
+            if (current)
+            {
+                m_stack.push(current);
+                current = current->left;
+            }
+            else if (!m_stack.empty())
+            {
+                current = m_stack.top();
+                m_stack.pop();
+
+                count++;
+                if (count == k)
+                {
+                    return current->val;
+                }
+                current = current->right;
+            }
+            else
+                break;
+        }
+
+        return 0;
     }
 }

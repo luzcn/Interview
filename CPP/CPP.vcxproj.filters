@@ -819,6 +819,12 @@
     <ClInclude Include="Include\leetcode\BinaryTreeLongestConsecutiveSequence.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\CountAndSay.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\EncodeAndDecodeString.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

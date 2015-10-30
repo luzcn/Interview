@@ -11,8 +11,14 @@ namespace leetcode
      */
     int divide_helper(int d1, int d2)
     {
-        if (d1 == 0 || d2 == 1) { return d1; }
-        if (d2 == 2) { return d1 >> 1; }
+        if (d1 == 0 || d2 == 1) 
+        {
+            return d1; 
+        }
+        if (d2 == 2) 
+        { 
+            return d1 >> 1; 
+        }
 
         int count = 0;
         while (d1 >= d2)
