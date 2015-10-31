@@ -54,11 +54,11 @@ namespace LongestPalindromicSubstring
 
 #pragma region DP solution, O(n^2) time and space
     //  DP solution, O(n^2) time, O(n^2) space.
-	//  Defin DP[i][j] = true, if the substring s[i]...s[j] is palidrom.
-	//  So, the transform function is:
-	//  DP[i][i] = true;
+    //  Defin DP[i][j] = true, if the substring s[i]...s[j] is palidrom.
+    //  So, the transform function is:
+    //  DP[i][i] = true;
     //  DP[i][i+1] = true; if s[i] == s[i+1]
-	//  DP[i][j] = DP[i+1][j-1] && s[i] == s[j], j-i>1
+    //  DP[i][j] = DP[i+1][j-1] && s[i] == s[j], j-i>1
     string longestPalindrome_DP(string s)
     {
         if (s.empty())
@@ -87,20 +87,20 @@ namespace LongestPalindromicSubstring
         }
 
         // We only used half of the DP table.
-        int len = 3;
-        while (len <= n)
+        for (int i = n - 3; i >= 0; i--)
         {
-            for (int i = 0; i < n - len + 1; i++)
+            for (int j = n - 1; j > i; j--)
             {
-                int j = i + len - 1;
                 if (s[i] == s[j] && dp[i + 1][j - 1])
                 {
                     dp[i][j] = true;
-                    begin = i;
-                    maxlen = len;
+                    if (maxlen > j - i + 1)
+                    {
+                        maxlen = j - i + 1;
+                        begin = i;
+                    }
                 }
             }
-            len++;
         }
         return s.substr(begin, maxlen);
     }
@@ -120,7 +120,7 @@ namespace LongestPalindromicSubstring
             r++;
         }
 
-        return s.substr(l + 1, (r - l + 1) - 2);
+        return s.substr(l + 1, (r - 1) - (l + 1) + 1);
     }
     /**
      *	We observe that a palindrome mirrors around its center.

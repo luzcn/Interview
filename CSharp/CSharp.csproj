@@ -76,6 +76,7 @@
     <Compile Include="LeetCode\RotateArray.cs" />
     <Compile Include="LeetCode\RotateList.cs" />
     <Compile Include="LeetCode\SpiralMatrix.cs" />
+    <Compile Include="LeetCode\UglyNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

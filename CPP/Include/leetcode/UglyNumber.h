@@ -26,13 +26,13 @@ namespace leetcode
             }
             else if (num % 2 == 0)
             {
-                num /= 3;
+                num /= 2;
             }
             else
                 return false;
         }
 
-        return false;
+        return num == 1;
     }
 
 
