@@ -160,5 +160,58 @@ namespace LongestPalindromicSubstring
     /**
      *	http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
      */
+    string preprocess(const string& s)
+    {
+        string res = "";
+        for (int i = 0; i < s.size(); i++)
+        {
+            res += "#" + s.substr(i, 1);
+        }
+        res += "#";
+
+        return res;
+    }
+    string longestPalindrome(string s)
+    {
+        string str = std::move(preprocess(s));
+        string res = "";
+
+        vector<int> p(str.size(), 0);
+        int center = 0;
+        int mx = 0;
+        int n = str.size();
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            int i_mirror = 2 * center - i;
+            if (mx > i)
+            {
+                p[i] = min(mx - i, p[i_mirror]);
+            }
+            else
+            {
+                p[i] = 0;
+            }
+
+            // update the p[i] by extending from i as center
+            while (i + p[i] + 1 < str.size() && i - p[i] - 1 >= 0 && str[i + p[i] + 1] == str[i - p[i] - 1])
+            {
+                p[i]++;
+            }
+
+            // find a longer palindrome, set the center to i
+            if (i + p[i] > mx)
+            {
+                center = i;
+                mx = i + p[i];
+            }
+        }
+
+        auto it = max_element(p.begin(), p.end());
+        int maxLen = *it;
+        int centerIndex = it - p.begin();
+
+        return s.substr((centerIndex - maxLen) / 2, maxLen);
+    }
 #pragma  endregion
 }

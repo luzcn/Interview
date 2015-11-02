@@ -1,9 +1,10 @@
-///   Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and set.
+///   Design and implement a data structure for Least Recently Used (LRU) cache. 
+// It should support the following operations: get and set.
 ///   
 ///   1. get(key) - Get the value(will always be positive) of the key if the key exists in the cache, otherwise return -1.
 ///   
-///   2. set(key, value) - Set or insert the value if the key is not already present.When the cache reached its capacity, 
-///   it should invalidate the least recently used item before inserting a new item.
+///   2. set(key, value) - Set or insert the value if the key is not already present.
+//  When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
 /// 
 
 #pragma once
@@ -17,7 +18,7 @@ namespace LRUCache
     /// <summary>
     ///  The Cache data item structure.
     /// </summary>
-    struct CacheData 
+    struct CacheData
     {
         int key;
         int value;
@@ -80,7 +81,7 @@ namespace LRUCache
         int m_capacity;
         std::list<CacheData> m_LRUCache;
         //std::list < std::pair<int, int> > 
-        
+
 
         /// <summary>
         ///  
