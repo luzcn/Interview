@@ -151,6 +151,7 @@
     <ClInclude Include="Include\DesignPattern\Singleton.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
     <ClInclude Include="Include\leetcode\BasicCalculator.h" />
+    <ClInclude Include="Include\leetcode\BestMeetingPoint.h" />
     <ClInclude Include="Include\leetcode\BestToBuyAndSellStock.h" />
     <ClInclude Include="Include\leetcode\BinarySearchTreeIterator.h" />
     <ClInclude Include="Include\leetcode\BinaryTreeLevelOrderTraversal.h" />
@@ -207,6 +208,7 @@
     <ClInclude Include="Include\leetcode\LargestNumber.h" />
     <ClInclude Include="Include\leetcode\LengthOfLongestSubstring.h" />
     <ClInclude Include="Include\leetcode\LetterCombinationsPhoneNumber.h" />
+    <ClInclude Include="Include\leetcode\LongestCommonPrefix.h" />
     <ClInclude Include="Include\leetcode\LowestCommonAncestor.h" />
     <ClInclude Include="Include\leetcode\LengthofLastWord.h" />
     <ClInclude Include="Include\leetcode\LinkedListCycle.h" />
@@ -232,6 +234,7 @@
     <ClInclude Include="Include\leetcode\NimGame.h" />
     <ClInclude Include="Include\leetcode\NQueens.h" />
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
+    <ClInclude Include="Include\leetcode\OneEditDistance.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
     <ClInclude Include="Include\leetcode\PalindromePartitioning2.h" />
     <ClInclude Include="Include\leetcode\PalindromePermutation.h" />
@@ -308,6 +311,7 @@
     <ClInclude Include="Include\lintcode\Median.h" />
     <ClInclude Include="Include\lintcode\NQueen.h" />
     <ClInclude Include="Include\lintcode\Permutation.h" />
+    <ClInclude Include="Include\lintcode\PostOfficeProblem.h" />
     <ClInclude Include="Include\lintcode\PreviousPermutation.h" />
     <ClInclude Include="Include\lintcode\Rehashing.h" />
     <ClInclude Include="Include\lintcode\RemoveElement.h" />

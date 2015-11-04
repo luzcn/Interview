@@ -834,6 +834,18 @@
     <ClInclude Include="Include\leetcode\BinaryTreeUpsideDown.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\BestMeetingPoint.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\PostOfficeProblem.h">
+      <Filter>Header Files\lintcode\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\OneEditDistance.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\LongestCommonPrefix.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
