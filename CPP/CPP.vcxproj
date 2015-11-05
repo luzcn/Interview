@@ -260,6 +260,7 @@
     <ClInclude Include="Include\leetcode\ReverseNodesInKGroup.h" />
     <ClInclude Include="Include\leetcode\ReverserInteger.h" />
     <ClInclude Include="Include\leetcode\ReverseWord.h" />
+    <ClInclude Include="Include\leetcode\RotateArray.h" />
     <ClInclude Include="Include\leetcode\RotateImage.h" />
     <ClInclude Include="Include\leetcode\SearchForRange.h" />
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h" />

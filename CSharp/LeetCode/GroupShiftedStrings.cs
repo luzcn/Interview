@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 //]
 //Note: For the return value, each inner list's elements must follow the lexicographic order.
 
-namespace CSharp
+namespace CSharp.LeetCode
 {
     class GroupShiftedStrings
     {
