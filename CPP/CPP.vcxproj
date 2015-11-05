@@ -190,8 +190,10 @@
     <ClInclude Include="Include\leetcode\FlattenBinaryTreeToLinkedList.h" />
     <ClInclude Include="Include\leetcode\GameOfLife.h" />
     <ClInclude Include="Include\leetcode\GasStation.h" />
+    <ClInclude Include="Include\leetcode\FlipGame.h" />
     <ClInclude Include="Include\leetcode\GenerateParenthesis.h" />
     <ClInclude Include="Include\leetcode\GrayCode.h" />
+    <ClInclude Include="Include\leetcode\GroupShiftedString.h" />
     <ClInclude Include="Include\leetcode\HappyNumber.h" />
     <ClInclude Include="Include\leetcode\HIndex.h" />
     <ClInclude Include="Include\leetcode\HouseRobber.h" />
@@ -284,6 +286,7 @@
     <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
     <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
+    <ClInclude Include="Include\leetcode\VerifyPreorderSequenceBST.h" />
     <ClInclude Include="Include\leetcode\WildcardMatching.h" />
     <ClInclude Include="Include\leetcode\WordBreak.h" />
     <ClInclude Include="Include\leetcode\WordBreak2.h" />

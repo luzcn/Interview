@@ -48,6 +48,7 @@
     <Compile Include="DataStructure\Graph.cs" />
     <Compile Include="DesignPattern\Observer.cs" />
     <Compile Include="DesignPattern\Singleton.cs" />
+    <Compile Include="GroupShiftedStrings.cs" />
     <Compile Include="LeetCode\AddBinary.cs" />
     <Compile Include="LeetCode\BasicCalculator.cs" />
     <Compile Include="LeetCode\BestTimeToBuyAndSellStock.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="LeetCode\CountPrimes.cs" />
     <Compile Include="LeetCode\ExcelSheetColumnNumber.cs" />
     <Compile Include="LeetCode\FindMissingPositive.cs" />
+    <Compile Include="LeetCode\FlipGame.cs" />
     <Compile Include="LeetCode\HappyNumber.cs" />
     <Compile Include="LeetCode\HouseRobber.cs" />
     <Compile Include="LeetCode\IsomorphicStrings.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="LeetCode\RotateList.cs" />
     <Compile Include="LeetCode\SpiralMatrix.cs" />
     <Compile Include="LeetCode\UglyNumber.cs" />
+    <Compile Include="LeetCode\VerifyPreorderSequenceBST.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
