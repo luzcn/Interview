@@ -48,7 +48,7 @@
     <Compile Include="DataStructure\Graph.cs" />
     <Compile Include="DesignPattern\Observer.cs" />
     <Compile Include="DesignPattern\Singleton.cs" />
-    <Compile Include="GroupShiftedStrings.cs" />
+    <Compile Include="LeetCode\GroupShiftedStrings.cs" />
     <Compile Include="LeetCode\AddBinary.cs" />
     <Compile Include="LeetCode\BasicCalculator.cs" />
     <Compile Include="LeetCode\BestTimeToBuyAndSellStock.cs" />

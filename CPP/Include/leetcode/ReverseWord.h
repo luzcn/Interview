@@ -55,4 +55,45 @@ namespace ReverseWord
 
         return elems;
     }
+
+
+    //Given an input string, reverse the string word by word.A word is defined as a sequence of non - space characters.
+    //    The input string does not contain leading or trailing spaces and the words are always separated by a single space.
+    //    For example,
+    //    Given s = "the sky is blue",
+    //    return "blue is sky the".
+    //    Could you do it in - place without allocating extra space ?
+    void swapRange(string& s, int i, int j)
+    {
+        while (i < j)
+        {
+            auto temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+
+            i++;
+            j--;
+        }
+    }
+    void reverseWord(string& s)
+    {
+        if (s.size() <= 1)
+            return;
+
+        // reverse the entire string
+        swapRange(s, 0, s.size() - 1);
+
+        int i = 0;
+        int j = 0;
+        while (j < s.size())
+        {
+            while (j < s.size() && !iswspace(s[j]))
+            {
+                j++;
+            }
+            swapRange(s, i, j - 1);
+            j++;
+            i = j;
+        }
+    }
 }
