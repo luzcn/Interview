@@ -9,6 +9,7 @@
  //]                  ]
 namespace leetcode
 {
+    // Rotate in place, if the input matrix is N*N
     void rotate(vector<vector<int>>& board)
     {
         int n = board.size();

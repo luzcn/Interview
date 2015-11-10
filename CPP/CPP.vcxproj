@@ -238,6 +238,8 @@
     <ClInclude Include="Include\leetcode\NQueens.h" />
     <ClInclude Include="Include\leetcode\NumberOfIslands.h" />
     <ClInclude Include="Include\leetcode\OneEditDistance.h" />
+    <ClInclude Include="Include\leetcode\PaintFence.h" />
+    <ClInclude Include="Include\leetcode\PaintHouse.h" />
     <ClInclude Include="Include\leetcode\PalindromeNumber.h" />
     <ClInclude Include="Include\leetcode\PalindromePartitioning2.h" />
     <ClInclude Include="Include\leetcode\PalindromePermutation.h" />
@@ -245,6 +247,7 @@
     <ClInclude Include="Include\leetcode\PartitionList.h" />
     <ClInclude Include="Include\leetcode\PathSum.h" />
     <ClInclude Include="Include\leetcode\PathSum2.h" />
+    <ClInclude Include="Include\leetcode\PerfectSquares.h" />
     <ClInclude Include="Include\leetcode\Permutation.h" />
     <ClInclude Include="Include\leetcode\PermutationSequence.h" />
     <ClInclude Include="Include\leetcode\PlusOne.h" />

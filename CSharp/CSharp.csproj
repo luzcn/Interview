@@ -72,6 +72,7 @@
     <Compile Include="LeetCode\Numberof1Bits.cs" />
     <Compile Include="LeetCode\NumberOfIslands.cs" />
     <Compile Include="LeetCode\PartitionList.cs" />
+    <Compile Include="LeetCode\PerfectSquares.cs" />
     <Compile Include="LeetCode\Permutations.cs" />
     <Compile Include="LeetCode\RemoveElement.cs" />
     <Compile Include="LeetCode\RepeatedDNASequence.cs" />
