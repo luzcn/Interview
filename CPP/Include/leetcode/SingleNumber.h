@@ -55,18 +55,20 @@ namespace leetcode
     // so we can separate the input array into two parts, each contains one single number.
     vector<int> singleNumber3(vector<int> &A)
     {
-        int total_xor = 0;
+        int xorResult = 0;
         int x = 0;
         int y = 0;
 
         for (int i = 0; i < A.size(); i++)
         {
-            total_xor ^= A[i];
+            xorResult ^= A[i];
         }
         
         // int set_bit_no = total_xor&~(total_xor-1);
+        // find the first bit '1' position ( low to high) in xorResult
+        // '1' means the bit position that thest two apprea once numsbers are different.
         int set_bit_no = 1;
-        while (!(set_bit_no&total_xor))
+        while (!(set_bit_no & xorResult))
         {
             set_bit_no <<= 1;
         }
@@ -87,7 +89,8 @@ namespace leetcode
 }
 #if 0
 //(Idea coming from the internet)
-//Since we know that XOR operation can be used for testing if 1 bit occurs twice, in other words, for a single bit, if 1 occurs twice, it turns to 0.
+//Since we know that XOR operation can be used for testing if 1 bit occurs twice, 
+//in other words, for a single bit, if 1 occurs twice, it turns to 0.
 //Now we need a 3 - time criteria for each bit, by utilizing the bit operations.
 //This 3 - time criteria needs every bit turns to 0 if  '1' occurs three times.
 
