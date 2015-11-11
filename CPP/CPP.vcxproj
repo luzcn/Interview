@@ -169,6 +169,7 @@
     <ClInclude Include="Include\leetcode\CountAndSay.h" />
     <ClInclude Include="Include\leetcode\CountCompleteTreeNodes.h" />
     <ClInclude Include="Include\leetcode\CountPrimes.h" />
+    <ClInclude Include="Include\leetcode\CourseSchedule.h" />
     <ClInclude Include="Include\leetcode\DecodingWays.h" />
     <ClInclude Include="Include\leetcode\DifferentWaysAddParentheses.h" />
     <ClInclude Include="Include\leetcode\DistinctSubsequences.h" />
@@ -254,6 +255,7 @@
     <ClInclude Include="Include\leetcode\PopulatingNextRightNodeInEachNode.h" />
     <ClInclude Include="Include\leetcode\Pow.h" />
     <ClInclude Include="Include\leetcode\ProductOfArrayExceptSelf.h" />
+    <ClInclude Include="Include\leetcode\RangeSumQuery.h" />
     <ClInclude Include="Include\leetcode\RectangleArea.h" />
     <ClInclude Include="Include\leetcode\RegularExpressMatching.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicatesFromSortedArray.h" />
