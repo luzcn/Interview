@@ -7,7 +7,7 @@
 
 namespace Graph
 {
-    void BFS(GraphNode* node, std::queue<GraphNode*>& que, std::unordered_map<GraphNode*, int>& visited)
+    void BFS(GraphNode* node, std::queue<GraphNode*>& que, std::unordered_map<GraphNode*, bool>& visited)
     {
         if (!node)
         {
@@ -55,45 +55,29 @@ namespace Graph
     }
 
     //  Detect Cycle In Directed Graph
-    bool isCycleDFS(GraphNode* node, unordered_map<GraphNode*, int>& visited,
-        unordered_map<GraphNode*, int>& ancestor)
+    bool isCycleDFS(GraphNode* node, unordered_map<GraphNode*, bool>& visited,
+        unordered_set<GraphNode*>& ancestor)
     {
-        if (!node)
+        if (!visited[node])
         {
-            return false;
-        }
+            visited[node] = true;
+            ancestor.insert(node);
 
-        //// Detect cycle
-        //if (ancestor.find(node) != ancestor.end())
-        //{
-        //    return true;
-        //}
-
-        visited.emplace(node, 1);
-        ancestor.emplace(node, 1);
-
-        for (auto adj : node->adj_list)
-        {
-            if (visited.find(adj) == visited.end())
+            for (auto adj : node->adj_list)
             {
-                return isCycleDFS(adj, visited, ancestor);
+                if (visited.find(adj) == visited.end())
+                {
+                    if (isCycleDFS(adj, visited, ancestor))
+                        return true;
+                }
+                else if (ancestor.find(adj) != ancestor.end())
+                {
+                    return true;
+                }
             }
-            else if (ancestor.find(adj) != ancestor.end())
-            {
-                return true;
-            }
+            ancestor.erase(node);
         }
-        ancestor.erase(node);
         return false;
-    }
-
-    bool isCycle(GraphNode* node, unordered_map<GraphNode*, int>& visited)
-    {
-        if (visited.find(node) != visited.end())
-            return false;
-
-        unordered_map<GraphNode*, int> ancestor;
-        return isCycleDFS(node, visited, ancestor);
     }
 
     void TopologicalSortRec(GraphNode* node, std::unordered_set<GraphNode*>& visited, std::stack<GraphNode*>& stack)
@@ -200,7 +184,7 @@ namespace WeightedGraph
 using namespace std;
 using namespace Graph;
 
-int _tmain(int argc, _TCHAR* argv [])
+int _tmain(int argc, _TCHAR* argv[])
 {
     GraphNode n0(0);
     GraphNode n1(1);
@@ -234,7 +218,7 @@ int _tmain(int argc, _TCHAR* argv [])
 
     cout << isCycle(&n0, visited);
     return 0;
-    }
+}
 #endif
 
 #if 0

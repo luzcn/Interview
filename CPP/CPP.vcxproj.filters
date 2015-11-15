@@ -291,9 +291,6 @@
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\FindKthTopResult.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
@@ -445,9 +442,6 @@
       <Filter>Header Files\CareerCup\Tree</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\DeleteMiddleNode.h">
-      <Filter>Header Files\CareerCup\Linked List</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\CareerCup\DetectCycle.h">
       <Filter>Header Files\CareerCup\Linked List</Filter>
     </ClInclude>
     <ClInclude Include="Include\CareerCup\FindKthSmallest.h">
@@ -874,6 +868,18 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\CourseSchedule.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\DetectCycle.h">
+      <Filter>Header Files\CareerCup\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\AlienDictionary.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\FindKthTopResult.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MedianofTwoSortedArrays.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

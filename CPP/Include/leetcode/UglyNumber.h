@@ -63,7 +63,28 @@ namespace leetcode
             results.push_back(min_element);
         }
         return results.back();
+    }
 
+    // follow up: if the number is computed by this formular: 2^i * 5^j
+    int nthUglyNumber2(int n)
+    {
+        vector<int> v;
+        v.push_back(1);
 
+        int i = 0, j = 0;
+
+        while (v.size() < n)
+        {
+            int minElement = min(v[i] * 2, v[j] * 5);
+
+            if (minElement == v[i] * 2)
+                i++;
+            if (minElement == v[j] * 5)
+                j++;
+
+            v.push_back(minElement);
+        }
+
+        return v.back();
     }
 }

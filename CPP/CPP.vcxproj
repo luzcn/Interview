@@ -150,6 +150,7 @@
     <ClInclude Include="Include\DesignPattern\Observer.h" />
     <ClInclude Include="Include\DesignPattern\Singleton.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
+    <ClInclude Include="Include\leetcode\AlienDictionary.h" />
     <ClInclude Include="Include\leetcode\BasicCalculator.h" />
     <ClInclude Include="Include\leetcode\BestMeetingPoint.h" />
     <ClInclude Include="Include\leetcode\BestToBuyAndSellStock.h" />
@@ -227,6 +228,7 @@
     <ClInclude Include="Include\leetcode\MaximumDepth.h" />
     <ClInclude Include="Include\leetcode\MaximumProductSubarray.h" />
     <ClInclude Include="Include\leetcode\MaxPointsOnALine.h" />
+    <ClInclude Include="Include\leetcode\MedianofTwoSortedArrays.h" />
     <ClInclude Include="Include\leetcode\MeetingRooms.h" />
     <ClInclude Include="Include\leetcode\MergeIntervals.h" />
     <ClInclude Include="Include\leetcode\MergeKSortedList.h" />
