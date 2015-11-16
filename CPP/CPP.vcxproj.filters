@@ -882,6 +882,12 @@
     <ClInclude Include="Include\leetcode\MedianofTwoSortedArrays.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\SmallestRectangleEnclosingBlackPixels.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ThreeSumClosest.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

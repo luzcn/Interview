@@ -69,6 +69,7 @@
     <Compile Include="LeetCode\LongestSubString.cs" />
     <Compile Include="LeetCode\LowestCommonAncestor.cs" />
     <Compile Include="LeetCode\MaximumSubArray.cs" />
+    <Compile Include="LeetCode\MedianOfTwoSortedArray.cs" />
     <Compile Include="LeetCode\Numberof1Bits.cs" />
     <Compile Include="LeetCode\NumberOfIslands.cs" />
     <Compile Include="LeetCode\PaintHouse.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="LeetCode\VerifyPreorderSequenceBST.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LeetCode\SmallestRectangleEnclosingBlackPixels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

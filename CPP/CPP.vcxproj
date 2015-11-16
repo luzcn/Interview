@@ -149,6 +149,7 @@
     <ClInclude Include="Include\DataStructure\Sorting.h" />
     <ClInclude Include="Include\DesignPattern\Observer.h" />
     <ClInclude Include="Include\DesignPattern\Singleton.h" />
+    <ClInclude Include="Include\leetcode\ThreeSumClosest.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
     <ClInclude Include="Include\leetcode\AlienDictionary.h" />
     <ClInclude Include="Include\leetcode\BasicCalculator.h" />
@@ -279,6 +280,7 @@
     <ClInclude Include="Include\leetcode\SimplifyPath.h" />
     <ClInclude Include="Include\leetcode\SingleNumber.h" />
     <ClInclude Include="Include\leetcode\SlidingWindowMaximum.h" />
+    <ClInclude Include="Include\leetcode\SmallestRectangleEnclosingBlackPixels.h" />
     <ClInclude Include="Include\leetcode\SpiralMatrix.h" />
     <ClInclude Include="Include\leetcode\Sqrt.h" />
     <ClInclude Include="Include\leetcode\StringToInteger.h" />
