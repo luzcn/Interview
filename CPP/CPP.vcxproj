@@ -149,6 +149,9 @@
     <ClInclude Include="Include\DataStructure\Sorting.h" />
     <ClInclude Include="Include\DesignPattern\Observer.h" />
     <ClInclude Include="Include\DesignPattern\Singleton.h" />
+    <ClInclude Include="Include\leetcode\GraphValidTree.h" />
+    <ClInclude Include="Include\leetcode\PascalTriangle.h" />
+    <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h" />
     <ClInclude Include="Include\leetcode\ThreeSumClosest.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
     <ClInclude Include="Include\leetcode\AlienDictionary.h" />
