@@ -897,6 +897,9 @@
     <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\DataStructure\Trie.h">
+      <Filter>Header Files\DataStructure</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

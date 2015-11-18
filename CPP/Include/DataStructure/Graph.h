@@ -5,7 +5,7 @@
 #include <queue>
 #include <limits>
 
-namespace Graph
+namespace datastructureGraph
 {
     void BFS(GraphNode* node, std::queue<GraphNode*>& que, std::unordered_map<GraphNode*, bool>& visited)
     {

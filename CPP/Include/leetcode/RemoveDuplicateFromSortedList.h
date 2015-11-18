@@ -42,19 +42,36 @@ namespace leetcode
         if (!head || !head->next)
             return head;
 
-        ListNode res(-1);
-        ListNode* h = &res;
-
         auto p = head;
         auto q = head->next;
-        ListNode* prev = nullptr;
+
+        ListNode res(-1);
+        auto h = &res;
 
         while (q)
         {
+            bool duplicate = false;
+            // find duplicates
             while (q && q->val == p->val)
             {
+                duplicate = true;
                 q = q->next;
             }
+
+            if (duplicate)
+            {
+                // all the duplicate nodes need to removed
+                h->next = q;
+            }
+            else
+            {
+                // find no duplicate node
+                h->next = p;
+                h = p;
+            }
+
+            p = q;
+            if (q) q = q->next;
         }
 
         return res.next;

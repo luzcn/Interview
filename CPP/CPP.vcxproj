@@ -147,6 +147,7 @@
     <ClInclude Include="Include\DataStructure\RedBlackTree.h" />
     <ClInclude Include="Include\DataStructure\ShortestPathInGraph.h" />
     <ClInclude Include="Include\DataStructure\Sorting.h" />
+    <ClInclude Include="Include\DataStructure\Trie.h" />
     <ClInclude Include="Include\DesignPattern\Observer.h" />
     <ClInclude Include="Include\DesignPattern\Singleton.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />

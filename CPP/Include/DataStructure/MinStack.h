@@ -4,76 +4,77 @@
 #include <limits>
 #include <stack>
 
-class MinStack
+namespace datastructure
 {
-public:
-    MinStack()
-        :m_min(INT_MAX)
+    class MinStack
     {
-    }
-
-    void push(int val)
-    {
-        if (val <= m_min) // must be "<="
+    public:
+        MinStack()
+            :m_min(INT_MAX)
         {
-            m_min_stack.push(m_min);
-            m_min = val;
         }
 
-        m_stack.push(val);
-    }
-
-    int top()
-    {
-        if (empty())
-            throw std::exception("Stack empty");
-
-        return m_stack.top();
-    }
-
-    bool empty()
-    {
-        return m_stack.empty();
-    }
-
-    void pop()
-    {
-        if (empty())
-            throw std::exception("Stack empty");
-
-        auto t = top();
-
-        if (t == m_min)
+        void push(int val)
         {
-            m_min_stack.pop();
-            if (!m_min_stack.empty())
+            if (val <= m_min) // must be "<="
             {
-                m_min = m_min_stack.top();
+                m_min_stack.push(m_min);
+                m_min = val;
             }
-            else
-            {
-                m_min = INT_MAX;
-            }
+
+            m_stack.push(val);
         }
 
-        m_stack.pop();
-    }
+        int top()
+        {
+            if (empty())
+                throw std::exception("Stack empty");
 
-    int get_min()
-    {
-        return m_min;
-    }
+            return m_stack.top();
+        }
 
-private:
-    int m_min;
-    // used as internal stack
-    std::stack<int, std::vector<int>> m_stack;
+        bool empty()
+        {
+            return m_stack.empty();
+        }
 
-    // to save the min elements
-    std::stack<int, std::vector<int>> m_min_stack;
-};
+        void pop()
+        {
+            if (empty())
+                throw std::exception("Stack empty");
 
+            auto t = top();
 
+            if (t == m_min)
+            {
+                m_min_stack.pop();
+                if (!m_min_stack.empty())
+                {
+                    m_min = m_min_stack.top();
+                }
+                else
+                {
+                    m_min = INT_MAX;
+                }
+            }
+
+            m_stack.pop();
+        }
+
+        int get_min()
+        {
+            return m_min;
+        }
+
+    private:
+        int m_min;
+        // used as internal stack
+        std::stack<int, std::vector<int>> m_stack;
+
+        // to save the min elements
+        std::stack<int, std::vector<int>> m_min_stack;
+    };
+}
 #if 0
 class MinStack
 {
