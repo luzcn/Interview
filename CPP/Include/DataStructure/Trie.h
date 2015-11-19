@@ -8,12 +8,11 @@ namespace datastructur
     public:
         int words;  // used to indicate the leaf node
         int prefixes;   // used to count how may words has this common prefix
-        vector<TrieNode*> children;
+        TrieNode* children[26];
 
         TrieNode()
             :words(0), prefixes(0)
         {
-            children.resize(26);
             for (int i = 0; i < 26; i++)
             {
                 children[i] = nullptr;

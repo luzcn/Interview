@@ -900,6 +900,9 @@
     <ClInclude Include="Include\DataStructure\Trie.h">
       <Filter>Header Files\DataStructure</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\AddAndSearchWord.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
