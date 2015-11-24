@@ -903,6 +903,18 @@
     <ClInclude Include="Include\leetcode\AddAndSearchWord.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\MaximumSumSegmentQuery.h">
+      <Filter>Header Files\CareerCup\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\AdditiveNumber.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

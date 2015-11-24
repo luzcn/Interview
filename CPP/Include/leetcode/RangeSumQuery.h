@@ -7,7 +7,8 @@ namespace leetcode
     // NumArray numArray(nums);
     // numArray.sumRange(0, 1);
     // numArray.sumRange(1, 2);
-    class NumArray {
+    class NumArray
+    {
     public:
         NumArray(vector<int> &nums)
         {
@@ -29,6 +30,91 @@ namespace leetcode
     };
 
 
+    // using segment tree
+
+    // the array value may update multiple times
+    class NumArrayMutable
+    {
+    public:
+        NumArrayMutable(vector<int>& nums)
+        {
+            // construct the segment tree
+            this->root = constructSegmentTree(nums, 0, nums.size() - 1);
+        }
+
+        void update(int i, int val)
+        {
+            updateRec(root, i, val);
+        }
+
+        int sumRange(int i, int j)
+        {
+            return queryRec(root, i, j);
+        }
+    private:
+        class SegmentTreeNode
+        {
+        public:
+            int start;
+            int end;
+            int value;
+            SegmentTreeNode *left, *right;
+
+            SegmentTreeNode(int s, int e, int val)
+                :start(s), end(e), value(val), left(nullptr), right(nullptr)
+            {}
+        };
+
+        SegmentTreeNode* root;
+
+        SegmentTreeNode* constructSegmentTree(vector<int> &nums, int l, int r)
+        {
+            if (l > r)
+                return nullptr;
+
+            if (l == r)
+                return new SegmentTreeNode(l, r, nums[l]);
+
+            int m = l + (r - l) / 2;
+            auto leftSub = constructSegmentTree(nums, l, m);
+            auto rightSub = constructSegmentTree(nums, m + 1, r);
+
+            SegmentTreeNode* node = new SegmentTreeNode(l, r, leftSub->value + rightSub->value);
+            node->left = leftSub;
+            node->right = rightSub;
+
+            return node;
+        }
+
+        int queryRec(SegmentTreeNode* node, int i, int j)
+        {
+            if (!node || i > node->end || j < node->start)
+                return 0;
+
+            if (node->start >= i && node->end <= j)
+                return node->value;
+
+            return queryRec(node->left, i, j) + queryRec(node->right, i, j);
+        }
+
+        void updateRec(SegmentTreeNode* node, int i, int val)
+        {
+            if (!node || i < node->start || i > node->end)
+                return;
+
+            if (i == node->start && i == node->end)
+            {
+                node->value = val;
+                return;
+            }
+
+            updateRec(node->left, i, val);
+            updateRec(node->right, i, val);
+
+            node->value = node->left->value + node->right->value;
+        }
+    };
+
     // Range Sum Query 2D - Immutable
     // Given a 2D matrix matrix, find the sum of the elements inside the rectangle defined 
     // by its upper left corner(row1, col1) and lower right corner(row2, col2).
@@ -48,7 +134,7 @@ namespace leetcode
     public:
         NumMatrix(vector<vector<int>> &matrix)
         {
-            if (!matrix.empty)
+            if (!matrix.empty())
             {
                 int m = matrix.size();
                 int n = matrix[0].size();

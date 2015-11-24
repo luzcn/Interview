@@ -55,6 +55,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(ProjectDir)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/wd4018 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,6 +114,7 @@
     <ClInclude Include="Include\CareerCup\MatrixChainMultiplication.h" />
     <ClInclude Include="Include\CareerCup\MaximumDistanceInArray.h" />
     <ClInclude Include="Include\CareerCup\MaximumSubarray.h" />
+    <ClInclude Include="Include\CareerCup\MaximumSumSegmentQuery.h" />
     <ClInclude Include="Include\CareerCup\MaxSumGame.h" />
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h" />
     <ClInclude Include="Include\CareerCup\MinimumSpanningTree.h" />
@@ -151,7 +153,10 @@
     <ClInclude Include="Include\DesignPattern\Observer.h" />
     <ClInclude Include="Include\DesignPattern\Singleton.h" />
     <ClInclude Include="Include\leetcode\AddAndSearchWord.h" />
+    <ClInclude Include="Include\leetcode\AdditiveNumber.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
+    <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h" />
+    <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
     <ClInclude Include="Include\leetcode\PascalTriangle.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h" />
     <ClInclude Include="Include\leetcode\ThreeSumClosest.h" />
