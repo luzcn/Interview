@@ -21,43 +21,53 @@ namespace leetcode
     class Vector2D {
     public:
         Vector2D(vector<vector<int>>& vec2d)
-            :M(vec2d)
         {
-            it_row = M.begin();
-            if (it_row != M.end())
+            m_row = vec2d.begin();
+            m_end = vec2d.end();
+
+            if (m_row != m_end)
             {
-                it_col = it_row->begin();
-                while (it_row != M.end() && it_col == it_row->end())
+                m_col = m_row->begin();
+            }
+
+            // find the first non-empty vector
+            while (m_row != m_end && m_col == m_row->end())
+            {
+                m_row++;
+                if (m_row != m_end)
                 {
-                    it_row++;
-                    it_col = it_row->begin();
+                    m_col = m_row->begin();
                 }
             }
         }
 
         int next()
         {
-            int data = *it_col;
-            it_col++;
-            if (it_col == it_row->end())
+            int data = *m_col;
+            m_col++;
+
+            // if current vector has finished, 
+            // find the next non-empty vector
+            while (m_row != m_end && m_col == m_row->end())
             {
-                while (it_row != M.end() && it_col == it_row->end())
+                m_row++;
+                if (m_row != m_end)
                 {
-                    it_row++;
-                    it_col = it_row->begin();
+                    m_col = m_row->begin();
                 }
             }
+
             return data;
         }
 
         bool hasNext()
         {
-            return it_row != M.end(); //&& it_col != it_row->end();
+            return m_row != m_end;
         }
-    private:
-        vector<vector<int>>::iterator it_row;
-        vector<int>::iterator it_col;
-        vector<vector<int>> M;
+
+        vector<vector<int>>::iterator m_row;
+        vector<int>::iterator m_col;
+        vector<vector<int>>::iterator m_end;
     };
 
 }
