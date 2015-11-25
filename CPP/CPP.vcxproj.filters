@@ -915,6 +915,9 @@
     <ClInclude Include="Include\leetcode\AdditiveNumber.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\WordPattern.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
