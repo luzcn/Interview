@@ -151,6 +151,8 @@ namespace leetcode
     //     - If we separate the array at position i, then we have sub array [i+1, n] and the maxProfit of this sub array
     //     - so the recurrence is P(n,k) = P(i, k-1) + maxProfit(i+1, n)
     //  3. the optimal soltuion is max( P(i, k-1) + maxProfit(i+1, n)) for each 0< i <= n-1;
+    // http://leetcode.tgic.me/best-time-to-buy-and-sell-stock-iv/index.html
+    // http://blog.csdn.net/feliciafay/article/details/45128771
     namespace helper
     {
         int maxProfitInRange(const vector<int>& prices, const int start, const int end)
@@ -190,54 +192,35 @@ namespace leetcode
 
             return best;
         }
+    }
 
-        int  maxProfitDp(const vector<int>& prices, int k)
+    int maxProfit4DP(vector<int>& prices, int k)
+    {
+        if (k >= prices.size())
+            return maxProfit2(prices);
+
+        int n = prices.size();
+        vector<vector<int>> local(n, vector<int>(k, 0));
+        vector<vector<int>> global(n, vector<int>(k, 0));
+
+        for (int i = 1; i < prices.size(); i++)
         {
-            int n = prices.size();
-            vector<vector<int>> dp(n, vector<int>(k, 0));
-            dp[0][0] = 0;
-
-            // base condition first column is the maxProfit(0...i)
-            int maxProfit = 0;
-            int pivot = prices[0];
-            for (int i = 1; i < n; i++)
+            int diff = prices[i] - prices[i - 1];
+            for (int j = 0; j < k; j++)
             {
-                if (prices[i] > pivot)
-                {
-                    maxProfit = max(maxProfit, prices[i] - pivot);
-                }
-                else
-                {
-                    pivot = prices[i];
-                }
-
-                dp[i][0] = maxProfit;
+                local[i][j] = max(global[i-1][j-1] + max(diff, 0), local[i-1][j] + diff);
+                global[i][j] = max(local[i][j], global[i - 1][j]);
             }
-
-            for (int i = 1; i < n; i++)
-            {
-                for (int j = 1; j < k; j++)
-                {
-                    int best = 0;
-                    for (int p = 0; p < i; p++)
-                    {
-                        int rightMaxProfit = maxProfitInRange(prices, p, i);
-                        int leftOPT = dp[p][j - 1];
-                        best = max(best, rightMaxProfit + leftOPT);
-                    }
-                    dp[i][j] = best;
-                }
-            }
-
-            return dp[n - 1][k - 1];
         }
+
+        return global[n - 1][k - 1];
     }
     int maxProfit4(vector<int>& prices, int k)
     {
         if (prices.size() < 2)
             return 0;
 
-        return helper::maxProfitRec(prices, k, prices.size() - 1);
+        return maxProfit4DP(prices, k) ;
     }
 #pragma endregion 
 }

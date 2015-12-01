@@ -154,6 +154,7 @@
     <ClInclude Include="Include\DesignPattern\Singleton.h" />
     <ClInclude Include="Include\leetcode\AddAndSearchWord.h" />
     <ClInclude Include="Include\leetcode\AdditiveNumber.h" />
+    <ClInclude Include="Include\leetcode\BullsAndCows.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
     <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h" />
     <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
@@ -308,6 +309,7 @@
     <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
     <ClInclude Include="Include\leetcode\VerifyPreorderSequenceBST.h" />
+    <ClInclude Include="Include\leetcode\WiggleSort.h" />
     <ClInclude Include="Include\leetcode\WildcardMatching.h" />
     <ClInclude Include="Include\leetcode\WordBreak.h" />
     <ClInclude Include="Include\leetcode\WordBreak2.h" />
