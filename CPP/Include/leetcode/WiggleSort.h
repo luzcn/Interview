@@ -6,8 +6,163 @@
 //For example, given nums = [3, 5, 2, 1, 6, 4], one possible answer is[1, 6, 2, 5, 3, 4].
 namespace leetcode
 {
-    void wiggleSort(vector<int>& nums) 
+    // sort then swap, O(nlogn)
+    void wiggleSort(vector<int>& nums)
     {
+        if (nums.size() < 2)
+            return;
 
+        sort(nums.begin(), nums.end());
+
+        for (int i = 1; i < nums.size() - 1; i = i + 2)
+        {
+            // swap i and i+1
+            int temp = nums[i];
+            nums[i] = nums[i + 1];
+            nums[i + 1] = temp;
+        }
+    }
+
+    // O(n) solution
+    void wiggleSort2(vector<int>& nums)
+    {
+        if (nums.size() < 2)
+            return;
+
+        bool increase = true;
+
+        for (int i = 1; i < nums.size(); i++)
+        {
+            if ((increase && nums[i] < nums[i - 1])
+                || (!increase && nums[i - 1] < nums[i]))
+            {
+                // swap
+                int temp = nums[i];
+                nums[i] = nums[i - 1];
+                nums[i - 1] = temp;
+
+            }
+            increase = !increase;
+        }
+    }
+
+    // follow up 1: the constratins changed to nums[0] < nums[1] > nums[2] ...
+    // no contiguous equavelent number
+    // the problem is you cannot guarantee there is always a solution.
+    void wiggleSort3(vector<int>& nums)
+    {
+        if (nums.size() < 2)
+            return;
+
+        bool increase = true;
+        int i = 0;
+        int j = 1;
+
+        while (j < nums.size())
+        {
+            switch (increase)
+            {
+                // increasing
+            case true:
+                if (nums[i] < nums[j])
+                {
+                    i = j;
+                    j = i + 1;
+                }
+                else if (nums[i] > nums[j])
+                {
+                    int temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+
+                    i = j;
+                    j = i + 1;
+                }
+                else if (nums[i] == nums[j])
+                {
+                    while (j < nums.size() && nums[j] <= nums[i])
+                    {
+                        j++;
+                    }
+
+                    if (j == nums.size())
+                        return;
+
+                    // swap i+1 and j
+                    i++;
+                    int temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                    j = i + 1;
+                }
+                increase = !increase;
+
+            case false: // decreasing
+                if (nums[i] > nums[j])
+                {
+                    i = j;
+                    j = i + 1;
+                }
+                else if (nums[i] < nums[j])
+                {
+                    // swap i and j
+                    int temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+
+                    i = j;
+                    j = i + 1;
+                }
+                else if (nums[i] == nums[j])
+                {
+                    while (j < nums.size() && nums[j] >= nums[i])
+                    {
+                        j++;
+                    }
+
+                    if (j == nums.size())
+                        return;
+
+                    // swap i+1 and j
+                    i++;
+                    int temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                    j = i + 1;
+                }
+                increase = !increase;
+            default:
+                break;
+            }
+
+        }
+    }
+
+
+    // follow up2,
+    // given an unsorted array and one array contains only 0 and 1 used to indicate increasing or decreasing.
+    // reorder the given array in place based on the second array.
+    // for example: given nums = [3, 5, 2, 1, 6, 4], 
+    // and the second array orders=[0,0,1,1,1] indicating nums[0] >= nums[1] >= nums[2] <= nums[3] <= nums[4] <= nums[5], 
+    // one solution is [6,4,1,2,3,5]
+    void wiggleSort4(vector<int>& nums, vector<int>& orders)
+    {
+        if (nums.size() < 2)
+            return;
+
+        if (orders.size() < nums.size() - 1)
+            return;
+
+        for (int i = 0; i < nums.size() - 1; i++)
+        {
+            if ((orders[i] == 0 && nums[i] < nums[i + 1])
+                || (orders[i] == 1 && nums[i] > nums[i+1]))
+            {
+                // swap
+                int temp = nums[i];
+                nums[i] = nums[i + 1];
+                nums[i + 1] = temp;
+            }
+        }
     }
 }
