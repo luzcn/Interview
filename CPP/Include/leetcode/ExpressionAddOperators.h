@@ -11,6 +11,8 @@
 //"105", 5 ->["1*0+5", "10-5"]
 //"00", 0 ->["0+0", "0-0", "0*0"]
 //"3456237490", 9191 ->[]
+
+#if 0
 namespace leetcode
 {
     // return true if op1 is '*' and op2 is '+' or '-'
@@ -127,5 +129,51 @@ namespace leetcode
         getExpressions(num, ops, res, current, 0, target);
 
         return res;
+    }
+}
+#endif
+
+namespace leetcode
+{
+    // diff: the value needs to change,
+    // curNum: the current value
+    void addOperatorsDFS(string num, int target, vector<string> &result, 
+        long long diff, long long curNum, string outs)
+    {
+        if (num.empty() && curNum == target)
+        {
+            result.push_back(outs);
+            return;
+        }
+
+        for (int i = 0; i < num.size(); i++)
+        {
+            string prefix = num.substr(0, i + 1);
+
+            if (prefix.size() > 1 && prefix[0] == '0')    // "00" is not valid number
+                return;
+
+            string last = num.substr(i + 1);
+
+            if (outs.empty())
+            {
+                addOperatorsDFS(last, target, result, stoll(prefix), stoll(prefix), prefix);
+            }
+            else
+            {
+                addOperatorsDFS(last, target, result, stoll(prefix), curNum + stoll(prefix), outs + '+' + prefix);
+                addOperatorsDFS(last, target, result, -stoll(prefix), curNum - stoll(prefix), outs + '-' + prefix);
+                addOperatorsDFS(last, target, result, diff * stoll(prefix), (curNum - diff) + diff*stoll(prefix), outs + '*' + prefix);
+            }
+        }
+    }
+
+    vector<string> addOperators(string num, int target)
+    {
+        vector<string> result;
+
+        addOperatorsDFS(num, target, result, 0, 0, "");
+        
+        return result;
     }
 }

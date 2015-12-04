@@ -1,20 +1,93 @@
 #pragma once
 #include "stdafx.h"
 #include <set>
+#include <map>
+#include <functional>
+#include <iterator>
 
 namespace leetcode
 {
-    //struct Building
-    //{
-    //    int Li; // the left index
-    //    int Ri; // the right index
-    //    int Hi; // the height of the building
+    struct EndPoint
+    {
+        int pos;
+        int height;
+        bool isLeft;
 
-    //    Building(int l, int r, int h)
-    //        :Li(l), Ri(r), Hi(h)
-    //    {}
-    //};
+        EndPoint(int p, int h, bool is_left)
+            :pos(p), height(h), isLeft(is_left)
+        {
+        }
 
+    };
+
+    vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings)
+    {
+        vector<pair<int, int>> result;
+
+        if (buildings.empty())
+            return result;
+
+        vector<EndPoint> points;
+        for (auto& b : buildings)
+        {
+            points.push_back({ b[0], b[2], true });
+            points.push_back({ b[1], b[2], false });
+        }
+        sort(points.begin(), points.end(), [&](EndPoint& p1, EndPoint& p2) {
+            return p1.pos < p2.pos;
+        });
+
+
+        std::multiset<int, std::greater<int>> heights;  // the first element is the larget height
+        std::map<int, int> endPointMap; // sorted
+
+        for (auto& p : points)
+        {
+            if (p.isLeft)
+            {
+                heights.insert(p.height);
+            }
+            else
+            {
+                heights.erase(heights.find(p.height));
+            }
+
+            if (heights.empty())
+            {
+                endPointMap[p.pos] = 0;
+            }
+            else
+            {
+                endPointMap[p.pos] = *heights.begin();
+            }
+        }
+
+        std::unique_copy(endPointMap.begin(), endPointMap.end(), 
+            back_inserter<vector<pair<int, int>>>(result),
+            [&](pair<int, int> p1, pair<int, int> p2) {return p1.second == p2.second; });
+
+
+        return result;
+    }
+
+}
+
+#if 0
+namespace leetcode
+{
+    struct EndPoint
+    {
+        int Pos;
+        int Ri;
+        int height;
+        bool isLeft;
+        int count;  // used to overlaped builds with same height
+
+        EndPoint(int p, int r, int h, bool l)
+            :Pos(p), Ri(r), height(h), isLeft(l), count(0)
+        {}
+
+    };
     struct comparator
     {
         bool operator()(int n1, int n2)
@@ -23,16 +96,6 @@ namespace leetcode
         }
     };
 
-    struct EndPoint
-    {
-        int pos;
-        int height;
-        bool isLeft;
-
-        EndPoint(int p, int h, bool isLeftPoint)
-            :pos(p), height(h), isLeft(isLeftPoint)
-        {}
-    };
 
     vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings)
     {
@@ -41,46 +104,97 @@ namespace leetcode
             return{};
 
         vector<EndPoint> points;
-        std::multiset<int, comparator> st;
+        std::map<int, EndPoint, std::greater<int>> map;
+
 
         for (auto& b : buildings)
         {
-            points.push_back(EndPoint(b[0], b[2], true));
-            points.push_back(EndPoint(b[1], b[2], false));
+            points.push_back(EndPoint(b[0], b[1], b[2], true));
+            points.push_back(EndPoint(b[1], b[1], b[2], false));
         }
 
-        sort(points.begin(), points.end(), [&](const EndPoint& p1, const EndPoint& p2) {
-            return p1.pos < p2.pos;
+        sort(points.begin(), points.end(), [&](EndPoint& p1, EndPoint& p2) {
+            return p1.Pos < p2.Pos;
         });
 
+        for (int i = 0; i < points.size() - 1; i++)
+        {
+            auto p1 = points[i];
+            auto p2 = points[i + 1];
+
+            if (!p1.isLeft && p2.isLeft && p1.height == p2.height && p1.Pos == p2.Pos)
+            {
+                points.erase(points.begin() + i);
+                points.erase(points.begin() + i);
+            }
+        }
         for (auto& p : points)
         {
             if (p.isLeft)
             {
-                if (st.empty() || *st.begin() < p.height)
+                if (map.empty())
                 {
-                    result.push_back({ p.pos, p.height });
+                    if (!result.empty() && result.back().first == p.Pos && result.back().second == 0)
+                    {
+                        result.back().second = p.height;
+                    }
+                    else
+                    {
+                        result.push_back({ p.Pos, p.height });
+                    }
                 }
+                else
+                {
+                    auto it = map.begin();
+                    int currentHi = it->first;
+                    int pos = it->second.Pos;
 
-                st.insert(p.height);
+                    if (p.height > currentHi)
+                    {
+                        if (p.Pos == pos)
+                        {
+                            result.back().second = p.height;
+                        }
+                        else
+                        {
+                            result.push_back({ p.Pos, p.height });
+                        }
+                    }
+                }
+                auto it = map.find(p.height);
+                if (it != map.end())
+                {
+                    it->second.count++;
+                }
+                else
+                {
+                    map.emplace(p.height, p);
+                }
             }
-            else // right point 
+            else // the right endpoint
             {
-                st.erase(p.height);
-
-                if (st.empty())
+                auto it = map.find(p.height);
+                if (it->second.count == 0)
                 {
-                    result.push_back({ p.pos, 0 });
+                    map.erase(it);
                 }
-                else if (*st.begin() < p.height)
+                else
                 {
-                    result.push_back({ p.pos, *st.begin() });
+                    it->second.count--;
                 }
 
-                // special case, these two buildings are contiguously connected and have same height
+                if (map.empty())
+                {
+                    result.push_back({ p.Pos, 0 });
+                }
+                else if (p.height > map.begin()->first && p.Pos != map.begin()->second.Ri)
+                {
+                    result.push_back({ p.Pos, map.begin()->first });
+                }
             }
         }
 
         return result;
     }
 }
+#endif

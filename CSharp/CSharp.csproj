@@ -81,6 +81,7 @@
     <Compile Include="LeetCode\ReverseBits.cs" />
     <Compile Include="LeetCode\RotateArray.cs" />
     <Compile Include="LeetCode\RotateList.cs" />
+    <Compile Include="LeetCode\SkylineProblem.cs" />
     <Compile Include="LeetCode\SlidingWindowMaximum.cs" />
     <Compile Include="LeetCode\SpiralMatrix.cs" />
     <Compile Include="LeetCode\UglyNumber.cs" />
