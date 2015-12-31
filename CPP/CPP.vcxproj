@@ -155,8 +155,10 @@
     <ClInclude Include="Include\leetcode\AddAndSearchWord.h" />
     <ClInclude Include="Include\leetcode\AdditiveNumber.h" />
     <ClInclude Include="Include\leetcode\BinaryTreePath.h" />
+    <ClInclude Include="Include\leetcode\BinaryTreeVerticalOrderTraversal.h" />
     <ClInclude Include="Include\leetcode\BullsAndCows.h" />
     <ClInclude Include="Include\leetcode\BurstBalloons.h" />
+    <ClInclude Include="Include\leetcode\ContainerWithMostWater.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
     <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h" />
     <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
@@ -166,6 +168,7 @@
     <ClInclude Include="Include\leetcode\RemoveDuplicateLetters.h" />
     <ClInclude Include="Include\leetcode\SerializeAndDeserializeBinaryTree.h" />
     <ClInclude Include="Include\leetcode\SkylineProblem.h" />
+    <ClInclude Include="Include\leetcode\StrobogrammaticNumber.h" />
     <ClInclude Include="Include\leetcode\ThreeSumClosest.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
     <ClInclude Include="Include\leetcode\AlienDictionary.h" />
@@ -310,6 +313,7 @@
     <ClInclude Include="Include\leetcode\SwapNodesinPairs.h" />
     <ClInclude Include="Include\leetcode\TrappingRainingWater.h" />
     <ClInclude Include="Include\leetcode\Triangle.h" />
+    <ClInclude Include="Include\leetcode\TwoSumDesign.h" />
     <ClInclude Include="Include\leetcode\UglyNumber.h" />
     <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
     <ClInclude Include="Include\leetcode\UniqueWordAbbreviation.h" />
@@ -322,6 +326,7 @@
     <ClInclude Include="Include\leetcode\WordBreak2.h" />
     <ClInclude Include="Include\leetcode\WordLadder.h" />
     <ClInclude Include="Include\leetcode\WordPattern.h" />
+    <ClInclude Include="Include\leetcode\WordSearch.h" />
     <ClInclude Include="Include\leetcode\ZigZagConversion.h" />
     <ClInclude Include="Include\leetcode\ZigZagIterator.h" />
     <ClInclude Include="Include\lintcode\AssignmentOperatorOverload.h" />
@@ -367,7 +372,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CPP.cpp" />
-    <ClCompile Include="Include\leetcode\PeekingIterator.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

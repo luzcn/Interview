@@ -20,5 +20,52 @@
 namespace leetcode
 {
 
+    // DFS solution
+    void dfs(const int& n, const int& k, string& result,
+        string& current, vector<bool>& visited, int& count)
+    {
+        if (current.size() == n)
+        {
+            if (++count == k)
+            {
+                result = current;
+                return;
+            }
+        }
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (!visited[i])
+            {
+                visited[i] = true;
+                current.push_back(i + '0');
+
+                dfs(n, k, result, current, visited, count);
+
+                current.pop_back();
+                visited[i] = false;
+            }
+        }
+    }
+
+    string getPermutation(int n, int k)
+    {
+        string result = "";
+        vector<bool> visited(n + 1, false);
+
+        int count = 0;
+        string current = "";
+        dfs(n, k, result, current, visited, count);
+
+        return result;
+    }
+
+    // math solution
+    string getPermutation2(int n, int k)
+    {
+
+        return{};
+
+    }
 
 }
