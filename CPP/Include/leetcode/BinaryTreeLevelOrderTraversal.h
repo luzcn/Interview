@@ -10,40 +10,43 @@ namespace leetcode
      */
     vector<vector<int>> TreeLevelOrderTraversal(TreeNode* root)
     {
-        vector<vector<int>> sol;
         if (!root)
-            return sol;
+            return{};
 
-        queue<TreeNode*> que1;
-        queue<TreeNode*> que2;
-        vector<int> level;
-        que1.push(root);
+        vector<vector<int>> result;
+        vector<int> levelList;
 
-        while (!que1.empty())
+        std::queue<TreeNode*> que_nodes;
+        std::queue<TreeNode*> que_temp;
+
+        que_nodes.push(root);
+
+        while (!que_nodes.empty())
         {
-            auto current = que1.front();
-            que1.pop();
-            level.push_back(current->val);
+            TreeNode* current = que_nodes.front();
+            que_nodes.pop();
 
+            levelList.push_back(current->val);
             if (current->left)
             {
-                que2.push(current->left);
-            }
-            if (current->right)
-            {
-                que2.push(current->right);
+                que_temp.push(current->left);
             }
 
-            if (que1.empty())
+            if (current->right)
             {
-                sol.push_back(level);
-                level.clear();
-                que1 = que2;
-                que2 = queue<TreeNode*>();
+                que_temp.push(current->right);
+            }
+
+            if (que_nodes.empty())
+            {
+                que_nodes.swap(que_temp);
+
+                result.push_back(levelList);
+                levelList.clear();
             }
         }
 
-        return sol;
+        return result;
     }
 
     /***

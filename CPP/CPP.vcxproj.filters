@@ -963,6 +963,9 @@
     <ClInclude Include="Include\leetcode\ContainerWithMostWater.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\ReadNCharactersGivenRead4.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

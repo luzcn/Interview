@@ -164,6 +164,7 @@
     <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
     <ClInclude Include="Include\leetcode\PascalTriangle.h" />
     <ClInclude Include="Include\leetcode\PeekingIterator.h" />
+    <ClInclude Include="Include\leetcode\ReadNCharactersGivenRead4.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateLetters.h" />
     <ClInclude Include="Include\leetcode\SerializeAndDeserializeBinaryTree.h" />
