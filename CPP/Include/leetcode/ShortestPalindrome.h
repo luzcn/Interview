@@ -1,7 +1,6 @@
 #pragma once
 #include "stdafx.h"
 
-
 //A palindrome is a String that is spelled the same forward and backwards.Given a String base that may or may not be a palindrome, 
 //we can always force base to be a palindrome by adding letters to it.
 //

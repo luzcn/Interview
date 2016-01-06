@@ -160,6 +160,7 @@
     <ClInclude Include="Include\leetcode\BurstBalloons.h" />
     <ClInclude Include="Include\leetcode\ContainerWithMostWater.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
+    <ClInclude Include="Include\leetcode\MaximumSizeSubarraySumEqualsk.h" />
     <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h" />
     <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
     <ClInclude Include="Include\leetcode\PascalTriangle.h" />
