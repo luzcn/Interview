@@ -11,10 +11,10 @@ namespace leetcode
     //    The solution set must not contain duplicate combinations.
     //    For example, given candidate set 2, 3, 6, 7 and target 7,
     //    A solution set is :
-    //[7]
-    //[2, 2, 3]
+    //  [7]
+    //  [2, 2, 3]
     void combinationSumRec(const vector<int>& candidates, const int& target,
-        vector<vector<int>>& result, vector<int>& current, int sum)
+        vector<vector<int>>& result, vector<int>& current, int sum, int index)
     {
         if (sum == target)
         {
@@ -27,10 +27,10 @@ namespace leetcode
             return;
         }
 
-        for (int i = 0; i < candidates.size(); i++)
+        for (int i = index; i < candidates.size(); i++)
         {
             current.push_back(candidates[i]);
-            combinationSumRec(candidates, target, result, current, sum + candidates[i]);
+            combinationSumRec(candidates, target, result, current, sum + candidates[i], i);
             current.pop_back();
         }
     }
@@ -42,7 +42,9 @@ namespace leetcode
             return result;
 
         vector<int> current;
-        combinationSumRec(candidates, target, result, current, 0);
+        sort(candidates.begin(), candidates.end());
+
+        combinationSumRec(candidates, target, result, current, 0, 0);
 
         return result;
     }
@@ -92,7 +94,7 @@ namespace leetcode
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target)
     {
         vector<vector<int>> res;
-        vector<int> current;    
+        vector<int> current;
         std::sort(candidates.begin(), candidates.end());
 
         combinationSum2Rec(candidates, target, res, current, 0, 0);

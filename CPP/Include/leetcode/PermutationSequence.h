@@ -19,7 +19,6 @@
 // http://en.wikipedia.org/wiki/Lehmer_code?
 namespace leetcode
 {
-
     // DFS solution
     void dfs(const int& n, const int& k, string& result,
         string& current, vector<bool>& visited, int& count)
@@ -48,24 +47,34 @@ namespace leetcode
         }
     }
 
+    // math solution
+    int factorial(int n)
+    {
+        if (n <= 1)
+            return 1;
+
+        return factorial(n - 1)*n;
+    }
+
     string getPermutation(int n, int k)
     {
-        string result = "";
-        vector<bool> visited(n + 1, false);
+        string result;
+        k--;
+        vector<int> nums;
 
-        int count = 0;
-        string current = "";
-        dfs(n, k, result, current, visited, count);
+        for (int i = 1; i <= n; i++)
+            nums.push_back(i);
+
+        for (int i = n; i >= 1; i--)
+        {
+            int base = factorial(i - 1);
+            int index = k / base;
+            k = k % base;
+
+            result.append(to_string(nums[index]));
+            nums.erase(nums.begin() + index);
+        }
 
         return result;
     }
-
-    // math solution
-    string getPermutation2(int n, int k)
-    {
-
-        return{};
-
-    }
-
 }
