@@ -134,7 +134,8 @@ namespace LongestPalindromicSubstring
             return s;
 
         int n = s.size();
-        string result = s.substr(0, 1);  // a single character slef is a palindrome
+        string result = s.substr(0, 1);  // a single character self is a palindrome
+
         for (int i = 0; i < n - 1; i++)
         {
             auto p1 = extend_from_center(s, i, i);
@@ -157,9 +158,7 @@ namespace LongestPalindromicSubstring
 
 #pragma region O(n) solution (Manacher’s algorithm)
 
-    /**
-     *	http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
-     */
+    // http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
     string preprocess(const string& s)
     {
         string res = "";
@@ -174,16 +173,20 @@ namespace LongestPalindromicSubstring
     string longestPalindrome(string s)
     {
         string str = std::move(preprocess(s));
-        string res = "";
 
-        vector<int> p(str.size(), 0);
-        int center = 0;
-        int mx = 0;
         int n = str.size();
+        vector<int> p(n, 0);
+
+        // The index which is a palindrome center
+        int center = 0; 
+
+        // The furthest index which is in the palindrome centered as "center" index
+        // mx == center + p[center]
+        int mx = 0;     
 
         for (int i = 0; i < n - 1; i++)
         {
-            int i_mirror = 2 * center - i;
+            int i_mirror = 2 * center - i;  // center - (i - center)
             if (mx > i)
             {
                 p[i] = min(mx - i, p[i_mirror]);

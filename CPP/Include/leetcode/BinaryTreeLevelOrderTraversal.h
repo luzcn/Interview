@@ -4,10 +4,7 @@
 
 namespace leetcode
 {
-    using namespace std;
-    /***
-     *	Use queue to simulate the level.
-     */
+    // Use queue to simulate the level.
     vector<vector<int>> TreeLevelOrderTraversal(TreeNode* root)
     {
         if (!root)
@@ -49,23 +46,31 @@ namespace leetcode
         return result;
     }
 
-    /***
-     *	inorder DFS solution.
-     */
-    void TreeLevelOrderDFS(TreeNode* node, vector<vector<int>>& solution, int level)
+    // recursive solution        
+    void TreeLevelOrderDFS(TreeNode* node, vector<vector<int>>& result, int level)
     {
         if (!node)
             return;
 
-        if (level == solution.size())
+        if (level == result.size())
         {
-            solution.push_back(vector<int>());
+            result.push_back(vector<int>());
         }
 
-        solution[level].push_back(node->val);
+        result[level].push_back(node->val);
 
-        TreeLevelOrderDFS(node->left, solution, level + 1);
-        TreeLevelOrderDFS(node->right, solution, level + 1);
+        // For zigzag order
+        //if (level % 2 == 0)
+        //{
+        //    result[level].push_back(node->val);
+        //}
+        //else
+        //{
+        //    result[level].insert(result[level].begin(), node->val);
+        //}
+
+        TreeLevelOrderDFS(node->left, result, level + 1);
+        TreeLevelOrderDFS(node->right, result, level + 1);
     }
 
     vector<vector<int>> TreeLevelOrderTraversalDFS(TreeNode* root)

@@ -729,9 +729,6 @@
     <ClInclude Include="Include\leetcode\UglyNumber.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\CareerCup\RobotMergeProblem.h">
-      <Filter>Header Files\CareerCup</Filter>
-    </ClInclude>
     <ClInclude Include="Include\leetcode\MergeIntervals.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
@@ -977,6 +974,18 @@
     </ClInclude>
     <ClInclude Include="Include\leetcode\FactorCombination.h">
       <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\PowerOfThree.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\CoinChange.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\ShortestDistanceFromAllBuildings.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\RobotMergeProblem.h">
+      <Filter>Header Files\CareerCup\DFS BFS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -158,6 +158,7 @@
     <ClInclude Include="Include\leetcode\BinaryTreeVerticalOrderTraversal.h" />
     <ClInclude Include="Include\leetcode\BullsAndCows.h" />
     <ClInclude Include="Include\leetcode\BurstBalloons.h" />
+    <ClInclude Include="Include\leetcode\CoinChange.h" />
     <ClInclude Include="Include\leetcode\ContainerWithMostWater.h" />
     <ClInclude Include="Include\leetcode\CreateMaximumNumber.h" />
     <ClInclude Include="Include\leetcode\FactorCombination.h" />
@@ -168,10 +169,12 @@
     <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
     <ClInclude Include="Include\leetcode\PascalTriangle.h" />
     <ClInclude Include="Include\leetcode\PeekingIterator.h" />
+    <ClInclude Include="Include\leetcode\PowerOfThree.h" />
     <ClInclude Include="Include\leetcode\ReadNCharactersGivenRead4.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateLetters.h" />
     <ClInclude Include="Include\leetcode\SerializeAndDeserializeBinaryTree.h" />
+    <ClInclude Include="Include\leetcode\ShortestDistanceFromAllBuildings.h" />
     <ClInclude Include="Include\leetcode\SkylineProblem.h" />
     <ClInclude Include="Include\leetcode\StrobogrammaticNumber.h" />
     <ClInclude Include="Include\leetcode\ThreeSumClosest.h" />
