@@ -25,17 +25,11 @@
 
 // brute force solution
 // for each cell which has value '0', use bfs find the shortest distance to all the house (value is '1').
-class Solution
+// if there is one house unreachable from this cell, returns the distance as INT_MAX;
+namespace leetcode
 {
-public:
-    int shortestDistance(vector<vector<int>>& grid)
+    struct point
     {
-
-    }
-private:
-    class point
-    {
-    public:
         point(int _x, int _y, int d)
             :x(_x), y(_y), distance(d)
         {}
@@ -45,26 +39,87 @@ private:
         int distance;
     };
 
-    int getDistaceToAllHouse(vector<vector<int>>& grid, int x, int y)
+    void bfs(vector<vector<int>>& grid, vector<vector<int>>& distance, int i, int j)
     {
-        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
-        int distance = 0;
+        int m = grid.size();
+        int n = grid[0].size();
 
+        vector<vector<bool>> visited(m, vector<bool>(n, false));
         std::queue<point> que;
-        que.push({ x, y, 0 });
+        que.push({ i - 1, j, 1 });
+        que.push({ i + 1, j, 1 });
+        que.push({ i, j - 1, 1 });
+        que.push({ i, j + 1, 1 });
 
         while (!que.empty())
         {
             auto p = que.front();
             que.pop();
 
-            if (!visited[p.x][p.y])
+            if (p.x < 0 || p.x >= m || p.y < 0 || p.y >= n
+                || visited[p.x][p.y] || grid[p.x][p.y] == 2 || grid[p.x][p.y] == 1)
             {
-                visited[p.x][p.y] = true;
+                continue;
+            }
 
+
+            visited[p.x][p.y] = true;
+            if (distance[p.x][p.y] != INT_MAX)
+                distance[p.x][p.y] += p.distance;
+
+            que.push({ p.x - 1, p.y, p.distance + 1 });
+            que.push({ p.x + 1, p.y, p.distance + 1 });
+            que.push({ p.x, p.y - 1, p.distance + 1 });
+            que.push({ p.x, p.y + 1, p.distance + 1 });
+        }
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (grid[i][j] == 0 && !visited[i][j])
+                {
+                    distance[i][j] = INT_MAX;
+                }
             }
         }
     }
 
-};
+    int shortestDistance(vector<vector<int>>& grid)
+    {
+        if (grid.empty())
+            return -1;
 
+        int m = grid.size();
+        int n = grid[0].size();
+
+        vector<vector<int>> distance(m, vector<int>(n, 0));
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (grid[i][j] == 1)
+                {
+                    bfs(grid, distance, i, j);
+                }
+            }
+        }
+
+        int result = INT_MAX;
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (grid[i][j] == 0)
+                {
+                    if (distance[i][j] < result)
+                    {
+                        result = distance[i][j];
+                    }
+                }
+            }
+        }
+
+        return result == INT_MAX ? -1 : result;
+    }
+}

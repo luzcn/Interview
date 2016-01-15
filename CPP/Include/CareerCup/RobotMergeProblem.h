@@ -21,6 +21,17 @@ Definition: Best merge point: minimal sum of path num between robots and merge p
 // so there should be no merge point.
 namespace careercup
 {
+    struct MyPoint
+    {
+        MyPoint(int _x, int _y, int d)
+            :x(_x), y(_y), distance(d)
+        {}
+
+        int x;
+        int y;
+        int distance;
+    };
+
     void print(vector<vector<int>>& M)
     {
         for (auto v : M)
@@ -36,145 +47,91 @@ namespace careercup
     }
 
     // BFS solution,
-    // The idea is from a robot, get all the shortest distance for every node except blocks.
-    void bfs(const vector<vector<int>>& board, int x, int y, vector<vector<int>>& totalDistance)
+    // The idea is from a robot, compute the distance to each reachable cell.
+    // for those unreachable cells, set distance to INT_MAX
+    void bfs(const vector<vector<int>>& board, int i, int j, vector<vector<int>>& total_distance)
     {
-        std::queue<pair<int, int>> que;
-        que.emplace(x, y);
-
-        vector<vector<bool>> visited(board.size(), vector<bool>(board[0].size(), false));
-        vector<vector<int>> distance(board.size(), vector<int>(board[0].size(), 0));
-
         int m = board.size();
         int n = board[0].size();
 
+        vector<vector<bool>> visited(m, vector<bool>(n, false));
+
+        std::queue<MyPoint> que;
+        que.push({ i, j, 0 });
+
         while (!que.empty())
         {
-            int i = que.front().first;
-            int j = que.front().second;
+            auto p = que.front();
             que.pop();
 
-            if (!visited[i][j] && board[i][j] != -1)
+            int x = p.x;
+            int y = p.y;
+            int d = p.distance;
+
+            if (x < 0 || x >= m || y < 0 || y >= n
+                || visited[x][y] || board[x][y] == -1)
             {
-                // mark current point as visited.
-                visited[i][j] = true;
-
-                // move up
-                if (i > 0 && !visited[i - 1][j])
-                {
-                    if (board[i - 1][j] != -1)
-                    {
-                        //if (distance[i][j] + 1 < distance[i - 1][j])
-                        distance[i - 1][j] = distance[i][j] + 1;
-                        totalDistance[i - 1][j] += distance[i - 1][j];
-
-                        que.push(pair<int, int>(i - 1, j));
-                    }
-                    else
-                    {
-                        distance[i - 1][j] = 100; // INT_MAX;
-                        totalDistance[i - 1][j] = INT_MAX;
-                    }
-                }
-                // move down
-                if (i < m - 1 && !visited[i + 1][j])
-                {
-                    if (board[i + 1][j] != -1)
-                    {
-                        //if (distance[i][j] + 1 < distance[i + 1][j])
-                        distance[i + 1][j] = distance[i][j] + 1;
-                        totalDistance[i + 1][j] += distance[i + 1][j];
-
-                        que.push(pair<int, int>(i + 1, j));
-                    }
-                    else
-                    {
-                        distance[i + 1][j] = 100; // INT_MAX;
-                        totalDistance[i + 1][j] = INT_MAX;
-                    }
-                }
-
-                // move left
-                if (j > 0 && !visited[i][j - 1])
-                {
-                    if (board[i][j - 1] != -1)
-                    {
-                        //if (distance[i][j] + 1 < distance[i][j - 1])
-                        distance[i][j - 1] = distance[i][j] + 1;
-                        totalDistance[i][j - 1] += distance[i][j - 1];
-
-                        que.push(pair<int, int>(i, j - 1));
-                    }
-                    else
-                    {
-                        distance[i][j - 1] = 100;// INT_MAX;
-                        totalDistance[i][j - 1] = INT_MAX;
-                    }
-                }
-
-                // move right
-                if (j < n - 1 && !visited[i][j + 1])
-                {
-                    if (board[i][j + 1] != -1)
-                    {
-                        //if (distance[i][j] + 1 < distance[i][j + 1])
-                        distance[i][j + 1] = distance[i][j] + 1;
-                        totalDistance[i][j + 1] += distance[i][j + 1];
-
-                        que.push(pair<int, int>(i, j + 1));
-                    }
-                    else
-                    {
-                        distance[i][j + 1] = 100; // INT_MAX;
-                        totalDistance[i][j + 1] = INT_MAX;
-                    }
-                }
-
+                continue;
             }
+
+            visited[x][y] = true;
+            if (total_distance[x][y] != INT_MAX)
+            {
+                total_distance[x][y] += d;
+            }
+
+            que.push({ x - 1, y, d + 1 });
+            que.push({ x + 1, y, d + 1 });
+            que.push({ x, y - 1, d + 1 });
+            que.push({ x, y + 1, d + 1 });
         }
 
-        //return distance;
-    }
-
-
-    int bestMerge(vector<vector<int>>& board)
-    {
-        vector<vector<int>> totalDistance(board.size(), vector<int>(board[0].size(), 0));
-
-        // find all the robots first.
-        vector<pair<int, int>> robots;
+        // Rest the unreachable cells to INT_MAX
         for (int i = 0; i < board.size(); i++)
         {
             for (int j = 0; j < board[0].size(); j++)
             {
+                if (board[i][j] == 0 && !visited[i][j])
+                {
+                    total_distance[i][j] = INT_MAX;
+                }
+            }
+        }
+    }
+    int bestMerge(vector<vector<int>>& board)
+    {
+        if (board.empty())
+            return -1;
+
+        int m = board.size();
+        int n = board[0].size();
+        vector<vector<int>> total_distance(m, vector<int>(n, 0));
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
                 if (board[i][j] == 1)
-                    robots.push_back(pair<int, int>(i, j));
+                {
+                    bfs(board, i, j, total_distance);
+                }
             }
         }
 
-        for (auto& p : robots)
+        int result = INT_MAX;
+        for (int i = 0; i < m; i++)
         {
-            bfs(board, p.first, p.second, totalDistance);
-
+            for (int j = 0; j < n; j++)
+            {
+                if (board[i][j] == 0)
+                    result = min(result, total_distance[i][j]);
+            }
         }
-        print(totalDistance);
 
-        return 1;
+        print(total_distance);
+
+        return result;
     }
 }
 
-#if 0
-int main()
-{
-    vector<vector<int>> M{
-        { 0,   0,   0,   0,   1 },
-        { 0,   1,   -1,   0 ,  0 },
-        { 0,   -1,   0,   0,   0 },
-        { 0,   0,   0,   1,   0 },
-        { 0,   0,   0,   0,   0 }
-    };
 
-    careercup::bestMerge(M);
-    return 0;
-}
-#endif

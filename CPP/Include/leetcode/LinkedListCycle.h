@@ -62,8 +62,13 @@ namespace LinkedListCycle
 
             if (p == q)
             {
-               break;
+                break;
             }
+        }
+
+        if (!p || !q)
+        {
+            return nullptr;
         }
 
         // if p and q meets, there is a cycle.
