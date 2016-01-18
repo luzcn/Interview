@@ -5,11 +5,7 @@ namespace SubSets
 {
     namespace details
     {
-        /// <summary>
-        ///  The recursive helper function.
-        /// </summary>
-        /// <param name=""> </param>
-        /// <returns> </return>
+        //  The recursive helper function.
         void power_set(const std::vector<int>& S, std::vector<std::vector<int>>& solution,
             std::vector<int>& current_list, size_t index)
         {
@@ -27,11 +23,7 @@ namespace SubSets
         }
 
 
-        /// <summary>
-        ///  The recursive helper function.
-        /// </summary>
-        /// <param name=""> </param>
-        /// <returns> </return>
+        // The recursive helper function.
         void subsetsWithDup_rec(
             vector<int>& nums,
             vector<vector<int>>& res,

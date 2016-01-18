@@ -987,6 +987,9 @@
     <ClInclude Include="Include\CareerCup\RobotMergeProblem.h">
       <Filter>Header Files\CareerCup\DFS BFS</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\RemoveInvalidParentheses.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
