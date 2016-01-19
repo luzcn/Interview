@@ -21,13 +21,8 @@ namespace leetcode
         }
         return count;
     }
-}
 
-namespace Primes
-{
-    /**
-    Sieve of Eratosthenes
-    **/
+    //Sieve of Eratosthenes
     vector<int> getPrimes(int n)
     {
         vector<int> res;
@@ -39,6 +34,7 @@ namespace Primes
             {
                 res.push_back(i);
                 // The multiplies of i are not prime numbers.
+                // i.e. 2*i , 3*i, 4*i ... are not prime.
                 for (int j = i * 2; j < n; j += i)
                 {
                     is_prime[j] = false;

@@ -12,8 +12,6 @@
 //    "(a)())()" ->["(a)()()", "(a())()"]
 //    ")(" ->[""]
 //
-
-
 namespace leetcode
 {
     void dfs(string& s, vector<string>& result, string current, int start, int open)
@@ -50,7 +48,7 @@ namespace leetcode
             {
                 dfs(s, result, current + c, start + 1, open - 1);
             }
-            
+
             // Remove the duplicates
             while (start < s.size() - 1 && s[start + 1] == s[start])
             {
@@ -74,19 +72,22 @@ namespace leetcode
 
     vector<string> bfs(string s)
     {
+        if (s.empty())
+            return{};
+
         std::queue<string> que;
-        unordered_map<string, int> visited;
+        unordered_set<string> visited;
         vector<string> result;
 
         que.push(s);
-        visited[s]++;
+        visited.insert(s);
 
         while (!que.empty())
         {
-            s = que.front();
+            string current = que.front();
             que.pop();
 
-            if (isValid(s))
+            if (isValid(current))
             {
                 // Only save the longest valid strings
                 if (result.empty() || result.back().size() == s.size())
@@ -95,18 +96,20 @@ namespace leetcode
                 continue;
             }
 
-            for (int i = 0; i < s.size(); i++)
+            for (int i = 0; i < current.size(); i++)
             {
-                if (s[i] != '(' && s[i] != ')')
-                {
+                char c = current[i];
+                if (c != '(' && c != ')')
                     continue;
-                }
 
-                string t = s.substr(0, i) + s.substr(i + 1);
-                if (visited.find(t) == visited.end())
+                // The candidate data, 
+                // remove this ith characters from current string
+                string candidate = current.substr(0, i) + current.substr(i + 1);
+
+                if (visited.find(candidate) == visited.end())
                 {
-                    que.push(t);
-                    visited[t]++;
+                    visited.insert(candidate);
+                    que.push(candidate);
                 }
             }
         }

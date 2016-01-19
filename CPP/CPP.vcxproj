@@ -177,6 +177,7 @@
     <ClInclude Include="Include\leetcode\SerializeAndDeserializeBinaryTree.h" />
     <ClInclude Include="Include\leetcode\ShortestDistanceFromAllBuildings.h" />
     <ClInclude Include="Include\leetcode\SkylineProblem.h" />
+    <ClInclude Include="Include\leetcode\SparseMatrixMultiplication.h" />
     <ClInclude Include="Include\leetcode\StrobogrammaticNumber.h" />
     <ClInclude Include="Include\leetcode\ThreeSumClosest.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />

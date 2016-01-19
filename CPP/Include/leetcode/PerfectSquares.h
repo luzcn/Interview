@@ -45,6 +45,7 @@ namespace leetcode
             if (que.empty())
             {
                 distance++;
+                //swap(que, que_temp);
                 que = que_temp;
                 que_temp = std::queue<int>();
             }
