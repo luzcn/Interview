@@ -993,6 +993,12 @@
     <ClInclude Include="Include\leetcode\SparseMatrixMultiplication.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\RecoverBinarySearchTree.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\NumberOfConnectedComponentsUndirectedGraph.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

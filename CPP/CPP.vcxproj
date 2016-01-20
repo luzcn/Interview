@@ -167,10 +167,12 @@
     <ClInclude Include="Include\leetcode\MaximumSizeSubarraySumEqualsk.h" />
     <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h" />
     <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
+    <ClInclude Include="Include\leetcode\NumberOfConnectedComponentsUndirectedGraph.h" />
     <ClInclude Include="Include\leetcode\PascalTriangle.h" />
     <ClInclude Include="Include\leetcode\PeekingIterator.h" />
     <ClInclude Include="Include\leetcode\PowerOfThree.h" />
     <ClInclude Include="Include\leetcode\ReadNCharactersGivenRead4.h" />
+    <ClInclude Include="Include\leetcode\RecoverBinarySearchTree.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateLetters.h" />
     <ClInclude Include="Include\leetcode\RemoveInvalidParentheses.h" />

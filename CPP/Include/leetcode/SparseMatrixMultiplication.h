@@ -30,11 +30,6 @@ namespace leetcode
         if (A.empty() || B.empty())
             return{};
 
-        //int rowA = A.size();
-        //int colA = A[0].size();
-        //int rowB = B.size();
-        //int colB = B[0].size();
-
         int m = A.size();
         int n = B[0].size();
 

@@ -1,50 +1,89 @@
 #pragma once
 #include "stdafx.h"
 
-//Given a complete binary tree, count the number of nodes.
+// Given a complete binary tree, count the number of nodes.
 //
-//Definition of a complete binary tree from Wikipedia :
-//In a complete binary tree every level, except possibly the last, is completely filled, 
-//and all nodes in the last level are as far left as possible.
-//It can have between 1 and 2h nodes inclusive at the last level h.
+// Definition of a complete binary tree from Wikipedia :
+// In a complete binary tree every level, except possibly the last, is completely filled, 
+// and all nodes in the last level are as far left as possible.
+// It can have between 1 and 2h nodes inclusive at the last level h.
 
 namespace leetcode
 {
-    namespace helper
+    int countNodes(TreeNode* root)
     {
-        void countRec(TreeNode* node, int& sum)
+        if (!root)
         {
-            if (!node)
-                return;
-
-            sum++;
-            countRec(node->left, sum);
-            countRec(node->right, sum);
+            return 0;
         }
 
-        int getDepth(TreeNode* node)
-        {
-            if (!node)
-                return 0;
+        int depth = 0;
+        auto l = root;
+        auto r = root;
 
-            return std::max(getDepth(node->left), getDepth(node->right)) + 1;
+        while (l && r)
+        {
+            depth++;
+            l = l->left;
+            r = r->right;
         }
+
+        if (!l && !r)
+        {
+            return (1 << depth) - 1;
+        }
+
+        return countNodes(root->left) + countNodes(root->right) + 1;
     }
 
 
-    int countNodes(TreeNode* root)
+    // Binary search solution
+    TreeNode* getNode(TreeNode* root, int path, int depth)
     {
-        int sum = 0;
-
-        auto t = root;
-        int height = 0;
-        while (t)
+        while (depth-- && root)
         {
-            height++;
-            t = t->left;
+            if (path & (1 << depth))
+            {
+                root = root->right;
+            }
+            else
+            {
+                root = root->left;
+            }
+        }
+        return root;
+    }
+
+    int countNodesBS(TreeNode* root)
+    {
+        int depth = 0;
+        TreeNode* node = root;
+
+        while (node)
+        {
+            depth++;
+            node = node->left;
         }
 
-        sum = pow(2, height) - 1;
-        return sum;
+        if (depth == 0)
+        {
+            return 0;
+        }
+
+        int left = 0, right = (1 << (depth - 1)) - 1;
+
+        while (left <= right)
+        {
+            int mid = (left + right) >> 1;
+            if (getNode(root, mid, depth - 1))
+            {
+                left = mid + 1;
+            }
+            else
+            {
+                right = mid - 1;
+            }
+        }
+        return (1 << (depth - 1)) + right;
     }
 }
