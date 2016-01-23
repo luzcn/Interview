@@ -162,6 +162,7 @@
     <ClInclude Include="Include\leetcode\ContainerWithMostWater.h" />
     <ClInclude Include="Include\leetcode\CreateMaximumNumber.h" />
     <ClInclude Include="Include\leetcode\FactorCombination.h" />
+    <ClInclude Include="Include\leetcode\FindDuplicateNumber.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
     <ClInclude Include="Include\leetcode\IntegerToEnglish.h" />
     <ClInclude Include="Include\leetcode\MaximumSizeSubarraySumEqualsk.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Include\leetcode\SkylineProblem.h" />
     <ClInclude Include="Include\leetcode\SparseMatrixMultiplication.h" />
     <ClInclude Include="Include\leetcode\StrobogrammaticNumber.h" />
+    <ClInclude Include="Include\leetcode\TextJustification.h" />
     <ClInclude Include="Include\leetcode\ThreeSumClosest.h" />
     <ClInclude Include="Include\leetcode\AddBinary.h" />
     <ClInclude Include="Include\leetcode\AlienDictionary.h" />

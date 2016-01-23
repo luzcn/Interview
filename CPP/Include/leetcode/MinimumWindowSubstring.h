@@ -1,17 +1,19 @@
 #pragma once
 #include "stdafx.h"
 
-//Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
+//  Given a string S and a string T, find the minimum window in S which will contain 
+// all the characters in T in complexity O(n).
 //
-//For example,
-//S = "ADOBECODEBANC"
-//T = "ABC"
+//  For example,
+//  S = "ADOBECODEBANC"
+//  T = "ABC"
 //
 //Minimum window is "BANC".
 //
 //Note:
 //If there is no such window in S that covers all characters in T, return the empty string "".
 //If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
+//
 // Thought:
 // 1. the string T may have duplicate characters, so using a hashmap to store the index of characters does not work.
 // 2. using a hashmap to store the character which is required in T and the numbers of character we have found so far.
@@ -27,13 +29,13 @@ namespace leetcode
         if (s.empty() || t.empty())
             return result;
 
-        unordered_map<char, int> needToFind;
-        unordered_map<char, int> hasFound;
+        unordered_map<char, int> need_find;
+        unordered_map<char, int> has_found;
         int minLen = INT_MAX;
 
         for (char& c : t)
         {
-            needToFind[c]++;
+            need_find[c]++;
         }
 
         int count = 0;
@@ -43,12 +45,12 @@ namespace leetcode
         while (end < s.size())
         {
             char c = s[end];
-            if (needToFind.find(c) != needToFind.end())
+            if (need_find.find(c) != need_find.end())
             {
-                hasFound[c]++;
+                has_found[c]++;
 
                 // this check condition is required, since there could be no such window in S
-                if (hasFound[c] <= needToFind[c])
+                if (has_found[c] <= need_find[c])
                 {
                     count++;
                 }
@@ -58,15 +60,15 @@ namespace leetcode
                     // need to increase the begin as far as you can
                     while (true)
                     {
-                        if (needToFind.find(s[begin]) == needToFind.end())
+                        if (need_find.find(s[begin]) == need_find.end())
                         {
                             // the s[begin] character is not required to find
                             begin++;
                         }
-                        else if (hasFound[s[begin]] > needToFind[s[begin]])
+                        else if (has_found[s[begin]] > need_find[s[begin]])
                         {
                             // found more characters of s[begin] than required.
-                            hasFound[s[begin]]--;
+                            has_found[s[begin]]--;
                             begin++;
                         }
                         else

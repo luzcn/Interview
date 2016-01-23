@@ -12,8 +12,8 @@
 //     3
 //    / \
 //   9  20
-//  / \
-// 15   7
+//      / \
+//     15  7
 //
 //return its vertical order traversal as :
 //
