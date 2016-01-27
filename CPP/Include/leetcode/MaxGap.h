@@ -14,7 +14,6 @@ namespace leetcode
     // Assume there are N elements, we can find max and min element in O(n) time.
     // There are N-1 difference values, so construct N buckets, each bucket has interval = (max-min) / (N-1).
     // For each element nums[i], map to the corresponding bucket by computing the loc = (nums[i]- min)/interval.
-
     struct Bucket
     {
         int low, high;

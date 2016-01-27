@@ -178,6 +178,7 @@
     <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateLetters.h" />
     <ClInclude Include="Include\leetcode\RemoveInvalidParentheses.h" />
+    <ClInclude Include="Include\leetcode\ScrambleString.h" />
     <ClInclude Include="Include\leetcode\SerializeAndDeserializeBinaryTree.h" />
     <ClInclude Include="Include\leetcode\ShortestDistanceFromAllBuildings.h" />
     <ClInclude Include="Include\leetcode\SkylineProblem.h" />

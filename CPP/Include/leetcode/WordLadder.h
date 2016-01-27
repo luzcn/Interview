@@ -1,65 +1,70 @@
 #pragma once
 
 #include "stdafx.h"
-
-#include <unordered_set>
-#include <limits>
 #include <unordered_map>
-/**
-*  Given two words (start and end), and a dictionary,
-find the length of shortest transformation sequence from start to end, such that:
 
-Only one letter can be changed at a time
-Each intermediate word must exist in the dictionary
+// Given two words (start and end), and a dictionary,
+// find the length of shortest transformation sequence from start to end, such that:
+//
+// Only one letter can be changed at a time
+// Each intermediate word must exist in the dictionary
+//
+// For example,
+//
+// Given:
+// start = "hit"
+// end = "cog"
+// dict = ["hot","dot","dog","lot","log"]
+//
+// As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
+// return its length 5.
+//
+// Note:
+//
+// Return 0 if there is no such transformation sequence.
+// All words have the same length.
+// All words contain only lowercase alphabetic characters.
 
-For example,
-
-Given:
-start = "hit"
-end = "cog"
-dict = ["hot","dot","dog","lot","log"]
-
-As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
-return its length 5.
-
-Note:
-
-Return 0 if there is no such transformation sequence.
-All words have the same length.
-All words contain only lowercase alphabetic characters.
-
-*/
-namespace WordLadder
+namespace leetcode
 {
+    // BFS
     int ladderLength(string start, string end, unordered_set<string>& dict)
     {
-        // BFS
-        vector<string> list;
-        unordered_map<string, int> distance;
+        if (dict.empty())
+            return 0;
 
-        list.push_back(start);
-        distance.emplace(start, 1);
+        // hash map used to store the distance of candidate word 
+        // and indicate if this word has been visited.
+        unordered_map<string, int> map_distance;
 
-        while (!list.empty())
+        // BFS needs a queue to save the candidate data
+        queue<string> que;
+
+        que.push(start);
+        map_distance[start] = 1;
+
+        while (!que.empty())
         {
-            auto word = list.front();
-            list.erase(list.begin());
+            string word = que.front();
+            que.pop();
 
-            // compare all the transformation
             for (int i = 0; i < word.size(); i++)
             {
+                // need to make a copy
+                string s = word;
                 for (char c = 'a'; c <= 'z'; c++)
                 {
-                    auto t = word;
-                    t[i] = c;
-                    if (t == end)
+                    s[i] = c;
+
+                    if (s == end)
                     {
-                        return distance[word] + 1;
+                        return map_distance[word] + 1;
                     }
-                    if (dict.count(t) > 0 && distance.count(t) == 0)
+
+                    if (dict.find(s) != dict.end() && map_distance[s] == 0)
                     {
-                        distance[t] = distance[word] + 1;
-                        list.push_back(t);
+                        que.push(s);
+                        map_distance[s] = map_distance[word] + 1;
                     }
                 }
             }
@@ -67,102 +72,60 @@ namespace WordLadder
 
         return 0;
     }
-
-
-
 }
 
 namespace WordLadder2
 {
-    // construct a graph and find the shorted path.
-    struct Node
+    void dfs(string word, const string& end, unordered_set<string>& dict,
+        vector<vector<string>>& result,
+        vector<string>& current,
+        unordered_map<string, bool>& visited,
+        int distance, const int& max_length)
     {
-        string val;
-        vector<Node*> adj;
-        int distance;
+        if (distance >= max_length)
+            return;
 
-        Node(string str)
-            :val(std::move(str))
+        for (int i = 0; i < word.size(); i++)
         {
-        }
-
-        void add_adj(Node* s)
-        {
-
-            adj.push_back(s);
-        }
-    };
-
-    void BFS(Node* head)
-    {
-        std::unordered_map<Node*, int> visited;
-        vector<Node*> list;
-        list.push_back(head);
-
-        while (!list.empty())
-        {
-            auto t = list.front();
-            list.erase(list.begin());
-
-            if (visited.count(t) == 0)
+            string s = word;
+            for (char c = 'a'; c <= 'z'; c++)
             {
-                cout << t->val << endl;
-                visited[t] = 1;
-                for (auto item : t->adj)
+                s[i] = c;
+
+                if (s == end)
                 {
-                    list.push_back(item);
+                    current.push_back(end);
+                    result.push_back(current);
+                    current.pop_back();
+
+                    return;
+                }
+                if (dict.find(s) != dict.end() && !visited[s])
+                {
+                    visited[s] = true;
+                    current.push_back(s);
+
+                    dfs(s, end, dict, result, current, visited, distance + 1, max_length);
+
+                    current.pop_back();
+                    visited[s] = false;
                 }
             }
         }
     }
 
-    void shortest_path(Node* head)
-    {
 
-    }
-
-    vector<vector<string>> findLadders(string start, string end, unordered_set<string> &dict)
+    vector<vector<string>> findLadders(string beginWord, string endWord, unordered_set<string> &wordList)
     {
         vector<vector<string>> result;
+        if (wordList.empty())
+            return result;
 
-        // construct a graph first.
-        vector<Node*> list;        // used as a queue for BFS
-        std::unordered_map<string, int> distance; // used to check if the string has been visited
+        int max_length = leetcode::ladderLength(beginWord, endWord, wordList);
+        unordered_map<string, bool> visited;
+        vector<string> current{ beginWord };
 
-        distance.emplace(start, 1);
-
-        Node * head = new Node(start);
-        list.push_back(head);
-
-        while (!list.empty())
-        {
-            auto p_word = list.front();
-            list.erase(list.begin());
-
-            for (int i = 0; i < p_word->val.size(); i++)
-            {
-                auto t = p_word->val;
-                for (char c = 'a'; c <= 'z'; c++)
-                {
-                    t[i] = c;
-
-                    if (t == end)
-                    {
-                        break;
-                    }
-
-                    if (dict.count(t) > 0 && distance.count(t) == 0)
-                    {
-                        auto newNode = new Node(t);
-                        p_word->add_adj(newNode);
-                        list.push_back(newNode);
-                        distance[t] = distance[p_word->val] + 1;
-                    }
-                }
-            }
-        }
-
-        BFS(head);
+        dfs(beginWord, endWord, wordList, result, current, visited, 1, max_length);
 
         return result;
     }
