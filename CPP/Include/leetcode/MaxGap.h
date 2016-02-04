@@ -1,13 +1,13 @@
 #pragma once
 #include "stdafx.h"
 
-//Given an unsorted array, find the maximum difference between the successive elements in its sorted form.
+// Given an unsorted array, find the maximum difference between the successive elements in its sorted form.
 //
-//Try to solve it in linear time / space.
+// Try to solve it in linear time / space.
 //
-//Return 0 if the array contains less than 2 elements.
+// Return 0 if the array contains less than 2 elements.
 //
-//You may assume all elements in the array are non - negative integers and fit in the 32 - bit signed integer range.
+// You may assume all elements in the array are non-native integers and fit in the 32-bit signed integer range.
 namespace leetcode
 {
     // Thought:
@@ -43,21 +43,26 @@ namespace leetcode
         if (nums.size() < 2)
             return 0;
 
+        int n = nums.size();
+
         int maxValue = *max_element(nums.begin(), nums.end());
         int minValue = *min_element(nums.begin(), nums.end());
-        double interval = (double) (maxValue - minValue) / (nums.size() - 1);
-        if (interval == 0)
-            return maxValue - minValue;
+        //double interval = (double) (maxValue - minValue) / (nums.size() - 1);
+        //if (interval == 0)
+        //    return maxValue - minValue;
+        if (maxValue == minValue)
+            return 0;
 
-        vector<Bucket> buckets(nums.size());
-        for (int i = 0; i < nums.size(); i++)
+
+        vector<Bucket> buckets(n);
+        for (int i = 0; i < n; i++)
         {
-            int pos = (nums[i] - minValue) / interval;
+            int pos = (nums[i] - minValue)*(n - 1) / (maxValue - minValue);
             buckets[pos].put(nums[i]);
         }
 
-        int i = buckets.size() - 1;
-        while (i >= 0 && buckets.size() == 0)
+        int i = n - 1;
+        while (i >= 0 && buckets[i].size == 0)
         {
             i--;
         }

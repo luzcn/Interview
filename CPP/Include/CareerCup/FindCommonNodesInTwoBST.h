@@ -15,7 +15,7 @@
 // - otherwise move to left subtree.
 
 // The best solution:
-//1.) Convert BSTs tosorted DLLs.
+//1.) Convert BSTs to sorted DLLs.
 //
 //2.) Apply the algorithm to get intersection of two sorted arrays 
 //      on these two sorted DLLs to get common of these two DLLs.
