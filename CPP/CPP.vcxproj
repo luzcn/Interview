@@ -160,6 +160,7 @@
     <ClInclude Include="Include\leetcode\BurstBalloons.h" />
     <ClInclude Include="Include\leetcode\CoinChange.h" />
     <ClInclude Include="Include\leetcode\ContainerWithMostWater.h" />
+    <ClInclude Include="Include\leetcode\CountUnivalueSubtrees.h" />
     <ClInclude Include="Include\leetcode\CreateMaximumNumber.h" />
     <ClInclude Include="Include\leetcode\FactorCombination.h" />
     <ClInclude Include="Include\leetcode\FindDuplicateNumber.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Include\leetcode\PeekingIterator.h" />
     <ClInclude Include="Include\leetcode\PowerOfThree.h" />
     <ClInclude Include="Include\leetcode\ReadNCharactersGivenRead4.h" />
+    <ClInclude Include="Include\leetcode\ReconstructItinerary.h" />
     <ClInclude Include="Include\leetcode\RecoverBinarySearchTree.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateLetters.h" />
@@ -337,6 +339,7 @@
     <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
     <ClInclude Include="Include\leetcode\VerifyPreorderSequenceBST.h" />
+    <ClInclude Include="Include\leetcode\WallsAndGates.h" />
     <ClInclude Include="Include\leetcode\WiggleSort.h" />
     <ClInclude Include="Include\leetcode\WildcardMatching.h" />
     <ClInclude Include="Include\leetcode\WordBreak.h" />
