@@ -1026,6 +1026,12 @@
     <ClInclude Include="Include\leetcode\MaximumProductofWordLengths.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\TopKSlidingWindow.h">
+      <Filter>Header Files\CareerCup\Google</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\LongestIncreasingPathMatrix.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

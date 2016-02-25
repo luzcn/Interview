@@ -133,6 +133,7 @@
     <ClInclude Include="Include\CareerCup\StringExpressionToTree.h" />
     <ClInclude Include="Include\CareerCup\StringPartition.h" />
     <ClInclude Include="Include\CareerCup\SubSet.h" />
+    <ClInclude Include="Include\CareerCup\TopKSlidingWindow.h" />
     <ClInclude Include="Include\CareerCup\TreeSerialization.h" />
     <ClInclude Include="Include\CareerCup\TwoSumInBST.h" />
     <ClInclude Include="Include\CareerCup\ValidPushPopSequence.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Include\leetcode\FindDuplicateNumber.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
     <ClInclude Include="Include\leetcode\IntegerToEnglish.h" />
+    <ClInclude Include="Include\leetcode\LongestIncreasingPathMatrix.h" />
     <ClInclude Include="Include\leetcode\MaximumProductofWordLengths.h" />
     <ClInclude Include="Include\leetcode\MaximumSizeSubarraySumEqualsk.h" />
     <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h" />

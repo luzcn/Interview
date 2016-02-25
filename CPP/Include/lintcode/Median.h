@@ -25,6 +25,23 @@ namespace lintcode
         }
     }
 
+    int partition(vector<int>& nums, int l, int r)
+    {
+        int m = l - 1;
+        int pivot = nums[r];
+        for (int i = l; i < r; i++)
+        {
+            if (nums[i] < pivot)
+            {
+                m++;
+                swap(nums, m, i);
+            }
+        }
+        m++;
+        swap(nums, m, r);
+        return m;
+    }
+
     int topKth(vector<int> &nums, int l, int r, int k)
     {
         if (l == r)
@@ -41,23 +58,6 @@ namespace lintcode
         }
         else
             return topKth(nums, l, m - 1, k);
-    }
-
-    int partition(vector<int>& nums, int l, int r)
-    {
-        int m = l - 1;
-        int pivot = nums[r];
-        for (int i = l; i < r; i++)
-        {
-            if (nums[i] < pivot)
-            {
-                m++;
-                swap(nums, m, i);
-            }
-        }
-        m++;
-        swap(nums, m, r);
-        return m;
     }
 
     int median(vector<int> &nums)

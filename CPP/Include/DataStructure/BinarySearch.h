@@ -29,7 +29,7 @@ private:
         if (right <= left)
             return false;
 
-        int middle = (right - left) / 2;
+        int middle = left + (right - left) / 2;
         if (target == sl[middle])
             return true;
         else if (target < sl[middle])
@@ -50,7 +50,7 @@ private:
     {
         while (right >= left)
         {
-            int middle = (right - left) / 2;
+            int middle = left + (right - left) / 2;
             if (target == sl[middle])
                 return true;
             else if (target < sl[middle])
