@@ -165,6 +165,7 @@
     <ClInclude Include="Include\leetcode\CreateMaximumNumber.h" />
     <ClInclude Include="Include\leetcode\FactorCombination.h" />
     <ClInclude Include="Include\leetcode\FindDuplicateNumber.h" />
+    <ClInclude Include="Include\leetcode\FractionToRecurringDecimal.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
     <ClInclude Include="Include\leetcode\IntegerToEnglish.h" />
     <ClInclude Include="Include\leetcode\LongestIncreasingPathMatrix.h" />
