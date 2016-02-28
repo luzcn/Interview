@@ -1,7 +1,8 @@
 #pragma once
 
 #include "stdafx.h"
-
+#include <functional>
+#include <numeric>
 
 namespace leetcode
 {
@@ -200,27 +201,106 @@ namespace leetcode
             return maxProfit2(prices);
 
         int n = prices.size();
-        vector<vector<int>> local(n, vector<int>(k, 0));
-        vector<vector<int>> global(n, vector<int>(k, 0));
+        vector<vector<int>> history(n, vector<int>(k + 1, 0));
+        vector<vector<int>> profit(n, vector<int>(k + 1, 0));
 
         for (int i = 1; i < prices.size(); i++)
         {
             int diff = prices[i] - prices[i - 1];
-            for (int j = 0; j < k; j++)
+            for (int j = 1; j <= k; j++)
             {
-                local[i][j] = max(global[i-1][j-1] + max(diff, 0), local[i-1][j] + diff);
-                global[i][j] = max(local[i][j], global[i - 1][j]);
+                history[i][j] = max(history[i - 1][j] + diff, profit[i - 1][j - 1]);
+                profit[i][j] = max(history[i][j], profit[i - 1][j]);
             }
         }
 
-        return global[n - 1][k - 1];
+        return profit[n - 1][k];
     }
+
+
+    // O(n) solution
     int maxProfit4(vector<int>& prices, int k)
     {
-        if (prices.size() < 2)
-            return 0;
+        vector<int> profits;
+        stack<pair<int, int>> valley_peak_stack; // valley-peak pairs
 
-        return maxProfit4DP(prices, k) ;
+        // Step 1: find out all the possible profit
+        int v = 0, p = -1;
+
+        while (true)
+        {
+            // find the valley point
+            v = p + 1;
+            while (v < prices.size() - 1 && prices[v] >= prices[v + 1])
+            {
+                v++;
+            }
+
+            // find the peak point
+            p = v;
+            while (p < prices.size() - 1 && prices[p] <= prices[p + 1])
+            {
+                p++;
+            }
+
+            if (v == p)
+            {
+                // both valley and peak reach the end of tha array
+                break;
+            }
+
+            // (v1, p1) the valley-peak pair already saved in the stack.
+            // (v, p) the new valley-peak pair
+
+            // case two: v1 >= v2  
+            while (!valley_peak_stack.empty() && prices[valley_peak_stack.top().first] >= prices[v])
+            {
+                // no need to combine these two vally-peak pair
+
+                // put the profit (p1 - v1)
+                profits.push_back(prices[valley_peak_stack.top().second] - prices[valley_peak_stack.top().first]);
+
+                // the valley-peak (v1, p1) has been processed, no need to keep in stack 
+                valley_peak_stack.pop();
+            }
+
+            // If prices[v1] < prices[v2] and prices[p1] <= prices[p2], 
+            // then it is meaningful to combine the two transactions
+            // update (v1, p1) to (v1, p2), and save the profit of (v2, p1)
+            while (!valley_peak_stack.empty() && prices[valley_peak_stack.top().second] <= prices[p])
+            {
+                profits.push_back(prices[valley_peak_stack.top().second] - prices[v]);  // (v2, p1)
+
+                // update v2 to v1, now the pair is (v1, p2)
+                v = valley_peak_stack.top().first;
+
+                valley_peak_stack.pop();
+            }
+
+            // save the new-found valley-peak pair
+            valley_peak_stack.emplace(v, p);
+        }
+
+        // save all the remaining valley-peak pairs to the profits
+        while (!valley_peak_stack.empty())
+        {
+            profits.push_back(prices[valley_peak_stack.top().second] - prices[valley_peak_stack.top().first]);
+            valley_peak_stack.pop();
+        }
+
+        // Step 2: find out the k highest profits
+        int max_profit = 0;
+        if (k >= profits.size())
+        {
+            max_profit = std::accumulate(profits.begin(), profits.end(), 0);
+        }
+        else
+        {
+            nth_element(profits.begin(), profits.begin() + k, profits.end(), std::greater<int>());
+            max_profit = accumulate(profits.begin(), profits.begin() + k, 0);
+        }
+
+        return max_profit;
     }
 #pragma endregion 
 }
