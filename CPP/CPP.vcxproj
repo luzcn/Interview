@@ -173,6 +173,7 @@
     <ClInclude Include="Include\leetcode\MaximumSizeSubarraySumEqualsk.h" />
     <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h" />
     <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
+    <ClInclude Include="Include\leetcode\MissingRange.h" />
     <ClInclude Include="Include\leetcode\NumberOfConnectedComponentsUndirectedGraph.h" />
     <ClInclude Include="Include\leetcode\NumberOfDigitOne.h" />
     <ClInclude Include="Include\leetcode\OddEvenLinkedList.h" />
@@ -339,6 +340,7 @@
     <ClInclude Include="Include\leetcode\TwoSumDesign.h" />
     <ClInclude Include="Include\leetcode\UglyNumber.h" />
     <ClInclude Include="Include\leetcode\UniqueBinarySearchTrees.h" />
+    <ClInclude Include="Include\leetcode\UniquePath.h" />
     <ClInclude Include="Include\leetcode\UniqueWordAbbreviation.h" />
     <ClInclude Include="Include\leetcode\ValidNumeric.h" />
     <ClInclude Include="Include\leetcode\ValidPalindrome.h" />

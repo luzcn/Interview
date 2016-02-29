@@ -303,4 +303,74 @@ namespace leetcode
         return max_profit;
     }
 #pragma endregion 
+
+#pragma region Best Time to Buy and Sell Stock with Cooldown
+
+    // dfs with memoization
+
+    int maxProfit5(vector<int>& prices)
+    {
+        if (prices.size() <= 1)
+            return 0;
+
+        int n = prices.size();
+
+        // buy[i]: the max profit till i position, the ending transaction is buy
+        vector<int> buy(n, 0);
+
+        // sell[i]: the max profit till i position, the ending transaction is sell
+        vector<int> sell(n, 0);
+
+
+        // buy[i]: To make a decision whether to buy at i, 
+        // we either take a rest, by just using the old decision at i - 1, or sell at / before i - 2, 
+        // then buy at i, We cannot sell at i - 1, then buy at i, because of cooldown.
+
+        // sell[i] : To make a decision whether to sell at i, 
+        // we either take a rest, by just using the old decision at i - 1, 
+        // or buy at / before i - 1, then sell at i.
+
+        //buy[i] = max(buy[i - 1], sell[i - 2] - prices[i]);
+        //sell[i] = max(sell[i - 1], buy[i - 1] + prices[i]);
+
+        buy[0] = -prices[0];    // you can buy on first day, the profit is -prices[0]
+        sell[0] = 0;            // you can not sell on first day, the profit is 0
+
+        for (int i = 1; i < n; i++)
+        {
+            buy[i] = max(buy[i - 1], i >= 2 ? sell[i - 2] - prices[i] : -prices[i]);
+            sell[i] = max(sell[i - 1], buy[i - 1] + prices[i]);
+        }
+
+        return sell[n - 1];
+    }
+
+    // O(1) space
+    int maxProfit5_1(vector<int>& prices)
+    {
+        if (prices.size() <= 1)
+            return 0;
+
+        int n = prices.size();
+
+        // you can buy on first day, the profit is -prices[0].
+        int b0 = -prices[0];
+        int b1 = b0;
+
+        int s0 = 0, s1 = 0, s2 = 0;
+
+        for (int i = 1; i < n; i++)
+        {
+            b0 = max(b1, s2 - prices[i]);
+            s0 = max(s1, b1 + prices[i]);
+
+            b1 = b0;
+
+            s2 = s1;
+            s1 = s0;
+        }
+
+        return s0;
+    }
+#pragma endregion
 }

@@ -182,3 +182,4 @@ $RECYCLE.BIN/
 **/*.sln.ide 
 .vs/Interview/v14
 /Python/leetcode/__pycache__
+*.opendb
