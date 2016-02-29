@@ -11,15 +11,14 @@ namespace leetcode
         int m = obstacleGrid.size();
         int n = obstacleGrid[0].size();
 
-        vector<int> rows(m, 0);
-        vector<int> cols(n, 0);
+        vector<vector<int>> path(m, vector<int>(n, 0));
 
         for (int i = 0; i < m; i++)
         {
             if (obstacleGrid[i][0])
                 break;
 
-            rows[i] = 1;
+            path[i][0] = 1;
         }
 
         for (int j = 0; j < n; j++)
@@ -27,7 +26,7 @@ namespace leetcode
             if (obstacleGrid[0][j])
                 break;
 
-            cols[j] = 1;
+            path[0][j] = 1;
         }
 
         for (int i = 1; i < m; i++)
@@ -35,19 +34,14 @@ namespace leetcode
             for (int j = 1; j < n; j++)
             {
                 if (obstacleGrid[i][j])
-                {
-                    rows[i] = 0;
-                    cols[j] = 0;
-                }
+                    path[i][j] = 0;
                 else
                 {
-                    int value = rows[i - 1] + cols[j - 1];
-                    rows[i] = value;
-                    cols[j] = value;
+                    path[i][j] = path[i - 1][j] + path[i][j - 1];
                 }
             }
         }
 
-        return cols[n - 1];
+        return path[m - 1][n - 1];
     }
 }
