@@ -3,44 +3,41 @@
 #include "stdafx.h"
 #include <algorithm>
 
-/**
- *	Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+//Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+// (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+//
+// Find the minimum element.
+// You may assume no duplicate exists in the array.
 
- (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
-
- Find the minimum element.
-
- You may assume no duplicate exists in the array.
- */
-namespace FindMinimuminRotatedSortedArray
+namespace leetcode
 {
     // Thought: if array is not roated, A[m] should < A[r], so if rotated, A[m] will > A[r]
     // so every time, we find A[m]>A[r], search the [m...r] range.
-    int findMin(vector<int> &num)
+    int findMin(vector<int> &nums)
     {
-        if (num.empty())
+        if (nums.empty())
         {
             return 0;
         }
 
-        int l = 0;
-        int r = num.size() - 1;
+        int low = 0;
+        int high = nums.size() - 1;
 
-        while (l != r)
+        while (low != high)
         {
-            int m = l + (r - l) / 2;
-
-            // num[l] > num[r] && num[m] > num[r], search [m, r]
-            if (num[m] > num[r])
+            int m = low + (high - low) / 2;
+            if (nums[m] > nums[high])
             {
-                l = m + 1;
+                // check the range [m...high]
+                low = m + 1;
             }
             else
             {
-                r = m;
+                high = m;
             }
         }
-        return num[r];
+
+        return nums[low]; // low == high
     }
 
     // example: 

@@ -90,6 +90,7 @@
     <ClInclude Include="Include\CareerCup\BadNeighbors.h" />
     <ClInclude Include="Include\CareerCup\BinaryToHex.h" />
     <ClInclude Include="Include\CareerCup\BSTtoDoubleLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\CardDeck.h" />
     <ClInclude Include="Include\CareerCup\ClosestPairs.h" />
     <ClInclude Include="Include\CareerCup\CoinMakeChange.h" />
     <ClInclude Include="Include\CareerCup\Combinations.h" />
@@ -123,6 +124,8 @@
     <ClInclude Include="Include\CareerCup\KMP.h" />
     <ClInclude Include="Include\CareerCup\PaintersPartition.h" />
     <ClInclude Include="Include\CareerCup\PartitionProblem.h" />
+    <ClInclude Include="Include\CareerCup\PhoneCallDipatch.h" />
+    <ClInclude Include="Include\CareerCup\ReplaceSpaceInString.h" />
     <ClInclude Include="Include\CareerCup\ShortestPath.h" />
     <ClInclude Include="Include\CareerCup\StringPermutation.h" />
     <ClInclude Include="Include\CareerCup\PrintNodeWithSkips.h" />
@@ -168,6 +171,7 @@
     <ClInclude Include="Include\leetcode\FractionToRecurringDecimal.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
     <ClInclude Include="Include\leetcode\IntegerToEnglish.h" />
+    <ClInclude Include="Include\leetcode\LargestRectangleInHistogram.h" />
     <ClInclude Include="Include\leetcode\LongestIncreasingPathMatrix.h" />
     <ClInclude Include="Include\leetcode\MaximumProductofWordLengths.h" />
     <ClInclude Include="Include\leetcode\MaximumSizeSubarraySumEqualsk.h" />
@@ -346,6 +350,7 @@
     <ClInclude Include="Include\leetcode\ValidPalindrome.h" />
     <ClInclude Include="Include\leetcode\ValidSudoku.h" />
     <ClInclude Include="Include\leetcode\VerifyPreorderSequenceBST.h" />
+    <ClInclude Include="Include\leetcode\VerifyPreorderSerializationBinaryTree.h" />
     <ClInclude Include="Include\leetcode\WallsAndGates.h" />
     <ClInclude Include="Include\leetcode\WiggleSort.h" />
     <ClInclude Include="Include\leetcode\WildcardMatching.h" />

@@ -15,7 +15,12 @@ namespace leetcode
         string serialize(TreeNode* root)
         {
             string data = "";
-            preorder(root, data);
+            preorder(root);
+
+            for (auto& str : dataList)
+            {
+                data.append(str);
+            }
 
             return data;
         }
@@ -41,35 +46,21 @@ namespace leetcode
             return node;
         }
     private:
-        void preorder(TreeNode* node, string& data)
+        void preorder(TreeNode* node)
         {
             if (!node)
             {
-                data.append("#");
                 dataList.push_back("#");
                 return;
             }
 
-            data.append(to_string(node->val));
             dataList.push_back(to_string(node->val));
 
-            preorder(node->left, data);
-            preorder(node->right, data);
+            preorder(node->left);
+            preorder(node->right);
         }
 
       
-        /*vector<string> split(string& s, char delim)
-        {
-            stringstream ss(s);
-            vector<string> element;
-            string item;
-
-            while (getline(ss, item, delim))
-            {
-                element.push_back(item);
-            }
-        }*/
-
         int index;
         vector<string> dataList;
     };

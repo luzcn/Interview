@@ -17,9 +17,9 @@
 namespace careercup
 {
     void permuteRec(const string& s, vector<string>& result, string& current,
-        vector<bool>& visited, int index)
+        vector<bool>& visited)
     {
-        if (index == s.size())
+        if (current.size() == s.size())
         {
             result.push_back(current);
             return;
@@ -31,7 +31,7 @@ namespace careercup
             {
                 visited[i] = true;
                 current.push_back(s[i]);
-                permuteRec(s, result, current, visited, index + 1);
+                permuteRec(s, result, current, visited);
                 current.pop_back();
                 visited[i] = false;
             }
@@ -44,10 +44,9 @@ namespace careercup
         string current = "";
         vector<bool> visited(s.size(), false);
 
-        permuteRec(s, result, current, visited, 0);
+        permuteRec(s, result, current, visited);
 
         return result;
-
     }
         
     // string permutation without duplication.

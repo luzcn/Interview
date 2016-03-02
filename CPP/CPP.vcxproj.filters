@@ -100,6 +100,9 @@
     <Filter Include="Header Files\CareerCup\Google">
       <UniqueIdentifier>{804a0f55-d080-4810-82f1-750713619009}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CareerCup\OO Design">
+      <UniqueIdentifier>{aedf5f01-3628-4844-8b93-96a0574f07f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -1042,6 +1045,21 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\UniquePath.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\CardDeck.h">
+      <Filter>Header Files\CareerCup\OO Design</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\PhoneCallDipatch.h">
+      <Filter>Header Files\CareerCup\OO Design</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\ReplaceSpaceInString.h">
+      <Filter>Header Files\CareerCup\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\LargestRectangleInHistogram.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\VerifyPreorderSerializationBinaryTree.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

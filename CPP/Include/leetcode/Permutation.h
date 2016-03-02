@@ -8,10 +8,12 @@
 //[1, 1, 2], [1, 2, 1], and[2, 1, 1].
 namespace leetcode
 {
-    void permuteNoDupRec(vector<int>& nums, vector<vector<int>>& result, 
-        vector<int> current, vector<bool>& visited, int index)
+    void permuteNoDupRec(vector<int>& nums, 
+        vector<vector<int>>& result, 
+        vector<int> current, 
+        vector<bool>& visited)
     {
-        if (index >= nums.size())
+        if (current.size() == nums.size())
         {
             result.push_back(current);
             return;
@@ -27,7 +29,7 @@ namespace leetcode
                 visited[i] = true;
                 current.push_back(nums[i]);
 
-                permuteNoDupRec(nums, result, current, visited, index + 1);
+                permuteNoDupRec(nums, result, current, visited);
 
                 current.pop_back();
                 visited[i] = false;
@@ -43,7 +45,12 @@ namespace leetcode
         vector<int> current;
         vector<bool> visited(nums.size(), false);
 
-        permuteNoDupRec(nums, result, current,visited , 0);
+
+        // Need to sort first, 
+        // otherwise the comparison nums[i] == nums[i-1] in recursive does not work
+        sort(nums.begin(), nums.end());
+
+        permuteNoDupRec(nums, result, current,visited);
 
         return result;
     }
