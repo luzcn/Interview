@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPP", "CPP\CPP.vcxproj", "{3B165BAD-8E07-4A4A-9171-792D8CD03F79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp", "CSharp\CSharp.csproj", "{57E1B974-54F4-4A91-985C-76E6F1AE18BC}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Python", "Python\Python.pyproj", "{24009E2A-C6C2-4296-B9A8-579BEC3D765D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,12 @@ Global
 		{57E1B974-54F4-4A91-985C-76E6F1AE18BC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{57E1B974-54F4-4A91-985C-76E6F1AE18BC}.Release|Win32.ActiveCfg = Release|Any CPU
 		{57E1B974-54F4-4A91-985C-76E6F1AE18BC}.Release|Win32.Build.0 = Release|Any CPU
+		{24009E2A-C6C2-4296-B9A8-579BEC3D765D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24009E2A-C6C2-4296-B9A8-579BEC3D765D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{24009E2A-C6C2-4296-B9A8-579BEC3D765D}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{24009E2A-C6C2-4296-B9A8-579BEC3D765D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24009E2A-C6C2-4296-B9A8-579BEC3D765D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{24009E2A-C6C2-4296-B9A8-579BEC3D765D}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
