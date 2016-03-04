@@ -49,92 +49,29 @@ namespace leetcode
     // follow up 1: the constratins changed to nums[0] < nums[1] > nums[2] ...
     // no contiguous equavelent number
     // the problem is you cannot guarantee there is always a solution.
-    void wiggleSort3(vector<int>& nums)
+    void wiggleSortII(vector<int>& nums)
     {
-        if (nums.size() < 2)
-            return;
+        vector<int> sorted(nums);
+        sort(sorted.begin(), sorted.end());
 
-        bool increase = true;
-        int i = 0;
-        int j = 1;
+        //for (int i = nums.size() - 1, j = 0, k = i / 2 + 1; i >= 0; i--)
+        //{
+        //    nums[i] = sorted[i & 1 ? k++ : j++];
+        //}
 
-        while (j < nums.size())
+        int s = (nums.size() + 1) / 2;
+        int k = nums.size();
+
+        for (int i = 0; i < nums.size(); i++)
         {
-            switch (increase)
+            if ((i & 1) == 0)
             {
-                // increasing
-            case true:
-                if (nums[i] < nums[j])
-                {
-                    i = j;
-                    j = i + 1;
-                }
-                else if (nums[i] > nums[j])
-                {
-                    int temp = nums[i];
-                    nums[i] = nums[j];
-                    nums[j] = temp;
-
-                    i = j;
-                    j = i + 1;
-                }
-                else if (nums[i] == nums[j])
-                {
-                    while (j < nums.size() && nums[j] <= nums[i])
-                    {
-                        j++;
-                    }
-
-                    if (j == nums.size())
-                        return;
-
-                    // swap i+1 and j
-                    i++;
-                    int temp = nums[i];
-                    nums[i] = nums[j];
-                    nums[j] = temp;
-                    j = i + 1;
-                }
-                increase = !increase;
-
-            case false: // decreasing
-                if (nums[i] > nums[j])
-                {
-                    i = j;
-                    j = i + 1;
-                }
-                else if (nums[i] < nums[j])
-                {
-                    // swap i and j
-                    int temp = nums[i];
-                    nums[i] = nums[j];
-                    nums[j] = temp;
-
-                    i = j;
-                    j = i + 1;
-                }
-                else if (nums[i] == nums[j])
-                {
-                    while (j < nums.size() && nums[j] >= nums[i])
-                    {
-                        j++;
-                    }
-
-                    if (j == nums.size())
-                        return;
-
-                    // swap i+1 and j
-                    i++;
-                    int temp = nums[i];
-                    nums[i] = nums[j];
-                    nums[j] = temp;
-                    j = i + 1;
-                }
-                increase = !increase;
-            default:
-                break;
+                nums[i] = sorted[--s];
             }
-
+            else
+            {
+                nums[i] = sorted[--k];
+            }
         }
     }
 

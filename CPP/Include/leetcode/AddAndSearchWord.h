@@ -32,11 +32,15 @@ namespace leetcode
             if (word.empty())
                 return;
 
-            auto current = root;
+            TrieNode* current = root;
+
+            // O(k), k is the word length
             for (int i = 0; i < word.size(); i++)
             {
+                // for each characters in the word, 
                 char c = word[i];
                 int index = c - 'a';
+
                 if (!current->children[index])
                 {
                     TrieNode* temp = new TrieNode();
@@ -56,25 +60,49 @@ namespace leetcode
 
     private:
         // helper function to search the word
-        bool dfs(string& s, int pos, TrieNode* node)
+        bool dfs(TrieNode* node, const string& word, int pos)
         {
-            if (pos >= s.size())
+            if (!node)
+                return false;
+
+            if (pos >= word.size())
                 return node->words > 0;
 
-            for (int i = 0; i < 26; i++)
+            if (word[pos] != '.')
             {
-                if (node->children[i])
+                return dfs(node->children[word[pos] - 'a'], word, pos + 1);
+            }
+            else
+            {
+                for (TrieNode* child : node->children)
                 {
-                    if (s[pos] == '.' || i == s[pos] - 'a')
+                    if (child && dfs(child, word, pos + 1))
                     {
-                        if (dfs(s, pos + 1, node->children[i]))
-                            return true;
+                        return true;
                     }
                 }
             }
-            
-            return false;
         }
+
+        //bool dfs(string& s, int pos, TrieNode* node)
+        //{
+        //    if (pos >= s.size())
+        //        return node->words > 0;
+
+        //    for (int i = 0; i < 26; i++)
+        //    {
+        //        if (node->children[i])
+        //        {
+        //            if (s[pos] == '.' || i == s[pos] - 'a')
+        //            {
+        //                if (dfs(s, pos + 1, node->children[i]))
+        //                    return true;
+        //            }
+        //        }
+        //    }
+        //    
+        //    return false;
+        //}
 
 
         // the Trie prefix tree root node.

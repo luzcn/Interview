@@ -29,7 +29,7 @@
 //        The longest increasing path is[3, 4, 5, 6].Moving diagonally is not allowed.
 namespace leetcode
 {
-    void dfs(vector<vector<int>>& matrix, int i, int j, int& longest, int current)
+    /*void dfs(vector<vector<int>>& matrix, int i, int j, int& longest, int current)
     {
         if (i < 0 || i >= matrix.size() || j < 0 || j >= matrix[0].size())
             return;
@@ -55,8 +55,30 @@ namespace leetcode
         {
             dfs(matrix, i, j + 1, longest, current + 1);
         }
-    }
+    }*/
 
+
+    // dfs with memoization
+    int dfs(const vector<vector<int>>& matrix, int i, int j,
+        vector<vector<int>>& memo, const vector<pair<int,int>>& dirs)
+    {
+        if (memo[i][j])
+            return memo[i][j];
+
+        for (auto& dir : dirs)
+        {
+            int x = i + dir.first;
+            int y = j + dir.second;
+
+            if (x >= 0 && x < matrix.size() && j >= 0 && j < matrix[0].size()
+                && matrix[x][y] > matrix[i][j])
+            {
+                memo[i][j] = max(memo[i][j], dfs(matrix, x, y, memo, dirs));
+            }
+        }
+
+        return ++memo[i][j];
+    }
 
     int longestIncreasingPath(vector<vector<int>>& matrix)
     {
@@ -67,11 +89,14 @@ namespace leetcode
         int n = matrix[0].size();
         int longest = 1;
 
+        vector<vector<int>> memo(m, vector<int>(n, 0));
+        vector<pair<int, int>> dirs{ {1, 0},{-1,0},{0,1},{0,-1} };
+
         for (int i = 0; i < m; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                dfs(matrix, i, j, longest, 1);
+                longest = max(longest, dfs(matrix, i, j, memo, dirs));
             }
         }
 

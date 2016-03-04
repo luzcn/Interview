@@ -12,14 +12,14 @@ namespace MergeKSortedList
 {
     using namespace std;
 
-/*
+
     struct Comparator
     {
-        bool operator() (ListNode* n1, ListNode* n2)
+        bool operator() (ListNode* lhs, ListNode* rhs)
         {
-            return n1->val > n2->val;
+            return lhs->val > rhs->val;
         }
-    };*/
+    };
 
     ListNode* mergeKLists(vector<ListNode*> &lists)
     {
@@ -28,22 +28,27 @@ namespace MergeKSortedList
             return nullptr;
         }
 
-        auto compare = [](ListNode* n1, ListNode* n2){ return n1->val > n2->val; };
-        std::priority_queue<ListNode*, vector<ListNode*>, decltype(compare)> que(lists.begin(), lists.end());
-
+        std::priority_queue<ListNode*, vector<ListNode*>, Comparator> minHeap;
+        for (ListNode* node : lists)
+        {
+            if (node)
+            {
+                minHeap.push(node);
+            }
+        }
 
         ListNode result(0);
-        auto current = &result;
+        ListNode* current = &result;
 
-        while (!que.empty())
+        while (!minHeap.empty())
         {
-            current->next = que.top();
-            que.pop();
+            current->next = minHeap.top();
+            minHeap.pop();
             current = current->next;
 
             if (current->next)
             {
-                que.push(current->next);
+                minHeap.push(current->next);
             }
         }
 

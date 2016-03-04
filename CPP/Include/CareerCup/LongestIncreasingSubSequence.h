@@ -31,8 +31,35 @@ namespace careercup
 
         return *std::max_element(dp.begin(), dp.end());
     }
-}
 
+
+    // O(nlogn) time
+    int longestIncreasingSubsequence2(vector<int> nums)
+    {
+        if (nums.size() <= 1)
+            return nums.size();
+
+        vector<int> LIS;
+        //int longestLength = 1;
+
+        for (int i = 0; i < nums.size(); i++)
+        {
+            auto it = lower_bound(LIS.begin(), LIS.end(), nums[i]);
+            if (it == LIS.end())
+            {
+                LIS.push_back(nums[i]);
+            }
+            else
+            {
+                *it = nums[i];
+            }
+
+            //longestLength = max(longestLength, (int)LIS.size());
+        }
+
+        return LIS.size();
+    }
+}
 #if 0
 vector<int> v{ 88,4,24,82,86,1,56,74,71,9,8,18,26,53,
     77,87,60,27,69,17,76,23,67,14,98,13,10,83,20,43,39,29,92,31,0,30,90,70,37,59 };
