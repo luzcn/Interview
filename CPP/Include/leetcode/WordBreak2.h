@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include <unordered_set>
 
-namespace WordBreak2
+namespace leetcode
 {
     using namespace std;
 
@@ -40,11 +40,9 @@ namespace WordBreak2
     }
 #endif
 
-    /***
-     *	Recursive bruteforce solution
-     *	
-     */
-    void GetAllSolution(int start, const string& s, const unordered_set<string> &dict, int len, string& result, vector<string>& solutions)
+    // dfs brute force solution, O(2^n) time
+    void GetAllSolution(int start, const string& s, const unordered_set<string> &dict,
+        int len, string& result, vector<string>& solutions)
     {
         if (start == len)
         {
@@ -65,9 +63,7 @@ namespace WordBreak2
         }
     }
 
-    /***
-     *	using the DP idea to prune unnecessary computations.
-     */
+    // use the DP idea to prune unnecessary computations.
     void GetAllSolution2(int start, const string& s, const unordered_set<string> &dict, int len,
         string& result, vector<string>& solutions, vector<bool>& possible)
     {
@@ -81,7 +77,7 @@ namespace WordBreak2
         {
             auto prefix = s.substr(start, i - start + 1);
 
-            if (dict.find(prefix) != dict.end() && possible[i+1])
+            if (dict.find(prefix) != dict.end() && possible[i + 1])
             {
                 result.append(prefix).append(" ");
                 int beforeChange = solutions.size();
@@ -94,7 +90,7 @@ namespace WordBreak2
             }
         }
     }
-    vector<string> wordbreak(string s, unordered_set<string>& dict)
+    vector<string> wordBreak(string s, unordered_set<string>& dict)
     {
         vector<string> sol;
         string result("");
@@ -108,7 +104,7 @@ namespace WordBreak2
 }
 
 #if 0
-int _tmain(int argc, _TCHAR* argv [])
+int _tmain(int argc, _TCHAR* argv[])
 {
     unordered_set<string> dict = { "cats", "and", "dog", "cat", "sand" };
 

@@ -83,6 +83,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Debug.h" />
     <ClInclude Include="Include\CareerCup\ActivitySelection.h" />
     <ClInclude Include="Include\CareerCup\Addition.h" />
     <ClInclude Include="Include\CareerCup\AddTowNumbersAsLinkedList.h" />
