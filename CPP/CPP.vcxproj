@@ -364,6 +364,7 @@
     <ClInclude Include="Include\leetcode\WordLadder.h" />
     <ClInclude Include="Include\leetcode\WordPattern.h" />
     <ClInclude Include="Include\leetcode\WordSearch.h" />
+    <ClInclude Include="Include\leetcode\WordSearch2.h" />
     <ClInclude Include="Include\leetcode\ZigZagConversion.h" />
     <ClInclude Include="Include\leetcode\ZigZagIterator.h" />
     <ClInclude Include="Include\lintcode\AssignmentOperatorOverload.h" />
