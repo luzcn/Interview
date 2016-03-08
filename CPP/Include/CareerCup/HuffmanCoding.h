@@ -34,49 +34,51 @@ namespace careercup
         _ASSERT(str.size() >= 2);
 
         // create a min-heap
-        std::priority_queue<PrefixTreeNode*, std::vector<PrefixTreeNode*>, comparator> heap;
+        std::priority_queue<PrefixTreeNode*, std::vector<PrefixTreeNode*>, comparator> minHeap;
+
         for (int i = 0; i < str.size(); i++)
         {
             PrefixTreeNode* node = new PrefixTreeNode(str[i], freq[i]);
-            heap.push(node);
+            minHeap.push(node);
         }
 
-        while (heap.size() > 1)
+        while (minHeap.size() > 1)
         {
-            auto n1 = heap.top();
-            heap.pop();
+            PrefixTreeNode* n1 = minHeap.top();
+            minHeap.pop();
 
-            auto n2 = heap.top();
-            heap.pop();
+            PrefixTreeNode* n2 = minHeap.top();
+            minHeap.pop();
 
             PrefixTreeNode* newNode = new PrefixTreeNode(n1->character + n2->character, n1->frequency + n2->frequency);
             newNode->left = n1;
             newNode->right = n2;
-            heap.push(newNode);
+
+            minHeap.push(newNode);
         }
 
-        return heap.top();
+        return minHeap.top();
     }
 
-    void preorder(PrefixTreeNode* root, vector<string>& res, string& current)
+    void preorder(PrefixTreeNode* root, vector<string>& result, string& currentCode)
     {
         if (!root)
             return;
 
         if (!root->left && !root->right)
         {
-            res.push_back(current);
-            cout << root->character << ": " << current << endl;
+            result.push_back(currentCode);
+            cout << root->character << ": " << currentCode << endl;
             return;
         }
 
-        current += "0";
-        preorder(root->left, res, current);
-        current.pop_back();
+        currentCode += "0";
+        preorder(root->left, result, currentCode);
+        currentCode.pop_back();
 
-        current += "1";
-        preorder(root->right, res, current);
-        current.pop_back();
+        currentCode += "1";
+        preorder(root->right, result, currentCode);
+        currentCode.pop_back();
     }
 
     vector<string> printCode(PrefixTreeNode* root)

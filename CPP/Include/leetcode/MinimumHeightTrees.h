@@ -15,5 +15,24 @@
 // Since all edges are undirected, [0, 1] is the same as[1, 0] and thus will not appear together in edges.
 namespace leetcode
 {
-    // similar to minimum spanning tree?
+    int bfs(int n, vector<pair<int, int>>& edges, int root)
+    {
+        vector<bool> visited(n, false);
+        queue<int> candidates;
+
+        candidates.push(root);
+        while (!candidates.empty())
+        {
+            int u = candidates.front();
+            candidates.pop();
+
+
+        }
+
+    }
+
+    vector<int> findMinHeightTrees(int n, vector<pair<int, int>>& edges) 
+    {
+
+    }
 }

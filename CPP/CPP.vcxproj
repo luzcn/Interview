@@ -187,6 +187,7 @@
     <ClInclude Include="Include\leetcode\NumberOfDigitOne.h" />
     <ClInclude Include="Include\leetcode\OddEvenLinkedList.h" />
     <ClInclude Include="Include\leetcode\PascalTriangle.h" />
+    <ClInclude Include="Include\leetcode\PatchingArray.h" />
     <ClInclude Include="Include\leetcode\PeekingIterator.h" />
     <ClInclude Include="Include\leetcode\PowerOfThree.h" />
     <ClInclude Include="Include\leetcode\ReadNCharactersGivenRead4.h" />

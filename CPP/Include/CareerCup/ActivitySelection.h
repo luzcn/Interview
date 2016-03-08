@@ -16,24 +16,29 @@ namespace careercup
     // OPT is the optimal solution,
     // a1 is the earlist finished activity in this OPT solution.
     // by "cut-and-paste", we can replace this a1 with a0 without breaking the mutual comaptibility.
-    vector<Activity> activitySelection(vector<Activity>& S)
+    vector<Activity> activitySelection(vector<Activity>& activityList)
     {
 
-        if (S.empty())
+        if (activityList.empty())
             return{};
 
-        vector<Activity> res;
-        auto a = S[0];
-        res.push_back(a);
+        // sort the list of activities by finish time
+        sort(activityList.begin(), activityList.end(), [&](const Activity& lhs, const Activity& rhs) {
+            return lhs.finish < rhs.finish;
+        });
 
-        for (int i = 1; i < S.size(); i++)
+        vector<Activity> result;
+        Activity first = activityList[0];
+        result.push_back(first);
+
+        for (int i = 1; i < activityList.size(); i++)
         {
-            if (a.finish <= S[i].start)
+            if (first.finish <= activityList[i].start)
             {
-                res.push_back(S[i]);
-                a = S[i];
+                result.push_back(activityList[i]);
+                first = activityList[i];
             }
         }
-        return res;
+        return result;
     }
 }

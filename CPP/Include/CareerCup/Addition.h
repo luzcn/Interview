@@ -2,10 +2,8 @@
 
 #include "stdafx.h"
 
-/*
- *	Write a function to add two numbers, without using "+" and any other operators.
- */
-namespace BitsManipulation
+// Write a function to add two numbers, without using "+" and any other operators.
+namespace careercup
 {
     // the input number is non-negative
     vector<int> splitNumToDigits(int num)

@@ -2,12 +2,12 @@
 
 #include "stdafx.h"
 
-//Given two binary strings, return their sum (also a binary string).
+// Given two binary strings, return their sum (also a binary string).
 //
-//For example,
-//a = "11"
-//b = "1"
-//Return "100".
+// For example,
+// a = "11"
+// b = "1"
+// Return "100".
 //
 //http://fisherlei.blogspot.com/2013/01/leetcode-add-binary.html
 namespace leetcode
@@ -21,7 +21,7 @@ namespace leetcode
             int value_i = i >= 0 ? a[i] - '0' : 0;
             int value_j = j >= 0 ? b[j] - '0' : 0;
 
-            auto sum = (value_i + value_j + carry) % 2;
+            int sum = (value_i + value_j + carry) % 2;
             carry = (value_i + value_j + carry) / 2;
 
             result.insert(result.begin(), sum + '0');

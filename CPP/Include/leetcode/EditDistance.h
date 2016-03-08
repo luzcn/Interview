@@ -1,25 +1,23 @@
 #pragma once
 #include "stdafx.h"
 
-/***
- *	 Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2.
- (each operation is counted as 1 step.)
+ //Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2.
+ //(each operation is counted as 1 step.)
 
- You have the following 3 operations permitted on a word:
+ //You have the following 3 operations permitted on a word:
 
- a) Insert a character
- b) Delete a character
- c) Replace a character
+ //a) Insert a character
+ //b) Delete a character
+ //c) Replace a character
 
- http://www.programcreek.com/2013/12/edit-distance-in-java/
+ //http://www.programcreek.com/2013/12/edit-distance-in-java/
 
- the idea is: ed("", s) || ed(s,"") = s.size();
- ed(s1,s2) = ed(s1+x, s2+y)
- 1. = ed(s1, s2) if ch1 == ch2
- 2. if ch1 != ch2
- - Insert ch1 to s2, 1 + ed(s1, s2+ch2)
- - Delete ch2 from s2, 1+ ed(s1, s2
- */
+ //the idea is: ed("", s) || ed(s,"") = s.size();
+ //ed(s1,s2) = ed(s1+x, s2+y)
+ //1. = ed(s1, s2) if ch1 == ch2
+ //2. if ch1 != ch2
+ //- Insert ch1 to s2, 1 + ed(s1, s2+ch2)
+ //- Delete ch2 from s2, 1+ ed(s1, s2)
 namespace leetcode
 {
     /***
