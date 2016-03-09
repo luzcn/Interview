@@ -1086,6 +1086,9 @@
     <ClInclude Include="Include\leetcode\PatchingArray.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\ParkingLot.h">
+      <Filter>Header Files\CareerCup\OO Design</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

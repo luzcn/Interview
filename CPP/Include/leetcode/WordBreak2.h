@@ -4,42 +4,6 @@
 
 namespace leetcode
 {
-    using namespace std;
-
-#if 0   // not validated solution
-    void breakRec(string s, unordered_set<string>& dict, vector<vector<string>>& sol, vector<string>& cur)
-    {
-        if (dict.find(s) != dict.end())
-        {
-            cur.push_back(s);
-            return;
-        }
-
-        for (int i = 1; i <= s.size(); ++i)
-        {
-            auto prefix = s.substr(0, i);
-            if (dict.find(prefix) != dict.end())
-            {
-                cur.push_back(prefix);
-                breakRec(s.substr(i), dict, sol, cur);
-                sol.push_back(cur);
-                cur.clear();
-            }
-        }
-
-    }
-
-    vector<vector<string>> wordbreak(string s, unordered_set<string>& dict)
-    {
-        vector<vector<string>> sol;
-        vector<string> prefix;
-
-        breakRec(s, dict, sol, prefix);
-
-        return sol;
-    }
-#endif
-
     // dfs brute force solution, O(2^n) time
     void GetAllSolution(int start, const string& s, const unordered_set<string> &dict,
         int len, string& result, vector<string>& solutions)
@@ -64,42 +28,48 @@ namespace leetcode
     }
 
     // use the DP idea to prune unnecessary computations.
-    void GetAllSolution2(int start, const string& s, const unordered_set<string> &dict, int len,
-        string& result, vector<string>& solutions, vector<bool>& possible)
+    void dfs(string& s, unordered_set<string>& dict, vector<string>& result,
+            string& current, vector<bool>& possible, int start)
     {
-        if (start == len)
+        if (start >= s.size())
         {
-            solutions.push_back(result.substr(0, result.size() - 1));  // eliminate the last redundant space.
+            // use "current.substr" here, we should not modify "current", here
+            result.push_back(current.substr(0, current.size() - 1));
             return;
         }
 
-        for (int i = start; i < len; ++i)
+        for (int i = start; i < s.size(); i++)
         {
-            auto prefix = s.substr(start, i - start + 1);
+            string prefix = s.substr(start, i - start + 1);
 
             if (dict.find(prefix) != dict.end() && possible[i + 1])
             {
-                result.append(prefix).append(" ");
-                int beforeChange = solutions.size();
-                GetAllSolution(i + 1, s, dict, len, result, solutions);
-                if (solutions.size() == beforeChange)
+                current.append(prefix).append(" ");
+                int sizeBeforeChange = result.size();
+
+                dfs(s, dict, result, current, possible, i + 1);
+
+                current.resize(current.size() - prefix.size() - 1);
+
+                if (result.size() == sizeBeforeChange)  
                 {
-                    possible[i + 1] = false; // if no solution, set the possibility to false.
+                    // the "result" size does not chage, no solution found
+                    // set the possible[i + 1] as false
+                    possible[i + 1] = false;
                 }
-                result.resize(result.size() - prefix.size() - 1);
             }
         }
     }
     vector<string> wordBreak(string s, unordered_set<string>& dict)
     {
-        vector<string> sol;
-        string result("");
-        vector<bool> possible(s.size() + 1, true);
+        vector<string> result;
+        string current("");
+        vector<bool> possible(s.size() + 1, true);  // the size if the input string length + 1
 
 
-        GetAllSolution2(0, s, dict, s.size(), result, sol, possible);
+        dfs(s, dict, result, current, possible, 0);
 
-        return sol;
+        return result;
     }
 }
 

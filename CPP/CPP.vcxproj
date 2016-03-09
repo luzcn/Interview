@@ -124,6 +124,7 @@
     <ClInclude Include="Include\CareerCup\NumberOf1Bit.h" />
     <ClInclude Include="Include\CareerCup\KMP.h" />
     <ClInclude Include="Include\CareerCup\PaintersPartition.h" />
+    <ClInclude Include="Include\CareerCup\ParkingLot.h" />
     <ClInclude Include="Include\CareerCup\PartitionProblem.h" />
     <ClInclude Include="Include\CareerCup\PhoneCallDipatch.h" />
     <ClInclude Include="Include\CareerCup\ReplaceSpaceInString.h" />

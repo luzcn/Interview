@@ -27,6 +27,9 @@
     <Compile Include="leetcode\CountPrimes.py" />
     <Compile Include="leetcode\FindCelebrity.py" />
     <Compile Include="leetcode\HappyNumber.py" />
+    <Compile Include="leetcode\ReverseLinkedList.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="leetcode\SurroundedRegions.py" />
     <Compile Include="Python.py" />
   </ItemGroup>
