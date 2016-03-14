@@ -13,29 +13,25 @@
 #include <unordered_map>
 #include <list>
 
-namespace LRUCache
+namespace leetcode
 {
-    /// <summary>
-    ///  The Cache data item structure.
-    /// </summary>
-    struct CacheData
+    // the key-value pair of LRU cached data
+    struct Data
     {
-        int key;
-        int value;
-        CacheData(int k, int v)
+        Data(int k, int v)
             :key(k), value(v)
         {}
+
+        int key;
+        int value;
     };
 
-    /// <summary>
-    ///  
-    /// </summary>
     class LRUCache
     {
     public:
         LRUCache(int capacity)
-            :m_capacity(capacity)
         {
+            m_cap = capacity;
         }
 
         int get(int key)
@@ -43,58 +39,51 @@ namespace LRUCache
             if (m_map.find(key) == m_map.end())
                 return -1;
 
-            // Move to Head
-            move_to_head(key);
+            int value = m_map[key]->value;
+            moveToHead(key, value);
 
-            return m_map[key]->value;
+            return value;
         }
 
         void set(int key, int value)
         {
-            if (m_map.find(key) == m_map.end())  // new data
+            if (m_map.find(key) == m_map.end())   // not in the map
             {
-                CacheData new_data(key, value);
-
-                if (m_map.size() >= m_capacity)
+                if (m_list.size() == m_cap)
                 {
-                    // Remove the end (least used element) from m_LRUCache list.
-                    m_map.erase(m_LRUCache.back().key);
-                    m_LRUCache.pop_back();
+                    // reach the size limitation
+                    // delete the last list element
+                    m_map.erase(m_list.back().key);
+                    m_list.pop_back();
                 }
 
-                // Insert to the front of m_LRUCache list.
-                m_LRUCache.push_front(new_data);
-                m_map[key] = m_LRUCache.begin();
+                // directly add the new data at the list front
+                m_list.push_front({ key, value });
+                m_map[key] = m_list.begin();
             }
             else
             {
-                m_map[key]->value = value;  // update the value, which already in the LRUCache list.
-
-                // Move to head
-                move_to_head(key);
+                moveToHead(key, value);
             }
 
         }
-
     private:
-        std::unordered_map<int, std::list<CacheData>::iterator> m_map;
-        int m_capacity;
-        std::list<CacheData> m_LRUCache;
-        //std::list < std::pair<int, int> > 
+        int m_cap;
+        list<Data> m_list;
+        unordered_map<int, list<Data>::iterator> m_map;
 
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <param name=""> </param>
-        void move_to_head(int key)
+        void moveToHead(int key, int value)
         {
-            auto copy_dataentry = *m_map[key];
-            m_LRUCache.erase(m_map[key]);
-            m_LRUCache.push_front(copy_dataentry);
+            auto it = m_map[key];
 
-            // Update the hash map value, since it is a reference to the element in LRUCache list.
-            m_map[key] = m_LRUCache.begin();
+            // delete it
+            m_list.erase(it);
+
+            // put the data at the front
+            m_list.push_front({ key, value });
+
+            // update the hash map pointing to the list front.
+            m_map[key] = m_list.begin();
         }
     };
 }

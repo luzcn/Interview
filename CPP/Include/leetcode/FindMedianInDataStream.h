@@ -30,84 +30,79 @@ namespace leetcode
     {
     public:
 
-        // TLE??
-         //Adds a number into the data structure.
+        // Adds a number into the data structure.
         void addNum(int num)
         {
-            if (maxHeap.empty())
+            if (right.empty() || num >= right.top())
             {
-                maxHeap.push(num);
-                return;
-            }
-            else if (minHeap.empty())
-            {
-                minHeap.push(num);
-                return;
-            }
-
-            if (num > minHeap.top())
-            {
-                minHeap.push(num);
+                right.push(num);
             }
             else
             {
-                maxHeap.push(num);
+                left.push(num);
             }
 
-            while (!maxHeap.empty() && !minHeap.empty() && maxHeap.top() > minHeap.top() 
-                || maxHeap.size() > minHeap.size() + 1)
-            {
-                minHeap.push(maxHeap.top());
-                maxHeap.pop();
-            }
-
-            while (!maxHeap.empty() && !minHeap.empty() && minHeap.top() < maxHeap.top() 
-                || minHeap.size() > maxHeap.size() + 1)
-            {
-                maxHeap.push(minHeap.top());
-                minHeap.pop();
-            }
+            // make left and right balance
+            makeBalance();
         }
-
 
         // Returns the median of current data stream
         double findMedian()
         {
-            if (minHeap.size() > maxHeap.size())
+            if (left.empty() && right.empty())
+                return 0;
+
+
+            if (left.size() == right.size())
             {
-                return (double)minHeap.top();
+                return (left.top() + right.top()) / 2.0;
             }
-            
-            if (maxHeap.size() > minHeap.size())
+            else
             {
-                return (double)maxHeap.top();
-            }
-            
-            if (maxHeap.size() == minHeap.size())
-            {
-                return (double)((double)minHeap.top() + (double)maxHeap.top()) / 2;
+                return (double)left.size() > right.size() ? left.top() : right.top();
             }
         }
+
     private:
-        struct minHeapComparator
+        void makeBalance()
         {
-            bool operator() (const int& a, const int& b)
+            // size() returns "unsigned int", 
+            // using "left.size() - right.size()" may cause underflow.
+            if (left.size() > right.size() + 1)
             {
-                return a > b;
+                int value = left.top();
+                left.pop();
+
+                right.push(value);
             }
-        };
-        struct maxHeapComparator
-        {
-            bool operator() (const int& a, const int& b)
+            else if (right.size() > left.size() + 1)
             {
-                return a < b;
+                int value = right.top();
+                right.pop();
+
+                left.push(value);
+            }
+        }
+
+        struct ComparatorMinHeap
+        {
+            bool operator()(int lhs, int rhs)
+            {
+                return lhs > rhs;
             }
         };
 
-        std::priority_queue<int, vector<int>, minHeapComparator> minHeap;
-        std::priority_queue<int, vector<int>, maxHeapComparator> maxHeap;
+        struct ComparatorMaxHeap
+        {
+            bool operator()(int lhs, int rhs)
+            {
+                return lhs < rhs;
+            }
+        };
+
+        priority_queue<int, vector<int>, ComparatorMaxHeap> left;   // max heap, left sub tree
+        priority_queue<int, vector<int>, ComparatorMinHeap> right;  // min heap, right sub tree
     };
-
     // Your MedianFinder object will be instantiated and called as such:
     // MedianFinder mf;
     // mf.addNum(1);
