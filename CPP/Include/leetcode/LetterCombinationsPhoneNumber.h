@@ -7,40 +7,50 @@ namespace leetcode
     //    A mapping of digit to letters(just like on the telephone buttons) is given below.
     //    Input:Digit string "23"
     //    Output : ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
-    namespace helper
+    void dfs(unordered_map<char, string>& letters, string& digits, int index,
+        vector<string>& result, string& current)
     {
-        void combineRec(vector<string>& inputs, vector<string>& res, string& current, int index)
+        if (index >= digits.size())
         {
-            if (index == inputs.size())
-            {
-                res.push_back(current);
-                return;
-            }
+            result.push_back(current);
+            return;
+        }
 
-            auto in = inputs[index];
-            for (int i = 0; i < in.size(); i++)
-            {
-                current += in[i];
-                combineRec(inputs, res, current, index + 1);
-                current.pop_back();
-            }
+        for (char c : letters[digits[index]])
+        {
+            current.push_back(c);
+
+            dfs(letters, digits, index + 1, result, current);
+
+            current.pop_back();
         }
     }
 
     vector<string> letterCombinations(string digits)
     {
-        vector<string> letters{ "","abc","def","ghi","jkl","mno",
-            "pqrs","tuv","wxyz","+", " ", "#" };
+        if (digits.empty())
+            return{};
 
-        vector<string> inputs;
-        vector<string> res;
-        for (int i = 0; i < digits.size(); i++)
-        {
-            inputs.push_back(letters[digits[i] - '1']);
-        }
+        unordered_map<char, string> letters{
+            { '0', " " },
+            { '1', "" },
+            { '2', "abc" },
+            { '3', "def" },
+            { '4', "ghi" },
+            { '5', "jkl" },
+            { '6', "mno" },
+            { '7', "pqrs" },
+            { '8',  "tuv" },
+            { '9', "wxyz" },
+            { '*',  "+" },
+            { '#',  "#" }
+        };
 
-        string current = "";
-        helper::combineRec(inputs, res, current, 0);
-        return res;
+        vector<string> result;
+        string current;
+
+        dfs(letters, digits, 0, result, current);
+
+        return result;
     }
 }

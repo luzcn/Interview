@@ -173,6 +173,7 @@
     <ClInclude Include="Include\leetcode\FractionToRecurringDecimal.h" />
     <ClInclude Include="Include\leetcode\GeneralizedAbbreviation.h" />
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
+    <ClInclude Include="Include\leetcode\ImplementTrie.h" />
     <ClInclude Include="Include\leetcode\IncreasingTripletSubsequence.h" />
     <ClInclude Include="Include\leetcode\IntegerToEnglish.h" />
     <ClInclude Include="Include\leetcode\LargestBSTSubtree.h" />
