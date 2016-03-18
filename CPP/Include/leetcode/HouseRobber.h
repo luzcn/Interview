@@ -2,14 +2,16 @@
 #include "stdafx.h"
 
 
-/*
-You are a professional robber planning to rob houses along a street.
-Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses
-have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
 
-Given a list of non-negative integers representing the amount of money of each house,
-determine the maximum amount of money you can rob tonight without alerting the police.
-*/
+// You are a professional robber planning to rob houses along a street.
+// Each house has a certain amount of money stashed, 
+//
+// the only constraint stopping you from robbing each of them is that adjacent houses
+// have security system connected and it will automatically contact the police 
+// if two adjacent houses were broken into on the same night.
+//
+// Given a list of non-negative integers representing the amount of money of each house,
+// determine the maximum amount of money you can rob tonight without alerting the police.
 
 namespace leetcode
 {
@@ -94,27 +96,32 @@ namespace leetcode
 
 
 #pragma region House Robber 3
-    int robRec(TreeNode* node)
+    vector<int> dfs(TreeNode* node)
     {
         if (!node)
-            return 0;
-
-        if (!node->left && !node->right)
-            return node->val;
-
-        int v1 = 0;
-        int v2 = 0;
-        if (node->left)
         {
-            v1 = robRec(node->left->left) + node->val;
-            v2 = robRec(node->left->right) + node->val;
+            // the first is not rob
+            // second is rob
+            return{ 0, 0 };
         }
 
-        int v3 = robRec(node->left);
-        int v4 = robRec(node->right);
+        if (!node->left && !node->right)
+        {
+            return{ 0, node->val };
+        }
 
-        return max(max(v1, v2), max(v3, v4));
+        vector<int> L = dfs(node->left);
+        vector<int> R = dfs(node->right);
 
+        vector<int> nums{ 0,0 };
+
+        // not rob current
+        nums[0] = max(L[0], L[1]) + max(R[0], R[1]);
+
+        // rob current
+        nums[1] = node->val + L[0] + R[0];
+
+        return nums;
     }
 
 
@@ -123,7 +130,9 @@ namespace leetcode
         if (!root)
             return 0;
 
-        return robRec(root);
+        auto result = dfs(root);
+
+        return max(result[0], result[1]);
     }
 #pragma endregion
 }

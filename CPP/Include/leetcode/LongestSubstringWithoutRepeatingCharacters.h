@@ -33,4 +33,34 @@ namespace LongestSubstringWithoutRepeatingCharacters
 
     }
 
+    // using the super template
+    // two pointers + hash map
+    int lengthOfLongestSubstring(string s)
+    {
+        unordered_map<char, int> map;
+        int start = 0, end = 0;
+        int count = 0;  // counter of the duplicate char
+        int maxLength = 0;
+
+        while (end < s.size())
+        {
+            if (map[s[end++]]++ > 0)
+            {
+                count++;
+            }
+
+            while (count > 0)
+            {
+                if (map[s[start++]]-- > 1)
+                {
+                    count--;
+                }
+            }
+
+            maxLength = max(maxLength, end - start);
+        }
+
+        return maxLength;
+    }
+
 }

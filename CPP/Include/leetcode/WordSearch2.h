@@ -101,19 +101,22 @@ namespace leetcode
         void dfs(vector<string>& board, vector<string>& result,
             string& current, int i, int j, vector<vector<bool>>& visited, TrieNode* node)
         {
-            if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size() || !node)
+            if (!node)
+                return;
+
+            if (node->wordCounts > 0)
+            {
+                result.push_back(current);
+                node->wordCounts--;
+            }
+
+            if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size())
                 return;
 
             if (!visited[i][j] && node->children[board[i][j] - 'a'])
             {
                 visited[i][j] = true;
                 current.push_back(board[i][j]);
-
-                if (node->children[board[i][j] - 'a']->wordCounts > 0)
-                {
-                    result.push_back(current);
-                    node->children[board[i][j] - 'a']->wordCounts--;
-                }
 
                 dfs(board, result, current, i - 1, j, visited, node->children[board[i][j] - 'a']);
                 dfs(board, result, current, i + 1, j, visited, node->children[board[i][j] - 'a']);

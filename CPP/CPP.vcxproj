@@ -184,6 +184,7 @@
     <ClInclude Include="Include\leetcode\MinimumHeightTrees.h" />
     <ClInclude Include="Include\leetcode\MinimumSizeSubarraySum.h" />
     <ClInclude Include="Include\leetcode\MinimumWindowSubstring.h" />
+    <ClInclude Include="Include\leetcode\MissingNumbers.h" />
     <ClInclude Include="Include\leetcode\MissingRange.h" />
     <ClInclude Include="Include\leetcode\NumberOfConnectedComponentsUndirectedGraph.h" />
     <ClInclude Include="Include\leetcode\NumberOfDigitOne.h" />

@@ -22,37 +22,44 @@
 // ["ab","ba"] returns [["ab"], ["ba"]]
 namespace leetcode
 {
+    string encode(string& s)
+    {
+        int diff = 0;
+        string encodeStr;
+        for (int i = 1; i < s.size(); i++)
+        {
+            diff = s[i] - s[i - 1];
+            if (diff < 0)
+                diff += 26;
+
+            encodeStr += 'a' + diff + ',';
+        }
+
+        return encodeStr;
+    }
+
     vector<vector<string>> groupStrings(vector<string>& strings)
     {
-        std::unordered_map<string, vector<string>> map;
-        vector<vector<string>> res;
+        vector<vector<string>> result;
+        unordered_map<string, vector<string>> map;
 
-        for (auto& str : strings)
+        if (strings.empty())
+            return result;
+
+        for (string& str : strings)
         {
-            string t = str;
-            int diff = t[0] - 'a';
-
-            for (int i = 0; i < t.size(); i++)
-            {
-                if (t[i] - diff - 'a'>= 0)
-                {
-                    t[i] = t[i] - diff;
-                }
-                else
-                {
-                    t[i] = t[i] - diff  + 1 + 26;
-                }
-            }
-
-            map[t].push_back(str);
+            string encodeStr = std::move(encode(str));
+            map[encodeStr].push_back(str);
         }
 
-        for (auto it = map.begin(); it != map.end(); it++)
+        for (auto& p : map)
         {
-            sort(it->second.begin(), it->second.end());
-            res.push_back(it->second);
+            sort(p.second.begin(), p.second.end());
+
+            result.push_back(p.second);
         }
-        return res;
+
+        return result;
     }
 
     // follow up:

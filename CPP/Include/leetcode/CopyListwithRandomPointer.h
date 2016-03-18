@@ -2,6 +2,12 @@
 
 #include "stdafx.h"
 
+//A linked list is given such that each node contains an additional random pointer 
+//which could point to any node in the list or null.
+//
+//Return a deep copy of the list.
+// http://fisherlei.blogspot.com/2013/11/leetcode-copy-list-with-random-pointer.html
+
 struct RandomListNode
 {
     RandomListNode* next;
@@ -14,14 +20,6 @@ struct RandomListNode
 
 namespace leetcode
 {
-    /// <summary>
-    ///  A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
-    ///  Return a deep copy of the list.
-    ///  
-    ///  http://fisherlei.blogspot.com/2013/11/leetcode-copy-list-with-random-pointer.html
-    /// </summary>
-    /// <param name=""> </param>
-    /// <returns> </return>
     RandomListNode* copyRandomList(RandomListNode* head)
     {
         if (!head)
@@ -40,7 +38,7 @@ namespace leetcode
         }
 
         auto result = head->next;
-        
+
         // Construct the random pointer.
         p = head;
         while (p)
@@ -49,10 +47,6 @@ namespace leetcode
             {
                 p->next->random = p->random->next;
             }
-            else
-            {
-                p->next->random = nullptr;
-            }
             p = p->next->next;
         }
 
@@ -60,74 +54,58 @@ namespace leetcode
         p = head;
         while (p)
         {
-            auto temp = p->next;
-
-            if (temp)
+            auto nextNode = p->next;
+            if (nextNode)
             {
-                p->next = temp->next;
-                p = temp;
+                p->next = nextNode->next;
             }
-            p = temp;
+            p = nextNode;
         }
 
         return result;
     }
-}
 
-#if 0
-RandomListNode* copyRandomList(RandomListNode* head)
-{
-    if (!head)
-        return head;
-
-    auto p = head;
-    RandomListNode* result = new RandomListNode(-1);
-    auto h = result;
-
-    while (p)
+    // use hash map
+    RandomListNode* copyRandomList2(RandomListNode* head)
     {
-        RandomListNode* newNode = new RandomListNode(p->label);
-        h->next = newNode;
+        if (!head)
+            return head;
 
-        auto temp = p->next;
-        newNode->random = p;
-        p->next = newNode;
+        unordered_map<RandomListNode*, RandomListNode*> map;
 
-        p = temp;
-        h = newNode;
+        RandomListNode* p = head;
+        map[p] = new RandomListNode(p->label);
+        while (p)
+        {
+            // next pointer
+            auto nextNode = p->next;
+            if (nextNode)
+            {
+                map[nextNode] = new RandomListNode(nextNode->label);
+            }
+
+
+            // random pointer
+            auto randPointer = p->random;
+            if (randPointer && map.find(randPointer) == map.end())
+            {
+                map[randPointer] = new RandomListNode(randPointer->label);;
+            }
+
+            // the copined node
+            auto copiedNode = map[p];
+
+            if (p->next)
+                copiedNode->next = map[p->next];
+
+            if (p->random)
+                copiedNode->random = map[p->random];
+
+            p = p->next;
+        }
+
+        return map[head];
     }
 
-    auto q = result->next;
-    while (q)
-    {
-        auto temp = q->random;
-
-        // construct the random pointer
-        if (q->random->random)
-        {
-            q->random = q->random->random->next;
-        }
-        else
-        {
-            q->random = nullptr;
-        }
-
-        // recover the next pointers of the original list.
-        // This will fail, because if recover back the "q->random->random->next" 
-        // may points back to the original list.
-
-        //if (q->next)
-        //{
-        //    temp->next = q->next->random;
-        //}
-        //else
-        //{
-        //    temp->next = nullptr;
-        //}
-
-        q = q->next;
-    }
-
-    return result->next;
 }
-#endif // 0
+
