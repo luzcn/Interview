@@ -63,27 +63,31 @@ namespace leetcode
 
     int minCostKColors(vector<vector<int>>& costs)
     {
+        // Write your code here
+        if (costs.empty())
+            return 0;
+
         int n = costs.size();
         int k = costs[0].size();
 
-        vector<int> dp(k, 0);
+        vector<int> dp(costs[0].begin(), costs[0].end());
         int min1 = INT_MAX;
         int min2 = INT_MAX;
 
-        for (int i = 0; i < k; i++)
+        // find the smallest two elements.
+        for (int v : dp)
         {
-            dp[i] = costs[0][i];
-
-            if (dp[i] < min1)
+            if (v < min1)
             {
                 min2 = min1;
-                min1 = dp[i];
+                min1 = v;
             }
-            else if (dp[i] < min2)
+            else if (v < min2)
             {
-                min2 = dp[i];
+                min2 = v;
             }
         }
+
 
         for (int i = 1; i < n; i++)
         {
@@ -92,6 +96,8 @@ namespace leetcode
 
             for (int j = 0; j < k; j++)
             {
+                // update the dp array with 
+                // previous house min costs.
                 if (dp[j] == min1)
                 {
                     dp[j] = min2 + costs[i][j];
@@ -101,6 +107,7 @@ namespace leetcode
                     dp[j] = min1 + costs[i][j];
                 }
 
+                // get the current smallest 2 costs
                 if (dp[j] < currentMin1)
                 {
                     currentMin2 = currentMin1;
@@ -112,6 +119,7 @@ namespace leetcode
                 }
             }
 
+            // update to the global 
             min1 = currentMin1;
             min2 = currentMin2;
         }

@@ -25,16 +25,16 @@ namespace leetcode
         if (n == 1)
             return k;
 
-        int S = k;  // there are only k ways to paint the first two fences with same colors.
-        int D = k*(k - 1);
+        int same = k;  // there are only k ways to paint the first two fences with same colors.
+        int diff = k*(k - 1);
 
         for (int i = 2; i < n; i++)
         {
-            auto temp = D;
-            D = (S + D)*(k - 1);
-            S = temp;
+            auto temp = diff;
+            diff = (same + diff)*(k - 1);
+            same = temp;
         }
 
-        return D + S;
+        return diff + same;
     }
 }

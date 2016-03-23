@@ -2,17 +2,11 @@
 #include "stdafx.h"
 #include <queue>
 
-/***
- *	Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
- *
- *	using heap (priority queue) to store all the head nodes of k sorted lists.
- *
- */
-namespace MergeKSortedList
+//Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+//using heap (priority queue) to store all the head nodes of k sorted lists.
+
+namespace leetcode
 {
-    using namespace std;
-
-
     struct Comparator
     {
         bool operator() (ListNode* lhs, ListNode* rhs)

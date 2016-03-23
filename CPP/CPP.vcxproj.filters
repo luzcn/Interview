@@ -252,9 +252,6 @@
     <ClInclude Include="Include\leetcode\ReverseWord.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\leetcode\SetColor.h">
-      <Filter>Header Files\leetcode</Filter>
-    </ClInclude>
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
@@ -1093,6 +1090,21 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\MissingNumbers.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\Sqrt(x).h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\BuildHeap.h">
+      <Filter>Header Files\DataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\MinimumAdjustmentCost.h">
+      <Filter>Header Files\lintcode\DP</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SortColor.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\SortLinkedList.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

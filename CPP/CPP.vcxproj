@@ -91,6 +91,7 @@
     <ClInclude Include="Include\CareerCup\BadNeighbors.h" />
     <ClInclude Include="Include\CareerCup\BinaryToHex.h" />
     <ClInclude Include="Include\CareerCup\BSTtoDoubleLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\BuildHeap.h" />
     <ClInclude Include="Include\CareerCup\CardDeck.h" />
     <ClInclude Include="Include\CareerCup\ClosestPairs.h" />
     <ClInclude Include="Include\CareerCup\CoinMakeChange.h" />
@@ -204,7 +205,9 @@
     <ClInclude Include="Include\leetcode\SerializeAndDeserializeBinaryTree.h" />
     <ClInclude Include="Include\leetcode\ShortestDistanceFromAllBuildings.h" />
     <ClInclude Include="Include\leetcode\SkylineProblem.h" />
+    <ClInclude Include="Include\leetcode\SortLinkedList.h" />
     <ClInclude Include="Include\leetcode\SparseMatrixMultiplication.h" />
+    <ClInclude Include="Include\leetcode\Sqrt(x).h" />
     <ClInclude Include="Include\leetcode\StrobogrammaticNumber.h" />
     <ClInclude Include="Include\leetcode\TextJustification.h" />
     <ClInclude Include="Include\leetcode\ThreeSumClosest.h" />
@@ -331,7 +334,7 @@
     <ClInclude Include="Include\leetcode\RotateImage.h" />
     <ClInclude Include="Include\leetcode\SearchForRange.h" />
     <ClInclude Include="Include\leetcode\SearchInRoatedSortedArray.h" />
-    <ClInclude Include="Include\leetcode\SetColor.h" />
+    <ClInclude Include="Include\leetcode\SortColor.h" />
     <ClInclude Include="Include\leetcode\SetMatrixZeroes.h" />
     <ClInclude Include="Include\leetcode\ShortestPalindrome.h" />
     <ClInclude Include="Include\leetcode\ShortestWordDistance.h" />
@@ -392,6 +395,7 @@
     <ClInclude Include="Include\lintcode\MaximumSubarrayDifference.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
+    <ClInclude Include="Include\lintcode\MinimumAdjustmentCost.h" />
     <ClInclude Include="Include\lintcode\NQueen.h" />
     <ClInclude Include="Include\lintcode\Permutation.h" />
     <ClInclude Include="Include\lintcode\PostOfficeProblem.h" />

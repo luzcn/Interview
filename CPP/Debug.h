@@ -19,48 +19,49 @@ namespace debug
 
             return result;
         }
+    }
 
-        // 
-        TreeNode* deserializeRec(const vector<string>& data, int& i)
+    TreeNode* buildTree(string s)
+    {
+        vector<string> nodeList = helper::split(s, ',');
+
+        if (nodeList.empty())
+            return nullptr;
+
+        std::queue<TreeNode*> que;
+        TreeNode* root = new TreeNode(stoi(nodeList[0]));
+
+        que.push(root);
+        int i = 1;
+        while (!que.empty())
         {
-            if (i >= data.size())
-            {
-                return nullptr;
-            }
+            TreeNode* node = que.front();
+            que.pop();
 
-            if (data[i] == "#")
+            if (i < nodeList.size())
             {
+                if (nodeList[i] != "#")
+                {
+                    TreeNode* leftNode = new TreeNode(stoi(nodeList[i]));
+                    node->left = leftNode;
+                    que.push(leftNode);
+                }
+                
                 i++;
-                return nullptr;
             }
 
-            TreeNode* node = new TreeNode(stoi(data[i]));
-
-            i++;
-            node->left = deserializeRec(data, i);
-            node->right = deserializeRec(data, i);
-
-            return node;
+            if (i < nodeList.size())
+            {
+                if (nodeList[i] != "#")
+                {
+                    TreeNode* rightNode = new TreeNode(stoi(nodeList[i]));
+                    node->right = rightNode;
+                    que.push(rightNode);
+                }
+                i++;
+            }
         }
-    }
 
-    // Construct Binary tree from pre-order string
-    TreeNode* deserialize(string preorder)
-    {
-        vector<string> data = std::move(helper::split(preorder, ','));
-
-        int i = 0;
-        return helper::deserializeRec(data, i);
-    }
-
-    // pre-order print a binary tree
-    void preorder(TreeNode* root)
-    {
-        if (!root)
-            return;
-
-        cout << root->val << endl;
-        debug::preorder(root->left);
-        debug::preorder(root->right);
+        return root;
     }
 }

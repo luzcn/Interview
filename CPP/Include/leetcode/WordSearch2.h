@@ -48,6 +48,7 @@ namespace leetcode
 
             int m = board.size();
             int n = board[0].size();
+            vector<vector<bool>> visited(m, vector<bool>(n, false));
 
             vector<string> result;
             string current;
@@ -57,8 +58,6 @@ namespace leetcode
             {
                 for (int j = 0; j < n; j++)
                 {
-                    vector<vector<bool>> visited(m, vector<bool>(n, false));
-
                     if (root->children[board[i][j] - 'a'])
                     {
                         dfs(board, result, current, i, j, visited, root);

@@ -27,45 +27,31 @@
 
 namespace leetcode
 {
-    struct Point
-    {
-        int x;
-        int y;
-        int distance;
-
-        Point(int _x, int _y, int d)
-            :x(_x), y(_y), distance(d)
-        {}
-    };
-
     // BFS
-    void bfs(vector<vector<int>>& rooms, std::queue<Point>& que_candidate)
+    void bfs(vector<vector<int>>& rooms, std::queue<pair<int, int>>& que_candidate)
     {
-        int m = rooms.size();
-        int n = rooms[0].size();
-
-        //vector<vector<bool>> visited(m, vector<bool>(n, false));
-
+        vector<pair<int, int>> dirs{ { 1,0 },{ -1,0 },{ 0,1 },{ 0,-1 } };
 
         while (!que_candidate.empty())
         {
-            int x = que_candidate.front().x;
-            int y = que_candidate.front().y;
-            int d = que_candidate.front().distance;
+            int x = que_candidate.front().first;
+            int y = que_candidate.front().second;
             que_candidate.pop();
 
-            if (x < 0 || x >= m || y < 0 || y >= n
-                || rooms[x][y] == -1 || rooms[x][y] < d)
+            for (auto dir : dirs)
             {
-                continue;
+                int i = x + dir.first;
+                int j = y + dir.second;
+
+                if (i < 0 || i >= rooms.size() || j < 0 || j >= rooms[0].size()
+                    || rooms[i][j] == -1 || rooms[i][j] < rooms[x][y] + 1)
+                {
+                    continue;
+                }
+
+                rooms[i][j] = rooms[x][y] + 1;
+                que_candidate.push({ i,j });
             }
-
-            rooms[x][y] = d;
-
-            que_candidate.push({ x - 1, y, d + 1 });
-            que_candidate.push({ x + 1, y, d + 1 });
-            que_candidate.push({ x, y - 1, d + 1 });
-            que_candidate.push({ x, y + 1, d + 1 });
         }
     }
 
@@ -89,25 +75,6 @@ namespace leetcode
             }
         }
 
-        vector<pair<int, int>> dirs{ {1,0},{-1,0},{0,1},{0,-1} };
-        // BFS
-        while (!que_candidate.empty())
-        {
-            int x = que_candidate.front().first;
-            int y = que_candidate.front().second;
-            que_candidate.pop();
-
-            for (auto dir : dirs)
-            {
-                int i = x + dir.first;
-                int j = y + dir.second;
-
-                if (i < 0 || i >= m || j < 0 || j >= n || rooms[i][j] == -1 || rooms[i][j] < rooms[x][y] + 1)
-                    continue;
-
-                rooms[i][j] = rooms[x][y] + 1;
-                que_candidate.push({ i,j });
-            }
-        }
+        bfs(rooms, que_candidate);
     }
 }

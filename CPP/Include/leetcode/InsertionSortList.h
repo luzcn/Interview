@@ -2,13 +2,8 @@
 
 #include "stdafx.h"
 
-namespace InsertionSortList
+namespace leetcode
 {
-    /// <summary>
-    ///  
-    /// </summary>
-    /// <param name="head"> The head node of sorted list</param>
-    /// <returns> </return>
     ListNode* insert_node_tosortedlist(ListNode* head, ListNode* p)
     {
         if (!head)
