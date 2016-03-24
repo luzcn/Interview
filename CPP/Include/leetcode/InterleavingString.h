@@ -66,20 +66,14 @@ namespace leetcode
     }
     bool isInterleave(string s1, string s2, string s3)
     {
-        if (s1.size() == 0)
+        if (s1.empty())
         {
-            if (s2 == s3)
-                return true;
-            else
-                return false;
+            return s2 == s3;
         }
 
-        if (s2.size() == 0)
+        if (s2.empty())
         {
-            if (s1 == s3)
-                return true;
-            else
-                return false;
+            return s1 == s3;
         }
 
         //return isInterleaveRec(s1, s2, s3, 0, 0, 0);

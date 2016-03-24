@@ -23,6 +23,28 @@ namespace leetcode
             generateRec(l, r - 1, result, current + ")");
     }
 
+    void dfs(vector<string>& result, string current, int l, int r)
+    {
+        if (r < l)
+        {
+            return;
+        }
+
+        if (l < 0 || r < 0)
+        {
+            return;
+        }
+
+        if (l == 0 && r == 0)
+        {
+            result.push_back(current);
+            return;
+        }
+
+        dfs(result, current + '(', l - 1, r);
+        dfs(result, current + ')', l, r - 1);
+    }
+
     vector<string> generateParenthesis(int n)
     {
         vector<string> result;

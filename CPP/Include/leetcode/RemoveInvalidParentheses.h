@@ -54,70 +54,14 @@ namespace leetcode
             {
                 start++;
             }
+
+            // we can choose do not use these '(' or ')' characters
             dfs(s, result, current, start + 1, open);
         }
     }
 
 
-    bool isValid(string t)
-    {
-        int cnt = 0;
-        for (int i = 0; i < t.size(); ++i)
-        {
-            if (t[i] == '(') ++cnt;
-            if (t[i] == ')' && cnt-- == 0) return false;
-        }
-        return cnt == 0;
-    }
-
-    vector<string> bfs(string s)
-    {
-        if (s.empty())
-            return{};
-
-        std::queue<string> que;
-        unordered_set<string> visited;
-        vector<string> result;
-
-        que.push(s);
-        visited.insert(s);
-
-        while (!que.empty())
-        {
-            string current = que.front();
-            que.pop();
-
-            if (isValid(current))
-            {
-                // Only save the longest valid strings
-                if (result.empty() || result.back().size() == s.size())
-                    result.push_back(s);
-
-                continue;
-            }
-
-            for (int i = 0; i < current.size(); i++)
-            {
-                char c = current[i];
-                if (c != '(' && c != ')')
-                    continue;
-
-                // The candidate data, 
-                // remove this ith characters from current string
-                string candidate = current.substr(0, i) + current.substr(i + 1);
-
-                if (visited.find(candidate) == visited.end())
-                {
-                    visited.insert(candidate);
-                    que.push(candidate);
-                }
-            }
-        }
-
-        return result;
-    }
-
-    vector<string> removeInvalidParentheses(string s)
+       vector<string> removeInvalidParentheses(string s)
     {
         if (s.empty())
             return{};

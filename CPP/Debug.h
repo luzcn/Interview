@@ -21,11 +21,39 @@ namespace debug
         }
     }
 
-    TreeNode* buildTree(string s)
+    string serialize(TreeNode* root)
+    {
+        // level order traverse
+        string result;
+        std::queue<TreeNode*> que;
+        que.push(root);
+        TreeNode* current = nullptr;
+
+        while (!que.empty())
+        {
+            current = que.front();
+            que.pop();
+
+            if (!current)
+            {
+                result.append("#,");
+                continue;
+            }
+
+            result.append(to_string(current->val)).append(",");
+
+            que.push(current->left);
+            que.push(current->right);
+        }
+
+        return result.substr(0, result.size() - 1);
+    }
+
+    TreeNode* deserialize(string s)
     {
         vector<string> nodeList = helper::split(s, ',');
 
-        if (nodeList.empty())
+        if (nodeList.empty() || nodeList[0] == "#")
             return nullptr;
 
         std::queue<TreeNode*> que;

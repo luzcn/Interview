@@ -1,19 +1,17 @@
 #pragma once
 #include "stdafx.h"
 
-/***
- *	 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+ //Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 
- Do not allocate extra space for another array, you must do this in place with constant memory.
+ //Do not allocate extra space for another array, you must do this in place with constant memory.
 
- For example,
- Given input array A = [1,1,2],
+ //For example,
+ //Given input array A = [1,1,2],
 
- Your function should return length = 2, and A is now [1,2].
- */
-namespace RemoveDuplicatesFromSortedArray
+ //Your function should return length = 2, and A is now [1,2].
+namespace leetcode
 {
-    int removeDuplicates(int A [], int n)
+    int removeDuplicates(int A[], int n)
     {
         if (n <= 1)
             return n;
@@ -34,44 +32,43 @@ namespace RemoveDuplicatesFromSortedArray
         return start + 1;
     }
 
-    /***
-     *	 Follow up for "Remove Duplicates":
-        What if duplicates are allowed at most twice?
+    // Follow up for "Remove Duplicates":
+    //   What if duplicates are allowed at most twice?
 
-        For example,
-        Given sorted array A = [1,1,1,2,2,3],
+    //   For example,
+    //   Given sorted array A = [1,1,1,2,2,3],
 
-        Your function should return length = 5, and A is now [1,1,2,2,3]. 
-     */
-    int removeDuplicates2(int A [], int n)
+    //   Your function should return length = 5, and A is now [1,1,2,2,3]. 
+    int removeDuplicates2(vector<int>& nums)
     {
-        if (n <= 1)
+        if (nums.size() <= 2)
         {
-            return n;
+            return nums.size();
         }
 
-        int s = 0;
-        int e = 1;
-        int count = 1;
+        int start = 0;
+        int end = 1;
+        int count = 0;
 
-        while (e < n)
+        while (end < nums.size())
         {
-            if (A[s] != A[e])
+            if (nums[start] == nums[end])
             {
-                A[++s] = A[e];
-                count = 1;
+                if (++count < 2)
+                {
+                    start++;
+                    nums[start] = nums[end];    // here, we also need to copy 
+                }
             }
             else
             {
-                if (count < 2)
-                {
-                    count++;
-                    s++;
-                    A[s] = A[e];
-                }
+                start++;
+                nums[start] = nums[end];
+                count = 0;
             }
-            e++;
+            end++;
         }
-        return s + 1;
+
+        return start + 1;
     }
 }
