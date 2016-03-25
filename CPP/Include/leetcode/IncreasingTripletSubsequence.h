@@ -79,7 +79,10 @@ namespace leetcode
             if (inc.size() >= 3)
                 return true;
 
+            // find the first element in "inc" which is larger than nums[i].
             int pos = lower_bound(inc.begin(), inc.end(), nums[i]) - inc.begin();
+
+            // if no such element in "inc", push nums[i] into int.
             if (pos == inc.size())
                 inc.push_back(nums[i]);
             else

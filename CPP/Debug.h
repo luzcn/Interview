@@ -49,32 +49,33 @@ namespace debug
         return result.substr(0, result.size() - 1);
     }
 
-    TreeNode* deserialize(string s)
+    template<typename T>
+    T* deserialize(string s)
     {
         vector<string> nodeList = helper::split(s, ',');
 
         if (nodeList.empty() || nodeList[0] == "#")
             return nullptr;
 
-        std::queue<TreeNode*> que;
-        TreeNode* root = new TreeNode(stoi(nodeList[0]));
+        std::queue<T*> que;
+        T* root = new T(stoi(nodeList[0]));
 
         que.push(root);
         int i = 1;
         while (!que.empty())
         {
-            TreeNode* node = que.front();
+            T* node = que.front();
             que.pop();
 
             if (i < nodeList.size())
             {
                 if (nodeList[i] != "#")
                 {
-                    TreeNode* leftNode = new TreeNode(stoi(nodeList[i]));
+                    T* leftNode = new T(stoi(nodeList[i]));
                     node->left = leftNode;
                     que.push(leftNode);
                 }
-                
+
                 i++;
             }
 
@@ -82,7 +83,7 @@ namespace debug
             {
                 if (nodeList[i] != "#")
                 {
-                    TreeNode* rightNode = new TreeNode(stoi(nodeList[i]));
+                    T* rightNode = new T(stoi(nodeList[i]));
                     node->right = rightNode;
                     que.push(rightNode);
                 }
@@ -92,4 +93,48 @@ namespace debug
 
         return root;
     }
+
+    //TreeNode* deserialize(string s)
+    //{
+    //    vector<string> nodeList = helper::split(s, ',');
+
+    //    if (nodeList.empty() || nodeList[0] == "#")
+    //        return nullptr;
+
+    //    std::queue<TreeNode*> que;
+    //    TreeNode* root = new TreeNode(stoi(nodeList[0]));
+
+    //    que.push(root);
+    //    int i = 1;
+    //    while (!que.empty())
+    //    {
+    //        TreeNode* node = que.front();
+    //        que.pop();
+
+    //        if (i < nodeList.size())
+    //        {
+    //            if (nodeList[i] != "#")
+    //            {
+    //                TreeNode* leftNode = new TreeNode(stoi(nodeList[i]));
+    //                node->left = leftNode;
+    //                que.push(leftNode);
+    //            }
+    //            
+    //            i++;
+    //        }
+
+    //        if (i < nodeList.size())
+    //        {
+    //            if (nodeList[i] != "#")
+    //            {
+    //                TreeNode* rightNode = new TreeNode(stoi(nodeList[i]));
+    //                node->right = rightNode;
+    //                que.push(rightNode);
+    //            }
+    //            i++;
+    //        }
+    //    }
+
+    //    return root;
+    //}
 }

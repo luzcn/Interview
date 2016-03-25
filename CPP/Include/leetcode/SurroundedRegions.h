@@ -81,7 +81,7 @@ namespace SurroundedRegions
             {
                 if (i == 0 || i == m - 1 || j == 0 || j == n - 1)
                 {
-                    helper::bfs(board, visited, i, j);
+                    helper::bfs(board, i, j);
                 }
             }
         }

@@ -92,7 +92,7 @@ namespace leetcode
             if (m <= 0 || n <= 0)
                 return{};
 
-            int dirs[4][2] = { { 0, 1 },{ 1,0 },{ 0, -1 },{ -1,0 } };
+            int dirs[4][2] = { { 0, 1 },{ 1, 0 },{ -1, 0 },{ 0, -1 } };
             vector<vector<bool>> isIsland(m, vector<bool>(n, false));
 
             int count = 0;  // number of islands
@@ -110,6 +110,7 @@ namespace leetcode
 
                     // compute the id
                     int id = n * x + y;
+                    m_parent[id] = id;
 
                     // check the neigbors
                     for (int i = 0; i < 4; i++)
@@ -131,8 +132,8 @@ namespace leetcode
 
                         if (root != neighborRoot)
                         {
-                            count--;
-                            m_parent[neighborRoot] = root;
+                            --count;
+                            m_parent[root] = neighborRoot;
                         }
                     }
                 }
@@ -153,19 +154,10 @@ namespace leetcode
                 root = m_parent[root];
             }
 
-            //int x = id, temp;
-            //while (x != m_parent[x])
-            //{
-            //    temp = m_parent[x];
-            //    m_parent[x] = root;
-            //    x = temp;
-            //}
             return root;
         }
 
         std::unordered_map<int, int> m_parent;
     };
-
-
 
 }
