@@ -78,28 +78,23 @@ namespace leetcode
         while (p)
         {
             // next pointer
-            auto nextNode = p->next;
-            if (nextNode)
+            if (p->next)
             {
-                map[nextNode] = new RandomListNode(nextNode->label);
+                map[p->next] = new RandomListNode(p->next->label);
+                map[p]->next = map[p->next];
             }
 
 
             // random pointer
-            auto randPointer = p->random;
-            if (randPointer && map.find(randPointer) == map.end())
-            {
-                map[randPointer] = new RandomListNode(randPointer->label);;
-            }
-
-            // the copined node
-            auto copiedNode = map[p];
-
-            if (p->next)
-                copiedNode->next = map[p->next];
-
             if (p->random)
-                copiedNode->random = map[p->random];
+            {
+                if (map.find(p->random) == map.end())
+                {
+                    map[p->random] = new RandomListNode(p->random->label);;
+                }
+
+                map[p]->random = map[p->random];
+            }
 
             p = p->next;
         }
