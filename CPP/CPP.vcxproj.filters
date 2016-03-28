@@ -103,6 +103,9 @@
     <Filter Include="Header Files\CareerCup\OO Design">
       <UniqueIdentifier>{aedf5f01-3628-4844-8b93-96a0574f07f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lintcode\System Design">
+      <UniqueIdentifier>{d2e52383-ee29-4c9d-bcab-35bcbdd3de9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -1106,6 +1109,12 @@
     </ClInclude>
     <ClInclude Include="Include\leetcode\SortLinkedList.h">
       <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\MiniTweeter.h">
+      <Filter>Header Files\lintcode\System Design</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\ConsistentHashing.h">
+      <Filter>Header Files\lintcode\System Design</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

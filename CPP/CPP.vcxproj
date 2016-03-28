@@ -379,6 +379,7 @@
     <ClInclude Include="Include\lintcode\BackPack.h" />
     <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
     <ClInclude Include="Include\lintcode\Combination.h" />
+    <ClInclude Include="Include\lintcode\ConsistentHashing.h" />
     <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h" />
     <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h" />
     <ClInclude Include="Include\lintcode\DeleteKDigits.h" />
@@ -396,6 +397,7 @@
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
     <ClInclude Include="Include\lintcode\MinimumAdjustmentCost.h" />
+    <ClInclude Include="Include\lintcode\MiniTweeter.h" />
     <ClInclude Include="Include\lintcode\NQueen.h" />
     <ClInclude Include="Include\lintcode\Permutation.h" />
     <ClInclude Include="Include\lintcode\PostOfficeProblem.h" />

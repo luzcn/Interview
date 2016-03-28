@@ -1,5 +1,6 @@
 #pragma once
 #include "stdafx.h"
+#include <sstream>
 
 namespace leetcode
 {
@@ -52,4 +53,38 @@ namespace leetcode
 
         return res;
     }
+
+    // using c++ stringstream 
+    class Codec
+    {
+    public:
+
+        // Encodes a list of strings to a single string.
+        string encode(vector<string> strs)
+        {
+            string code;
+            for (string& s : strs)
+            {
+                code += s + '\0';
+            }
+
+            return code;
+        }
+
+        // Decodes a single string to a list of strings.
+        vector<string> decode(string s)
+        {
+            std::stringstream ss(s);
+            vector<string> result;
+            string element;
+
+            while (std::getline(ss, element, '\0'))
+            {
+                result.push_back(element);
+            }
+
+            return result;
+
+        }
+    };
 }
