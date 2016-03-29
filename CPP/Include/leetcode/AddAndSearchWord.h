@@ -106,28 +106,9 @@ namespace leetcode
                     }
                 }
             }
+
+            return false;
         }
-
-        //bool dfs(string& s, int pos, TrieNode* node)
-        //{
-        //    if (pos >= s.size())
-        //        return node->words > 0;
-
-        //    for (int i = 0; i < 26; i++)
-        //    {
-        //        if (node->children[i])
-        //        {
-        //            if (s[pos] == '.' || i == s[pos] - 'a')
-        //            {
-        //                if (dfs(s, pos + 1, node->children[i]))
-        //                    return true;
-        //            }
-        //        }
-        //    }
-        //    
-        //    return false;
-        //}
-
 
         // the Trie prefix tree root node.
         TrieNode *root;
