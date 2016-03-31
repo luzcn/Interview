@@ -1116,6 +1116,18 @@
     <ClInclude Include="Include\lintcode\ConsistentHashing.h">
       <Filter>Header Files\lintcode\System Design</Filter>
     </ClInclude>
+    <ClInclude Include="Include\lintcode\ConsistentHashing2.h">
+      <Filter>Header Files\lintcode\System Design</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\MiniCassandra.h">
+      <Filter>Header Files\lintcode\System Design</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\CareerCup\MineSweeper.h">
+      <Filter>Header Files\CareerCup\OO Design</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\lintcode\TinyUrl.h">
+      <Filter>Header Files\lintcode\System Design</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

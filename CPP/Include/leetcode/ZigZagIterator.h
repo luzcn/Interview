@@ -12,9 +12,13 @@
 // the order of elements returned by next should be : [1, 3, 2, 4, 5, 6].
 //
 //  Follow up : What if you are given k 1d vectors ? How well can your code be extended to such cases ?
+
+// This problem is easy to use Java, because it provides the Iterator member function hasNext()
+// In c++, we need to save the end() iterator to comparing with current iterator.
 namespace leetcode
 {
-    class ZigzagIterator {
+    class ZigzagIterator 
+    {
     public:
         ZigzagIterator(vector<int>& v1, vector<int>& v2)
         {

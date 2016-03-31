@@ -23,18 +23,22 @@
 //    3   1
 namespace leetcode
 {
-    void dfs(TreeNode* node)
+    void dfs(TreeNode* node, TreeNode* parent)
     {
         if (!node)
             return;
 
-        TreeNode* t = node->left;
+        dfs(node->left, node);
 
-        dfs(node->left);
-        if (t)
+        if (parent)
         {
-            t->left = node->right;
-            t->right = node;
+            node->left = parent->right;
+            node->right = parent;
+        }
+        else
+        {
+            node->left = nullptr;
+            node->right = nullptr;
         }
     }
 
@@ -50,9 +54,7 @@ namespace leetcode
             result = result->left;
         }
 
-        dfs(root);
-        root->left = nullptr;
-        root->right = nullptr;
+        dfs(root, nullptr);
 
         return result;
     }

@@ -4,114 +4,209 @@
 // design a parking lot
 
 // Assumptions:
-// 1. 
+//see CC150 OO Design for details.
+// 1) n levels, each level has m rows of spots and each row has k spots.So each level has m x k spots.
+// 2) The parking lot can park motorcycles, cars and buses
+// 3) The parking lot has motorcycle spots, compact spots, and large spots
+// 4) Each row, motorcycle spots id is in range[0, k / 4)(0 is included, k / 4 is not included),
+//     compact spots id is in range[k / 4, k / 4 * 3) and large spots id is in range[k / 4 * 3, k].
+// 5) A motorcycle can park in any spot
+// 6) A car park in single compact spot or large spot
+// 7) A bus can park in 5 large spots that are consecutive and within same row.it can not park in small spots
 namespace careercup
 {
-    enum SlotType
+    // enum type for Vehicle
+    enum class VehicleSize
     {
-        Compact,        // compact size parking slot
-        Regular,        // the regular size parking slot
-        Handicapped,    // 
-        ValetOnly,
-    };
-
-    class ParkingSlot
-    {
-    public:
-        ParkingSlot(int level, int row, int position, SlotType type)
-            :m_isOccupied(false), m_type(type)
-        {
-            m_id = to_string(level) + to_string(row) + to_string(position);
-        }
-
-        bool isAvailable()
-        {
-            return m_isOccupied;
-        }
-
-        string ID()
-        {
-            // for example:
-            // "3E49" means the third floor Row E and No.49 slot
-            return m_id;
-        }
-    private:
-        string      m_id;
-        bool        m_isOccupied;
-        SlotType    m_type;
-    };
-
-    class ParkingLevel
-    {
-    public:
-        ParkingLevel(int rows, int spaces)
-            :m_rows(rows), m_spaceEachRow(spaces)
-        {
-        }
-
-    private:
-        const int           m_rows;
-        const int           m_spaceEachRow;
-        vector<ParkingSlot> m_slots;
-    };
-
-    // A parking lot has multiple parking levels
-    class ParkingLot
-    {
-    public:
-        ParkingLot(int levelNumbers)
-        {
-            m_levelList = vector<ParkingLevel>(levelNumbers, ParkingLevel(10, 50));
-        }
-
-    private:
-        vector<ParkingLevel> m_levelList;
-    };
-
-
-    enum VehicleSize
-    {
+        Motorcycle,
         Compact,
-        Large,
-        Motocycle
+        Large
     };
 
     class Vehicle
     {
     public:
-        Vehicle(string license, VehicleSize size, int sports)
-            :m_licensePlate(license), m_size(size), m_sportsNeeded(sports)
-        {}
+        string ID;
+        VehicleSize size;
+        int spotsNeeded;
+    };
 
-        virtual ~Vehicle()
+    class Bus : public Vehicle
+    {
+    public:
+        Bus()
         {
+            size = VehicleSize::Large;
+            spotsNeeded = 5;
+        }
+    };
+
+    class Car : public Vehicle
+    {
+    public:
+        Car()
+        {
+            size = VehicleSize::Compact;
+            spotsNeeded = 1;
+        }
+    };
+
+    class Motorcycle : public Vehicle
+    {
+    public:
+        Motorcycle()
+        {
+            size = VehicleSize::Motorcycle;
+            spotsNeeded = 1;
+        }
+    };
+
+    class ParkingSpot
+    {
+    public:
+        ParkingSpot(VehicleSize type)
+        {
+            size = type;
+            isAvailable = true;
         }
 
-        int sportsNeeded()
+        bool canFit(Vehicle& v)
         {
-            return m_sportsNeeded;
+            switch (v.size)
+            {
+            case VehicleSize::Motorcycle:
+                return isAvailable;
+            case VehicleSize::Compact:
+                return isAvailable && size != VehicleSize::Motorcycle;
+            case VehicleSize::Large:
+                isAvailable && size == VehicleSize::Large;
+            default:
+                break;
+            }
         }
 
-        VehicleSize getVehicleSize()
+        bool isAvailable;
+    private:
+        VehicleSize size;
+
+    };
+
+    class Level
+    {
+    public:
+        Level(int num_rows, int spots_per_row)
         {
-            return m_size;
+            spots = vector<vector<ParkingSpot>>(num_rows);
+            numsAvailable = num_rows* spots_per_row;
+
+            for (int i = 0; i < num_rows; i++)
+            {
+                for (int j = 0; j < spots_per_row; j++)
+                {
+                    if (j < spots_per_row / 4)
+                    {
+                        spots[i].push_back({ VehicleSize::Motorcycle });
+                    }
+                    else if (j < spots_per_row / 4 * 3)
+                    {
+                        spots[i].push_back({ VehicleSize::Compact });
+                    }
+                    else
+                    {
+                        spots[i].push_back({ VehicleSize::Large });
+                    }
+                }
+            }
         }
 
-        string licensePlate()
-        {
-            return m_licensePlate;
-        }
-
-        // parking the vehicle to the park slot
-        // if failed to park, return false.
-        bool parkIntoSport()
+        bool parkVehicle(Vehicle& v)
         {
 
         }
 
-    protected:
-        string m_licensePlate;
-        int m_sportsNeeded;
-        VehicleSize m_size;
+    private:
+        int numsAvailable;
+        vector<vector<ParkingSpot>> spots;
+        int parkingRow;
+        vector<int> parkingPos;
+
+        bool findAvailable(Vehicle& v)
+        {
+            if (numsAvailable < v.spotsNeeded)
+                return false;
+
+            parkingPos.clear();
+            parkingRow = 0;
+            for (int i = 0; i < spots.size(); i++)
+            {
+                for (int j = 0; j < spots[0].size(); j++)
+                {
+                    if (v.spotsNeeded == 1)
+                    {
+                        if (spots[i][j].canFit(v))
+                        {
+                            parkingRow = i;
+                            parkingPos.push_back(j);
+
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        // Bus, need to find 5 consecutive large spots
+                        if (j + 5 >= spots[0].size())
+                            break;
+
+                        for (int k = 0; k < 5; k++)
+                        {
+                            if (!spots[i][j + k].canFit(v))
+                            {
+                                //
+                            }
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+    };
+
+    class ParkingLot
+    {
+    public:
+        // @param n number of leves
+        // @param num_rows  each level has num_rows rows of spots
+        // @param spots_per_row each row has spots_per_row spots
+        ParkingLot(int n, int num_rows, int spots_per_row)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                levels.push_back({ num_rows, spots_per_row });
+            }
+        }
+
+        // Park the vehicle in a spot (or multiple spots)
+        // Return false if failed
+        bool parkVehicle(Vehicle &vehicle)
+        {
+            // Write your code here
+            for (int i = 0; i < levels.size(); i++)
+            {
+                if (!levels[i].parkVehicle)
+                    return false;
+            }
+
+            return true;
+        }
+
+        // unPark the vehicle
+        void unParkVehicle(Vehicle &vehicle)
+        {
+            
+        }
+
+    private:
+        vector<Level> levels;
     };
 }

@@ -120,6 +120,7 @@
     <ClInclude Include="Include\CareerCup\MaximumSumSegmentQuery.h" />
     <ClInclude Include="Include\CareerCup\MaxSumGame.h" />
     <ClInclude Include="Include\CareerCup\MergeSortLinkedList.h" />
+    <ClInclude Include="Include\CareerCup\MineSweeper.h" />
     <ClInclude Include="Include\CareerCup\MinimumSpanningTree.h" />
     <ClInclude Include="Include\CareerCup\Multiplication.h" />
     <ClInclude Include="Include\CareerCup\NumberOf1Bit.h" />
@@ -380,6 +381,7 @@
     <ClInclude Include="Include\lintcode\BinaryRepresentation.h" />
     <ClInclude Include="Include\lintcode\Combination.h" />
     <ClInclude Include="Include\lintcode\ConsistentHashing.h" />
+    <ClInclude Include="Include\lintcode\ConsistentHashing2.h" />
     <ClInclude Include="Include\lintcode\ConvertExpressionToReversePolish.h" />
     <ClInclude Include="Include\lintcode\ConvertSortedListToBST.h" />
     <ClInclude Include="Include\lintcode\DeleteKDigits.h" />
@@ -396,6 +398,7 @@
     <ClInclude Include="Include\lintcode\MaximumSubarrayDifference.h" />
     <ClInclude Include="Include\lintcode\MaximumSubarraySum.h" />
     <ClInclude Include="Include\lintcode\Median.h" />
+    <ClInclude Include="Include\lintcode\MiniCassandra.h" />
     <ClInclude Include="Include\lintcode\MinimumAdjustmentCost.h" />
     <ClInclude Include="Include\lintcode\MiniTweeter.h" />
     <ClInclude Include="Include\lintcode\NQueen.h" />
@@ -413,6 +416,7 @@
     <ClInclude Include="Include\lintcode\SubarraySumClosest.h" />
     <ClInclude Include="Include\lintcode\SubSet2.h" />
     <ClInclude Include="Include\lintcode\ThreeSumClosest.h" />
+    <ClInclude Include="Include\lintcode\TinyUrl.h" />
     <ClInclude Include="Include\lintcode\TrailingZeros.h" />
     <ClInclude Include="Include\lintcode\WoodCut.h" />
     <ClInclude Include="Include\lintcode\WordLadder2.h" />
