@@ -24,7 +24,7 @@ namespace lintcode
         * @param url a long url
         * @return a short url starts with http://tiny.url/
         */
-        string longToShort(string& url)
+        string longToShort(string url)
         {
             int id = 0;
             if (mapUrlToId.find(url) != mapUrlToId.end())
@@ -60,13 +60,13 @@ namespace lintcode
         * @param url a short url starts with http://tiny.url/
         * @return a long url
         */
-        string shortToLong(string& url)
+        string shortToLong(string url)
         {
             int id = 0;
             string shortId = url.substr(url.size() - 6);
             for (int i = 5; i >= 0; i--)
             {
-                id = id*62 + toBase62(shortId[i]);
+                id += toBase62(shortId[i]) * pow(62, (5-i));
             }
 
             return mapIdToUrl[id];

@@ -54,72 +54,80 @@ namespace leetcode
     //
     //For example,
     //Given n = 2, return["11", "69", "88", "96"].
-    void dfs(vector<char>& list, vector<string>& result, std::list<char>& current, int m)
+    class strobogrammatic2
     {
-        if (current.size() > m)
-            return;
-
-        if (current.size() == m)
+    public:
+        vector<string> findStrobogrammatic(int n)
         {
-            string s(current.begin(), current.end());
-            result.push_back(s);
-            return;
-        }
+            if (n <= 0)
+                return{};
 
-        for (int i = 0; i < list.size(); i++)
-        {
-            if (current.size() == m - 2 && list[i] == '0')
-                continue;
-
-            if (current.empty())
+            if (n == 1)
             {
-                if ((list[i] == '6' || list[i] == '9') && m % 2 == 1)
-                    continue;
+                return{ "0","1","8" };
+            }
 
-                current.push_back(list[i]);
-                if (m % 2 == 0)
+            vector<string> result;
+            std::list<char> current;
+
+            dfs(result, current, n);
+
+
+            return result;
+        }
+    private:
+        void dfs(vector<string>& result, std::list<char>& current, int len)
+        {
+            if (current.size() > len)
+                return;
+
+            if (current.size() == len)
+            {
+                if (current.front() != '0')
                 {
-                    if (list[i] == '9')
-                        current.push_front('6');
-                    else if (list[i] == '6')
-                        current.push_front('9');
-                    else
-                        current.push_front(list[i]);
+                    string str(current.begin(), current.end());
+                    result.push_back(str);
+                }
+                return;
+            }
+
+            for (int i = 0; i < data.size(); i++)
+            {
+                if (current.empty() && len % 2 == 1)
+                {
+                    if ((data[i] == '6' || data[i] == '9'))
+                    {
+                        // the total length is odd number, cannot use '6' or '9' in the middle.
+                        continue;
+                    }
+
+                    current.push_back(data[i]);
+                }
+                else
+                {
+                    current.push_back(data[i]);
+                    current.push_front(mapStrobo[data[i]]);
+                }
+
+                dfs(result, current, len);
+                current.pop_back();
+                if (!current.empty())
+                {
+                    current.pop_front();
                 }
             }
-            else
-            {
-                current.push_back(list[i]);
-                if (list[i] == '9')
-                    current.push_front('6');
-                else if (list[i] == '6')
-                    current.push_front('9');
-                else
-                    current.push_front(list[i]);
-            }
-
-            dfs(list, result, current, m);
-            current.pop_back();
-            if (!current.empty())
-                current.pop_front();
-        }
-    }
-
-    vector<string> findStrobogrammatic(int n)
-    {
-        if (n == 1)
-        {
-            return{ "0","1","8" };
         }
 
+        vector<char> data{ '0','1','6','8','9' };
+        unordered_map<char, char> mapStrobo{
+            { '0','0' },
+            { '1','1' },
+            { '8','8' },
+            { '6','9' },
+            { '9','6' }
+        };
+    };
 
-        vector<char> charset{ '0','1','6','8','9' };
-        vector<string> result;
-        std::list<char> current;
-        dfs(charset, result, current, n);
-
-        return result;
-    }
 
 
     //Write a function to count the total strobogrammatic numbers that exist in the range of low <= num <= high.
@@ -181,9 +189,16 @@ namespace leetcode
     int countByLength(int n)
     {
         if (n == 1)
+        {
+            // 0, 1, 8
             return 3;
+        }
+
         if (n == 2)
+        {
+            // 11, 88, 69, 96
             return 4;
+        }
 
         int last = (n % 2 == 1) ? 3 : 1;
         int first = 4;

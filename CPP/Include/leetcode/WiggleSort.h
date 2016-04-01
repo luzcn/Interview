@@ -59,17 +59,19 @@ namespace leetcode
         //    nums[i] = sorted[i & 1 ? k++ : j++];
         //}
 
-        int s = (nums.size() + 1) / 2;
+        int s = (nums.size() + 1) / 2; //nums.size() % 2 == 0 ? nums.size() / 2 - 1 : nums.size() / 2;
         int k = nums.size();
 
         for (int i = 0; i < nums.size(); i++)
         {
             if ((i & 1) == 0)
             {
+                // even position
                 nums[i] = sorted[--s];
             }
             else
             {
+                // odd position
                 nums[i] = sorted[--k];
             }
         }

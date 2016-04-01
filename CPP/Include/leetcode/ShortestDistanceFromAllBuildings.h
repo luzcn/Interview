@@ -57,7 +57,7 @@ namespace leetcode
             que.pop();
 
             if (p.x < 0 || p.x >= m || p.y < 0 || p.y >= n
-                || visited[p.x][p.y] || grid[p.x][p.y] == 2 || grid[p.x][p.y] == 1)
+                || visited[p.x][p.y] || grid[p.x][p.y] != 0)
             {
                 continue;
             }

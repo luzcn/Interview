@@ -12,12 +12,12 @@ namespace LargestNumber
             return s > t;
         });
 
-        string res;
-        for (auto s : num)
+        string result;
+        for (int& n : num)
         {
-            res += to_string(s);
+            result += to_string(n);
         }
 
-        return res[0] == '0' ? "0" : res;
+        return result[0] == '0' ? "0" : result;
     }
 }

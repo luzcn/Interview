@@ -98,4 +98,37 @@ namespace leetcode
 
         return nodeStack.empty();
     }
+
+bool isValidSerialization2(string preorder)
+{
+    vector<string> data = std::move(split(preorder, ','));
+
+    stack<bool> st;
+
+    if (data[0] != "#")
+    {
+        st.push(false);
+    }
+
+    for (int i = 1; i < data.size(); i++)
+    {
+        if (st.empty())
+            return false;
+
+        if (!st.top())
+        {
+            st.top() = true;
+        }
+        else
+        {
+            st.pop();
+        }
+
+        if (data[i] != "#")
+        {
+            st.push(false);
+        }
+    }
+    return st.empty();
+}
 }

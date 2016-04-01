@@ -42,6 +42,9 @@ namespace leetcode
 
         bool isUnique(string word)
         {
+            // 2 conditions will return true
+            // 1. abbreviate is not in the map
+            // 2. word in dictionary and no other words have the same abbreviation.
             string abbreviate = process(word);
             if (dict.find(word) != dict.end() && dict[word] == map[abbreviate])
             {
