@@ -56,48 +56,55 @@ namespace leetcode
     }
 
     // Find the majority element from an array, which has more than n/3 occurance
-    vector<int> majority2(vector<int>& A)
-    {
-        vector<int> res;
-        int count1 = 0;
-        int count2 = 0;
-        int a = 0;
-        int b = 0;
-
-        // voting
-        for (int n : A)
+    class Solution {
+    private:
+        void split(vector<int>& nums, int left, int right, int len, vector<int>& ans)
         {
-            if (count1 == 0 || n == a)
-            {
-                count1++;
-                a = n;
-            }
-            else if (count2 == 0 || n == b)
-            {
-                count2++;
-                b = n;
-            }
-            else
-            {
-                count1--;
-                count2--;
-            }
-        }
+            if (left >= right)
+                return;
 
-        count1 = count2 = 0;
-        for (int n : A)
+            int idx = (left + right) / 2;
+
+            int val = nums[idx];
+            int i = left + 1;
+            int j = left;
+            int k = left;
+
+            swap(nums[idx], nums[left]);
+
+            while (i < nums.size())
+            {
+                if (nums[i] < val)
+                {
+                    swap(nums[k++], nums[i]);
+                    swap(nums[++j], nums[i++]);
+                }
+                else if (nums[i] == val)
+                {
+                    swap(nums[i++], nums[++j]);
+                }
+                else i++;
+            }
+
+            if (j - k + 1 >= len)
+                ans.push_back(nums[k]);
+
+            if (k - left >= len)
+                split(nums, left, k, len, ans);
+
+            if (right - j >= len)
+                split(nums, j + 1, right, len, ans);
+        }
+    public:
+        vector<int> majorityElement(vector<int>& nums)
         {
-            if (n == a)
-                count1++;
-            else if (n == b)
-                count2++;
+            vector<int> ans;
+            if (nums.empty())
+                return ans;
+
+            split(nums, 0, nums.size(), 1 + nums.size() / 3, ans);
+
+            return ans;
         }
-
-        if (count1 > A.size() / 2)
-            res.push_back(a);
-        if (count2 > A.size() / 2)
-            res.push_back(b);
-
-        return res;
-    }
+    };
 }
