@@ -379,48 +379,38 @@ namespace leetcode
     class NumMatrix
     {
     public:
-        NumMatrix(vector<vector<int>>& matrix)
+        NumMatrix(vector<vector<int>> &matrix)
+            :data(matrix)
         {
-            if (matrix.size() == 0 || matrix[0].size() == 0)
+            if (matrix.empty())
                 return;
 
             m = matrix.size();
             n = matrix[0].size();
-            BIT = vector<vector<int>>(m + 1, vector<int>(n + 1, 0));
-            data = vector<vector<int>>(m, vector<int>(n, 0));
 
+            BIT = vector<vector<int>>(m + 1, vector<int>(n + 1, 0));
+
+            // construct BIT
             for (int i = 0; i < m; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    update(i, j, matrix[i][j]);
+                    updateHelper(i, j, matrix[i][j]);
                 }
             }
         }
 
         void update(int row, int col, int val)
         {
-            int diff = val - data[row][col];
+            updateHelper(row, col, val - data[row][col]);
             data[row][col] = val;
-
-            for (int i = row + 1; i <= m; i += (i & -i))
-            {
-                for (int j = col + 1; j <= n; j += (j & -j))
-                {
-                    BIT[i][j] += diff;
-                }
-            }
         }
 
         int sumRegion(int row1, int col1, int row2, int col2)
         {
-            if (m == 0 || n == 0)
-                return 0;
-
             return getSum(row2, col2) - getSum(row1 - 1, col2) - getSum(row2, col1 - 1) + getSum(row1 - 1, col1 - 1);
         }
     private:
-        // get sum of [0,0] to [row,col] block
         int getSum(int row, int col)
         {
             int sum = 0;
@@ -435,10 +425,23 @@ namespace leetcode
             return sum;
         }
 
+        void updateHelper(int row, int col, int value)
+        {
+            for (int i = row + 1; i <= m; i += (i & -i))
+            {
+                for (int j = col + 1; j <= n; j += (j & -j))
+                {
+                    BIT[i][j] += value;
+                }
+            }
+        }
+
+        // Binary Index Tree
         vector<vector<int>> BIT;
-        vector<vector<int>> data;
+        vector<vector<int>>& data;
         int m;
         int n;
+
     };
 
 }

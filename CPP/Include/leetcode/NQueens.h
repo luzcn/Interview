@@ -52,17 +52,10 @@ namespace NQueens
 
             for (int i = 0; i < n; ++i)
             {
-                for (int j = 0; j < n; ++j)
-                {
-                    if (j != column_for_row[i])
-                    {
-                        current_sol[i].append(".");
-                    }
-                    else
-                    {
-                        current_sol[i].append("Q");
-                    }
-                }
+                string str(n, '.');
+                str[column_for_row[i]] = 'Q';
+
+                current_sol.push_back(str);
             }
             sol.push_back(current_sol);
             return;

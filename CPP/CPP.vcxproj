@@ -149,6 +149,7 @@
     <ClInclude Include="Include\DataStructure\BinarySearch.h" />
     <ClInclude Include="Include\DataStructure\BinarySearchTree.h" />
     <ClInclude Include="Include\DataStructure\BinaryTree.h" />
+    <ClInclude Include="Include\DataStructure\CircularBuffer.h" />
     <ClInclude Include="Include\DataStructure\Graph.h" />
     <ClInclude Include="Include\DataStructure\IntervalTree.h" />
     <ClInclude Include="Include\DataStructure\MinStack.h" />

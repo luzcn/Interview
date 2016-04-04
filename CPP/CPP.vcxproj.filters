@@ -1128,6 +1128,9 @@
     <ClInclude Include="Include\lintcode\TinyUrl.h">
       <Filter>Header Files\lintcode\System Design</Filter>
     </ClInclude>
+    <ClInclude Include="Include\DataStructure\CircularBuffer.h">
+      <Filter>Header Files\DataStructure</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

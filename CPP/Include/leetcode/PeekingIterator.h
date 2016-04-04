@@ -47,20 +47,17 @@ namespace leetcode
         // Returns the next element in the iteration without advancing the iterator.
         int peek()
         {
-            auto nextIter = m_iter + 1;
-            if (nextIter != end)
-            {
-                return *nextIter;
-            }
-
-            return 0;
+            return *m_iter;
         }
 
         // hasNext() and next() should behave the same as in the Iterator interface.
         // Override them if needed.
         int next()
         {
-            return *m_iter;
+            int result = *m_iter;
+            m_iter++;
+
+            return result;
         }
 
         bool hasNext() const
