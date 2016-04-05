@@ -10,6 +10,7 @@ namespace careercup
 {
     // input S: An array of integers
     // Return true if the array of numbers can be splited into two sub set; the sum of each subset is half of total sum
+    // This DP solution only works for positive numbers.
     bool partitionProblem(vector<int>& S)
     {
         if (S.empty())
