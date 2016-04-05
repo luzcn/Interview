@@ -1131,6 +1131,12 @@
     <ClInclude Include="Include\DataStructure\CircularBuffer.h">
       <Filter>Header Files\DataStructure</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\ReverseBits.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\CountingBits.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

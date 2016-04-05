@@ -13,6 +13,37 @@
 //How would you optimize the kthSmallest routine?
 namespace leetcode
 {
+    // dfs solution
+    class Solution 
+    {
+    public:
+        int kthSmallest(TreeNode* root, int k)
+        {
+            if (!root || k <= 0)
+                return 0;
+
+            int result = 0;
+            int count = 0;
+            dfs(root, k, count, result);
+
+            return result;
+        }
+    private:
+        void dfs(TreeNode* node, int k, int& count, int& result)
+        {
+            if (!node)
+                return;
+
+            dfs(node->left, k, count, result);
+            if (++count == k)
+            {
+                result = node->val;
+                return;
+            }
+            dfs(node->right, k, count, result);
+        }
+    };
+
     // in order traverse solution, O(n) time, O(n) space
     int kthSmallest(TreeNode* root, int k)
     {
@@ -98,3 +129,24 @@ namespace leetcode
     }
 
 }
+/**
+if we could modify the BST node's structure,like following:
+
+struct TreeNode {
+    int val;
+    int leftTotal;//the total nodes in the left subtree
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+Then we can get the optimal runtime complexity : O(height of BST).
+Of course we should compute 'leftTotal' when we establish the BST or Traversing the BST beforehand.
+The pseudo - code :
+
+    1. if k == (currentNode->leftTotal + 1), return;
+
+    2. else if k > (currentNode->leftTotal + 1), let k = k - (currentNode->leftTotal + 1) and currentNode = currentNode->right;
+
+    3. else currentNode = currentNode->left;
+*/

@@ -77,7 +77,7 @@ namespace leetcode
 
             for (int i = index; i <= n; i++)
             {
-                if (n % i)
+                if (n % i != 0)
                     continue;
 
                 current.push_back(i);

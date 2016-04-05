@@ -30,6 +30,7 @@ namespace leetcode
     // 1 -> 11 : live -> live
     // 0 -> 10 : dead -> live
     // 1 -> 01 : live -> dead
+
     int computeNineCells(const vector<vector<int>>& board, const int& i, const int& j, const int& m, const int& n)
     {
         int count = 0;
@@ -78,4 +79,65 @@ namespace leetcode
         }
 
     }
+
+
+
+    // use bit manipulate
+    class Solution {
+    public:
+        void gameOfLife(vector<vector<int>>& board)
+        {
+            if (board.empty() || board[0].empty())
+                return;
+
+            int m = board.size();
+            int n = board[0].size();
+            // vector<vector<int>> matrix(m, vector<int>(n, 0));
+
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    int lives = 0;
+                    for (auto& dir : dirs)
+                    {
+                        int x = i + dir.first;
+                        int y = j + dir.second;
+
+                        if (x < 0 || x >= m || y < 0 || y >= n)
+                            continue;
+
+                        lives += board[x][y] & 1;
+                        //if (board[x][y] & 1)
+                        //    lives++;
+                    }
+
+                    if (lives < 2 || lives > 3)
+                    {
+                        // the next generation is 0
+                         board[i][j] |= 0;
+                    }
+                    else if (lives == 3 || (board[i][j] & 1))
+                    {
+                        // lives == 3, re-generation
+                        // otherwise, keep the state unchanged
+                        board[i][j] |= 2;
+                    }
+                }
+            }
+
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    board[i][j] = board[i][j] >> 1;
+                }
+            }
+            cout << board[0][0];
+        }
+    private:
+        vector<pair<int, int>> dirs{ { 1,0 },{ -1,0 },{ 0,-1 },{ 0,1 },{ -1, -1 },{ -1,1 },{ 1,-1 },{ 1,1 } };
+    };
+
+    
 }

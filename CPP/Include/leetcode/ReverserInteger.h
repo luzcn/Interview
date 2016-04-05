@@ -28,23 +28,23 @@ namespace ReverserInteger
             return result;
     }
 
-	// can handle the overflow
-	int reverse_with_overflow(int x)
-	{
-		int ret = 0;
-		while (x != 0)
-		{
-			// the INT_MAX is 2147483647, if abs(ret) > 214748364, ret*10 will be at least 2147483650 overflow.
-			// we do not need to compare == 214748364, because number between 2147483641...2147483647 is still valid.
-			if (abs(ret) > 214748364)
-				return 0;
+    // can handle the overflow
+    int reverse_with_overflow(int x)
+    {
+        int ret = 0;
+        while (x != 0)
+        {
+            // the INT_MAX is 2147483647, if abs(ret) > 214748364, ret*10 will be at least 2147483650 overflow.
+            // we do not need to compare == 214748364, because number between 2147483641...2147483647 is still valid.
+            if (abs(ret) > 214748364)
+                return 0;
 
-			ret = ret * 10 + x % 10;
-			x /= 10;
-		}
+            ret = ret * 10 + x % 10;
+            x /= 10;
+        }
 
-		return ret;
-	}
+        return ret;
+    }
 }
 
 

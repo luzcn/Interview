@@ -169,6 +169,7 @@
     <ClInclude Include="Include\leetcode\BurstBalloons.h" />
     <ClInclude Include="Include\leetcode\CoinChange.h" />
     <ClInclude Include="Include\leetcode\ContainerWithMostWater.h" />
+    <ClInclude Include="Include\leetcode\CountingBits.h" />
     <ClInclude Include="Include\leetcode\CountUnivalueSubtrees.h" />
     <ClInclude Include="Include\leetcode\CreateMaximumNumber.h" />
     <ClInclude Include="Include\leetcode\FactorCombination.h" />
@@ -202,6 +203,7 @@
     <ClInclude Include="Include\leetcode\RemoveDuplicateFromSortedList.h" />
     <ClInclude Include="Include\leetcode\RemoveDuplicateLetters.h" />
     <ClInclude Include="Include\leetcode\RemoveInvalidParentheses.h" />
+    <ClInclude Include="Include\leetcode\ReverseBits.h" />
     <ClInclude Include="Include\leetcode\ScrambleString.h" />
     <ClInclude Include="Include\leetcode\SelfCrossing.h" />
     <ClInclude Include="Include\leetcode\SerializeAndDeserializeBinaryTree.h" />
