@@ -28,26 +28,20 @@ namespace Triangle
 
 
     // DP solution
-    int minDP(vector<vector<int>>& T)
+    int minDP(vector<vector<int>>& trangle)
     {
-        int m = T.size();
-        vector<int> res(m);
-
-        // put last row elements into res
-        for (int i = 0; i < m; i++)
-        {
-            res[i] = T[m - 1][i];
-        }
+        int m = trangle.size();
+        vector<int> dp(trangle.back().begin(), trangle.back().end());
 
         // bottom up
         for (int level = m - 2; level >= 0; level--)
         {
-            for (int i = 0; i < T[level].size(); i++)
+            for (int i = 0; i < trangle[level].size(); i++)
             {
-                res[i] = T[level][i] + std::min(res[i], res[i + 1]);
+                dp[i] = trangle[level][i] + std::min(dp[i], dp[i + 1]);
             }
         }
-        return res[0];
+        return dp[0];
     }
 
 

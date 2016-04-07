@@ -107,6 +107,7 @@
     <ClInclude Include="Include\CareerCup\FindKthTopResult.h" />
     <ClInclude Include="Include\CareerCup\FloodFill.h" />
     <ClInclude Include="Include\CareerCup\GCD.h" />
+    <ClInclude Include="Include\CareerCup\getRandomConstantTime.h" />
     <ClInclude Include="Include\CareerCup\HuffmanCoding.h" />
     <ClInclude Include="Include\CareerCup\IntToBinary.h" />
     <ClInclude Include="Include\CareerCup\IsBalancaTree.h" />

@@ -93,9 +93,13 @@ namespace leetcode
             }
             else if (sum_map.find(current_sum - k) != sum_map.end())
             {
+                // if current_sum - k in the hash map
+                // the subarray [sum_map[current_sum - k]+ 1... i] sum is k.
                 max_len = max(max_len, i - sum_map[current_sum - k]);
             }
 
+            // if the current sum is already in the hash map
+            // no need to update the index, because we need the max length
             if (sum_map.find(current_sum) != sum_map.end())
             {
                 sum_map[current_sum] = i;

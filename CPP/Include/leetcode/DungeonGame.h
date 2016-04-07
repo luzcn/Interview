@@ -27,26 +27,32 @@ namespace leetcode
     {
         int m = dungeon.size();
         int n = dungeon[0].size();
-        vector<vector<int>> DP(m, vector<int>(n));
+        vector<vector<int>> dp(m, vector<int>(n));
 
-        DP[m - 1][n - 1] = dungeon[m - 1][n - 1];
+        // set the right bottom value as the dungeon value
+        dp[m - 1][n - 1] = dungeon[m - 1][n - 1];
+
+        // compute the last column first
         for (int i = m - 2; i >= 0; i--)
         {
-            if (DP[i + 1][n - 1] > 0)
+            if (dp[i + 1][n - 1] > 0)
             {
-                DP[i][n - 1] = dungeon[i][n - 1];
+                dp[i][n - 1] = dungeon[i][n - 1];
             }
             else
-                DP[i][n - 1] = DP[i + 1][n - 1] + dungeon[i][n - 1];
+            {
+                dp[i][n - 1] = dp[i + 1][n - 1] + dungeon[i][n - 1];
+            }
         }
+
         for (int j = n - 2; j >= 0; j--)
         {
-            if (DP[m - 1][j + 1] > 0)
+            if (dp[m - 1][j + 1] > 0)
             {
-                DP[m - 1][j] = dungeon[m - 1][j];
+                dp[m - 1][j] = dungeon[m - 1][j];
             }
             else
-                DP[m - 1][j] = DP[m - 1][j + 1] + dungeon[m - 1][j];
+                dp[m - 1][j] = dp[m - 1][j + 1] + dungeon[m - 1][j];
         }
 
 
@@ -54,16 +60,18 @@ namespace leetcode
         {
             for (int j = n - 2; j >= 0; j--)
             {
-                auto v1 = DP[i + 1][j];
-                auto v2 = DP[i][j + 1];
+                int value1 = dp[i + 1][j];
+                int value2 = dp[i][j + 1];
 
-                if (v1 > 0 || v2 > 0)
+                if (value1 > 0 || value2 > 0)
                 {
-                    DP[i][j] = dungeon[i][j];
+                    // if either bottom or righ cell has positive value
+                    // we can keep the current dungeon value
+                    dp[i][j] = dungeon[i][j];
                 }
                 else
                 {
-                    DP[i][j] = dungeon[i][j] + max(v1, v2);
+                    dp[i][j] = dungeon[i][j] + max(value1, value2);
                 }
             }
         }
@@ -72,13 +80,13 @@ namespace leetcode
         {
             for (int j = 0; j < n; j++)
             {
-                cout << DP[i][j] << " ";
+                cout << dp[i][j] << " ";
             }
             cout << endl;
         }
 
         cout << "----------" << endl;
 
-        return abs(DP[0][0]) + 1;
+        return dp[0][0] > 0 ? 1 : abs(dp[0][0]) + 1;
     }
 }

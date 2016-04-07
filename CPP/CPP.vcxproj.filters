@@ -1140,6 +1140,9 @@
     <ClInclude Include="Include\leetcode\Count of Range Sum.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
+    <ClInclude Include="Include\CareerCup\getRandomConstantTime.h">
+      <Filter>Header Files\CareerCup</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
