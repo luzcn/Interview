@@ -1,4 +1,4 @@
-package careercup;
+package CareerCup;
 
 import java.util.ArrayList;
 

@@ -4,7 +4,7 @@
  * Nov 19, 2015
  * zhelu
  */
-package leetcode;
+package LeetCode;
 
 public class RangeQuerySum2D
 {
