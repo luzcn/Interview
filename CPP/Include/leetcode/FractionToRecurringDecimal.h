@@ -49,6 +49,7 @@ namespace leetcode
             return result;
         }
 
+        result.push_back('.');
         // use hash map to save the fractional part and the corresponding position in "result"
         unordered_map<long long, int> map;
 
