@@ -13,6 +13,8 @@
 //"00", 0 ->["0+0", "0-0", "0*0"]
 //"3456237490", 9191 ->[]
 
+// https://segmentfault.com/a/1190000003797204
+
 #if 0
 namespace leetcode
 {
@@ -136,35 +138,42 @@ namespace leetcode
 
 namespace leetcode
 {
-    // diff: the value needs to change,
-    // curNum: the current value
-    void addOperatorsDFS(string num, int target, vector<string> &result, 
-        long long diff, long long curNum, string outs)
+    // value: the current expression value
+    // diff: the value that has been changed in previous recursive call
+    // for example: 2+3, the current is 5, diff is 3
+    // 2-3, the current is -1, diff is -3
+    // 2+3*4, if we have 5*4, it is wrong. We should make it 5-3+3*4.
+    void dfs(string& num, int target, vector<string>& result,
+        long long int value, long long int diff, string current, int start)
     {
-        if (num.empty() && curNum == target)
+        if (start >= num.size())
         {
-            result.push_back(outs);
+            if (value == target)
+            {
+                result.push_back(current);
+            }
             return;
         }
 
-        for (int i = 0; i < num.size(); i++)
+        for (int i = start; i < num.size(); i++)
         {
-            string prefix = num.substr(0, i + 1);
+            string prefix = num.substr(start, i - start + 1);
 
-            if (prefix.size() > 1 && prefix[0] == '0')    // "00" is not valid number
-                return;
-
-            string last = num.substr(i + 1);
-
-            if (outs.empty())
+            if (prefix.size() > 1 && prefix[0] == '0')
             {
-                addOperatorsDFS(last, target, result, stoll(prefix), stoll(prefix), prefix);
+                return;
+            }
+
+            if (current.empty())
+            {
+                // "+1+2+3" the first "+1" is redundant.
+                dfs(num, target, result, stoll(prefix), stoll(prefix), prefix, i + 1);
             }
             else
             {
-                addOperatorsDFS(last, target, result, stoll(prefix), curNum + stoll(prefix), outs + '+' + prefix);
-                addOperatorsDFS(last, target, result, -stoll(prefix), curNum - stoll(prefix), outs + '-' + prefix);
-                addOperatorsDFS(last, target, result, diff * stoll(prefix), (curNum - diff) + diff*stoll(prefix), outs + '*' + prefix);
+                dfs(num, target, result, value + stoll(prefix), stoll(prefix), current + "+" + prefix, i + 1);
+                dfs(num, target, result, value - stoll(prefix), -stoll(prefix), current + "-" + prefix, i + 1);
+                dfs(num, target, result, (value-diff) + diff*stoll(prefix), diff*stoll(prefix), current + "*" + prefix, i + 1);
             }
         }
     }
@@ -173,8 +182,8 @@ namespace leetcode
     {
         vector<string> result;
 
-        addOperatorsDFS(num, target, result, 0, 0, "");
-        
+        dfs(num, target, result, 0, 0, "", 0);
+
         return result;
     }
 }

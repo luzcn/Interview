@@ -7,13 +7,35 @@
 // The longest consecutive path need to be from parent to child(cannot be the reverse).
 namespace leetcode
 {
-    int dfs(TreeNode* node, int& maxLen)
+    // The top down solution
+
+    int dfs(TreeNode* node, TreeNode* parent, int length)
+    {
+        if (!node)
+        {
+            return length;
+        }
+
+        if (parent && parent->val + 1 == node->val)
+        {
+            length++;
+        }
+        else
+        {
+            length = 1;
+        }
+
+        return max(length, max(dfs(node->left, node, length), dfs(node->right, node, length)));
+    }
+
+    // The bottom up solution
+    int dfs2(TreeNode* node, int& maxLen)
     {
         if (!node)
             return 0;
 
-        int leftLen = dfs(node->left, maxLen) + 1;
-        int rightLen = dfs(node->right, maxLen) + 1;
+        int leftLen = dfs2(node->left, maxLen) + 1;
+        int rightLen = dfs2(node->right, maxLen) + 1;
 
         if (node->left && node->val + 1 != node->left->val)
         {
@@ -35,6 +57,6 @@ namespace leetcode
             return 0;
 
         int maxLen = 0;
-        return dfs(root, maxLen);
+        return dfs2(root, maxLen);
     }
 }
