@@ -4,12 +4,10 @@
 
 namespace leetcode
 {
-    /**
-     * A simple calculator, only "(", ")", "+", "-" on non-negative integers.
-     * Thought:
-     * for '(' ')', we do not need to compute first as the general expression evaluation,
-     * because 2-(3+4) => 2 - 3 - 4. So all we need to is to record the numbers (2, 3,,4) and the sign of each number.
-     **/
+    // A simple calculator, only "(", ")", "+", "-" on non-negative integers.
+    // Thought:
+    //  for '(' ')', we do not need to compute first as the general expression evaluation,
+    //  because 2-(3+4) => 2 - 3 - 4. So all we need to is to record the numbers (2, 3,,4) and the sign of each number.
     int calculate(string s)
     {
         stack<int> sign;
@@ -54,99 +52,121 @@ namespace leetcode
         return res;
     }
 
-    /*
-    * Basic Calculator 2
-    * Implement a basic calculator to evaluate a simple expression string.
-    *
-    * The expression string contains only non-negative integers, +, -, *, / operators and empty spaces .
-    *    The integer division should truncate toward zero.
-    *
-    *    You may assume that the given expression is always valid.
-    *
-    *    Some examples:
-    *    "3+2*2" = 7
-    *    " 3/2 " = 1
-    *    " 3+5 / 2 " = 5
-    */
+    //Basic Calculator 2
+    // Implement a basic calculator to evaluate a simple expression string.
+    //
+    // The expression string contains only non-negative integers, +, -, *, / operators and empty spaces .
+    // The integer division should truncate toward zero.
+    //
+    // You may assume that the given expression is always valid.
+    //
+    // Some examples:
+    //   "3+2*2" = 7
+    //   " 3/2 " = 1
+    //   " 3+5 / 2 " = 5
 #pragma region Basic Calculator 2
-    // Helper functions
-    int compute(char op, int num1, int num2)
+    class Solution
     {
-        switch (op)
+    public:
+        int calculate(string s)
         {
-        case '+':
-            return num1 + num2;
-        case '-':
-            return num1 - num2;
-        case '*':
-            return num1*num2;
-        case '/':
-            return num1 / num2;
-        }
-        return 0;
-    }
+            stack<char> ops;
+            stack<int> nums;
 
-    void compute(stack<int>& numbers, stack<char>& ops)
-    {
-        auto num1 = numbers.top();
-        numbers.pop();
-
-        auto num2 = numbers.top();
-        numbers.pop();
-
-        auto op = ops.top();
-        ops.pop();
-
-        int newNum = compute(op, num2, num1);
-        numbers.push(newNum);
-    }
-
-    int calculate2(string s)
-    {
-        stack<int> numbers;
-        stack<char> ops;
-        int i = 0;
-
-        while (i < s.size())
-        {
-            if (isdigit(s[i]))
+            int i = 0;
+            while (i < s.size())
             {
-                int num = s[i] - '0';
-                while (isdigit(s[++i]))
+                if (isdigit(s[i]))
                 {
-                    num = num * 10 + s[i] - '0';
+                    nums.push(getNumber(s, i));
                 }
-                numbers.push(num);
+                else if (iswspace(s[i]))
+                {
+                    i++;
+                }
+                else
+                {
+                    while (!ops.empty() && isHigher(ops.top(), s[i]))
+                    {
+                        // need to compute first
+                        evaluate(ops, nums);
+                    }
+
+                    // push the operator to the operator stack.
+                    ops.push(s[i]);
+                    i++;
+                }
             }
-            else if (s[i] == '*' || s[i] == '/')
+
+            while (!ops.empty())
             {
-                while (!ops.empty() && (ops.top() == '*' || ops.top() == '/'))
-                {
-                    compute(numbers, ops);
-                }
-                ops.push(s[i]);
+                evaluate(ops, nums);
+            }
+
+            return nums.top();
+        }
+    private:
+        int getNumber(string& s, int& i)
+        {
+            int result = 0;
+
+            while (i < s.size() && isdigit(s[i]))
+            {
+                result = result * 10 + s[i] - '0';
                 i++;
             }
-            else if (s[i] == '+' || s[i] == '-')
-            {
-                while (!ops.empty())
-                {
-                    compute(numbers, ops);
-                }
-                ops.push(s[i]);
-                i++;
-            }
-            else
-                i++;
+
+            return result;
         }
 
-        while (!ops.empty())
+        // return true if op1 higher calculate order than op2
+        bool isHigher(char op1, char op2)
         {
-            compute(numbers, ops);
+            if (op1 == '*' || op1 == '/')
+            {
+                return true;
+            }
+
+            if ((op1 == '+' || op1 == '-') && (op2 == '+' || op2 == '-'))
+            {
+                return true;
+            }
+            return false;
         }
 
-        return numbers.empty() ? 0 : numbers.top();
-    }
+        int compute(char op, int num1, int num2)
+        {
+            switch (op)
+            {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            case '/':
+                return num1 / num2;
+            default:
+                break;
+            }
+
+            return 0;
+        }
+
+        void evaluate(stack<char>& ops, stack<int>& nums)
+        {
+            int num1 = nums.top();
+            nums.pop();
+
+            int num2 = nums.top();
+            nums.pop();
+
+            char op = ops.top();
+            ops.pop();
+
+            nums.push(compute(op, num2, num1));
+        }
+    };
 #pragma endregion
 
     /*
@@ -156,7 +176,7 @@ namespace leetcode
 #pragma region Basic Calculator 3
     // Helper function
     // op1 is higher than op2
-    bool higher(char op1, char op2) 
+    bool higher(char op1, char op2)
     {
         if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
             return true;
@@ -164,6 +184,38 @@ namespace leetcode
         return false;
     }
 
+    int compute(char op, int num1, int num2)
+    {
+        switch (op)
+        {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            return num1 / num2;
+        default:
+            break;
+        }
+
+        return 0;
+    }
+
+    void evaluate(stack<int>& nums, stack<char>& ops)
+    {
+        int num1 = nums.top();
+        nums.pop();
+
+        int num2 = nums.top();
+        nums.pop();
+
+        char op = ops.top();
+        ops.pop();
+
+        nums.push(compute(op, num2, num1));
+    }
     int calculate3(string s)
     {
         stack<int> numbers;
@@ -187,7 +239,7 @@ namespace leetcode
                 {
                     // current operator is not higher order than the previous one
                     // need to compute the previous first.
-                    compute(numbers, ops);
+                    evaluate(numbers, ops);
                 }
                 ops.push(s[i]);
                 i++;
@@ -201,7 +253,7 @@ namespace leetcode
             {
                 while (!ops.empty() && ops.top() != '(')
                 {
-                    compute(numbers, ops);
+                    evaluate(numbers, ops);
                 }
                 if (!ops.empty())
                 {
@@ -215,7 +267,7 @@ namespace leetcode
 
         while (!ops.empty())
         {
-            compute(numbers, ops);
+            evaluate(numbers, ops);
         }
 
         return numbers.empty() ? 0 : numbers.top();

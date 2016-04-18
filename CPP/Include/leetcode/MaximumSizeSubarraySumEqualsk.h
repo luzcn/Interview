@@ -100,7 +100,7 @@ namespace leetcode
 
             // if the current sum is already in the hash map
             // no need to update the index, because we need the max length
-            if (sum_map.find(current_sum) != sum_map.end())
+            if (sum_map.find(current_sum) == sum_map.end())
             {
                 sum_map[current_sum] = i;
             }

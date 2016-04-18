@@ -96,6 +96,7 @@
     <ClInclude Include="Include\CareerCup\ClosestPairs.h" />
     <ClInclude Include="Include\CareerCup\CoinMakeChange.h" />
     <ClInclude Include="Include\CareerCup\Combinations.h" />
+    <ClInclude Include="Include\CareerCup\ConnectFour.h" />
     <ClInclude Include="Include\CareerCup\ConstructTreeFromInorderAndPreorder.h" />
     <ClInclude Include="Include\CareerCup\CuttingRod.h" />
     <ClInclude Include="Include\CareerCup\DeleteKDigits.h" />
