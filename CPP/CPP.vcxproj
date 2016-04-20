@@ -173,6 +173,7 @@
     <ClInclude Include="Include\leetcode\ContainerWithMostWater.h" />
     <ClInclude Include="Include\leetcode\Count of Range Sum.h" />
     <ClInclude Include="Include\leetcode\CountingBits.h" />
+    <ClInclude Include="Include\leetcode\CountOfSmallerNumbersAfterSelf.h" />
     <ClInclude Include="Include\leetcode\CountUnivalueSubtrees.h" />
     <ClInclude Include="Include\leetcode\CreateMaximumNumber.h" />
     <ClInclude Include="Include\leetcode\FactorCombination.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Include\leetcode\GraphValidTree.h" />
     <ClInclude Include="Include\leetcode\ImplementTrie.h" />
     <ClInclude Include="Include\leetcode\IncreasingTripletSubsequence.h" />
+    <ClInclude Include="Include\leetcode\IntegerBreak.h" />
     <ClInclude Include="Include\leetcode\IntegerToEnglish.h" />
     <ClInclude Include="Include\leetcode\LargestBSTSubtree.h" />
     <ClInclude Include="Include\leetcode\LargestRectangleInHistogram.h" />

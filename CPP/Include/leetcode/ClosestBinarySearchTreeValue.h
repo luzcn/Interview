@@ -10,6 +10,33 @@
 // You are guaranteed to have only one unique value in the BST that is closest to the target.
 namespace leetcode
 {
+    // top down approach
+    void dfs(TreeNode* node, double target, int& result)
+    {
+        if (!node)
+            return;
+
+        if ((double)node->val == target)
+        {
+            result = node->val;
+            return;
+        }
+        else if (abs((double)node->val - target) < abs((double)result - target))
+        {
+            result = node->val;
+        }
+
+        if ((double)node->val < target)
+        {
+            dfs(node->right, target, result);
+        }
+        else
+        {
+            dfs(node->left, target, result);
+        }
+    }
+
+    // bottom up approach
     TreeNode* dfs(TreeNode* node, const double& target)
     {
         if (!node)
@@ -39,64 +66,66 @@ namespace leetcode
         }
 
     }
+
     int closestValue(TreeNode* root, double target)
     {
-        if (!root)
-            return INT_MAX;
+        int result = root->val;
 
-        return dfs(root, target)->val;
+        // binary search
+        while (root)
+        {
+            if (abs((double)root->val - target) < abs((double)result - target))
+            {
+                result = root->val;
+            }
+
+            root = root->val < target ? root->right : root->left;
+        }
+
+        return result;
     }
 
 
-    //Given a non - empty binary search tree and a target value, find k values in the BST that are closest to the target.
+    // Given a non - empty binary search tree and a target value, find k values in the BST that are closest to the target.
     //    Note:
-    //Given target value is a floating point.
+    // Given target value is a floating point.
     //    You may assume k is always valid, that is : k <= total nodes.
     //    You are guaranteed to have only one unique set of k values in the BST that are closest to the target.
     //    Follow up :
     //Assume that the BST is balanced, could you solve it in less than O(n) runtime(where n = total nodes)?
-    class Solution
+    class Solution 
     {
     public:
-        // O(n) time, O(k + height) space.
         vector<int> closestKValues(TreeNode* root, double target, int k)
         {
-            // inorder iterative 
-            stack<TreeNode*> stack;
             vector<int> result;
-            if (!root)
-                return result;
+            inorder(root, target, k, result);
 
-            auto current = root;
-            while (true)
-            {
-                if (current)
-                {
-                    stack.push(current);
-                    current = current->left;
-                }
-                else if (!stack.empty())
-                {
-                    current = stack.top();
-                    stack.pop();
-                    if (result.size() < k)
-                    {
-                        result.push_back(current->val);
-                    }
-                    else
-                    {
-                        if (target > current->val || abs(current->val - target) < abs(result[0] - target))
-                        {
-                            result.erase(result.begin());
-                            result.push_back(current->val);
-                        }
-                    }
-                    current = current->right;
-                }
-                else
-                    break;
-            }
             return result;
+        }
+
+    private:
+        void inorder(TreeNode* node, double target, int k, vector<int>& result)
+        {
+            if (!node)
+                return;
+
+            inorder(node->left, target, k, result);
+
+            if (result.size() < k)
+            {
+                result.push_back(node->val);
+            }
+            else if (abs((double)node->val - target) < abs((double)result[0] - target))
+            {
+                // BST inorder is sorted array,
+                // if we have dis(node->val) < dis(result[0]) and node->val > result[0], 
+                // we can guarantee all elements [1...k-1] are closer than result[0].
+                result.erase(result.begin());
+                result.push_back(node->val);
+            }
+
+            inorder(node->right, target, k, result);
         }
     };
 }

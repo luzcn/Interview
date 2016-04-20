@@ -12,27 +12,26 @@ namespace leetcode
     int minSubArrayLen(int s, vector<int>& nums)
     {
         if (nums.empty())
+        {
             return 0;
+        }
 
         int minLength = INT_MAX;
-
-        int begin = 0, end = 0;
+        int start = 0;
+        int end = 0;
         int sum = 0;
 
         while (end < nums.size())
         {
-            sum += nums[end];
+            sum += nums[end++];
             while (sum >= s)
             {
-                minLength = min(minLength, end - begin + 1);
+                minLength = min(minLength, end - start);
 
-                sum -= nums[begin];
-                begin++;
+                sum -= nums[start++];
             }
-
-            end++;
         }
 
-        return minLength;
+        return minLength == INT_MAX ? 0 : minLength;
     }
 }

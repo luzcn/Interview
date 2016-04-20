@@ -1146,6 +1146,12 @@
     <ClInclude Include="Include\CareerCup\ConnectFour.h">
       <Filter>Header Files\CareerCup\String</Filter>
     </ClInclude>
+    <ClInclude Include="Include\leetcode\CountOfSmallerNumbersAfterSelf.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\IntegerBreak.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
