@@ -20,21 +20,14 @@ namespace leetcode
     {
         vector<vector<int>> triangle;
 
-        if (numRows <= 0)
-            return triangle;
-
-        triangle.push_back(vector<int>(1, 1));
-
-        for (int level = 1; level < numRows; level++)
+        for (int level = 0; level < numRows; level++)
         {
-            vector<int> row(level + 1, 1);
-            for (int i = 0; i < row.size(); i++)
-            {
-                if (i > 0 && i < row.size() - 1)
-                    row[i] = triangle[level - 1][i] + triangle[level - 1][i - 1];
-            }
+            triangle.push_back(vector<int>(level + 1, 1));
 
-            triangle.push_back(row);
+            for (int i = 1; i < level; i++)
+            {
+                triangle[level][i] = triangle[level - 1][i - 1] + triangle[level - 1][i];
+            }
         }
 
         return triangle;
@@ -49,19 +42,21 @@ namespace leetcode
     vector<int> getRow(int rowIndex)
     {
         if (rowIndex < 0)
+        {
             return{};
+        }
 
-        vector<int> list(rowIndex + 1, 0);
-        list[0] = 1;
+        vector<int> result(rowIndex + 1, 0);
+        result[0] = 1;
 
         for (int level = 1; level <= rowIndex; level++)
         {
             for (int i = level; i >= 1; i--)
             {
-                list[i] = list[i] + list[i - 1];
+                result[i] = result[i] + result[i - 1];
             }
         }
 
-        return list;
+        return result;
     }
 }

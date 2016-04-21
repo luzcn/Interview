@@ -171,7 +171,7 @@
     <ClInclude Include="Include\leetcode\BurstBalloons.h" />
     <ClInclude Include="Include\leetcode\CoinChange.h" />
     <ClInclude Include="Include\leetcode\ContainerWithMostWater.h" />
-    <ClInclude Include="Include\leetcode\Count of Range Sum.h" />
+    <ClInclude Include="Include\leetcode\CountofRangeSum.h" />
     <ClInclude Include="Include\leetcode\CountingBits.h" />
     <ClInclude Include="Include\leetcode\CountOfSmallerNumbersAfterSelf.h" />
     <ClInclude Include="Include\leetcode\CountUnivalueSubtrees.h" />

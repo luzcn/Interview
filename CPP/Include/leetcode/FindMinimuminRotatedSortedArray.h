@@ -28,11 +28,12 @@ namespace leetcode
             int m = low + (high - low) / 2;
             if (nums[m] > nums[high])
             {
-                // check the range [m...high]
+                // check the range (m...high]
                 low = m + 1;
             }
             else
             {
+                // check the [low...m]
                 high = m;
             }
         }

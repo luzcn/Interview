@@ -32,10 +32,10 @@ namespace LongestConsecutiveSequence
 
         int longest = 0;
 
-        for (auto n : num)
+        for (int n : num)
         {
             int count = 0;
-            auto temp = n;   // copy the current number
+            int temp = n;   // copy the current number
 
             while (set.find(temp) != set.end())
             {

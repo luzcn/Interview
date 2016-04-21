@@ -42,26 +42,26 @@ namespace leetcode
         vector<string> findWords(vector<string>& board, vector<string>& words)
         {
             if (board.empty() || words.empty())
+            {
                 return{};
+            }
+            
+            m = board.size();
+            n = board[0].size();
 
+            // construct the trie
             constructTrie(words);
-
-            int m = board.size();
-            int n = board[0].size();
-            vector<vector<bool>> visited(m, vector<bool>(n, false));
-
+           
             vector<string> result;
             string current;
+            vector<vector<bool>> visited(m, vector<bool>(n, false));
 
             // dfs search
             for (int i = 0; i < m; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    if (root->children[board[i][j] - 'a'])
-                    {
-                        dfs(board, result, current, i, j, visited, root);
-                    }
+                    dfs(board, result, current, i, j, visited, root);
                 }
             }
 
@@ -70,15 +70,14 @@ namespace leetcode
         }
     private:
         TrieNode* root;
-        TrieNode* test;
+        int m, n;   // the input board dimension
 
         void constructTrie(vector<string>& words)
         {
-            TrieNode* current = nullptr;
             for (string& word : words)
             {
                 // for each word, construct from root.
-                current = root;
+                TrieNode* current = root;
 
                 for (const char& c : word)
                 {
@@ -109,22 +108,26 @@ namespace leetcode
                 node->wordCounts--;
             }
 
-            if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size())
-                return;
-
-            if (!visited[i][j] && node->children[board[i][j] - 'a'])
+            if (!inBound(i, j) || visited[i][j])
             {
-                visited[i][j] = true;
-                current.push_back(board[i][j]);
-
-                dfs(board, result, current, i - 1, j, visited, node->children[board[i][j] - 'a']);
-                dfs(board, result, current, i + 1, j, visited, node->children[board[i][j] - 'a']);
-                dfs(board, result, current, i, j + 1, visited, node->children[board[i][j] - 'a']);
-                dfs(board, result, current, i, j - 1, visited, node->children[board[i][j] - 'a']);
-
-                current.pop_back();
-                visited[i][j] = false;
+                return;
             }
+
+            visited[i][j] = true;
+            for (pair<int, int>& dir : dirs)
+            {
+                current.push_back(board[i][j]);
+                dfs(board, result, current, i + dir.first, j + dir.second, visited, node->children[board[i][j] - 'a']);
+                current.pop_back();
+            }
+            visited[i][j] = false;
         }
+
+        bool inBound(int i, int j)
+        {
+            return i >= 0 && i < m && j >= 0 && j < n;
+        }
+
+        vector<pair<int, int>> dirs{ {1,0},{-1,0},{0,1},{0,-1} };
     };
 }

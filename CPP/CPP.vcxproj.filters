@@ -1137,9 +1137,6 @@
     <ClInclude Include="Include\leetcode\CountingBits.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
-    <ClInclude Include="Include\leetcode\Count of Range Sum.h">
-      <Filter>Header Files\leetcode</Filter>
-    </ClInclude>
     <ClInclude Include="Include\CareerCup\getRandomConstantTime.h">
       <Filter>Header Files\CareerCup</Filter>
     </ClInclude>
@@ -1150,6 +1147,9 @@
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
     <ClInclude Include="Include\leetcode\IntegerBreak.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\leetcode\CountofRangeSum.h">
       <Filter>Header Files\leetcode</Filter>
     </ClInclude>
   </ItemGroup>

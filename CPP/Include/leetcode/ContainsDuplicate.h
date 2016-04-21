@@ -8,25 +8,30 @@ namespace leetcode
 {
     bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t)
     {
-        if (nums.empty())
+        if (nums.empty() || k <= 0)
+        {
             return false;
+        }
 
-        map<long long, int> m;
-        int j = 0;
+        map<int, int> map; // nums value, index
+        int j = 0;      // the index denote which value needs to remove from map
+
         for (int i = 0; i < nums.size(); ++i)
         {
-            if (i - j > k && m[nums[j]] == j)
+            if (i - j > k )
             {
-                m.erase(nums[j++]);
+                map.erase(nums[j++]);
             }
 
-            auto a = m.lower_bound(nums[i] - t);
-            if (a != m.end() && abs(a->first - nums[i]) <= t)
+            std::map<int, int>::iterator it = map.lower_bound(nums[i] - t);
+
+            if (it != map.end() && abs(it->first - nums[i]) <= t)
             {
+                // double check if the candidate 'it' satisfy the condition
                 return true;
             }
 
-            m[nums[i]] = i;
+            map[nums[i]] = i;
         }
 
         return false;
