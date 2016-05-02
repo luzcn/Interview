@@ -1,52 +1,45 @@
 #include "stdafx.h"
 
+// Given a sorted array, find out the range summary
+// for example [1,2,3,7,8,10] outputs ["1->3", "7->8", "10"]
+
 namespace leetcode
 {
-    // Given a sorted array, find out the range summary
-    // for example [1,2,3,7,8,10] outputs ["1->3", "7->8", "10"]
-    vector<string> summaryRanges(vector<int>& nums)
+    string getSummary(vector<int>& nums, int i, int j)
     {
-        vector<string>  res;
-        if (nums.empty())
-            return res;
-        if (nums.size() == 1)
+        if (i == j)
         {
-            res.push_back(to_string(nums[0]));
-            return res;
+            return to_string(nums[i]);
         }
 
-        int start = 0;
-        int end = start + 1;
+        return to_string(nums[i]) + "->" + to_string(nums[j]);
+    }
+
+    vector<string> summaryRanges(vector<int>& nums)
+    {
+        vector<string> result;
+        if (nums.empty())
+        {
+            return result;
+        }
+
+        int begin = 0;
+        int end = 1;
 
         while (end < nums.size())
         {
-            if (nums[end] - nums[end - 1] == 1)
+            if (nums[end - 1] != nums[end] - 1)
             {
-                end++;
+                result.push_back(getSummary(nums, begin, end - 1));
             }
-            else
-            {
-                if (start != end - 1)
-                {
-                    res.push_back(to_string(nums[start]) + "->" + to_string(nums[end - 1]));
-                }
-                else
-                {
-                    res.push_back(to_string(nums[start]));
-                }
-                start = end;
-                end = start + 1;
-            }
-        }
-        if (start != end - 1)
-        {
-            res.push_back(to_string(nums[start]) + "->" + to_string(nums[end - 1]));
-        }
-        else
-        {
-            res.push_back(to_string(nums[start]));
+
+            begin = end;
+            end++;
         }
 
-        return res;
+        // add the last begin->end summary
+        result.push_back(getSummary(nums, begin, end - 1));
+
+        return result;
     }
 }

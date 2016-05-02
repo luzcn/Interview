@@ -93,19 +93,20 @@ namespace leetcode
     //    You are guaranteed to have only one unique set of k values in the BST that are closest to the target.
     //    Follow up :
     //Assume that the BST is balanced, could you solve it in less than O(n) runtime(where n = total nodes)?
+    // https://leetcode.com/discuss/55682/o-logn-java-solution-with-two-stacks-following-hint
     class Solution 
     {
     public:
         vector<int> closestKValues(TreeNode* root, double target, int k)
         {
-            vector<int> result;
+            list<int> result;
             inorder(root, target, k, result);
 
-            return result;
+            return vector<int>(result.begin(), result.end());
         }
 
     private:
-        void inorder(TreeNode* node, double target, int k, vector<int>& result)
+        void inorder(TreeNode* node, double target, int k, list<int>& result)
         {
             if (!node)
                 return;
@@ -116,12 +117,12 @@ namespace leetcode
             {
                 result.push_back(node->val);
             }
-            else if (abs((double)node->val - target) < abs((double)result[0] - target))
+            else if (abs((double)node->val - target) < abs((double)result.front() - target))
             {
                 // BST inorder is sorted array,
                 // if we have dis(node->val) < dis(result[0]) and node->val > result[0], 
                 // we can guarantee all elements [1...k-1] are closer than result[0].
-                result.erase(result.begin());
+                result.pop_front();
                 result.push_back(node->val);
             }
 
