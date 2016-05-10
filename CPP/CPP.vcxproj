@@ -361,6 +361,7 @@
     <ClInclude Include="Include\leetcode\SumRootToLeafNumbers.h" />
     <ClInclude Include="Include\leetcode\SurroundedRegions.h" />
     <ClInclude Include="Include\leetcode\SwapNodesinPairs.h" />
+    <ClInclude Include="Include\leetcode\TopKFrequentElements.h" />
     <ClInclude Include="Include\leetcode\TrappingRainingWater.h" />
     <ClInclude Include="Include\leetcode\Triangle.h" />
     <ClInclude Include="Include\leetcode\TwoSumDesign.h" />

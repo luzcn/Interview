@@ -25,7 +25,9 @@ namespace leetcode
         vector<pair<int, int>> result;
 
         if (buildings.empty())
+        {
             return result;
+        }
 
         vector<EndPoint> points;
         for (auto& b : buildings)
@@ -33,6 +35,7 @@ namespace leetcode
             points.push_back({ b[0], b[2], true });
             points.push_back({ b[1], b[2], false });
         }
+
         sort(points.begin(), points.end(), [&](EndPoint& p1, EndPoint& p2) {
             return p1.pos < p2.pos;
         });
@@ -62,10 +65,19 @@ namespace leetcode
             }
         }
 
-        std::unique_copy(endPointMap.begin(), endPointMap.end(), 
-            back_inserter<vector<pair<int, int>>>(result),
-            [&](pair<int, int> p1, pair<int, int> p2) {return p1.second == p2.second; });
+        //std::unique_copy(endPointMap.begin(), endPointMap.end(), 
+        //    back_inserter<vector<pair<int, int>>>(result),
+        //    [&](pair<int, int> p1, pair<int, int> p2) {return p1.second == p2.second; });
 
+        for (auto p : endPointMap)
+        {
+            if (!result.empty() && result.back().second == p.second)
+            {
+                continue;
+            }
+
+            result.push_back(p);
+        }
 
         return result;
     }
@@ -191,10 +203,10 @@ namespace leetcode
                 {
                     result.push_back({ p.Pos, map.begin()->first });
                 }
-            }
         }
+    }
 
         return result;
-    }
+}
 }
 #endif

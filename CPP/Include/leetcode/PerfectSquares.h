@@ -10,16 +10,21 @@ namespace leetcode
     {
         int sq = std::sqrt(n);
         if (sq * sq == n)
+        {
             return true;
-        else
-            return false;
+        }
+
+        return false;
     }
 
     int numSquares(int n)
     {
         if (isPerfectSqureNumber(n))
+        {
             return 1;
+        }
 
+        // bfs
         std::queue<int> que;
         std::queue<int> que_temp;
         que.push(n);
@@ -32,11 +37,16 @@ namespace leetcode
 
             for (int i = 1; i <= current / 2; i++)
             {
-                if (isPerfectSqureNumber(i) && isPerfectSqureNumber(current - i))
+                if (!isPerfectSqureNumber(i))
+                {
+                    continue;
+                }
+
+                if (isPerfectSqureNumber(current - i))
                 {
                     return distance + 2;
                 }
-                else if (isPerfectSqureNumber(i))
+                else
                 {
                     que_temp.push(current - i);
                 }
@@ -45,9 +55,7 @@ namespace leetcode
             if (que.empty())
             {
                 distance++;
-                //swap(que, que_temp);
-                que = que_temp;
-                que_temp = std::queue<int>();
+                swap(que, que_temp);
             }
         }
 

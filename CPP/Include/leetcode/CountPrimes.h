@@ -6,16 +6,16 @@ namespace leetcode
     int countPrimes(int n)
     {
         int count = 0;
-        vector<bool> v(n + 1, true);
+        vector<bool> isPrime(n + 1, true);
 
         for (int i = 2; i < n; i++)
         {
-            if (v[i])
+            if (isPrime[i])
             {
                 count++;
-                for (int j = i * 2; j < n; j += i)
+                for (int j = 2; j*i < n; j++)
                 {
-                    v[j] = false;
+                    isPrime[j*i] = false;
                 }
             }
         }
@@ -25,23 +25,23 @@ namespace leetcode
     //Sieve of Eratosthenes
     vector<int> getPrimes(int n)
     {
-        vector<int> res;
+        vector<int> result;
         vector<bool> is_prime(n + 1, true);
 
         for (int i = 2; i < n; i++)
         {
             if (is_prime[i])
             {
-                res.push_back(i);
+                result.push_back(i);
                 // The multiplies of i are not prime numbers.
                 // i.e. 2*i , 3*i, 4*i ... are not prime.
-                for (int j = i * 2; j < n; j += i)
+                for (int j = 2; j * i < n; j++)
                 {
-                    is_prime[j] = false;
+                    is_prime[j*i] = false;
                 }
             }
         }
 
-        return res;
+        return result;
     }
 }
